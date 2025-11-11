@@ -35,7 +35,7 @@ body {
     display: flex;
     padding: 8px 48px;
     align-items: center;
-    gap: 24px;  
+    gap: 24px;
     border-radius: 80px;
     background-color: var(--surface-color);
 }
@@ -53,7 +53,7 @@ body {
 
 .navbar-nav a:hover {
   text-decoration: none;
-  background-color: color-mix(in srgb, var(--Greyscale-50), transparent 35%); 
+  background-color: color-mix(in srgb, var(--Greyscale-50), transparent 35%);
 }
 
 .navbar .navbar-nav .nav-link.active {
@@ -62,12 +62,25 @@ body {
   background-color: var(--Greyscale-900);
 }
 
+/* Change style button in nav */
+.navbar .layout-container {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
 .navbar .layout-container .layout-button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background 0.3s ease;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: flex-start;
-    gap: 24px;
 }
 
 .navbar .layout-container .layout-button svg {
@@ -76,8 +89,80 @@ body {
     aspect-ratio: 1/1;
 }
 
-.navbar .layout-container .my-styles {
-    position: fixed;
-    z-index: 1000;
+.navbar .layout-container .layout-button:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.navbar .layout-container .layout-options {
+    display: none; /* hidden by default */
+    position: absolute;
+    top: 50px; /* adjust based on where you want it */
+    right: 0;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    list-style: none;
+    margin: 0;
+    /* background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); */
+    z-index: 9999;
+}
+
+.navbar .layout-container .layout-options.active {
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.navbar .layout-container .layout-options .trigger-style {
+    display: flex;
+    align-items: center; /* vertical centering */
+    justify-content: flex-end; /* Items are positioned at the end of the container */
+    gap: 16px;
+    padding: 6px 12px;
+    width: 45px; 
+    height: 45px; 
+    border-radius: 50%; 
+    overflow: visible;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Hide label by default */
+.trigger-style .style-label {
+    display: none;
+    font-size: 20px;
+}
+
+/* Reveal label on hover */
+.trigger-style:hover {
+    width: auto;
+    /* padding: 6px 10x 6px 6px; */
+    /* border-radius: 50%; */
+    justify-content: flex-start;
+    transform: translateY(-2px); /* a little lift when you hover */
+    border: solid;
+    border-color: #1A1A1A;
+}
+
+/* Image inside the circle */
+.trigger-style .style-icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+}
+
+.trigger-style:hover .style-label { 
+    padding: 5px 15px;
+    align-self: center;
+    display: flex; 
+    margin-left: 8px;
+    white-space: nowrap;
+    color: #222; 
 }
 

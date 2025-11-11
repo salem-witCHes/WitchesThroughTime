@@ -15,7 +15,9 @@
         <!-- Fonts -->
 
         <!-- JS -->
+        <script src="js/main.js"></script>
     </head>
+   
     <body>
         <header>
             <nav class="navbar navbar-expand-lg">
@@ -38,38 +40,42 @@
                             <li class="nav-item text-center"><a class="nav-link" href="#">Disclaimer</a></li>
                         </ul>
                     </div>
+
+                    <!-- Theme switcher -->
                     <div class="layout-container">
-                        <div class="layout-button">
+                        <button class="layout-button" id="layoutButton" area-label="Layout options">
+                            <!-- SVG icon -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                                 <path d="M24.1022 10.7969C25.7807 11.808 27.319 14.1902 27.8239 16.5811C28.3544 19.0949 28.1173 23.5037 24.5934 26.8066C22.188 28.7859 19.1131 29.9801 15.7594 29.999V30.001H5.99963V31.9199L3.44104 30.001H3.33362V29.9199L0.666626 27.9199L3.33362 25.9199V25.8389H3.44104L5.99963 23.9199V25.8389H16.5065V25.8018C21.4916 25.388 25.427 21.2749 25.5553 16.2139L25.5582 15.959C25.5581 14.0667 25.0249 12.2992 24.1022 10.7969ZM9.83167 23.9199H9.78967L9.7262 23.8418C9.76109 23.8682 9.79641 23.894 9.83167 23.9199ZM15.6793 8.08008C20.0303 8.08043 23.5579 11.608 23.5582 15.959C23.5582 20.3103 20.0305 23.8385 15.6793 23.8389C11.3279 23.8388 7.80042 20.3104 7.80042 15.959C7.80077 11.6078 11.3281 8.08017 15.6793 8.08008ZM30.8912 4L25.5582 8V6.08105H15.7155C15.7034 6.08101 15.6914 6.08008 15.6793 6.08008C15.6674 6.08008 15.6551 6.08101 15.6432 6.08105H14.8854V6.11523C9.80081 6.51963 5.80075 10.7705 5.80042 15.959C5.80042 17.846 6.33081 19.6087 7.24866 21.1084C5.57858 20.09 4.05116 17.7194 3.54846 15.3389C3.01642 12.8183 3.25492 8.391 6.80627 5.08496C6.82102 5.0712 6.83483 5.05649 6.84924 5.04297C9.26123 3.08982 12.333 1.91898 15.6783 1.91895H25.5582V0L30.8912 4ZM15.5729 10.748C15.0872 10.7481 14.6934 11.1423 14.693 11.6279V16.5723L14.9508 16.8291L17.2877 19.166C17.6313 19.5096 18.1882 19.5095 18.5319 19.166C18.875 18.8223 18.8753 18.2654 18.5319 17.9219L16.4528 15.8428V11.6279C16.4524 11.1424 16.0585 10.7482 15.5729 10.748ZM21.5826 8L21.6686 8.10449C21.6224 8.06921 21.5758 8.03448 21.5289 8H21.5826Z" fill="#1A1A1A"/>
                             </svg>
-                            <ul class="layout-options">
-                                <li class="trigger-style trigger1">
-                                    <span class="style-label">Style 1</span>
-                                    <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 1">
-                                </li>
-                                <li class="trigger-style trigger2">
-                                    <span class="style-label">Style 2</span>
-                                    <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 2">
-                                </li>
-                                <li class="trigger-style trigger3">
-                                    <span class="style-label">Style 3</span>
-                                    <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 3">
-                                </li>
-                                <li class="trigger-style trigger4">
-                                    <span class="style-label">Style 4</span>
-                                    <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 4">
-                                </li>
-                                <li class="trigger-style trigger5">
-                                    <span class="style-label">Style 5</span>
-                                    <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 5">
-                                </li>
-                                <li class="trigger-style trigger6">
-                                    <span class="style-label">Style 6</span>
-                                    <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 6">
-                                </li>
-                            </ul>
-                        </div>
+                        </button>
+
+                        <ul class="layout-options" id="layoutOptions">
+                            <li class="trigger-style trigger1" data-theme="theme1">
+                                <span class="style-label">Style 1</span>
+                                <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 1">
+                            </li>
+                            <li class="trigger-style trigger2" data-theme="theme2">
+                                <span class="style-label">Style 2</span>
+                                <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 2">
+                            </li>
+                            <li class="trigger-style trigger3" data-theme="theme3">
+                                <span class="style-label">Style 3</span>
+                                <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 3">
+                            </li>
+                            <li class="trigger-style trigger4" data-theme="theme4">
+                                <span class="style-label">Style 4</span>
+                                <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 4">
+                            </li>
+                            <li class="trigger-style trigger5" data-theme="theme5">
+                                <span class="style-label">Style 5</span>
+                                <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 5">
+                            </li>
+                            <li class="trigger-style trigger6" data-theme="theme6">
+                                <span class="style-label">Style 6</span>
+                                <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 6">
+                            </li>
+                        </ul>
                     </div>
                     
                 </div>
