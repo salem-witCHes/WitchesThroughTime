@@ -26,7 +26,7 @@ body {
 }
 
 /* forest container */
-.forest-container {
+.forest-container#forestContainer {
   position: fixed;   /* stays on top */
   top: 0;
   left: 0;
@@ -34,7 +34,7 @@ body {
   height: 100vh;
   z-index: 999;      /* above everything */
   overflow: hidden;
-  background-color: var(--background-color);
+  background: url('img/homepage/forest.png') center/cover no-repeat; /* adding the image on the backgroun keeps the forest as a fixed layer and the pseudo-elements stay neatly on top in the same container + oget automatic scaling across devices */
   transition: opacity 1.5s ease-in-out;
 }
 
@@ -42,7 +42,7 @@ body {
   position: absolute;
   inset: 0; /* top:0; left:0; bottom:0; right:0; */
   background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 50%, #ffffff 100%);
-  opacity: 0;               /* initially hidden */
+  opacity: 1;               /* 0 initially hidden */ /*1 starts visible */
   transition: opacity 1.5s ease-in-out;
   pointer-events: none;
   z-index: 5;               /* behind the title but above trees if needed */
@@ -64,28 +64,9 @@ body {
   transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.left-forest {
-  left: 0;
-  mask-image: none;
-  -webkit-mask-image: none;
-}
-
-.right-forest {
-  right: 0;
-  mask-image: none;
-  -webkit-mask-image: none;
-}
-
-.forest-container.opening .left-forest {
-  transform: translateX(-100%);
-  mask-image: linear-gradient(to right, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
-  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
-}
-
-.forest-container.opening .right-forest {
-  transform: translateX(100%);
-  mask-image: linear-gradient(to left, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
-  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+/* when the forest opens */
+.forest-container.opening .forest-gradient {
+  opacity: 0; /* fades away as curtains move */
 }
 
 

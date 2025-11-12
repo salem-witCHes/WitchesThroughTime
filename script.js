@@ -13,6 +13,6 @@ function openCurtains() {
   setTimeout(() => {
     forest.classList.add('hidden');
     homepage.classList.add('visible');
-  }, 1500);
+  }, 2500);
 
 }
