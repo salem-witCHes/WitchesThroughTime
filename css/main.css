@@ -25,6 +25,46 @@ body {
     overflow-x: hidden;
 }
 
+/* headings (h1–h6) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--default-font);
+  color: var(--default-font-color);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+/* paragraphs */
+p {
+  font-family: var(--default-font);
+  color: var(--default-font-color);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 1em;
+  /* keeps text readable on wide screens */
+}
+
+/* Headings sizing scale (responsive-friendly) */
+h1 { font-size: clamp(2rem, 4vw + 1rem, 3rem); }
+h2 { font-size: clamp(1.75rem, 3vw + 1rem, 2.5rem); }
+h3 { font-size: clamp(1.5rem, 2vw + 1rem, 2rem); }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+
+section h1, section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+section p {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+}
+
 /* forest container */
 .forest-container {
   position: fixed;   /* stays on top */
@@ -277,6 +317,52 @@ body {
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
   opacity: 1;
+}
+
+
+
+.introduction h1::after {
+  content: "";
+  display: block;
+  width: 60px;             /* line length */
+  height: 2px;             /* line thickness */
+  background: var(--default-font-color);        /* color */
+  margin: 0.5em auto 1em;  /* spacing and centering */
+}
+
+.introduction,
+.link-documentation {
+  max-width: 90%;              
+  margin: 4rem auto;            /* centers the section horizontally */
+  padding: 0 2rem;              /* small horizontal breathing space */
+  text-align: center;           /* centers heading and button */
+}
+
+.link-documentation a {
+  display: inline-block;           /* allows padding and margins */
+  padding: 0.75rem 1.5rem;         /* button size */
+  border: 2px solid var(--default-font-color);  /* outlined look */
+  border-radius: 2rem;             /* rounded edges */
+  color: var(--default-font-color);
+  text-decoration: none;           /* remove underline */
+  font-weight: 600;
+  margin-top: 1.5rem;              /* spacing above the button */
+}
+
+.link-documentation a:hover {
+  background-color: var(--default-font-color);
+  color: var(--background-color);
+  transform: scale(1.05);          /* subtle zoom */
+}
+
+/* Decorative line after heading */
+.link-documentation h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--default-font-color);
+  margin: 0.5em auto 1.2em;
 }
 
 /* Responsive adjustments */
