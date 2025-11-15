@@ -1,5 +1,6 @@
 localStorage.removeItem('hasVisited'); // 🧪 comment this out when you go live
 
+
 function openCurtains() {
   const forest = document.getElementById('forestContainer');
   const homepage = document.getElementById('homepage-content');
@@ -16,8 +17,8 @@ function openCurtains() {
     forest.classList.add('hidden');
     homepage.classList.add('visible');
   }, 800);
-
 }
+
 
 // remember if the user has already seen the opening animation
 document.addEventListener('DOMContentLoaded', () => {

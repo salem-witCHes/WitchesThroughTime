@@ -64,7 +64,8 @@ section p {
   text-align: justify;
 }
 
-/* forest container */
+/* Both forest images */
+/* --- Forest Background --- */
 .forest-container {
   position: fixed;   /* stays on top */
   top: 0;
@@ -87,7 +88,6 @@ section p {
   object-fit: contain;
 }
 
-/* Both forest images */
 .forest {
   position: absolute;
   top: 0;
@@ -140,8 +140,8 @@ section p {
 .title-content {
   position: absolute;
   top: 70%;
-  left: 47%;
-  transform: translateX(-50%);  /* horizontal center only */
+  left: 50%;
+  transform: translateX(-50%);  /* center horizontally */
   text-align: center;
   color: #000000;
   z-index: 10;
@@ -168,6 +168,7 @@ section p {
 .enter-btn {
   font-size: 1rem;
   position: absolute;
+  left: 50%;
   transform: translateX(-50%);
   background: #ffffff;
   border: 1px solid #1a1a1a;
@@ -179,6 +180,7 @@ section p {
   cursor: pointer;
   transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* keep hover effect only */
 }
+
 
 .enter-btn:hover {
   transform: translateX(-50%);
@@ -556,91 +558,73 @@ section p {
       padding: 10px 16px;
   }
 
-  .carousel-caption h3 {
-      font-size: 1.3rem;
+}
+
+/* opening page */
+@media (max-width: 480px) {
+  .title-content {
+    top: 60%;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .enter-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    white-space: normal; /* allow wrapping on very narrow screens */
   }
 }
 
-
-
-/*
-Tablet
-@media (max-width: 1024px) {
+@media (max-width: 400px) {
   .forest {
-    width: 45vw;
-    height: 80vh;
+    object-fit: cover;
+    min-width: 120vw; /* ensure coverage */
+  }
+}
+
+@media (max-width: 360px) {
+  .title-content {
+    top: 55%;
+  }
+  .title { font-size: 1.4rem; }
+  .subtitle { font-size: 1rem; }
+}
+
+/* carousel */
+@media (max-width: 576px) {
+  .carousel-caption {
+    bottom: 5%;
+    left: 5%;
   }
 
-  Title and subtitle
-  .title {
-    font-size: 2rem;
-  }
-  .subtitle {
-    font-size: 1.2rem;
-  }
-  .title-text {
-    transform: translateY(-15%);
-  }
-
-  Enter button
-  .enter-btn {
-    bottom: 3%;
-    padding: 0.5rem 1.5rem;
-    font-size: 1rem;
-  }
-
-  Carousel
-  .carousel-inner {
-    min-height: 50vh;
-  }
-  .carousel-item img {
-    max-height: 50vh;
-  }
-
-  Carousel caption
-  .carousel-caption h3 {
+  .carousel-caption a {
     font-size: 1.5rem;
   }
+}
 
+@media (max-width: 480px) {
+  .introduction,
+  .link-documentation {
+    padding: 0 1rem;
+  }
+}
 
-/*
-Mobile
-@media (max-width: 768px) {
+/* Mobile + narrow viewports */
+@media (max-width: 991px) {
   .forest {
-    width: 90vw;
-    height: auto;  scale proportionally
+    width: 100vw;        /* Force fill screen */
+    height: 100vh;
+    object-fit: cover;   /* Scale as needed */
+    min-width: 100vw;
+    min-height: 100vh;
   }
-  Title and subtitle
-  .title {
-    font-size: 1.5rem;
-  }
-  .subtitle {
-    font-size: 1rem;
-  }
-  .title-text {
-    transform: translateY(-10%);
-  }
-
-  Enter button
-  .enter-btn {
-    bottom: 2%;
-    padding: 0.4rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  Carousel
-  .carousel-inner {
-    min-height: 35vh;
-  }
-  .carousel-item img {
-    max-height: 35vh;
-  }
-
-  Carousel caption
-  .carousel-caption h3 {
-    font-size: 1.2rem;
-    padding: 5px 10px;
-  }
+}
 } */
 
 
