@@ -368,6 +368,34 @@ section p {
   visibility: visible;
 }
 
+/* --- RESPONSIVE NAVBAR --- */
+@media (max-width: 991px) {
+  #menuItems {
+    padding: 20px 0;
+    border-radius: 0; /* remove the round pills on smaller screens */
+    width: 100%;
+  }
+
+  .navbar-nav {
+    flex-direction: column !important;
+    gap: 10px;
+    padding: 0;
+    background: none; /* no pill background */
+  }
+
+  .navbar-toggler {
+      border: none;
+      /* margin-top: -10px;   --- change this if you want to move the toggler in the corner
+      margin-right: -10px; */
+  }
+
+  .navbar-toggler-icon {
+      filter: brightness(0); /* makes it black */
+      width: 28px;
+      height: 28px;
+  }
+}
+
 /* RESPONSIVE theme-button: Move to bottom-left on smaller screens */
 /* Bs navbar collapses at 992px (navbar-expand-lg), so we want them to match */
 @media (max-width: 991px) {
@@ -387,17 +415,20 @@ section p {
     left: auto;
     right: 0;
   }
+}
 
   /* Optional: Even smaller screens */
 @media (max-width: 480px) {
   .navbar .layout-container {
     bottom: 10px;
-    left: 10px;
+    right: 10px;
+    left: auto;
   }
 
   .navbar .layout-container .layout-options {
     bottom: 50px;
-    min-width: 200px;
+    right: 10px;
+    left: auto;
   }
 }
 
@@ -610,5 +641,15 @@ Mobile
     font-size: 1.2rem;
     padding: 5px 10px;
   }
+} */
+
+
+/* Footer 
+-------------------------------------- */
+.footer-separator {
+    height: 2px;
+    background: black;
+    max-width: 90%; /* or 80%, or a fixed value like 1200px */
+    margin: 0 auto; /* centers the line */
 }
-*/
+
