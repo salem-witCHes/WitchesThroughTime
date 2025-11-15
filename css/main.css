@@ -214,14 +214,14 @@ section p {
 }
 
 .navbar-nav {
-    padding: 8px 48px;
+    padding: 8px 24px;
     gap: 24px;
     border-radius: 80px;
     background-color: var(--surface-color);
 }
 
 .navbar-nav .nav-link {
-  padding: 16px 24px !important; 
+  padding: 10px 24px !important; 
   justify-content: center;
   gap: 10px;
   border-radius: 80px;
@@ -247,9 +247,10 @@ section p {
     align-items: center;
     justify-content: center;
     top: 24px;
-    right: 0;
-    transform: translateY(-50%);
-    z-index: 1000;
+    margin-left: auto;
+    /* right: 0; */
+    transform: translateY(-50%); /* Perfect vertical centering */
+    z-index: 9999; /* above overlay */
 }
 
 .navbar .layout-container .layout-button {
@@ -287,7 +288,7 @@ section p {
     padding: 16px;
     list-style: none;
     margin: 0;
-    /* background: white;
+    /* background: white;     /* Uncomment this if you want visible background for the dropdown 
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15); */
     z-index: 9999;
@@ -347,9 +348,60 @@ section p {
     display: flex; 
     margin-left: 8px;
     white-space: nowrap;
-    color: #222; 
+    color: white; 
 }
 
+/* Dark overlay when dropdown is open */
+.dropdown-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* chnage darkness here */
+  z-index: 9998; /* just below the dropdown */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.dropdown-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* RESPONSIVE theme-button: Move to bottom-left on smaller screens */
+/* Bs navbar collapses at 992px (navbar-expand-lg), so we want them to match */
+@media (max-width: 991px) {
+  .navbar .layout-container {
+    position: fixed; /* Changed from absolute */
+    top: auto; /* Reset top */
+    bottom: 24px; /* Position at bottom */
+    right: 20px; /* Position at right */
+    left: auto; /* Reset left */
+    transform: none; /* Remove centering transform */
+  }
+
+  /* Dropdown opens UPWARD from bottom */
+  .navbar .layout-container .layout-options {
+    top: auto; /* Reset top positioning */
+    bottom: 60px; /* Position above the button */
+    left: auto;
+    right: 0;
+  }
+
+  /* Optional: Even smaller screens */
+@media (max-width: 480px) {
+  .navbar .layout-container {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .navbar .layout-container .layout-options {
+    bottom: 50px;
+    min-width: 200px;
+  }
+}
 
 
 /* Carousel */

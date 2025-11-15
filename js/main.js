@@ -4,6 +4,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const layoutButton = document.getElementById("layoutButton");
   const layoutOptions = document.getElementById("layoutOptions");
+  const dropdownOverlay = document.getElementById("dropdownOverlay");
   const triggers = document.querySelectorAll(".trigger-style");
 
   // Create and append the theme <link> to head (ready to load CSS files)
@@ -15,10 +16,29 @@ document.addEventListener("DOMContentLoaded", function () {
     document.head.appendChild(themeLink);
   }
 
+// Update active state 
+  function updateActiveTheme(themeName) {
+    triggers.forEach(t => {
+      if (t.dataset.theme === themeName) {
+        t.classList.add('active-theme');
+      } else {
+        t.classList.remove('active-theme');
+      }
+    });
+  }
+
   // Open/close dropdown
   function setOpen(open) {
     layoutOptions.classList.toggle("active", open);
+    dropdownOverlay.classList.toggle("active", open); // Toggle overlay
     layoutButton.setAttribute("aria-expanded", String(!!open));
+
+    // Prevent body scroll when dropdown is open
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   }
 
   // Load saved theme if available
@@ -29,16 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
   } 
   // If no saved theme, do nothing - main.css is already loaded by default
 
-  // Update active state 
-function updateActiveTheme(themeName) {
-  triggers.forEach(t => {
-    if (t.dataset.theme === themeName) {
-      t.classList.add('active-theme');
-    } else {
-      t.classList.remove('active-theme');
-    }
-  });
-}
 
   // Toggle dropdown visibility (click on the svg area to ride the function inside)
   layoutButton.addEventListener("click", (e) => {
@@ -70,6 +80,7 @@ function updateActiveTheme(themeName) {
       // Load new theme
       themeLink.href = `css/${theme}.css`;
       localStorage.setItem("selectedTheme", theme);
+      updateActiveTheme(theme);
       setOpen(false);  // Close the dropdown after selecting a theme
 
       console.log(`Theme switched to: ${theme}`);
@@ -84,27 +95,30 @@ function updateActiveTheme(themeName) {
     });
   });
 
-// Reset to default theme button
-const resetButton = document.getElementById("resetTheme");
-if (resetButton) {
-  resetButton.addEventListener("click", (e) => {
-    e.stopPropagation();
+  // Reset to default theme button
+  const resetButton = document.getElementById("resetTheme");
+  if (resetButton) {
+    resetButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      
+      // Remove the theme stylesheet entirely to go back to main.css
+      if (themeLink && themeLink.parentNode) {
+        themeLink.href = ""; // Clear the href to unload the theme CSS
+        // OR you can remove it completely:
+        // themeLink.parentNode.removeChild(themeLink);
+      }
     
-    // Remove the theme stylesheet entirely to go back to main.css
-    if (themeLink && themeLink.parentNode) {
-      themeLink.href = ""; // Clear the href to unload the theme CSS
-      // OR you can remove it completely:
-      // themeLink.parentNode.removeChild(themeLink);
-    }
-    
-    // Remove saved theme from localStorage
-    localStorage.removeItem("selectedTheme");
-    
-    // Close dropdown
-    setOpen(false);
-    
-    console.log("Reset to default theme (main.css)");
-  });
+      // Remove saved theme from localStorage
+      localStorage.removeItem("selectedTheme");
+
+      // Clear active state from all themese 
+      updateActiveTheme(null);
+      
+      // Close dropdown
+      setOpen(false);
+      
+      console.log("Reset to default theme (main.css)");
+    });
 
   // Keyboard support for reset button
   resetButton.addEventListener("keydown", (e) => {
@@ -120,6 +134,11 @@ if (resetButton) {
     if (!layoutButton.contains(e.target) && !layoutOptions.contains(e.target)) {
       setOpen(false);
     }
+  });
+
+  // Close when clicking on overlay
+  dropdownOverlay.addEventListener("click", () => {
+    setOpen(false);
   });
 
   // Optional: close on ESC
