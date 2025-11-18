@@ -1,3 +1,6 @@
+Css
+
+
 /* Main CSS */
 
 /* Fonts */
@@ -12,6 +15,7 @@
     --Greyscale-900: #1A1A1A;
     --default-font-color: #1A1A1A;
     --Greyscale-50: #CCC;
+    --center-safe-width: 400px;
 }
 
 /* General styling */
@@ -46,9 +50,9 @@ p {
 }
 
 /* Headings sizing scale (responsive-friendly) */
-h1 { font-size: clamp(2rem, 4vw + 1rem, 3rem); }    /* CSS tool for making text responsive without breaking layouts -> clamp(min, preferred, max) */
-h2 { font-size: clamp(1.75rem, 3vw + 1rem, 2.5rem); }
-h3 { font-size: clamp(1.5rem, 2vw + 1rem, 2rem); }
+h1 { font-size: clamp(1rem, 4vw + 1rem, 2rem); }    /* CSS tool for making text responsive without breaking layouts -> clamp(min, preferred, max) */
+h2 { font-size: clamp(0.75rem, 3vw + 1rem, 1.5rem); }
+h3 { font-size: clamp(0.75rem, 2vw + 1rem, 1.5rem); }
 h4 { font-size: 1.25rem; }
 h5 { font-size: 1.1rem; }
 h6 { font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
@@ -80,6 +84,8 @@ section p {
 .forest-gradient {
   position: absolute;
   inset: 0; /* top:0; left:0; bottom:0; right:0; */
+  justify-content: center;  /* horizontal center */
+  align-items: center;      /* vertical center */
   background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 50%, #ffffff 100%);
   opacity: 0;               /* initially hidden */
   transition: opacity 0.5s ease-in-out;
@@ -90,14 +96,68 @@ section p {
 
 .forest {
   position: absolute;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
+  overflow: hidden;
+}
+
+.forest img.tree {
+  position: absolute;
+  bottom: 0;
+  height: 85vh;
+  object-fit: contain;
+  left: 50%;
+  transform: translateX(calc(-50% + var(--shift, 0)));
+  transition: transform 2.5s ease-in-out;
+  z-index: 4;
+}
+
+
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: center;
-  transition: transform 3s cubic-bezier(0.4, 0, 0.2, 1);
-  min-width: 100vw;  /* prevent gaps */
-  min-height: 100vh;
+  z-index: 1;
+}
+
+.l2 { --shift: -22vw; }
+.l3 { --shift: -35vw; }
+.l4 { --shift: -40vw; }
+.l5 { --shift: -55vw; }
+.l6 { --shift: -60vw; }
+
+.r1 { --shift: 22vw;  }
+.r2 { --shift: 30vw;  }
+.r3 { --shift: 40vw;  }
+.r4 { --shift: 60vw;  }
+
+.left-tree  { --shift: -18vw; transform: scaleX(-1); }
+.right-tree { --shift: 18vw;  }
+
+.far {
+  opacity: 80%;
+}
+
+.forest.opening .tree {
+  transform: translateX(calc(-50% + var(--shift) + 120vw));
+}
+
+.forest.opening .left-tree,
+.forest.opening .l2,
+.forest.opening .l3,
+.forest.opening .l4,
+.forest.opening .l5,
+.forest.opening .l6 {
+  transform: translateX(calc(-50% + var(--shift) - 120vw));
+}
+
+/* When opening, slide them apart */
+.forest-container.opening .left {
+  transform: translateX(-100%);
+}
+
+.forest-container.opening .right {
+  transform: translateX(100%);
 }
 
 .forest-container.hidden {
@@ -116,43 +176,48 @@ section p {
   transition: opacity 0.8s ease-in-out;
 }
 
-.title-content {
-  position: absolute;
-  top: 70%;
-  left: 48.5%;
-  transform: translateX(-50%);  /* center horizontally */
+.title-box {
+  position: fixed;
+  left: 50%;
+  top: 68%;
+  transform: translateX(-50%); /* only center horizontally */
+  white-space: nowrap;
   text-align: center;
-  color: #000000;
-  z-index: 10;
-  max-width: 90vw;
+  z-index: 15;
+  padding: clamp(0.3rem, 1.5vw, 0.6rem) clamp(0.6rem, 3vw, 1.2rem);
+  width: clamp(180px, 40%, 300px);
+  height: auto; /* let it grow naturally */
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
 }
 
-.title-text {
-  margin-bottom: 2rem;
+.title-box .title {
+  margin-bottom: 0.4rem;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  color: var(--default-font-color);
 }
 
-.title {
-  font-size: 1rem;    
-  margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-  font-weight: bold;
+.title-box .subtitle {
+  margin-bottom: 0.6rem;
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
+  color: var(--default-font-color);
 }
 
-.subtitle {
-  font-size: 0.8rem;
-  margin-bottom: 1rem;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+.forest-container:not(.opening) .title-box {
+  opacity: 1;
+}
+
+.title-box.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .enter-btn {
-  font-size: 1rem;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  font-size: clamp(0.8rem, 2vw, 1rem);        /* scales between 0.8rem and 1rem */
   background: #ffffff;
-  border: 1px solid #1a1a1a;
-  color: #1a1a1a;
-  padding: 0.5rem 1rem;
+  border: 1px solid var(--default-font-color);
+  color: var(--default-font-color);
+  padding: clamp(0.3rem, 1vw, 0.5rem) clamp(0.6rem, 2vw, 1rem); /* responsive padding */
   text-align: center;          /* center text */
   white-space: nowrap;         /* prevent wrapping */
   border-radius: 8px;
@@ -160,9 +225,7 @@ section p {
   transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* keep hover effect only */
 }
 
-
 .enter-btn:hover {
-  transform: translateX(-50%);
   background: var(--default-font-color); /* keep solid background */
   color: var(--background-color); /* optional */
 }
@@ -179,7 +242,6 @@ section p {
   pointer-events: auto;
   display: block; /* ensure container is visible */
 }
-
 
 
 /* Navbar */
@@ -398,7 +460,7 @@ section p {
   }
 }
 
-  /* Optional: Even smaller screens */
+/* Optional: Even smaller screens */
 @media (max-width: 480px) {
   .navbar .layout-container {
     bottom: 10px;
@@ -482,7 +544,7 @@ section p {
   opacity: 1;
 }
 
-.introduction h1::after {
+.introduction h2::after {
   content: "";
   display: block;
   width: 60px;             /* line length */
@@ -605,7 +667,6 @@ section p {
     min-height: 100vh;
   }
 }
-} */
 
 
 /* Footer 
@@ -616,4 +677,5 @@ section p {
     max-width: 90%; /* or 80%, or a fixed value like 1200px */
     margin: 0 auto; /* centers the line */
 }
+
 
