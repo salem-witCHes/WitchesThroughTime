@@ -199,6 +199,13 @@ section p {
     background-color: var(--surface-color);
 }
 
+/* Logo */
+.navbar-brand svg {
+    width: 50px;
+    height: auto;
+    flex-shrink: 0;
+}
+
 .navbar-nav .nav-link {
   padding: 10px 24px !important; 
   justify-content: center;

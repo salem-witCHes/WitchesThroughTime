@@ -132,3 +132,9 @@ p {
   background-color: var(--erin-green);
   box-shadow: 0 0 7px 0 #1AFE49;
 }
+
+/* Change logo color */
+.navbar-brand svg path {
+  fill: var(--erin-green);
+  filter: drop-shadow(0 0 7px #1AFE49);
+}
