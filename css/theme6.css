@@ -1,0 +1,140 @@
+/* Cyberpunk theme */
+
+:root {
+    --default-font: "Orbitron", sans-serif;
+}
+
+/* Global Colors */
+:root {
+    --background-color: black;
+    --tropical-indigo: #8386f5ff;
+    --violet-blue: #3d43b4ff;
+    --penn-blue: #041348ff;
+    --pakistan-green: #083e12ff;
+    --erin-green: #1afe49ff;
+    /* --surface-color: #E6E6E6;
+    --Greyscale-900: #1A1A1A;
+    --default-font-color: #1A1A1A;
+    --Greyscale-50: #CCC; */
+}
+
+/* General styling */
+body {
+    background-color: var(--background-color);
+    color: var(--erin-green);
+    font-family: var(--default-font);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* headings (h1–h6) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--default-font);
+  color: var(--erin-green);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+/* paragraphs */
+p {
+  font-family: var(--default-font);
+  color: var(--erin-green);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 1em;
+  /* keeps text readable on wide screens */
+}
+
+/* Holographic grid background */
+.grid-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+
+  background: repeating-linear-gradient(
+      0deg,
+      rgba(131, 134, 245, 0.15) 0px,   /* tropical indigo */
+      rgba(131, 134, 245, 0.15) 1px,
+      transparent 1px,
+      transparent 15px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(131, 134, 245, 0.15) 0px,
+      rgba(131, 134, 245, 0.15) 1px,
+      transparent 1px,
+      transparent 15px
+    );
+}
+
+.grid-line {
+  position: absolute;
+  background: var(--tropical-indigo);
+  opacity: 0.5;
+  animation: grid-flow 2.5s linear infinite;
+}
+
+.grid-line:nth-child(odd) {
+  width: 100%;
+  height: 1px;
+}
+.grid-line:nth-child(even) {
+  height: 100%;
+  width: 1px;
+}
+
+.grid-line:nth-child(1) { top: 15%; }
+.grid-line:nth-child(2) { left: 25%; }
+.grid-line:nth-child(3) { top: 55%; animation-delay: -0.8s; }
+.grid-line:nth-child(4) { left: 65%; animation-delay: -1.6s; }
+.grid-line:nth-child(5) { top: 85%; animation-delay: -1.2s; }
+
+@keyframes grid-flow {
+  0% {
+    transform: translateX(-100%) translateY(-100%);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%);
+  }
+}
+
+
+/* Navbar */
+
+.navbar-nav {
+    background-color: transparent;
+}
+
+.navbar-nav .nav-link {
+  border-radius: 0px;
+  color: var(--erin-green);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  text-decoration: none;
+  border: 2px solid #1AFE49;
+  background-color: transparent;
+  box-shadow: 0 0 7px 0 #1AFE49;
+}
+
+.navbar .nav-link.active {
+  color: black !important;    /* important! to override the variable --bs-navbar-active-color */
+  text-decoration: none;
+  background-color: var(--erin-green);
+  box-shadow: 0 0 7px 0 #1AFE49;
+}
+
+/* Change logo color */
+.navbar-brand svg path {
+  fill: var(--erin-green);
+  filter: drop-shadow(0 0 7px #1AFE49);
+}

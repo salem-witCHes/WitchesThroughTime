@@ -1,24 +1,28 @@
 localStorage.removeItem('hasVisited'); // 🧪 comment this out when you go live
 
-
 function openCurtains() {
   const forest = document.getElementById('forestContainer');
   const homepage = document.getElementById('homepage-content');
   const gradient = forest.querySelector('.forest-gradient');
+  const titleBox = document.getElementById('titleBox');
 
-  // Add opening class to trigger animations
-  forest.classList.add('opening');
-
-  // Fade in gradient
+  // show gradient
   gradient.style.opacity = '1';
-            
-  // Fade out forest container and show homepage content
-  setTimeout(() => {
-    forest.classList.add('hidden');
-    homepage.classList.add('visible');
-  }, 800);
-}
 
+  // fade out title box
+  titleBox.classList.add('hidden');
+  forest.classList.add('opening');
+  document.querySelector('.forest').classList.add('opening');
+
+  // start fading out
+  forest.style.opacity = '0';
+
+  // wait for transition to finish
+  forest.addEventListener('transitionend', () => {
+    forest.classList.add('hidden');   // actually hide it
+    homepage.classList.add('visible'); // show homepage content
+  }, { once: true });
+}
 
 // remember if the user has already seen the opening animation
 document.addEventListener('DOMContentLoaded', () => {
