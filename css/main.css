@@ -550,7 +550,6 @@ section p {
   opacity: 1;
 }
 
-/* text */
 .introduction-title h2::after {
   content: "";
   display: block;
@@ -830,43 +829,109 @@ section p {
 }
 /* --- ERA CARDS UNDER TOGGLE --- */
 
+
+/* Ensure all ERA cards have equal height and 4 cards per row */
+.eras .row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+.eras .col-3 {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
 .era-card {
     display: flex;
     flex-direction: column;
+    flex: 1 1 100%;
     width: 100%;
-    padding: 16px 24px;
+    min-width: 0;
+    padding: 12px 16px;
     border: 1px solid var(--Greyscale-900);
     border-radius: 16px;
-    gap: 24px;
+    gap: 12px;
     background: white;
+    box-sizing: border-box;
+    height: 100%;
 }
 
 .era-title {
     font-family: "Times New Roman", serif;
-    font-size: 24px;
+    font-size: 20px;  /* slightly smaller */
     font-weight: 400;
     color: var(--Greyscale-900);
+    margin-bottom: 2px; /* reduced space to description */
 }
 
 .era-description {
     font-family: "Times New Roman", serif;
-    font-size: 16px;
+    font-size: 14px;  /* slightly smaller */
     color: var(--Greyscale-900);
     margin: 0;
+    line-height: 1.2; /* tighter spacing */
 }
 
+/* ERA ITEMS - Grid layout */
 .era-items {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 145px);  /* 3 equal rows */
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(3, 145px);  /* 3 rows */
+    gap: 10px;                             /* space between items */
 }
 
-.era-items img {
-    width: 100%;
-    height: auto;
+/* Individual image + text container */
+.era-item {
+    position: relative;
+    width: 100%;      /* fill the grid cell */
+    height: 100%;     /* match row height */
     border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Image inside the item */
+.era-item img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    display: block;
+}
+
+/* Text overlay */
+.era-item-text {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    color: white;
+    font-family: "Times New Roman", serif;
+    font-size: 14px; /* smaller for responsiveness */
+    font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
+    word-wrap: break-word;
+    pointer-events: none;
+    line-height: 1.2;
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* maximum 3 lines */
+    -webkit-box-orient: vertical;
+}
+
+/* Small screen adjustments */
+@media (max-width: 480px) {
+    .era-items {
+        grid-template-columns: 1fr;  /* 1 column on mobile */
+        grid-template-rows: repeat(auto-fit, 120px); /* adjust row height for mobile */
+    }
+
+    .era-item-text {
+        font-size: 12px;
+        -webkit-line-clamp: 2; /* only 2 lines */
+    }
 }
 /* === Make header + navbar sticky and align toggle under it === */
 
@@ -912,10 +977,7 @@ nav.navbar {
     box-sizing: border-box;
 }
 
-/* In case your actual navbar height is different, override like this:
-   Add to your HTML <style> in head or adjust --nav-height variable in main.css:
-   :root { --nav-height: 64px; }  (use the real measured height)
-*/
+
 /* Chronology Timeline */
 .chronology-container {
     display: flex;
@@ -1006,11 +1068,11 @@ nav.navbar {
 
 /* Text section fills remaining space */
 .text {
-    flex: 1; /* fills remaining space */
+    flex: 1;
     padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 9px;
+    justify-content: center; /* vertically center the title */
 }
 
 .text-wrapper {
@@ -1034,5 +1096,5 @@ nav.navbar {
     left: 50%;
     transform: translate(-50%, -50%);
     top: 50%;
-    z-index: 4;
+    z-index: 0;
 }
