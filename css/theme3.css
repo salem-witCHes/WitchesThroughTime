@@ -1,0 +1,40 @@
+:root {
+    --default-font: "Bocklin", serif;
+    --text-font: "Cormorant Garamond", serif;
+}
+
+/* Global Colors */
+:root {
+    --background-color: #E9D9B6;
+    --witchflame-red: #9F3F33;
+    --cursed-walnut: #4B342C;
+    
+}
+
+/* General styling */
+body {
+    background-color: var(--background-color);
+    color: var(--background-color);
+    font-family: var(--default-font);
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    background: url("img/themes/art-nouveau/frame.png") no-repeat center / contain;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* headings (h1–h6) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--default-font);
+  color: var(--cursed-walnut);
+}
+
+/* paragraphs */
+p {
+  font-family: var(--text-font);
+  color: var(--cursed-walnut);
+}

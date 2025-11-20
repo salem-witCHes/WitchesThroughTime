@@ -550,7 +550,7 @@ section p {
   opacity: 1;
 }
 
-.introduction h2::after {
+.introduction-title h2::after {
   content: "";
   display: block;
   width: 60px;             /* line length */
@@ -827,6 +827,7 @@ section p {
         font-size: 18px;
     }
 }
+<<<<<<< Updated upstream
 /* --- ERA CARDS UNDER TOGGLE --- */
 
 .era-card {
@@ -914,3 +915,5 @@ nav.navbar {
    Add to your HTML <style> in head or adjust --nav-height variable in main.css:
    :root { --nav-height: 64px; }  (use the real measured height)
 */
+=======
+>>>>>>> Stashed changes

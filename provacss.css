@@ -1,0 +1,4 @@
+.container.eras {
+    background-color: var(--background-color);
+    border: border: 2px solid var(--default-font-color);
+}
