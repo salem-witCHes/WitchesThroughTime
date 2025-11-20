@@ -857,6 +857,7 @@ section p {
 .era-items {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 145px);  /* 3 equal rows */
     gap: 10px;
 }
 
