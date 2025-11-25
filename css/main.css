@@ -302,7 +302,6 @@ scale(0.1) = while moving, the element is dramatically shrunk to 10% of its orig
     visibility: visible;
 }
 
-
 /* Navbar */
 /* ------------------------------------------ */
 .navbar {
@@ -891,6 +890,7 @@ scale(0.1) = while moving, the element is dramatically shrunk to 10% of its orig
         font-size: 18px;
     }
 }
+
 /* --- ERA CARDS UNDER TOGGLE --- */
 
 

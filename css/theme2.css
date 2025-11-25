@@ -2,36 +2,47 @@
 
 
 :root {
-    --default-font: "Uncial Antiqua", serif;
+    --default-font: "IM Fell English", serif;
     --text-font: "Cormorant Garamond", serif;
 }
 
 /* Global Colors */
 :root {
-    --background-color: #353535;
-    --antique-gold: #D3B27D;
-    --velvet-red: #611E24;
-    --burnt-terracotta: #8B4542;
-    --porcelain-veil : #DDD9D5;
+    --background-color: #323546;
+    --soft-ice: #D4EEF9;
+    --forest-green: #43462A;
+    --pale-olive: #D2C486;
+    
+
 }
 
 /* General styling */
 body {
     background-color: var(--background-color);
-    color: var(--antique-gold);
     font-family: var(--default-font);
+    color: var(--soft-ice);
+}
+
+/* Overlay */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("../img/dark-romanticism/fog.jpg") center/cover no-repeat;
+    opacity: 30%;
+    z-index: -1;
 }
 
 /* headings (h1–h6) */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--default-font);
-  color: var(--antique-gold);
+  color: var(--soft-ice);
 }
 
 /* paragraphs */
 p {
   font-family: var(--text-font);
-  color: var(--antique-gold);
+  color: var(--pale-olive);
 }
 
 /* fog background */
@@ -46,45 +57,43 @@ p {
     align-items: center;
     align-self: stretch;
     font-family: var(--text-font);
+    color: var(--pale-olive);
 }
 
 .navbar-nav {
     padding: 8px 24px;
     gap: 24px;
     border-radius: 80px;
-    background-color: var(--velvet-red);
-    border: 2px solid var(--antique-gold);
+    background-color: var(--forest-green);
+    border: 2px solid var(--pale-olive);
     border-radius: 0px;
 }
 
 /* Logo */
 .navbar-nav .nav-link {
-    border: 1px solid var(--antique-gold);
+    border: 1px solid var(--pale-olive);
     border-radius: 0px;
-    color: var(--antique-gold);
+    color: var(--pale-olive);
 }
 
 .navbar-nav .nav-link:hover {
   text-decoration: none;
-  background-color: var(--burnt-terracotta);
+  background-color: var(--pale-olive);
+  color: var(--forest-green);
 }
 
 .navbar .nav-link.active {
-  color: var(--porcelain-veil) !important;    /* important! to override the variable --bs-navbar-active-color */
+  color: var(--forest-green) !important;    /* important! to override the variable --bs-navbar-active-color */
   text-decoration: none;
-  background-color: var(--burnt-terracotta);
+  background-color: var(--pale-olive);
 }
+
 
 /* Change style button and logo color */
 .navbar svg path {
-    fill: var(--antique-gold);
+    fill: var(--pale-olive);
 }
 
-.navbar .nav-link.active {
-color: var(--porcelain-veil) !important;    /* important! to override the variable --bs-navbar-active-color */
-text-decoration: none;
-background-color: var(--burnt-terracotta);
-}
 
 @media (max-width: 991px) {
   .custom-toggler .navbar-toggler-icon {
@@ -95,22 +104,22 @@ background-color: var(--burnt-terracotta);
 
 /* Change the rectangle color around the hamburger toggle */
 .navbar-toggler:focus {
-    border: 2px solid var(--antique-gold) !important; /* antique-gold */
+    border: 2px solid var(--soft-ice) !important; /* antique-gold */
     box-shadow: none !important; /* remove any inner shadow */
     background-clip: padding-box; /* ensure border doesn’t get clipped */
 }
 
 
 .navbar .layout-container .layout-options {
-    background-color: var(--velvet-red);
-    border: 2px solid var(--antique-gold);    /* frame color */
+    background-color: var(--forest-green);
+    border: 2px solid var(--soft-ice);    /* frame color */
     border-radius: 0px;                      /* round corners */
     box-shadow: 0 4px 12px rgba(0,0,0,0.25); /* optional shadow */
     padding: 16px;
 }
 
 .custom-toggler.navbar-toggler {
-  border-color: var(--antique-gold) !important; 
+  border-color: var(--soft-ice) !important; 
 }
 
 /* Change hamburger icon color */
@@ -118,12 +127,10 @@ background-color: var(--burnt-terracotta);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23D3B27D' stroke-width='2' stroke-linecap='round' d='M4 7h22 M4 15h22 M4 23h22'/%3E%3C/svg%3E") !important;   
 }
 
-
-
 /* Carousel */
 /* ---------------------------------------- */
 .carousel-caption a {
-  color: var(--antique-gold);
+  color: var(--soft-ice);
 }
 
 .carousel-caption a:hover {
@@ -139,7 +146,7 @@ background-color: var(--burnt-terracotta);
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../img/dark-romanticism/frame-romanticism.png');
+  background-image: url('');
   background-size: 100% 100%;
   background-repeat: no-repeat;
 
@@ -176,8 +183,8 @@ background-color: var(--burnt-terracotta);
 
 .introduction p,
 .link-documentation p {
-  background-color: var(--velvet-red);
-  border: 2px solid var(--antique-gold);
+  background-color: var(--forest-green);
+  border: 2px solid var(--pale-olive);
   border-radius: 20px;
   padding: 1.5rem;
   /* Optional: ensure the padding doesn't make the box wider than 100% */
@@ -187,18 +194,16 @@ background-color: var(--burnt-terracotta);
 .link-documentation a {
   display: inline-block;           /* allows padding and margins */
   padding: 0.75rem 1.5rem;         /* button size */
-  border: 2px solid var(--antique-gold);  /* outlined look */
+  border: 2px solid var(--soft-ice);  /* outlined look */
   border-radius: 2rem;             /* rounded edges */
-  color: var(--antique-gold);
+  color: var(--soft-ice);
   text-decoration: none;           /* remove underline */
   font-weight: 600;
   margin: 2rem;              /* spacing above the button */
 }
 
 .link-documentation a:hover {
-  background-color: var(--burnt-terracotta);
+  background-color: var(--pale-olive);
   color: var(--porcelain-veil);
   /* transform: scale(1.05); */         /* subtle zoom */
 }
-
-

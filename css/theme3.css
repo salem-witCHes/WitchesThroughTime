@@ -1,3 +1,20 @@
+/* =========================================
+   THE SLENDER SETUP
+   ========================================= */
+:root {
+    /* --- THE MASTER WIDTH CONTROL --- */
+    /* Change this one number to resize the whole page width */
+    --base-width: 45%; 
+    
+    /* Vertical Heights */
+    --title-height: 100px;  
+    --nav-height: 50px;     
+    --header-gap: 10px; 
+    
+    /* Where the content starts scrolling */
+    --scroll-start: calc(var(--title-height) + var(--nav-height) + var(--header-gap) + 15px);
+}
+
 :root {
     --default-font: "Bocklin", sans-serif;
     --text-font: "Playfair Display", serif;
@@ -11,129 +28,233 @@
     --brown: #7F552B;
 }
 
-/* General styling */
+* { box-sizing: border-box; }
+
 body {
     background-image: url("../img/art-nouveau/background.png");
-    z-index: 999;
-    background-size: cover;        /* make it fill the page */
-    background-repeat: no-repeat;  /* prevent tiling */
-    background-position: center;   /* center the image */
-    background-attachment: fixed;  /* optional: parallax effect */
-    color: var(--witchflame-red);
-    font-family: var(--default-font);
-}
-
-/* headings (h1–h6) */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--default-font);
-  color: var(--cursed-walnut);
-}
-
-/* paragraphs */
-p {
-  font-family: var(--text-font);
-  color: var(--cursed-walnut);
-}
-
-.forest-container {
-  background: white;
-}
-
-
-/* Navbar */
-/* ------------------------------------------ */
-.navbar {
-    display: flex;
-    padding: 24px;
-    justify-content: space-between;
-    align-items: center;
-    align-self: stretch;
-    font-family: var(--text-font);
-}
-
-.navbar-nav {
-    padding: 8px 24px;
-    gap: 24px;
     background-color: var(--background-color);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; 
+    font-family: var(--default-font);
+    color: var(--witchflame-red);
+}
+
+.introduction { display: contents; }
+
+/* =========================================
+   FIXED HEADER (NARROW)
+   ========================================= */
+
+/* TITLE BOX */
+.introduction-title {
+    position: fixed;
+    top: 1vh;
+    left: 0; right: 0; margin: 0 auto;
+    
+    /* APPLY MASTER WIDTH */
+    width: var(--base-width);
+    height: var(--title-height);
+    z-index: 1000;
+    
+    /* Border & Style */
     border: 2px solid var(--cursed-walnut);
     border-radius: 8px;
-}
-
-/* Logo */
-.navbar-nav .nav-link {
-    border: 1px solid var(--cursed-walnut);
-    border-radius: 8px;
-    color: var(--cursed-walnut);
-}
-
-.navbar-nav .nav-link:hover {
-  text-decoration: none;
-  background-color: var(--witchflame-red);
-  color: var(--background-color)
-}
-
-.navbar .nav-link.active {
-  color: var(--porcelain-veil) !important;    /* important! to override the variable --bs-navbar-active-color */
-  text-decoration: none;
-  background-color: var(--burnt-terracotta);
-}
-
-/* Change style button and logo color */
-.navbar svg path {
-    fill: var(--cursed-walnut);
-}
-
-.navbar .nav-link.active {
-color: var(--porcelain-veil) !important;    /* important! to override the variable --bs-navbar-active-color */
-text-decoration: none;
-background-color: var(--burnt-terracotta);
-}
-
-@media (max-width: 991px) {
-  .custom-toggler .navbar-toggler-icon {
-      filter: none !important; /* restore color */
-      background-color: var(--background-color);
-  }
-}
-
-/* Change the rectangle color around the hamburger toggle */
-.navbar-toggler:focus {
-    border: 2px solid var(--cursed-walnut) !important; /* antique-gold */
-    box-shadow: none !important; /* remove any inner shadow */
-    background-clip: padding-box; /* ensure border doesn’t get clipped */
-}
-
-.navbar .layout-container .layout-options {
-    display: none; /* hidden by default */
-    position: absolute;
-    top: 50px; /* adjust based on where you want it */
-    right: 0;
+    background-color: var(--background-color);
+    
+    display: flex;
     flex-direction: column;
-    gap: 12px;
-    width: 150px;                 /* match image width */
-    height: 600px;
-    padding: 16px;
-    list-style: none;
-    margin: 0;
-    background-image: url("../img/art-nouveau/4.png");
-    background-size: 100% 100%;   /* stretch image to fill box exactly */
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
 }
 
+.introduction-title h1 { 
+    font-size: 1.6rem; 
+    margin: 5px 0 0 0; 
+}
+.introduction-title h2 { 
+    font-size: 0.9rem; 
+    margin: 2px 0 0 0; 
+    font-weight: normal; 
+}
 
-.navbar .layout-container .layout-button {
-    background: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 50%;
-    transition: background 0.3s ease;
+/* B. NAVBAR */
+header {
+    position: fixed;
+    
+    /* FIX 1: Starts immediately below the title (no gap here) */
+    top: var(--title-height); 
+    
+    left: 0; right: 0; margin: 0 auto;
+    width: var(--base-width);
+    
+    /* FIX 2: Must include the gap in its total height */
+    height: calc(var(--nav-height) + var(--header-gap));
+    
+    /* FIX 3: Fill the background gap with the chosen color */
+    background-color: var(--background-color); 
+    z-index: 900;
+    
+    /* FIX 4: Push the internal navbar pill down by the gap amount */
+    padding-top: var(--header-gap);
+    
+    display: flex;
+    justify-content: center;
+    /* IMPORTANT: Align items to the top so they start after the padding */
+    align-items: flex-start; 
+}
+
+header .navbar {
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--cursed-walnut);
+    background-color: var(--background-color);
+    border-radius: 8px;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+header .nav-link {
+    padding: 0 15px !important;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   SCROLLABLE CONTENT
+   ========================================= */
+
+#homepage-content {
+    position: fixed;
+    top: var(--scroll-start);
+    bottom: 30px;
+    left: 0; right: 0; margin: 0 auto;
+    
+    /* APPLY MASTER WIDTH */
+    width: 80%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    bottom: 3vh;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 30vh;
+    padding-right: 10px; /* Space for scrollbar */
+}
+
+/* Content Styling */
+.carousel-frame-wrapper, 
+.introduction p {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid var(--cursed-walnut);
+}
+
+.introduction p {
+    background-color: var(--background-color);
+    border: 2px solid var(--cursed-walnut);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: justify;
+    font-family: var(--text-font);
+    color: var(--cursed-walnut);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.introduction-title h2::after {
+  content: none;
+}
+
+/* --- FIX: Override fixed bottom margin inside the scroll container --- */
+/* Target all relevant sections inside the scrollable area */
+
+.link-documentation {
+    /* Reset bottom margin to zero to allow padding-bottom: 20vh to work */
+    margin-bottom: 0 !important; 
+}
+
+
+.footer {
+    position: fixed;
+    bottom: 3vh; /* Start where the scrolling content ends */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: var(--base-width);
+    height: 8vh; /* The space we reserved above */
+    
+    /* Ensure it has the background to hide the frame */
+    background-color: var(--background-color); 
+    z-index: 100;
+    
+    /* Add any other styling needed for the footer content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================================
+   RESPONSIVENESS
+   ========================================= */
+/* TIGHTEN NAVBAR LINKS ON MOBILE */
+@media (max-width: 768px) {
+    /* Ensure maximum width usage */
+    /* Set the column width back to a readable size, e.g., 90% */
+    :root {
+        --base-width: 45%; 
+        --title-height: 80px;
+        --nav-height: 40px; 
+    }
+
+    /* 1. EXTEND THE BACKGROUND VISUALLY (Curtain Effect) */
+    /* This overrides the desktop width and stretches the background 
+       to cover the frame edges, prioritizing readability. */
+    .introduction-title, header {
+        
+        max-width: none !important; /* Ensures no max-width restriction */
+        left: 0; /* Align perfectly to the left edge */
+        transform: none; /* Remove centering transform if any */
+        
+        /* Ensure the solid background color is set (it should be, but check) */
+        background-color: var(--background-color); 
+        
+        /* Ensure they float above the frame */
+        z-index: 2000; 
+    }
+    
+    /* Re-center the content/text inside the new 100% box */
+    .introduction-title {
+        /* This margin compensates for the left: 0 above and centers the content visually */
+        margin: 0 auto; 
+    }
+
+    /* Keep the homepage content slightly narrower so it doesn't look like an accident */
+    #homepage-content {
+        width: 80%; 
+    }
+
+    /* Shrink the font size to prevent overflow */
+    header .nav-link {
+        padding: 0 8px !important; 
+        font-size: 0.75rem; 
+    }
+}
+
+
+/* Scrollbar */
+#homepage-content::-webkit-scrollbar { width: 6px; }
+#homepage-content::-webkit-scrollbar-track { background: transparent; }
+#homepage-content::-webkit-scrollbar-thumb { background-color: var(--cursed-walnut); border-radius: 8px; }
