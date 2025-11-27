@@ -14,375 +14,380 @@
         <link rel="stylesheet" href="css/main.css">
 
         <!-- Fonts -->
+        <!-- XIX century fonts: IM Fell English + Cormorant Garamond-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
 
         <!-- JS -->
         <script src="js/main.js"></script>
     </head>
    
-    <body>
-        <header>
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <img src="img/logo_ex.png" alt="Logo" width="80" height="47.2px">
-                    </a>
+    <body class="chronological-page">
+        <main class="page-content">
+            <header>
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                            <img src="img/logo_ex.png" alt="Logo" width="80" height="47.2px">
+                        </a>
 
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuItems" aria-controls="menuItems" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button> 
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuItems" aria-controls="menuItems" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button> 
 
-                    <div class="collapse navbar-collapse d-lg-flex justify-content-center" id="menuItems">
-                        <ul class="navbar-nav">
-                            <li class="nav-item text-center"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item text-center"><a class="nav-link" href="map.html">Map</a></li>
-                            <li class="nav-item text-center"><a class="nav-link active" href="#">Exhibition</a></li>
-                            <li class="nav-item text-center"><a class="nav-link" href="#">About</a></li>
-                            <li class="nav-item text-center"><a class="nav-link" href="#">Documentation</a></li>
-                            <li class="nav-item text-center"><a class="nav-link" href="#">Disclaimer</a></li>
-                        </ul>
-                    </div>
+                        <div class="collapse navbar-collapse d-lg-flex justify-content-center" id="menuItems">
+                            <ul class="navbar-nav">
+                                <li class="nav-item text-center"><a class="nav-link" href="index.html">Home</a></li>
+                                <li class="nav-item text-center"><a class="nav-link" href="map.html">Map</a></li>
+                                <li class="nav-item text-center"><a class="nav-link active" href="#">Exhibition</a></li>
+                                <li class="nav-item text-center"><a class="nav-link" href="#">About</a></li>
+                                <li class="nav-item text-center"><a class="nav-link" href="#">Documentation</a></li>
+                                <li class="nav-item text-center"><a class="nav-link" href="#">Disclaimer</a></li>
+                            </ul>
+                        </div>
 
-                    <!-- Theme switcher -->
-                    <div class="layout-container">
-                        <button class="layout-button" id="layoutButton" area-label="Layout options">
-                            <!-- SVG icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                <path d="M24.1022 10.7969C25.7807 11.808 27.319 14.1902 27.8239 16.5811C28.3544 19.0949 28.1173 23.5037 24.5934 26.8066C22.188 28.7859 19.1131 29.9801 15.7594 29.999V30.001H5.99963V31.9199L3.44104 30.001H3.33362V29.9199L0.666626 27.9199L3.33362 25.9199V25.8389H3.44104L5.99963 23.9199V25.8389H16.5065V25.8018C21.4916 25.388 25.427 21.2749 25.5553 16.2139L25.5582 15.959C25.5581 14.0667 25.0249 12.2992 24.1022 10.7969ZM9.83167 23.9199H9.78967L9.7262 23.8418C9.76109 23.8682 9.79641 23.894 9.83167 23.9199ZM15.6793 8.08008C20.0303 8.08043 23.5579 11.608 23.5582 15.959C23.5582 20.3103 20.0305 23.8385 15.6793 23.8389C11.3279 23.8388 7.80042 20.3104 7.80042 15.959C7.80077 11.6078 11.3281 8.08017 15.6793 8.08008ZM30.8912 4L25.5582 8V6.08105H15.7155C15.7034 6.08101 15.6914 6.08008 15.6793 6.08008C15.6674 6.08008 15.6551 6.08101 15.6432 6.08105H14.8854V6.11523C9.80081 6.51963 5.80075 10.7705 5.80042 15.959C5.80042 17.846 6.33081 19.6087 7.24866 21.1084C5.57858 20.09 4.05116 17.7194 3.54846 15.3389C3.01642 12.8183 3.25492 8.391 6.80627 5.08496C6.82102 5.0712 6.83483 5.05649 6.84924 5.04297C9.26123 3.08982 12.333 1.91898 15.6783 1.91895H25.5582V0L30.8912 4ZM15.5729 10.748C15.0872 10.7481 14.6934 11.1423 14.693 11.6279V16.5723L14.9508 16.8291L17.2877 19.166C17.6313 19.5096 18.1882 19.5095 18.5319 19.166C18.875 18.8223 18.8753 18.2654 18.5319 17.9219L16.4528 15.8428V11.6279C16.4524 11.1424 16.0585 10.7482 15.5729 10.748ZM21.5826 8L21.6686 8.10449C21.6224 8.06921 21.5758 8.03448 21.5289 8H21.5826Z" fill="#1A1A1A"/>
-                            </svg>
-                        </button>
-
-                        <ul class="layout-options" id="layoutOptions">
-                            <li class="trigger-style" data-theme="theme1">
-                                <span class="style-label">Style 1</span>
-                                <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 1">
-                            </li>
-                            <li class="trigger-style" data-theme="theme2">
-                                <span class="style-label">Style 2</span>
-                                <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 2">
-                            </li>
-                            <li class="trigger-style" data-theme="theme3">
-                                <span class="style-label">Style 3</span>
-                                <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 3">
-                            </li>
-                            <li class="trigger-style" data-theme="theme4">
-                                <span class="style-label" style="font-family: 'Press Start 2P', cursive;"> Windows XP   95</span>
-                                <img class="style-icon" src="img/theme4.svg" alt="Style 4">
-                            </li>
-                            <li class="trigger-style" data-theme="theme5">
-                                <span class="style-label">Style 5</span>
-                                <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 5">
-                            </li>
-                            <li class="trigger-style" data-theme="theme6">
-                                <span class="style-label">Style 6</span>
-                                <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 6">
-                            </li>
-                            <li class="trigger-style" id="resetTheme">
-                                <span class="style-label"> Reset to Default</span>
-                                <svg class="style-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <!-- Theme switcher -->
+                        <div class="layout-container">
+                            <button class="layout-button" id="layoutButton" area-label="Layout options">
+                                <!-- SVG icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                                     <path d="M24.1022 10.7969C25.7807 11.808 27.319 14.1902 27.8239 16.5811C28.3544 19.0949 28.1173 23.5037 24.5934 26.8066C22.188 28.7859 19.1131 29.9801 15.7594 29.999V30.001H5.99963V31.9199L3.44104 30.001H3.33362V29.9199L0.666626 27.9199L3.33362 25.9199V25.8389H3.44104L5.99963 23.9199V25.8389H16.5065V25.8018C21.4916 25.388 25.427 21.2749 25.5553 16.2139L25.5582 15.959C25.5581 14.0667 25.0249 12.2992 24.1022 10.7969ZM9.83167 23.9199H9.78967L9.7262 23.8418C9.76109 23.8682 9.79641 23.894 9.83167 23.9199ZM15.6793 8.08008C20.0303 8.08043 23.5579 11.608 23.5582 15.959C23.5582 20.3103 20.0305 23.8385 15.6793 23.8389C11.3279 23.8388 7.80042 20.3104 7.80042 15.959C7.80077 11.6078 11.3281 8.08017 15.6793 8.08008ZM30.8912 4L25.5582 8V6.08105H15.7155C15.7034 6.08101 15.6914 6.08008 15.6793 6.08008C15.6674 6.08008 15.6551 6.08101 15.6432 6.08105H14.8854V6.11523C9.80081 6.51963 5.80075 10.7705 5.80042 15.959C5.80042 17.846 6.33081 19.6087 7.24866 21.1084C5.57858 20.09 4.05116 17.7194 3.54846 15.3389C3.01642 12.8183 3.25492 8.391 6.80627 5.08496C6.82102 5.0712 6.83483 5.05649 6.84924 5.04297C9.26123 3.08982 12.333 1.91898 15.6783 1.91895H25.5582V0L30.8912 4ZM15.5729 10.748C15.0872 10.7481 14.6934 11.1423 14.693 11.6279V16.5723L14.9508 16.8291L17.2877 19.166C17.6313 19.5096 18.1882 19.5095 18.5319 19.166C18.875 18.8223 18.8753 18.2654 18.5319 17.9219L16.4528 15.8428V11.6279C16.4524 11.1424 16.0585 10.7482 15.5729 10.748ZM21.5826 8L21.6686 8.10449C21.6224 8.06921 21.5758 8.03448 21.5289 8H21.5826Z" fill="#1A1A1A"/>
                                 </svg>
-                            </li>
-                        </ul>
+                            </button>
+
+                            <ul class="layout-options" id="layoutOptions">
+                                <li class="trigger-style" data-theme="theme1">
+                                    <span class="style-label">Style 1</span>
+                                    <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 1">
+                                </li>
+                                <li class="trigger-style" data-theme="theme2">
+                                    <span class="style-label">Style 2</span>
+                                    <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 2">
+                                </li>
+                                <li class="trigger-style" data-theme="theme3">
+                                    <span class="style-label">Style 3</span>
+                                    <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 3">
+                                </li>
+                                <li class="trigger-style" data-theme="theme4">
+                                    <span class="style-label" style="font-family: 'Press Start 2P', cursive;"> Windows XP   95</span>
+                                    <img class="style-icon" src="img/theme4.svg" alt="Style 4">
+                                </li>
+                                <li class="trigger-style" data-theme="theme5">
+                                    <span class="style-label">Style 5</span>
+                                    <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 5">
+                                </li>
+                                <li class="trigger-style" data-theme="theme6">
+                                    <span class="style-label">Style 6</span>
+                                    <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 6">
+                                </li>
+                                <li class="trigger-style" id="resetTheme">
+                                    <span class="style-label"> Reset to Default</span>
+                                    <svg class="style-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                        <path d="M24.1022 10.7969C25.7807 11.808 27.319 14.1902 27.8239 16.5811C28.3544 19.0949 28.1173 23.5037 24.5934 26.8066C22.188 28.7859 19.1131 29.9801 15.7594 29.999V30.001H5.99963V31.9199L3.44104 30.001H3.33362V29.9199L0.666626 27.9199L3.33362 25.9199V25.8389H3.44104L5.99963 23.9199V25.8389H16.5065V25.8018C21.4916 25.388 25.427 21.2749 25.5553 16.2139L25.5582 15.959C25.5581 14.0667 25.0249 12.2992 24.1022 10.7969ZM9.83167 23.9199H9.78967L9.7262 23.8418C9.76109 23.8682 9.79641 23.894 9.83167 23.9199ZM15.6793 8.08008C20.0303 8.08043 23.5579 11.608 23.5582 15.959C23.5582 20.3103 20.0305 23.8385 15.6793 23.8389C11.3279 23.8388 7.80042 20.3104 7.80042 15.959C7.80077 11.6078 11.3281 8.08017 15.6793 8.08008ZM30.8912 4L25.5582 8V6.08105H15.7155C15.7034 6.08101 15.6914 6.08008 15.6793 6.08008C15.6674 6.08008 15.6551 6.08101 15.6432 6.08105H14.8854V6.11523C9.80081 6.51963 5.80075 10.7705 5.80042 15.959C5.80042 17.846 6.33081 19.6087 7.24866 21.1084C5.57858 20.09 4.05116 17.7194 3.54846 15.3389C3.01642 12.8183 3.25492 8.391 6.80627 5.08496C6.82102 5.0712 6.83483 5.05649 6.84924 5.04297C9.26123 3.08982 12.333 1.91898 15.6783 1.91895H25.5582V0L30.8912 4ZM15.5729 10.748C15.0872 10.7481 14.6934 11.1423 14.693 11.6279V16.5723L14.9508 16.8291L17.2877 19.166C17.6313 19.5096 18.1882 19.5095 18.5319 19.166C18.875 18.8223 18.8753 18.2654 18.5319 17.9219L16.4528 15.8428V11.6279C16.4524 11.1424 16.0585 10.7482 15.5729 10.748ZM21.5826 8L21.6686 8.10449C21.6224 8.06921 21.5758 8.03448 21.5289 8H21.5826Z" fill="#1A1A1A"/>
+                                    </svg>
+                                </li>
+                            </ul>
+                        </div>
+                        
                     </div>
-                    
+                </nav>
+
+                <div class="dropdown-overlay" id="dropdownOverlay"></div>
+
+            </header>
+
+            <div class="toggle-frame">
+                <!-- Left Label -->
+                <span id="labelChrono" class="toggle-text active-text">Chronological</span>
+
+                <!-- The Toggle Pill -->
+                <div class="toggle-pill">
+                    <!-- Active Icon inside Knob -->
+                    <div class="toggle-knob">
+                        <img id="toggleIcon" src="img/chronological-active.svg" alt="Active Icon">
+                    </div>
+
+                    <!-- Inactive Icon on the opposite side -->
+                    <img id="inactiveIcon" class="inactive-icon" src="img/eras-inactive.svg" alt="Inactive Icon">
                 </div>
-            </nav>
 
-            <div class="dropdown-overlay" id="dropdownOverlay"></div>
-
-        </header>
-
-        <div class="toggle-frame">
-            <!-- Left Label -->
-            <span id="labelChrono" class="toggle-text active-text">Chronological</span>
-
-            <!-- The Toggle Pill -->
-            <div class="toggle-pill">
-                <!-- Active Icon inside Knob -->
-                <div class="toggle-knob">
-                    <img id="toggleIcon" src="img/chronological-active.svg" alt="Active Icon">
-                </div>
-
-                <!-- Inactive Icon on the opposite side -->
-                <img id="inactiveIcon" class="inactive-icon" src="img/eras-inactive.svg" alt="Inactive Icon">
+                <!-- Right Label -->
+                <span id="labelEras" class="toggle-text">Eras</span>
             </div>
+            <!-- CHRONOLOGY TIMELINE SECTION -->
+            <div class="chronology-container">
+                <div class="timeline-lines">
 
-            <!-- Right Label -->
-            <span id="labelEras" class="toggle-text">Eras</span>
-        </div>
-        <!-- CHRONOLOGY TIMELINE SECTION -->
-        <div class="chronology-container">
-            <div class="timeline-lines">
-
-                <!-- Right side (odd) -->
-                <div class="line">
-                    <div class="card">
-                        <div class="picture">
-                            <img src="img/items.png" alt="">
+                    <!-- Right side (odd) -->
+                    <div class="line">
+                        <div class="card">
+                            <div class="picture">
+                                <img src="img/items.png" alt="">
+                            </div>
+                            <div class="text">
+                                <div class="text-wrapper">Statue of a Triple-Bodied Hecate <br><i>2nd century A.D.</i> </div>
+                            </div>
                         </div>
-                        <div class="text">
-                            <div class="text-wrapper">Statue of a Triple-Bodied Hecate <br><i>2nd century A.D.</i> </div>
-                        </div>
+                        <div class="ellipse"></div>
                     </div>
-                    <div class="ellipse"></div>
-                </div>
-                <!-- Right side (odd) -->
-                <div class="line">
-                    <div class="card">
-                        <div class="picture">
-                            <img src="img/items.png" alt="">
+                    <!-- Right side (odd) -->
+                    <div class="line">
+                        <div class="card">
+                            <div class="picture">
+                                <img src="img/items.png" alt="">
+                            </div>
+                            <div class="text">
+                                <div class="text-wrapper">Medea's Amphora<br><i>510 B.C. - 500 B.C.</i> </div>
+                            </div>
                         </div>
-                        <div class="text">
-                            <div class="text-wrapper">Medea's Amphora<br><i>510 B.C. - 500 B.C.</i> </div>
-                        </div>
+                        <div class="ellipse"></div>
                     </div>
-                    <div class="ellipse"></div>
-                </div>
 
-                <!-- Left side (even) -->
-                <div class="line">
-                    <div class="card left-card">
-                        <div class="text">
-                            <div class="text-wrapper">Two Waldensian Witches <br><i>1451</i> </div>
+                    <!-- Left side (even) -->
+                    <div class="line">
+                        <div class="card left-card">
+                            <div class="text">
+                                <div class="text-wrapper">Two Waldensian Witches <br><i>1451</i> </div>
+                            </div>
+                            <div class="picture">
+                                <img src="img/items.png" alt="">
+                            </div>
                         </div>
-                        <div class="picture">
-                            <img src="img/items.png" alt="">
-                        </div>
+                        <div class="ellipse"></div>
                     </div>
-                    <div class="ellipse"></div>
-                </div>
 
-                <!-- Right side (odd) -->
-                <div class="line">
-                    <div class="card">
-                        <div class="picture">
-                            <img src="img/items.png" alt="">
+                    <!-- Right side (odd) -->
+                    <div class="line">
+                        <div class="card">
+                            <div class="picture">
+                                <img src="img/items.png" alt="">
+                            </div>
+                            <div class="text">
+                                <div class="text-wrapper">Malleus Maleficarum <br><i>1487</i> </div>
+                            </div>
                         </div>
-                        <div class="text">
-                            <div class="text-wrapper">Malleus Maleficarum <br><i>1487</i> </div>
-                        </div>
+                        <div class="ellipse"></div>
                     </div>
-                    <div class="ellipse"></div>
-                </div>
 
-                <!-- Left side (even) -->
-                <div class="line">
-                    <div class="card left-card">
-                        <div class="text">
-                            <div class="text-wrapper">Witches brewing up a storm <br><i>1489</i> </div>
+                    <!-- Left side (even) -->
+                    <div class="line">
+                        <div class="card left-card">
+                            <div class="text">
+                                <div class="text-wrapper">Witches brewing up a storm <br><i>1489</i> </div>
+                            </div>
+                            <div class="picture">
+                                <img src="img/items.png" alt="">
+                            </div>
                         </div>
-                        <div class="picture">
-                            <img src="img/items.png" alt="">
-                        </div>
+                        <div class="ellipse"></div>
                     </div>
-                    <div class="ellipse"></div>
-                </div>
 
-                <!-- Right side (odd) -->
-                <div class="line">
-                    <div class="card">
-                        <div class="picture">
-                            <img src="img/items.png" alt="">
+                    <!-- Right side (odd) -->
+                    <div class="line">
+                        <div class="card">
+                            <div class="picture">
+                                <img src="img/items.png" alt="">
+                            </div>
+                            <div class="text">
+                                <div class="text-wrapper">Hortus Sanitatis <br><i>1491</i> </div>
+                            </div>
                         </div>
-                        <div class="text">
-                            <div class="text-wrapper">Hortus Sanitatis <br><i>1491</i> </div>
-                        </div>
+                        <div class="ellipse"></div>
                     </div>
-                    <div class="ellipse"></div>
-                </div>
 
-                <!-- Left side (even) -->
-                <div class="line">
-                    <div class="card left-card">
-                        <div class="text">
-                            <div class="text-wrapper">The Witches <br><i>1510</i> </div>
+                    <!-- Left side (even) -->
+                    <div class="line">
+                        <div class="card left-card">
+                            <div class="text">
+                                <div class="text-wrapper">The Witches <br><i>1510</i> </div>
+                            </div>
+                            <div class="picture">
+                                <img src="img/items.png" alt="">
+                            </div>
                         </div>
-                        <div class="picture">
-                            <img src="img/items.png" alt="">
-                        </div>
+                        <div class="ellipse"></div>
                     </div>
-                    <div class="ellipse"></div>
-                </div>
 
-                <!-- Right side (odd) -->
-                <div class="line">
-                    <div class="card">
-                        <div class="picture">
-                            <img src="img/items.png" alt="">
+                    <!-- Right side (odd) -->
+                    <div class="line">
+                        <div class="card">
+                            <div class="picture">
+                                <img src="img/items.png" alt="">
+                            </div>
+                            <div class="text">
+                                <div class="text-wrapper">The Three Witches<br><i>1783</i> </div>
+                            </div>
                         </div>
-                        <div class="text">
-                            <div class="text-wrapper">The Three Witches<br><i>1783</i> </div>
-                        </div>
+                        <div class="ellipse"></div>
                     </div>
-                    <div class="ellipse"></div>
-                </div>
 
-                <!-- Left side (even) -->
-                <div class="line">
-                    <div class="card left-card">
-                        <div class="text">
-                            <div class="text-wrapper">The Walnut Tree of Benevento<br><i>1825</i> </div>
+                    <!-- Left side (even) -->
+                    <div class="line">
+                        <div class="card left-card">
+                            <div class="text">
+                                <div class="text-wrapper">The Walnut Tree of Benevento<br><i>1825</i> </div>
+                            </div>
+                            <div class="picture">
+                                <img src="img/items.png" alt="">
+                            </div>
                         </div>
-                        <div class="picture">
-                            <img src="img/items.png" alt="">
-                        </div>
+                        <div class="ellipse"></div>
                     </div>
-                    <div class="ellipse"></div>
-                </div>
 
-                <!-- Right side (odd) -->
-                <div class="line">
-                    <div class="card">
-                        <div class="picture">
-                            <img src="img/items.png" alt="">
+                    <!-- Right side (odd) -->
+                    <div class="line">
+                        <div class="card">
+                            <div class="picture">
+                                <img src="img/items.png" alt="">
+                            </div>
+                            <div class="text">
+                                <div class="text-wrapper">A witchcraft was hanged <br><i>1830-1886</i> </div>
+                            </div>
                         </div>
-                        <div class="text">
-                            <div class="text-wrapper">A witchcraft was hanged <br><i>1830-1886</i> </div>
-                        </div>
+                        <div class="ellipse"></div>
                     </div>
-                    <div class="ellipse"></div>
-                </div>
 
-                <!-- Left side (even) -->
-                <div class="line">
-                    <div class="card left-card">
-                        <div class="text">
-                            <div class="text-wrapper">The Examination of a Witch <br><i>1853</i> </div>
+                    <!-- Left side (even) -->
+                    <div class="line">
+                        <div class="card left-card">
+                            <div class="text">
+                                <div class="text-wrapper">The Examination of a Witch <br><i>1853</i> </div>
+                            </div>
+                            <div class="picture">
+                                <img src="img/items.png" alt="">
+                            </div>
                         </div>
-                        <div class="picture">
-                            <img src="img/items.png" alt="">
-                        </div>
+                        <div class="ellipse"></div>
                     </div>
-                    <div class="ellipse"></div>
-                </div>
 
-                <!-- Right side (odd) -->
-                <div class="line">
-                    <div class="card">
-                        <div class="picture">
-                            <img src="img/items.png" alt="">
+                    <!-- Right side (odd) -->
+                    <div class="line">
+                        <div class="card">
+                            <div class="picture">
+                                <img src="img/items.png" alt="">
+                            </div>
+                            <div class="text">
+                                <div class="text-wrapper">Morgan-Le-Fay<br><i>1863-1864</i> </div>
+                            </div>
                         </div>
-                        <div class="text">
-                            <div class="text-wrapper">Morgan-Le-Fay<br><i>1863-1864</i> </div>
-                        </div>
+                        <div class="ellipse"></div>
                     </div>
-                    <div class="ellipse"></div>
-                </div>
 
-                <!-- Left side (even) -->
-                <div class="line">
-                    <div class="card left-card">
-                        <div class="text">
-                            <div class="text-wrapper">Rehabilitation of Anna Goldi <br><i>1865</i> </div>
+                    <!-- Left side (even) -->
+                    <div class="line">
+                        <div class="card left-card">
+                            <div class="text">
+                                <div class="text-wrapper">Rehabilitation of Anna Goldi <br><i>1865</i> </div>
+                            </div>
+                            <div class="picture">
+                                <img src="img/items.png" alt="">
+                            </div>
                         </div>
-                        <div class="picture">
-                            <img src="img/items.png" alt="">
-                        </div>
+                        <div class="ellipse"></div>
                     </div>
-                    <div class="ellipse"></div>
-                </div>
 
-                <!-- Right side (odd) -->
-                <div class="line">
-                    <div class="card">
-                        <div class="picture">
-                            <img src="img/items.png" alt="">
+                    <!-- Right side (odd) -->
+                    <div class="line">
+                        <div class="card">
+                            <div class="picture">
+                                <img src="img/items.png" alt="">
+                            </div>
+                            <div class="text">
+                                <div class="text-wrapper">Circe offering the cup to Odysseus<br><i>1891</i> </div>
+                            </div>
                         </div>
-                        <div class="text">
-                            <div class="text-wrapper">Circe offering the cup to Odysseus<br><i>1891</i> </div>
-                        </div>
+                        <div class="ellipse"></div>
                     </div>
-                    <div class="ellipse"></div>
-                </div>
 
-                <!-- Left side (even) -->
-                <div class="line">
-                    <div class="card left-card">
-                        <div class="text">
-                            <div class="text-wrapper">Baba Yaga's illustration<br><i>1900</i> </div>
+                    <!-- Left side (even) -->
+                    <div class="line">
+                        <div class="card left-card">
+                            <div class="text">
+                                <div class="text-wrapper">Baba Yaga's illustration<br><i>1900</i> </div>
+                            </div>
+                            <div class="picture">
+                                <img src="img/items.png" alt="">
+                            </div>
                         </div>
-                        <div class="picture">
-                            <img src="img/items.png" alt="">
-                        </div>
+                        <div class="ellipse"></div>
                     </div>
-                    <div class="ellipse"></div>
-                </div>
 
-                <!-- Right side (odd) -->
-                <div class="line">
-                    <div class="card">
-                        <div class="picture">
-                            <img src="img/items.png" alt="">
+                    <!-- Right side (odd) -->
+                    <div class="line">
+                        <div class="card">
+                            <div class="picture">
+                                <img src="img/items.png" alt="">
+                            </div>
+                            <div class="text">
+                                <div class="text-wrapper">Judy Chicago<br><i>1974-1979</i> </div>
+                            </div>
                         </div>
-                        <div class="text">
-                            <div class="text-wrapper">Judy Chicago<br><i>1974-1979</i> </div>
-                        </div>
+                        <div class="ellipse"></div>
                     </div>
-                    <div class="ellipse"></div>
-                </div>
 
-                <!-- Left side (even) -->
-                <div class="line">
-                    <div class="card left-card">
-                        <div class="text">
-                            <div class="text-wrapper">“Le streghe son tornate” <br><i>1976</i> </div>
+                    <!-- Left side (even) -->
+                    <div class="line">
+                        <div class="card left-card">
+                            <div class="text">
+                                <div class="text-wrapper">“Le streghe son tornate” <br><i>1976</i> </div>
+                            </div>
+                            <div class="picture">
+                                <img src="img/items.png" alt="">
+                            </div>
                         </div>
-                        <div class="picture">
-                            <img src="img/items.png" alt="">
-                        </div>
+                        <div class="ellipse"></div>
                     </div>
-                    <div class="ellipse"></div>
-                </div>
 
-                <!-- Right side (odd) -->
-                <div class="line">
-                    <div class="card">
-                        <div class="picture">
-                            <img src="img/items.png" alt="">
+                    <!-- Right side (odd) -->
+                    <div class="line">
+                        <div class="card">
+                            <div class="picture">
+                                <img src="img/items.png" alt="">
+                            </div>
+                            <div class="text">
+                                <div class="text-wrapper">The Myths series<br><i>1981</i> </div>
+                            </div>
                         </div>
-                        <div class="text">
-                            <div class="text-wrapper">The Myths series<br><i>1981</i> </div>
-                        </div>
+                        <div class="ellipse"></div>
                     </div>
-                    <div class="ellipse"></div>
-                </div>
 
-                <!-- Left side (even) -->
-                <div class="line">
-                    <div class="card left-card">
-                        <div class="text">
-                            <div class="text-wrapper">Witches in America<br><i>2018</i> </div>
+                    <!-- Left side (even) -->
+                    <div class="line">
+                        <div class="card left-card">
+                            <div class="text">
+                                <div class="text-wrapper">Witches in America<br><i>2018</i> </div>
+                            </div>
+                            <div class="picture">
+                                <img src="img/items.png" alt="">
+                            </div>
                         </div>
-                        <div class="picture">
-                            <img src="img/items.png" alt="">
-                        </div>
+                        <div class="ellipse"></div>
                     </div>
-                    <div class="ellipse"></div>
-                </div>
 
-                <!-- Right side (odd) -->
-                <div class="line">
-                    <div class="card">
-                        <div class="picture">
-                            <img src="img/items.png" alt="">
+                    <!-- Right side (odd) -->
+                    <div class="line">
+                        <div class="card">
+                            <div class="picture">
+                                <img src="img/items.png" alt="">
+                            </div>
+                            <div class="text">
+                                <div class="text-wrapper">Witch Camp in Ghana <br><i>2024</i> </div>
+                            </div>
                         </div>
-                        <div class="text">
-                            <div class="text-wrapper">Witch Camp in Ghana <br><i>2024</i> </div>
-                        </div>
+                        <div class="ellipse"></div>
                     </div>
-                    <div class="ellipse"></div>
-                </div>
 
+                </div>
             </div>
-        </div>
-        <section class="map">
-            <div></div>
+            <section class="map">
+                <div></div>
 
-        </section>
+            </section>
 
-        <div class="footer-separator"></div>
+            <div class="footer-separator"></div>
 
-            <!-- Footer -->
+                <!-- Footer -->
             <footer class="text-white text-center text-lg-start">
                 <!-- Grid container -->
                 <div class="container p-4">
@@ -451,6 +456,7 @@
                 </div>
                 <!-- Copyright -->
             </footer>
+        </main>
             
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>

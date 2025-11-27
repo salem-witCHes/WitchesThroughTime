@@ -2,15 +2,42 @@
    THE SLENDER SETUP
    ========================================= */
 :root {
-    /* --- THE MASTER WIDTH CONTROL --- */
     /* Change this one number to resize the whole page width */
     --base-width: 45%; 
     
     /* Vertical Heights */
-    --title-height: 100px;  
-    --nav-height: 50px;     
-    --header-gap: 10px; 
-    
+    --title-height: 75px;  
+    --nav-height: 60px;     
+    --header-gap: 10px;
+    --footer-height: 12vh;
+
+    /* DERIVED PIN: The total fixed height of the top section (Header + Toggle + all padding/gaps) */
+
+    /* Calculation breakdown:
+
+    H1 (Header) Height: var(--title-height) + var(--header-gap) (top) + 5px (bottom)
+
+    H2 (Toggle) Height: calc(var(--nav-height) + var(--header-gap))
+
+    Since H2's top is pinned *to* var(--title-height), the total height is:
+
+    (Title Height + Padding) + (Nav Height + Gap) - (Overlap/Shared space)
+
+
+    We can simplify this by using the 'top' and 'height' of the fixed elements:
+
+    Header ends at: 75px + 10px (header-gap) + 5px (padding-bottom) = 90px (approx)
+
+    Toggle starts at: 75px
+
+    Toggle height: 70px (60px + 10px)
+
+    Total Fixed Height (Bottom of Toggle): 75px (start) + 70px (height) = 145px
+
+    */
+
+    --fixed-top-height: calc(var(--title-height) + var(--nav-height) + var(--header-gap));
+
     /* Where the content starts scrolling */
     --scroll-start: calc(var(--title-height) + var(--nav-height) + var(--header-gap) + 15px);
 }
@@ -28,19 +55,20 @@
     --brown: #7F552B;
 }
 
+/* The code below ensures that all elements are sized in this more intuitive way */
 * { box-sizing: border-box; }
 
-body {
+body.homepage {
     background-image: url("../img/art-nouveau/background.png");
     background-color: var(--background-color);
     background-size: 100% 100%;
     background-attachment: fixed;
-    height: 100vh;
-    width: 100vw;
+    background-repeat: no-repeat;
     overflow: hidden; 
     font-family: var(--default-font);
     color: var(--witchflame-red);
 }
+
 
 .introduction { display: contents; }
 
@@ -48,7 +76,7 @@ body {
    FIXED HEADER (NARROW)
    ========================================= */
 
-/* TITLE BOX */
+/* title box */
 .introduction-title {
     position: fixed;
     top: 1vh;
@@ -81,17 +109,17 @@ body {
     font-weight: normal; 
 }
 
-/* B. NAVBAR */
-header {
+/* navbar */
+.homepage header {
     position: fixed;
     
-    /* FIX 1: Starts immediately below the title (no gap here) */
+    /* Starts immediately below the title (no gap here) */
     top: var(--title-height); 
     
     left: 0; right: 0; margin: 0 auto;
     width: var(--base-width);
     
-    /* FIX 2: Must include the gap in its total height */
+    /* Must include the gap in its total height */
     height: calc(var(--nav-height) + var(--header-gap));
     
     /* FIX 3: Fill the background gap with the chosen color */
@@ -107,7 +135,7 @@ header {
     align-items: flex-start; 
 }
 
-header .navbar {
+.homepage header .navbar {
     width: 100%;
     height: 100%;
     border: 2px solid var(--cursed-walnut);
@@ -119,26 +147,23 @@ header .navbar {
     justify-content: center;
 }
 
-header .nav-link {
+.homepage header .nav-link {
     padding: 0 15px !important;
     font-size: 0.9rem;
 }
 
-/* =========================================
-   SCROLLABLE CONTENT
-   ========================================= */
+/* scrollable content */
 
 #homepage-content {
     position: fixed;
     top: var(--scroll-start);
-    bottom: 30px;
+    bottom: 12vh;
     left: 0; right: 0; margin: 0 auto;
     
     /* APPLY MASTER WIDTH */
     width: 80%;
     overflow-y: auto;
     overflow-x: hidden;
-    bottom: 3vh;
     
     display: flex;
     flex-direction: column;
@@ -164,7 +189,7 @@ header .nav-link {
 
 .introduction p {
     background-color: var(--background-color);
-    border: 2px solid var(--cursed-walnut);
+    
     border-radius: 15px;
     padding: 1.5rem;
     text-align: justify;
@@ -181,9 +206,10 @@ header .nav-link {
 /* --- FIX: Override fixed bottom margin inside the scroll container --- */
 /* Target all relevant sections inside the scrollable area */
 
-.link-documentation {
+.link-documentation p {
     /* Reset bottom margin to zero to allow padding-bottom: 20vh to work */
-    margin-bottom: 0 !important; 
+    margin-bottom: 0 !important;
+    font-family: var(--text-font);
 }
 
 
@@ -206,55 +232,310 @@ header .nav-link {
     justify-content: center;
 }
 
-/* =========================================
-   RESPONSIVENESS
-   ========================================= */
-/* TIGHTEN NAVBAR LINKS ON MOBILE */
-@media (max-width: 768px) {
-    /* Ensure maximum width usage */
-    /* Set the column width back to a readable size, e.g., 90% */
-    :root {
-        --base-width: 45%; 
-        --title-height: 80px;
-        --nav-height: 40px; 
-    }
+footer p, footer a {
+    font-family: var(--text-font);
 
-    /* 1. EXTEND THE BACKGROUND VISUALLY (Curtain Effect) */
-    /* This overrides the desktop width and stretches the background 
-       to cover the frame edges, prioritizing readability. */
-    .introduction-title, header {
-        
-        max-width: none !important; /* Ensures no max-width restriction */
-        left: 0; /* Align perfectly to the left edge */
-        transform: none; /* Remove centering transform if any */
-        
-        /* Ensure the solid background color is set (it should be, but check) */
-        background-color: var(--background-color); 
-        
-        /* Ensure they float above the frame */
-        z-index: 2000; 
-    }
-    
-    /* Re-center the content/text inside the new 100% box */
-    .introduction-title {
-        /* This margin compensates for the left: 0 above and centers the content visually */
-        margin: 0 auto; 
-    }
-
-    /* Keep the homepage content slightly narrower so it doesn't look like an accident */
-    #homepage-content {
-        width: 80%; 
-    }
-
-    /* Shrink the font size to prevent overflow */
-    header .nav-link {
-        padding: 0 8px !important; 
-        font-size: 0.75rem; 
-    }
 }
-
 
 /* Scrollbar */
 #homepage-content::-webkit-scrollbar { width: 6px; }
 #homepage-content::-webkit-scrollbar-track { background: transparent; }
 #homepage-content::-webkit-scrollbar-thumb { background-color: var(--cursed-walnut); border-radius: 8px; }
+
+@media (max-width: 768px) {
+    
+    /* Covers top frame art */
+    .introduction-title {
+        max-width: none !important; 
+        width: 100vw !important; /* Force full width, overriding desktop var */
+        top: 0px;
+        
+        /* Add background and padding to cover the red frame art */
+        background-color: var(--background-color) !important;
+        padding-top: 25px;
+        
+        /* Remove desktop border, looks cleaner when it's full width */
+        border: none;
+        border-radius: 0;
+    }
+
+    /* 2. FULL WIDTH HEADER COVERAGE (Covers red frame art below title) */
+    .homepage header {
+        max-width: none !important; 
+        width: 100vw !important; /* Force full width, overriding desktop var */
+        
+        /* Add background and padding to cover the red frame art */
+        background-color: var(--background-color) !important; 
+        padding-top: 15px;
+        height: auto;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border-bottom: 2px solid var(--cursed-walnut)
+    }
+    
+    /* Ensure the inner navbar container (the pill) is centered and constrained */
+    .homepage header .navbar {
+        width: 90%; /* Constrain the inner content */
+        margin: 0 auto; /* Center the inner content */
+        height: auto; 
+        
+        /* Remove desktop border, looks cleaner */
+        border: none;
+    }
+
+    .homepage header .nav-link {
+        padding: 5px 15px !important; 
+        font-size: 0.85rem; 
+    }
+    
+    /* Ensure scrollable content starts below the now-expanded header */
+    #homepage-content {
+        /* You will need to calculate the new scroll start based on the auto heights. 
+           A safer temporary fix is to use a VH value until you can calculate the exact stack height. */
+        width: 75%; 
+    }
+
+    /* For the container that holds the links (the grey pill) */
+    .navbar-nav {
+      gap: 12px;
+    }
+    
+    .footer {
+        /* Ensure footer also goes full width */
+        width: 100vw !important;
+        left: 0 !important; right: 0 !important; margin: 0;
+        bottom: 0 !important;
+        height: 12vh;
+    }
+}
+
+
+
+/* exhibition page */
+
+body.eras-page, body.chronological-page {
+    background-image: url("../img/art-nouveau/background.png");
+    background-color: var(--background-color);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    overflow: hidden; 
+    font-family: var(--default-font);
+    color: var(--witchflame-red);
+}
+
+/* navbar */
+header {
+    position: fixed;
+    top: 0vh;
+    left: 0; right: 0; margin: 0 auto;
+    width: var(--base-width);
+    height: var(--title-height);
+    background-color: var(--background-color); 
+    z-index: 1000;
+    padding-top: var(--header-gap);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Align items to the top so they start after the padding */
+    align-items: flex-start;
+    padding-bottom: 5px;
+}
+
+header .navbar {
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--cursed-walnut);
+    background-color: var(--background-color);
+    border-radius: 8px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eras-page header .nav-link, .chronological-page header .nav-link {
+    padding: 0 15px !important;
+    font-size: 0.9rem;
+}
+
+.toggle-frame {
+    position: fixed;
+    top: var(--title-height);
+    left: 0; right: 0; margin: 0 auto;
+    border: 2px solid var(--cursed-walnut);
+    border-radius: 8px;
+    
+    /* APPLY MASTER WIDTH */
+    width: var(--base-width);
+    height: calc(var(--nav-height) + var(--header-gap));
+    padding-top: var(--header-gap);
+
+    background: var(--background-color);
+    gap: 20px;
+}
+
+.toggle-frame img {
+    fill: var(--witchflame-red)
+}
+
+/* Ensure all ERA cards have equal height and 4 cards per row */
+.page-content {
+    position: fixed;
+    top: var(--scroll-start);
+    bottom: var(--footer-height);
+    left: 0; right: 0; margin: 0 auto;
+    width: 80%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
+    padding-right: 10px; /* Space for scrollbar */
+}
+
+.era-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+    width: 100%;
+    min-width: 0;
+    padding: 12px 16px;
+    border: 2px solid var(--cursed-walnut);
+    border-radius: 16px;
+    gap: 12px;
+    background: var(--background-color);
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.era-title {
+    font-family: var(--default-font);
+    color: var(--witchflame-red);
+}
+
+.era-description {
+    font-family: var(--text-font);
+    color: var(--cursed-walnut);
+}
+
+/* Text overlay */
+.era-item-text {
+    color: var(--background-color);
+    font-family: var(--text-font);
+}
+
+
+/* chronological page */
+.chronology-container {
+    background-color: var(--background-color);
+}
+/* Central vertical line */
+.timeline-lines::before {
+    background: var(--cursed-walnut);
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* Card */
+.card {
+    border: 2px solid var(--cursed-walnut);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 500px;
+    background: var(--background-color);
+    z-index: 3;
+}
+
+/* Left-side card (even) image */
+.left-card .picture {
+    border-radius: 12px 0 0 12px;
+    margin: 0 auto;
+}
+
+/* Text section fills remaining space */
+.text {
+    flex: 1;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertically center the title */
+}
+
+.text-wrapper {
+    font-size: 24px;
+    font-family: var(--default-font);
+    color: var(--witchflame-red);
+}
+
+/* Black dot */
+.ellipse,
+.ellipse-2 {
+    width: 20px;
+    height: 20px;
+    background: var(--cursed-walnut);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    z-index: 0;
+}
+
+@media (max-width: 768px) {
+    
+    /* Center the entire timeline content horizontally */
+    .timeline-lines {
+        /* Force full width and center children lines */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center all lines */
+    }
+
+    /* 2. Make each card line take full width, and stack cards vertically */
+    .line {
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Center the card horizontally */
+        align-items: flex-start;
+        margin-bottom: 20px; /* Add spacing between lines */
+    }
+
+    /* 3. Make the card itself responsive and centered */
+    .card {
+        /* Allow card to shrink, but stop at a readable minimum */
+        width: 85%; /* Use a large percentage of the screen width */
+        min-width: 300px; /* Don't allow it to shrink below this size */
+        /* Center the card if its width is less than 100% of its container */
+        margin: 0 auto; 
+        /* On mobile, cards should stack their content (image/text) vertically */
+        flex-direction: column;
+        align-self: center;
+    }
+
+    /* *** CRITICAL FIX: OVERRIDE SPECIFICITY TO CENTER CARDS *** */
+    .line:nth-child(odd),
+    .line:nth-child(even) {
+        justify-content: center; /* This overrides the flex-start/flex-end rules */
+    }
+    
+    /* 4. Fix image/text alignment within the card on mobile */
+    .card .picture, .card .text {
+        width: 100%;
+    }
+
+    /* Fix image radius for stacked layout */
+    .card .picture {
+        /* Remove specific left-side rounding */
+        border-radius: 8px 8px 0 0; 
+    }
+    .left-card .picture {
+        /* Override specific left-side rounding for consistency */
+        border-radius: 8px 8px 0 0; 
+    }
+}
+
+
+/* cards must be centered on small screen, fix to have always the description under the photo */
