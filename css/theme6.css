@@ -481,3 +481,122 @@ footer a:hover {
 }
 
 
+/* --------------------------------
+    EXHIBITION PAGE 
+--------------------------------- */
+.toggle-frame {
+  background: transparent;
+}
+
+/* Labels */
+.toggle-text {
+    font-size: 24px;
+    font-family: var(--second-font);
+    text-shadow: 0 0 8px var(--erin-green);
+}
+
+.toggle-pill {
+  border: 1px solid var(--erin-green);
+}
+
+.toggle-knob {
+  background: var(--erin-green);
+}
+
+.era-card {
+  background: black;
+}
+
+.era-title {
+    font-family: var(--default-font);
+    color: var(--magenta-glitch);
+    text-shadow: 0 0 8px var(--magenta-glitch)
+}
+
+.era-description {
+    font-family: var(--second-font);
+    color: var(--electric-cyan);
+}
+
+/* The card */
+.era-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+    width: 100%;
+    min-width: 0;
+    padding: 12px 16px;
+    border: 1px solid var(--Greyscale-900);
+    border-radius: 16px;
+    gap: 12px;
+    background: white;
+    box-sizing: border-box;
+    height: 100%;
+    position: relative; /* ← REQUIRED for the border layer */
+    overflow: hidden;   /* ← Keeps the glow inside */
+}
+
+
+/* The animated neon border */
+.era-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px; thickness of the neon border
+  /* background: linear-gradient(
+    0deg,
+    #ff9966,
+    #ff5e62,
+    #ff9966,
+    #ff5e62
+  ); */
+  /* This creates the border mask */
+  /* -webkit-mask: 
+      linear-gradient(#000 0 0) content-box, 
+      linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+   */
+  /* animation: rotate-border 4s linear infinite; */
+  /* animation: rotation_481 5000ms infinite linear; */
+}
+
+/* Rotate the gradient along the border */
+/* @keyframes rotate-border {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} */
+
+/* @keyframes rotation_481 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  0% {
+    transform: rotateZ(360deg);
+  }
+} */
+
+.era-card::before {
+    content: "";
+    position: absolute;
+    inset: -2px;                    /* slightly larger than the card */
+    border-radius: 18px;            /* border + 2px */
+    background: conic-gradient(
+        #ff5e62,
+        #ff9966,
+        #ff5e62
+    );
+    animation: neon-rotate 4s linear infinite;
+
+    /* This clips the gradient so only the border thickness appears */
+    clip-path: inset(0px round 16px);
+    
+    z-index: 20;
+    pointer-events: none;
+}
+
+@keyframes neon-rotate {
+    to { transform: rotate(360deg); }
+}
