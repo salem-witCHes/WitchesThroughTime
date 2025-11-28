@@ -1,33 +1,35 @@
-/* Cyberpunk theme */
+/* ----- CYBERPUNK THEME ----- */
+
+/* ---------------------------
+        1. Variables           
+------------------------------ */
 
 :root {
-    --default-font: "Orbitron", sans-serif;
-    --second-font: "Rajdhani", sans-serif;
-}
+    /* fonts */
+    --font-default: "Orbitron", sans-serif;
+    --font-secondary: "Rajdhani", sans-serif;
 
-/* Global Colors */
-:root {
+    /* colors */
     --background-color: black;
     --tropical-indigo: #8386f5ff;
-    --violet-blue: #3d43b4ff;
+    /* --violet-blue: #3d43b4ff;
     --penn-blue: #041348ff;
-    --pakistan-green: #083e12ff;
+    --pakistan-green: #083e12ff; */
     --erin-green: #1afe49ff;
     --electric-cyan: #00F6FF; 
     --magenta-glitch: #E600FF;
-    --arrow-svg-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='86' height='73' viewBox='0 0 86 73' fill='none'%3E%3Cg filter='url(%23filter0_d_314_307)'%3E%3Cpath d='M61.6602 63.4583H40.3983L55.89 36.1004L40.3983 8.7365H61.6602L77.1521 36.1004L61.6602 63.4583ZM62.5783 7.09741H37.6206L54.0422 36.1004L37.6206 65.0974H62.5783L78.9999 36.1004L62.5783 7.09741Z' fill='%231AFE49'/%3E%3Cpath d='M31.478 7.0001H7L23.9013 36.1004L7 65.1946H31.478L48.3793 36.1004L31.478 7.0001Z' fill='%231AFE49'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d_314_307' x='0' y='0' width='86' height='72.1946' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset/%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3CfeComposite in2='hardAlpha' operator='out'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.101961 0 0 0 0 0.996078 0 0 0 0 0.286275 0 0 0 1 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_314_307'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_314_307' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
 
-    /* --surface-color: #E6E6E6;
-    --Greyscale-900: #1A1A1A;
-    --default-font-color: #1A1A1A;
-    --Greyscale-50: #CCC; */
+    /* decorative SVGs */
+    --arrow-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='86' height='73' viewBox='0 0 86 73' fill='none'%3E%3Cg filter='url(%23filter0_d_314_307)'%3E%3Cpath d='M61.6602 63.4583H40.3983L55.89 36.1004L40.3983 8.7365H61.6602L77.1521 36.1004L61.6602 63.4583ZM62.5783 7.09741H37.6206L54.0422 36.1004L37.6206 65.0974H62.5783L78.9999 36.1004L62.5783 7.09741Z' fill='%231AFE49'/%3E%3Cpath d='M31.478 7.0001H7L23.9013 36.1004L7 65.1946H31.478L48.3793 36.1004L31.478 7.0001Z' fill='%231AFE49'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d_314_307' x='0' y='0' width='86' height='72.1946' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset/%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3CfeComposite in2='hardAlpha' operator='out'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.101961 0 0 0 0 0.996078 0 0 0 0 0.286275 0 0 0 1 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_314_307'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_314_307' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
 }
 
-/* General styling */
+/* ----------------------------
+      2. Global reset 
+------------------------------- */
 body {
     background-color: var(--background-color);
     color: var(--erin-green);
-    font-family: var(--default-font);
+    font-family: var(--font-default);
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -35,7 +37,7 @@ body {
 
 /* headings (h1–h6) */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--default-font);
+  font-family: var(--font-default);
   color: var(--erin-green);
   font-weight: 700;
   line-height: 1.2;
@@ -45,7 +47,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* paragraphs */
 p {
-  font-family: var(--second-font);
+  font-family: var(--font-secondary);
   color: var(--electric-cyan);
   font-size: 1rem;
   line-height: 1.6;
@@ -111,6 +113,9 @@ p {
   }
 }
 
+/* --------------------------
+      3. Layout components 
+----------------------------- */
 
 /* Navbar */
 .navbar-nav {
@@ -163,13 +168,32 @@ p {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%231AFE49' stroke-width='2' stroke-linecap='round' d='M4 7h22 M4 15h22 M4 23h22'/%3E%3C/svg%3E") !important;
   }
 
-  /* Change theme switcher button */
+/* Change theme switcher button */
 .layout-button svg path {
   fill: var(--erin-green);
 }
 
 #resetTheme svg path {
   fill: var(--erin-green);
+}
+
+
+
+/* Footer */
+footer a {
+  color: var(--electric-cyan);
+}
+
+footer a:hover {
+  color: var(--magenta-glitch);
+}
+
+.bi-github {
+  color: var(--erin-green);
+}
+
+.bi-envelope {
+  color: var(--erin-green);
 }
 
 
@@ -187,7 +211,6 @@ p {
   z-index: 1000 !important;
 }
 
-
 .thematic-divider-footer {
   width: 100%;
   height: 20px;
@@ -199,25 +222,9 @@ p {
 }
 
 
-/* ----------------------------
-           FOOTER 
-------------------------------- */
-footer a {
-  color: var(--electric-cyan);
-}
-
-footer a:hover {
-  color: var(--magenta-glitch);
-}
-
-.bi-github {
-  color: var(--erin-green);
-}
-
-.bi-envelope {
-  color: var(--erin-green);
-}
-
+/* ------------------------
+      4. Home 
+--------------------------- */
 
 /* Carousel */
 .carousel-frame-wrapper {
@@ -252,7 +259,6 @@ footer a:hover {
     opacity: 0.35;
 }
 
-
 /* Ensure buttons are visible and above everything */
 .carousel-control-prev,
 .carousel-control-next {
@@ -269,7 +275,7 @@ footer a:hover {
 
 /* Custom left arrow */
 .carousel-control-prev-icon {
-    background-image: var(--arrow-svg-right) !important;
+    background-image: var(--arrow-icon) !important;
     transform: rotate(180deg);
     width: 50px !important;
     height: 50px !important;
@@ -279,7 +285,7 @@ footer a:hover {
 
 /* Custom right arrow → rotated version */
 .carousel-control-next-icon {
-    background-image: var(--arrow-svg-right) !important;
+    background-image: var(--arrow-icon) !important;
     width: 50px !important;
     height: 50px !important;
     background-repeat: no-repeat;
@@ -287,7 +293,6 @@ footer a:hover {
 }
 
 /* Carousel captions */
-
 .carousel-caption::before {
   background: rgba(255,0,0,0.5);
   /* content: "";
@@ -304,7 +309,7 @@ footer a:hover {
   color: var(--electric-cyan);
   text-decoration: none;
   font-size: clamp(2rem, 3.5vw, 3rem);
-  font-family: var(--default-font);
+  font-family: var(--font-default);
   font-weight: bold;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
   transition: color 0.3s ease;
@@ -328,15 +333,12 @@ footer a:hover {
 }
 
 
-/* ----------------------------------
-        INTRODUCTION SECTION 
---------------------------------- */
 
 /* Typing effect for title */
 .cyberpunk-animation {
   --chars: 21; /* number of visible characters */
 
-  font: bold 200% var(--default-font), monospace;
+  font: bold 200% var(--font-default), monospace;
   color: #1AFE49;
   text-shadow: 0 0 8px var(--erin-green);
   display: inline-block;
@@ -491,7 +493,7 @@ footer a:hover {
 /* Labels */
 .toggle-text {
     font-size: 24px;
-    font-family: var(--second-font);
+    font-family: var(--font-secondary);
     text-shadow: 0 0 8px var(--erin-green);
 }
 
@@ -506,13 +508,13 @@ footer a:hover {
 /* Eras */
 
 .era-title {
-    font-family: var(--default-font);
+    font-family: var(--font-default);
     color: var(--magenta-glitch);
     text-shadow: 0 0 8px var(--magenta-glitch)
 }
 
 .era-description {
-    font-family: var(--second-font);
+    font-family: var(--font-secondary);
     color: var(--electric-cyan);
 }
 
@@ -625,7 +627,12 @@ footer a:hover {
 }
 
 .text-wrapper {
-  font-family: var(--second-font);
+  font-family: var(--font-secondary);
   color: var(--electric-cyan);
 }
 
+.era-item-text {
+  color: var(--electric-cyan);
+  font-family: var(--font-secondary);
+  text-shadow: 2px 2px 4px rgba(0,0,0,1);
+}
