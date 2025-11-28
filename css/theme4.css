@@ -1,1108 +1,238 @@
-/* windows 95 */
-Css
+/* =========================================
+   THEME 4: WINDOWS 95 / RETRO STYLE
+   ========================================= */
 
+/* --- 1. Global Variables & Fonts --- */
+.chronological-page {
+    /* Define Windows 95 Palette */
+    --win-teal: #008081;
+    --win-grey: #C3C3C3;
+    --win-blue: #000181;
+    --win-white: #FFFFFF;
+    --win-dark-grey: #808080;
+    --win-black: #000000;
+    --win-text: #1A1A1A;
 
-/* Main CSS */
+    /* Override Main CSS Variables */
+    --background-color: var(--win-teal);
+    --surface-color: var(--win-grey);
+    --default-font-color: var(--win-text);
+    
+    /* Use the pixel font linked in your HTML (Press Start 2P) 
+       or fallback to monospace if 'pix M 8pt' isn't available */
+/* CORRECT Windows 95 Font */
+    --default-font: 'W95FA', 'MS Sans Serif', sans-serif;}
 
-/* Fonts */
-:root {
-    --default-font: "Times New Roman";
-}
-
-/* Global Colors */
-:root {
-    --background-color: #FFFFFF;
-    --surface-color: #E6E6E6;
-    --Greyscale-900: #1A1A1A;
-    --default-font-color: #1A1A1A;
-    --Greyscale-50: #CCC;
-    --center-safe-width: 400px;
-}
-
-:root {
-  --tree-max-width: 800px;      /* maximum width the left/right trees can occupy */
-  --center-safe-width: calc(100vw - (2 * var(--tree-max-width))); /* blank space in the middle */
-}
-
-
-/* General styling */
-body {
+/* Apply global font & background */
+body.chronological-page {
     background-color: var(--background-color);
-    color: var(--default-font-color);
     font-family: var(--default-font);
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden;
+    
+    /* W95FA looks best at 16px (1rem) or 13px */
+    font-size: 16px; 
+    
+    /* Remove letter-spacing, Windows 95 didn't have it */
+    letter-spacing: normal; 
+    
+    /* Ensure crisp pixel edges */
+    image-rendering: pixelated; 
+    -webkit-font-smoothing: none;
+}
+/* Remove all rounded corners globally for this theme */
+.chronological-page * {
+    border-radius: 0 !important;
 }
 
-/* headings (h1–h6) */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--default-font);
-  color: var(--default-font-color);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-top: 1.2em;
-  margin-bottom: 0.5em;
-}
-
-/* paragraphs */
-p {
-  font-family: var(--default-font);
-  color: var(--default-font-color);
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-top: 0;
-  margin-bottom: 1em;
-  /* keeps text readable on wide screens */
-}
-
-/* Headings sizing scale (responsive-friendly) */
-h1 { font-size: clamp(1rem, 4vw + 1rem, 2rem); }    /* CSS tool for making text responsive without breaking layouts -> clamp(min, preferred, max) */
-h2 { font-size: clamp(0.75rem, 3vw + 1rem, 1.5rem); }
-h3 { font-size: clamp(0.75rem, 2vw + 1rem, 1.5rem); }
-h4 { font-size: 1.25rem; }
-h5 { font-size: 1.1rem; }
-h6 { font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
-
-section h1, section h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-section p {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: justify;
-}
-
-/* Both forest images */
-/* --- Forest Background --- */
-.forest-container {
-  position: fixed;   /* stays on top */
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 999;      /* above everything */
-  overflow: hidden;
-  transition: opacity 3s ease-in-out;
-}
-
-.forest-gradient {
-  position: absolute;
-  inset: 0; /* top:0; left:0; bottom:0; right:0; */
-  justify-content: center;  /* horizontal center */
-  align-items: center;      /* vertical center */
-  background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 50%, #ffffff 100%);
-  opacity: 0;               /* initially hidden */
-  transition: opacity 1s ease-in-out;
-  pointer-events: none;
-  z-index: 5;               /* behind the title but above trees if needed */
-  object-fit: contain;
-}
-
-.forest {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
-
-.forest-left {
-  margin-right: var(--center-safe-width);
-}
-
-.forest-right {
-  margin-left: var(--center-safe-width);
-}
-
-.forest img.tree {
-  position: absolute;
-  bottom: 0;
-  height: 85vh;
-  object-fit: contain;
-  left: 50%;
-  transform: translateX(calc(-50% + var(--shift, 0)));
-  transition: transform 2.5s ease-in-out;
-  z-index: 4;
-}
-
-.bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-  
-
-.l2 { --shift: -22vw; }
-.l3 { --shift: -35vw; }
-.l4 { --shift: -40vw; }
-.l5 { --shift: -55vw; }
-.l6 { --shift: -60vw; }
-
-.r1 { --shift: 22vw;  }
-.r2 { --shift: 30vw;  }
-.r3 { --shift: 40vw;  }
-.r4 { --shift: 60vw;  }
-
-.left-tree  { --shift: -18vw; transform: scaleX(-1); }
-.right-tree { --shift: 18vw;  }
-
-.far {
-  opacity: 80%;
-}
-
-.forest.opening .tree {
-  transform: translateX(calc(-50% + var(--shift) + 120vw));
-}
-
-.forest.opening .left-tree,
-.forest.opening .l2,
-.forest.opening .l3,
-.forest.opening .l4,
-.forest.opening .l5,
-.forest.opening .l6 {
-  transform: translateX(calc(-50% + var(--shift) - 120vw));
-}
-
-/* When opening, slide them apart */
-.forest-container.opening .left {
-  transform: translateX(-100%);
-}
-
-.forest-container.opening .right {
-  transform: translateX(100%);
-}
-
-/* when the forest opens */
-.forest-container.opening .forest-gradient {
-  opacity: 0; /* fades away as curtains move */
-}
-
-/* Also fade out the title at the same time */
-.forest-container.opening .title-content {
-  opacity: 0;
-  transition: opacity 0.8s ease-in-out;
-}
-
-.title-box {
-  position: fixed;
-  left: 50%;
-  top: 68%;
-  transform: translateX(-50%); /* only center horizontally */
-  white-space: nowrap;
-  text-align: center;
-  z-index: 15;
-  padding: clamp(0.3rem, 1.5vw, 0.6rem) clamp(0.6rem, 3vw, 1.2rem);
-  width: clamp(180px, 40%, 300px);
-  height: auto; /* let it grow naturally */
-  opacity: 1;
-  transition: opacity 1s ease-in-out;
-}
-
-.title-box .title {
-  margin-bottom: 0.4rem;
-  font-size: clamp(0.9rem, 2.5vw, 1rem);
-  color: var(--default-font-color);
-}
-
-.title-box .subtitle {
-  margin-bottom: 0.6rem;
-  font-size: clamp(0.7rem, 2vw, 0.9rem);
-  color: var(--default-font-color);
-}
-
-.forest-container:not(.opening) .title-box {
-  opacity: 1;
-}
-
-.title-box.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.enter-btn {
-  font-size: clamp(0.8rem, 2vw, 1rem);        /* scales between 0.8rem and 1rem */
-  background: #ffffff;
-  border: 1px solid var(--default-font-color);
-  color: var(--default-font-color);
-  padding: clamp(0.3rem, 1vw, 0.5rem) clamp(0.6rem, 2vw, 1rem); /* responsive padding */
-  text-align: center;          /* center text */
-  white-space: nowrap;         /* prevent wrapping */
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* keep hover effect only */
-}
-
-.enter-btn:hover {
-  background: var(--default-font-color); /* keep solid background */
-  color: var(--background-color); /* optional */
-}
-
-/* Main content - initially hidden */
-#homepage-content {
-  opacity: 0;
-  visibility: hidden;  /* hide without collapsing layout */
-  transition: opacity 1s ease-in-out;
-}
-
-#homepage-content.visible {
-  opacity: 1;
-  pointer-events: auto;
-  display: block; /* ensure container is visible */
-}
-
-.forest-container.forest-exit-active {
-  opacity: 0;
-}
-
-.forest-container.hidden {
-  display: none;
-  pointer-events: none;
-}
-
-/* Navbar */
-/* ------------------------------------------ */
-.navbar {
-    display: flex;
-    padding: 24px;
-    justify-content: space-between;
-    align-items: center;
-    align-self: stretch;
-}
-
-.navbar-nav {
+/* --- 2. Navbar Styling --- */
+.chronological-page .navbar {
+    background-color: var(--win-grey);
+    border-bottom: 2px solid var(--win-dark-grey);
+    box-shadow: inset 1px 1px 0px var(--win-white);
     padding: 8px 24px;
-    gap: 24px;
-    border-radius: 80px;
-    background-color: var(--surface-color);
 }
 
-/* Logo */
-.navbar-brand svg {
-    width: 50px;
-    height: auto;
-    flex-shrink: 0;
+/* Nav Links as Windows Buttons */
+.chronological-page .navbar-nav {
+    background-color: transparent;
+    gap: 10px;
 }
 
-.navbar-nav .nav-link {
-  padding: 10px 24px !important; 
-  justify-content: center;
-  gap: 10px;
-  border-radius: 80px;
-  color: var(--default-font-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover {
-  text-decoration: none;
-  background-color: color-mix(in srgb, var(--Greyscale-50), transparent 35%);
-}
-
-.navbar .nav-link.active {
-  color: var(--surface-color) !important;    /* important! to override the variable --bs-navbar-active-color */
-  text-decoration: none;
-  background-color: var(--Greyscale-900);
-}
-
-/* Change style button in nav */
-.navbar .layout-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 24px;
-    margin-left: auto;
-    /* right: 0; */
-    transform: translateY(-50%); /* Perfect vertical centering */
-    z-index: 9999; /* above overlay */
-}
-
-.navbar .layout-container .layout-button {
-    background: transparent;
+.chronological-page .nav-link {
+    background-color: var(--win-grey);
+    color: var(--win-text) !important;
+    padding: 10px 20px !important;
+    font-family: var(--default-font);
+    font-size: 10px; /* Adjust for pixel font */
+    
+    /* The Classic "Outset" 3D Border */
+    box-shadow: inset 2px 2px 0px var(--win-white),
+                inset -2px -2px 0px var(--win-dark-grey),
+                2px 2px 0px var(--win-black);
     border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 50%;
-    transition: background 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    transition: none; /* Instant click feel */
 }
 
-.navbar .layout-container .layout-button svg {
-    width: 35px;
-    height: 35px;
-    aspect-ratio: 1/1;
-    display: inline-block;
-    vertical-align: middle;
+/* Active State (Depressed Button) */
+.chronological-page .nav-link.active,
+.chronological-page .nav-link:active {
+    background-color: #E6E6E6;
+    /* The Classic "Inset" 3D Border */
+    box-shadow: inset 2px 2px 0px var(--win-dark-grey),
+                inset -2px -2px 0px var(--win-white);
+    transform: translate(1px, 1px); /* Physical visual press */
 }
 
-.navbar .layout-container .layout-button:hover {
-    background-color: rgba(0,0,0,0.05);
+/* Hover State */
+.chronological-page .nav-link:hover {
+    background-color: var(--win-grey); /* Keep grey */
+    text-decoration: none;
 }
 
-.navbar .layout-container .layout-options {
-    display: none; /* hidden by default */
+
+/* --- 3. Toggle Section (Chronological vs Eras) --- */
+.chronological-page .toggle-frame {
+    background-color: var(--win-grey);
+    border: 2px solid var(--win-white);
+    border-right-color: var(--win-dark-grey);
+    border-bottom-color: var(--win-dark-grey);
+    margin-bottom: 20px;
+    padding: 12px;
+}
+
+.chronological-page .toggle-text {
+    font-family: var(--default-font);
+    font-size: 12px;
+    color: var(--win-text);
+}
+
+/* Customizing the Pill to look like a Windows Well */
+.chronological-page .toggle-pill {
+    background-color: var(--win-white);
+    border: 2px solid var(--win-dark-grey);
+    border-right-color: var(--win-white);
+    border-bottom-color: var(--win-white);
+    box-shadow: inset 2px 2px 0px var(--win-black);
+}
+
+.chronological-page .toggle-knob {
+    background-color: var(--win-grey);
+    border: 1px solid var(--win-black);
+    box-shadow: inset 1px 1px 0px var(--win-white),
+                2px 2px 0px var(--win-black);
+    border-radius: 0; /* Square knob */
+}
+
+/* --- 4. Chronology Container --- */
+.chronological-page .chronology-container {
+    background-color: var(--win-teal);
+    padding-top: 40px;
+}
+
+.chronological-page .timeline-lines::before {
+    background-color: var(--win-grey); /* Timeline vertical line is grey */
+    width: 4px; /* Slightly thicker */
+    border-left: 2px solid var(--win-dark-grey);
+    border-right: 2px solid var(--win-white);
+}
+
+
+/* --- 5. Timeline Icons (The Fix We Made) --- */
+.chronological-page .ellipse,
+.chronological-page .ellipse-2 {
+    width: 32px;
+    height: 32px;
+    /* Using the standard relative path */
+    background: url("../img/minesweeper-square.svg") center/contain no-repeat;
+    border-radius: 0;
     position: absolute;
-    top: 50px; /* adjust based on where you want it */
-    right: 0;
-    flex-direction: column;
-    gap: 12px;
-    padding: 16px;
-    list-style: none;
-    margin: 0;
-    /* background: white;     /* Uncomment this if you want visible background for the dropdown 
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15); */
-    z-index: 9999;
-}
-
-.navbar .layout-container .layout-options.active {
-    display:flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.navbar .layout-container .layout-options .trigger-style {
-    display: flex;
-    align-items: center; /* vertical centering */
-    justify-content: flex-end; /* Items are positioned at the end of the container */
-    gap: 16px;
-    padding: 6px 12px;
-    width: 45px; 
-    height: 45px; 
-    border-radius: 50%; 
-    overflow: visible;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-/* Hide label by default */
-.trigger-style .style-label {
-    display: none;
-    font-size: 20px;
-}
-
-/* Reveal label on hover */
-.trigger-style:hover {
-    width: auto;
-    /* padding: 6px 10x 6px 6px; */
-    /* border-radius: 50%; */
-    justify-content: flex-start;
-    transform: translateY(-2px); /* a little lift when you hover */
-    border: solid;
-    border-color: #1A1A1A;
-}
-
-/* Image inside the circle */
-.trigger-style .style-icon {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: contain;
-    display: block;
-    flex-shrink: 0;
-}
-
-.trigger-style:hover .style-label { 
-    padding: 5px 15px;
-    align-self: center;
-    display: flex; 
-    margin-left: 8px;
-    white-space: nowrap;
-    color: white; 
-}
-
-/* Dark overlay when dropdown is open */
-.dropdown-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6); /* chnage darkness here */
-  z-index: 9998; /* just below the dropdown */
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.dropdown-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* --- RESPONSIVE NAVBAR --- */
-@media (max-width: 991px) {
-  #menuItems {
-    padding: 20px 0;
-    border-radius: 0; /* remove the round pills on smaller screens */
-    width: 100%;
-  }
-
-  .navbar-nav {
-    flex-direction: column !important;
-    gap: 10px;
-    padding: 0;
-    background: none; /* no pill background */
-  }
-
-  .navbar-toggler {
-      border: none;
-      /* margin-top: -10px;   --- change this if you want to move the toggler in the corner
-      margin-right: -10px; */
-  }
-
-  .navbar-toggler-icon {
-      filter: brightness(0); /* makes it black */
-      width: 28px;
-      height: 28px;
-  }
-}
-
-/* RESPONSIVE theme-button: Move to bottom-left on smaller screens */
-/* Bs navbar collapses at 992px (navbar-expand-lg), so we want them to match */
-@media (max-width: 991px) {
-  .navbar .layout-container {
-    position: fixed; /* Changed from absolute */
-    top: auto; /* Reset top */
-    bottom: 24px; /* Position at bottom */
-    right: 20px; /* Position at right */
-    left: auto; /* Reset left */
-    transform: none; /* Remove centering transform */
-  }
-
-  /* Dropdown opens UPWARD from bottom */
-  .navbar .layout-container .layout-options {
-    top: auto; /* Reset top positioning */
-    bottom: 60px; /* Position above the button */
-    left: auto;
-    right: 0;
-  }
-}
-
-/* Optional: Even smaller screens */
-@media (max-width: 480px) {
-  .navbar .layout-container {
-    bottom: 10px;
-    right: 10px;
-    left: auto;
-  }
-
-  .navbar .layout-container .layout-options {
-    bottom: 50px;
-    right: 10px;
-    left: auto;
-  }
-}
-
-
-/* Carousel */
-/* ---------------------------------------- */
-.carousel {
-  width: 100%;
-  aspect-ratio: 16/9;   /* fixed ratio as the images */
-  max-height: 70vh;   /* fix the visible height */
-  background: none;
-  overflow: hidden;
-  position: relative;
-}
-
-.carousel-inner {
-  width: 100%;
-  height: 100%; /* ensure it always has height */
-  position: relative;
-}
-
-.carousel-item {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.carousel-item img {
-  width: 100%;
-  height: 100%;       /* maintain aspect ratio */
-  object-fit: cover;  /* fills container, crops overflow */
-  object-position: center;
-}
-
-.carousel-caption {
-  position: absolute;
-  bottom: 10%;
-  left: 10%;
-  right: auto;
-  text-align: left;
-  z-index: 10;     /* above image */
-  padding: 0.5rem 1rem;
-}
-
-.carousel-caption a {
-  color: var(--background-color);
-  text-decoration: none;
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  font-family: var(--default-font);
-  font-weight: bold;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-  transition: color 0.3s ease;
-}
-
-.carousel-caption a:hover {
-  color: var(--Greyscale-50);
-  transform: translateX(3px);
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  width: 10%;
-  opacity: 0.8;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-  opacity: 1;
-}
-
-.introduction-title h2::after {
-  content: "";
-  display: block;
-  width: 60px;             /* line length */
-  height: 2px;             /* line thickness */
-  background: var(--default-font-color);        /* color */
-  margin: 1em auto 1em;  /* spacing and centering */
-}
-
-.introduction,
-.link-documentation {
-  max-width: 90%;              
-  margin: 4rem auto;            /* centers the section horizontally */
-  padding: 0 2rem;              /* small horizontal breathing space */
-  text-align: center;           /* centers heading and button */
-}
-
-.link-documentation a {
-  display: inline-block;           /* allows padding and margins */
-  padding: 0.75rem 1.5rem;         /* button size */
-  border: 2px solid var(--default-font-color);  /* outlined look */
-  border-radius: 2rem;             /* rounded edges */
-  color: var(--default-font-color);
-  text-decoration: none;           /* remove underline */
-  font-weight: 600;
-  margin-top: 1.5rem;              /* spacing above the button */
-}
-
-.link-documentation a:hover {
-  background-color: var(--default-font-color);
-  color: var(--background-color);
-  /* transform: scale(1.05); */         /* subtle zoom */
-}
-
-/* Decorative line after heading */
-.link-documentation h2::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 2px;
-  background: var(--default-font-color);
-  margin: 1em auto 1.2em;
-}
-
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .navbar-nav {
-      padding: 8px 24px;
-      gap: 12px;
-  }
-  
-  .navbar-nav a {
-      padding: 10px 16px;
-  }
-
-}
-
-/* opening page */
-@media (max-width: 480px) {
-  .title-content {
-    top: 60%;
-  }
-
-  .title {
-    font-size: 1.8rem;
-  }
-
-  .subtitle {
-    font-size: 1.2rem;
-  }
-
-  .enter-btn {
-    font-size: 1rem;
-    padding: 0.6rem 1.2rem;
-    white-space: normal; /* allow wrapping on very narrow screens */
-  }
-}
-
-@media (max-width: 400px) {
-  .forest {
-    object-fit: cover;
-    min-width: 120vw; /* ensure coverage */
-  }
-}
-
-@media (max-width: 360px) {
-  .title-content {
-    top: 55%;
-  }
-  .title { font-size: 1.4rem; }
-  .subtitle { font-size: 1rem; }
-}
-
-/* carousel */
-@media (max-width: 576px) {
-  .carousel-caption {
-    bottom: 5%;
-    left: 5%;
-  }
-
-  .carousel-caption a {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .introduction,
-  .link-documentation {
-    padding: 0 1rem;
-  }
-}
-
-/* Mobile + narrow viewports */
-@media (max-width: 991px) {
-  .forest {
-    width: 100vw;        /* Force fill screen */
-    height: 100vh;
-    object-fit: cover;   /* Scale as needed */
-    min-width: 100vw;
-    min-height: 100vh;
-  }
-}
-
-
-/* Footer 
--------------------------------------- */
-.footer-separator {
-    height: 2px;
-    background: black;
-    max-width: 90%; /* or 80%, or a fixed value like 1200px */
-    margin: 0 auto; /* centers the line */
-}
-
-/* ----------------- Toggle Section ----------------- */
-
-/* Toggle Frame - centered under navbar */
-.toggle-frame {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
-    position: sticky;      /* stick under navbar */
-    top: 80px;             /* adjust based on navbar height */
-    z-index: 1000;
-    background: white;     /* ensures visibility */
-    padding: 8px 0;
-}
-
-/* Toggle Pill */
-.toggle-pill {
-    width: 128px;
-    height: 68px;
-    padding: 4px;            /* distance from pill edge to knob */
-    border-radius: 200px;
-    border: 1px solid #1A1A1A;
-    position: relative;
-    cursor: pointer;
-}
-
-/* Knob inside the pill */
-.toggle-knob {
-    position: absolute;
-    width: 60px;               /* knob size */
-    height: 60px;
-    border-radius: 50%;
-    background: #191919;
-    top: 4px;                  /* distance from pill top */
-    left: 4px;                 /* initial left position */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;                /* above inactive icon */
-    transition: left 0.3s ease;
-}
-
-/* Active icon inside knob */
-.toggle-knob img {
-    width: 40px;               /* icon size smaller than knob */
-    height: 40px;
-    object-fit: contain;
-    margin: 10px;              /* padding inside knob */
-}
-
-/* Inactive icon outside knob */
-.inactive-icon {
-    position: absolute;
-    width: 40px;
-    height: 40px;
     top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;                 /* behind knob */
-    transition: left 0.3s ease; /* smooth movement */
-    left: 4px;                  /* default distance from pill edge */
-}
-
-/* Labels */
-.toggle-text {
-    font-size: 24px;
-    font-family: "Times New Roman";
-    cursor: pointer;
-    transition: font-weight 0.3s ease;
-}
-
-.active-text {
-    font-weight: 700;
-}
-
-/* ----------------- Responsive Adjustments ----------------- */
-
-@media (max-width: 480px) {
-    .toggle-frame {
-        flex-direction: column;
-        gap: 12px;
-        top: 70px;
-    }
-
-    .toggle-text {
-        font-size: 20px;
-        text-align: center;
-    }
-
-    .toggle-pill {
-        width: 100px;
-        height: 50px;
-        padding: 3px;
-    }
-
-    .toggle-knob {
-        width: 45px;
-        height: 45px;
-        top: 2.5px;
-        left: 2.5px;
-    }
-
-    .toggle-knob img {
-        width: 30px;
-        height: 30px;
-        margin: 7.5px;
-    }
-
-    .inactive-icon {
-        width: 30px;
-        height: 30px;
-        left: 2.5px;             /* padding from pill edge */
-    }
-}
-
-@media (max-width: 360px) {
-    .toggle-pill {
-        width: 90px;
-        height: 45px;
-    }
-
-    .toggle-knob {
-        width: 40px;
-        height: 40px;
-        top: 2.5px;
-        left: 2.5px;
-    }
-
-    .toggle-knob img {
-        width: 28px;
-        height: 28px;
-        margin: 6px;
-    }
-
-    .inactive-icon {
-        width: 28px;
-        height: 28px;
-        left: 2.5px;
-    }
-
-    .toggle-text {
-        font-size: 18px;
-    }
-}
-/* --- ERA CARDS UNDER TOGGLE --- */
-
-
-/* Ensure all ERA cards have equal height and 4 cards per row */
-.era-card {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 100%;
-    width: 100%;
-    min-width: 0;
-    padding: 12px 16px;
-    border: 1px solid var(--Greyscale-900);
-    border-radius: 16px;
-    gap: 12px;
-    background: white;
-    box-sizing: border-box;
-    height: 100%;
-}
-
-/* Wrap title + description in a header div */
-.era-card-header {
-    flex: 0 0 auto; /* takes only its natural height */
-}
-
-.era-title {
-    font-family: "Times New Roman", serif;
-    font-size: 20px;  /* slightly smaller */
-    font-weight: 400;
-    color: var(--Greyscale-900);
-    margin-bottom: 2px; /* reduced space to description */
-}
-
-.era-description {
-    font-family: "Times New Roman", serif;
-    font-size: 14px;  /* slightly smaller */
-    color: var(--Greyscale-900);
-    margin: 0;
-    line-height: 1.2; /* tighter spacing */
-}
-
-/* ERA ITEMS - Grid layout */
-.era-items {
-    display: grid;
-    flex: 1 1 auto;     /* grid of images fills remaining space */
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 145px);  /* 3 rows */
-    gap: 10px;
-}
-
-/* Individual image + text container */
-.era-item {
-    position: relative;
-    width: 100%; /* fill the grid cell */
-    height: 140px; /* match row height */
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-/* Image inside the item */
-.era-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* Text overlay */
-.era-item-text {
-    position: absolute;
-    bottom: 8px;
-    left: 8px;
-    right: 8px;
-    color: white;
-    font-family: "Times New Roman", serif;
-    font-size: 14px; /* smaller for responsiveness */
-    font-weight: 400;
-    text-shadow: 2px 2px 4px rgba(0,0,0,1);
-    word-wrap: break-word;
-    pointer-events: none;
-    line-height: 1.2;
-
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* maximum 3 lines */
-    -webkit-box-orient: vertical;
-}
-
-/* Small screen adjustments */
-@media (max-width: 480px) {
-    .era-items {
-        grid-template-columns: 1fr;  /* 1 column on mobile */
-        grid-template-rows: repeat(auto-fit, 120px); /* adjust row height for mobile */
-    }
-
-    .era-item-text {
-        font-size: 12px;
-        -webkit-line-clamp: 2; /* only 2 lines */
-    }
-}
-/* === Make header + navbar sticky and align toggle under it === */
-
-/* set a CSS var for the nav height (adjust if your navbar height differs) */
-:root {
-  --nav-height: 100px; /* default used by toggle earlier — change if needed */
-}
-
-/* Make header sticky (safer than making inner nav sticky) */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 10000;                /* higher than toggle */
-  background: var(--background-color);
-  -webkit-backdrop-filter: none; /* avoid creating new stacking context */
-  backdrop-filter: none;
-}
-
-/* Ensure navbar itself doesn't create an interfering stacking context */
-nav.navbar {
-  position: relative;            /* let header do the sticky job */
-  top: 0;
-  z-index: 10001;                /* above header background */
-  background: transparent;       /* header provides background */
-}
-
-/* Keep the toggle placed under the navbar using the same variable */
-/* === Toggle stays centered under navbar === */
-.toggle-frame {
-    position: sticky;
-    top: var(--nav-height);
-    z-index: 9999;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-
-    width: 100%;
-    background: white;
-    padding: 12px 0;
-
-    box-sizing: border-box;
-}
-
-
-/* Chronology Timeline */
-.chronology-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    padding-top: 20px;
-    background-color: var(--Greyscale-50);
-    width: 100%;
-}
-
-.timeline-lines {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Central vertical line */
-.timeline-lines::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
     left: 50%;
-    width: 2px;
-    background: var(--Greyscale-900);
-    transform: translateX(-50%);
-    z-index: 1;
+    transform: translate(-50%, -50%);
+    z-index: 10;
 }
 
-.line {
+/* Mobile override for the line/icon background logic */
+@media (max-width: 768px) {
+    .chronological-page .ellipse,
+    .chronological-page .ellipse-2 {
+        background-color: var(--win-teal) !important;
+    }
+    .chronological-page .line {
+        border-left-color: var(--win-grey);
+    }
+}
+
+
+/* --- 6. Timeline Cards (The Figma Design) --- */
+
+.chronological-page .card {
+    /* 1. Main Window Box */
+    background-color: var(--win-grey);
+    border: 2px solid var(--win-white); /* Top/Left Highlight */
+    border-right-color: var(--win-dark-grey); /* Bot/Right Shadow */
+    border-bottom-color: var(--win-dark-grey);
+    box-shadow: 2px 2px 0px var(--win-black); /* Drop Shadow */
+    
+    padding: 4px; /* Gap between border and content */
     display: flex;
-    width: 100%;
-    margin-bottom: 40px;
-    position: relative;
+    gap: 0;
 }
 
-/* Odd lines - right side */
-.line:nth-child(odd) {
-    justify-content: flex-end;
+/* The Image Area */
+.chronological-page .picture,
+.chronological-page .picture-2 {
+    border: 2px solid var(--win-dark-grey);
+    border-right-color: var(--win-white);
+    border-bottom-color: var(--win-white);
+    background-color: var(--win-grey);
+    margin: 4px; /* Space inside the window */
 }
 
-/* Even lines - left side */
-.line:nth-child(even) {
-    justify-content: flex-start;
-}
-
-/* Card */
-.card {
-    display: flex;
-    flex-direction: row;
-    border: 1px solid var(--Greyscale-900);
-    border-radius: 12px;
-    overflow: hidden;
-    width: 500px;
-    max-width: 100%;
-    background: white;
-    z-index: 3;
-}
-
-/* Left-side card (even) image */
-.left-card .picture {
-    border-radius: 12px 0 0 12px;
-    margin-left: 0;
-}
-
-/* Image */
-.picture,
-.picture-2 {
-    width: 168px;
-    height: 160px;
-    flex-shrink: 0;
-    background-color: var(--Greyscale-50);
-}
-
-.picture img,
-.picture-2 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 200;
-    display: block;
-}
-
-/* Text section fills remaining space */
-.text {
-    flex: 1;
-    padding: 16px;
+/* The Text Area */
+.chronological-page .text {
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* vertically center the title */
+    justify-content: center;
 }
 
-.text-wrapper {
-    font-size: 24px;
-    font-family: "Times New Roman";
+/* Title Styling (Simulating the Blue Header) */
+.chronological-page .text-wrapper {
+    background-color: var(--win-blue);
+    color: var(--win-white);
+    font-family: var(--default-font);
+    font-size: 12px; /* Figma: 16px, but pixel fonts run large */
+    padding: 8px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    
+    /* Inset shadow for title bar */
+    box-shadow: inset 1px 1px 0px var(--win-white); 
 }
 
-.div {
-    font-size: 20px;
-    font-family: "Times New Roman";
+/* Date/Subtitle Styling */
+.chronological-page .text i {
+    color: var(--win-text);
+    font-family: var(--default-font);
+    font-size: 10px;
+    font-style: normal;
+    display: block;
+    margin-top: 8px;
+    padding: 4px;
+    background: transparent;
 }
 
-/* Black dot */
-.ellipse {
-    background-image: url("/img/minesweeper-square.svg");
+
+/* --- 7. Footer --- */
+.chronological-page footer {
+    background-color: var(--win-grey);
+    color: var(--win-text);
+    border-top: 2px solid var(--win-white);
+    font-family: var(--default-font);
+    font-size: 10px;
 }
 
-.ellipse-2 {
-    background-image: url("/img/minesweeper-square.svg");
+.chronological-page .footer-separator {
+    background: var(--win-dark-grey);
+    border-bottom: 1px solid var(--win-white);
 }
