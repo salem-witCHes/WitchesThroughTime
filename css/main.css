@@ -1256,63 +1256,6 @@ nav.navbar {
     }
 }
 
-
-/* -------------------------
-            MAP 
----------------------------- */
-.map-container svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-#first-room,
-#second-room,
-#third-room, 
-#fourth-room {
-  fill: var(--background-color) !important; /* Example default color */
-  stroke: none;
-  opacity: 0.8; 
-  transition: fill 0.3s, opacity 0.3s;
-}
-
-/* 2. Define the hover effect */
-#first-room:hover,
-#second-room:hover,
-#third-room:hover, 
-#fourth-room:hover {
-  /* This rule will override the default rule above */
-  fill: var(--Greyscale-50) !important; 
-  opacity: 1.0;
-  cursor: pointer;
-}
-
-#text-first-room, 
-#text-second-room, 
-#text-third-room, 
-#text-fourth-room {
-  font-family: var(--default-font);
-}
-
-#door1, 
-#door2, 
-#door3, 
-#door4, 
-#door5, 
-#door6, 
-#door7, 
-#door8, 
-#door9, 
-#door10, 
-#door11 {
-  fill: var(--background-color) !important;
-}
-
-.map-description {
-  border: 2px solid var(--Greyscale-900);
-  border-radius: 8px;
-}
-
 /* ITEM PAGE */
 /* Ensures the top row containers have equal height on desktop/tablet */
 .item-table > .col-12 {
