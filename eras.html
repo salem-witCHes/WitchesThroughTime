@@ -14,6 +14,14 @@
         <link rel="stylesheet" href="css/main.css">
 
         <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+        <!-- Cyberpunk fonts: Orbitron + Rajdhani -->
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
         <!-- XIX century fonts: IM Fell English + Cormorant Garamond-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,11 +33,17 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
-        <!-- JS -->
-        <script src="js/main.js"></script>
     </head>
    
     <body class="eras-page">
+        <!-- Grid effect for cyberpunk theme-->
+        <div class="grid-bg">
+            <div class="grid-line"></div>
+            <div class="grid-line"></div>
+            <div class="grid-line"></div>
+            <div class="grid-line"></div>
+            <div class="grid-line"></div>
+        </div>
         <main class="page-content">
             <header>
                 <nav class="navbar navbar-expand-lg">
@@ -130,31 +144,33 @@
                     <!-- ERA 1 -->
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="era-card">
-                            <div class="era-card-header">
-                                <div class="era-title">Origins and Myth</div>
-                                <p class="era-description">Witch as sorceress, healer, goddess, women connected to nature, magic and divinity.</p>
-                            </div>
+                            <div class="era-card-content"> 
+                                <div class="era-card-header">
+                                    <div class="era-title">Origins and Myth</div>
+                                    <p class="era-description">Witch as sorceress, healer, goddess, women connected to nature, magic and divinity.</p>
+                                </div>
                             
-                            <div class="era-items">
-                                <div class="era-item">
-                                    <img src="img/collection/hecate.jpg" alt="Statue of a Triple-Bodied Hecate">
-                                    <div class="era-item-text">Statue of a Triple-Bodied Hecate</div>
-                                </div>
-                                <div class="era-item">
-                                    <img src="img/collection/Medea.jpg" alt="Medea's Amphora">
-                                    <div class="era-item-text">Medea's Amphora</div>
-                                </div>
-                                <div class="era-item">
-                                    <img src="img/collection/Circe.jpg" alt="Circe offering the cup to Odysseus">
-                                    <div class="era-item-text">Circe offering the cup to Odysseus</div>
-                                </div>
-                                <div class="era-item">
-                                    <img src="img/collection/Morgana.jpeg" alt="Morgan-Le-Fay">
-                                    <div class="era-item-text">Morgan-Le-Fay</div>
-                                </div>
-                                <div class="era-item">
-                                    <img src="img/collection/Baba_Yaga.jpg" alt="Baba Yaga Illustration">
-                                    <div class="era-item-text">Baba Yaga Illustration</div>
+                                <div class="era-items">
+                                    <div class="era-item">
+                                        <img src="img/collection/hecate.jpg" alt="Statue of a Triple-Bodied Hecate">
+                                        <div class="era-item-text">Statue of a Triple-Bodied Hecate</div>
+                                    </div>
+                                    <div class="era-item">
+                                        <img src="img/collection/Medea.jpg" alt="Medea's Amphora">
+                                        <div class="era-item-text">Medea's Amphora</div>
+                                    </div>
+                                    <div class="era-item">
+                                        <img src="img/collection/Circe.jpg" alt="Circe offering the cup to Odysseus">
+                                        <div class="era-item-text">Circe offering the cup to Odysseus</div>
+                                    </div>
+                                    <div class="era-item">
+                                        <img src="img/collection/Morgana.jpeg" alt="Morgan-Le-Fay">
+                                        <div class="era-item-text">Morgan-Le-Fay</div>
+                                    </div>
+                                    <div class="era-item">
+                                        <img src="img/collection/Baba_Yaga.jpg" alt="Baba Yaga Illustration">
+                                        <div class="era-item-text">Baba Yaga Illustration</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -163,34 +179,36 @@
                     <!-- ERA 2 -->
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="era-card">
-                            <div class="era-card-header">
-                                <div class="era-title">Fear and Persecution</div>
-                                <p class="era-description">Witch as a heretic, victim, witch hunts.</p>
-                            </div>
-                            <div class="era-items">
-                                <div class="era-item">
-                                    <img src="img/collection/Vaudoises.jpeg" alt="Two Waldensian Witches">
-                                    <div class="era-item-text">Two Waldensian Witches</div>
+                            <div class="era-card-content">
+                                <div class="era-card-header">
+                                    <div class="era-title">Fear and Persecution</div>
+                                    <p class="era-description">Witch as a heretic, victim, witch hunts.</p>
                                 </div>
-                                <div class="era-item">
-                                    <img src="img/collection/malleus.jpeg" alt="Malleus Maleficarum">
-                                    <div class="era-item-text">Malleus Maleficarum</div>
-                                </div>
-                                <div class="era-item">
-                                    <img src="img/collection/Hortus_Titelblatt.jpg" alt="Hortus Sanitatis">
-                                    <div class="era-item-text">Hortus Sanitatis</div>
-                                </div>
-                                <div class="era-item">
-                                    <img src="img/collection/xilografia.jpeg" alt="Witches brewing up a storm">
-                                    <div class="era-item-text">Witches brewing up a storm</div>
-                                </div>
-                                <div class="era-item">
-                                    <img src="img/collection/woodcut.jpg" alt="The Witches">
-                                    <div class="era-item-text">The Witches</div>
-                                </div>
-                                <div class="era-item">
-                                    <img src="img/collection/Examination_of_a_Witch.jpg" alt="The Examination of a Witch">
-                                    <div class="era-item-text">The Examination of a Witch</div>
+                                <div class="era-items">
+                                    <div class="era-item">
+                                        <img src="img/collection/Vaudoises.jpeg" alt="Two Waldensian Witches">
+                                        <div class="era-item-text">Two Waldensian Witches</div>
+                                    </div>
+                                    <div class="era-item">
+                                        <img src="img/collection/malleus.jpeg" alt="Malleus Maleficarum">
+                                        <div class="era-item-text">Malleus Maleficarum</div>
+                                    </div>
+                                    <div class="era-item">
+                                        <img src="img/collection/Hortus_Titelblatt.jpg" alt="Hortus Sanitatis">
+                                        <div class="era-item-text">Hortus Sanitatis</div>
+                                    </div>
+                                    <div class="era-item">
+                                        <img src="img/collection/xilografia.jpeg" alt="Witches brewing up a storm">
+                                        <div class="era-item-text">Witches brewing up a storm</div>
+                                    </div>
+                                    <div class="era-item">
+                                        <img src="img/collection/woodcut.jpg" alt="The Witches">
+                                        <div class="era-item-text">The Witches</div>
+                                    </div>
+                                    <div class="era-item">
+                                        <img src="img/collection/Examination_of_a_Witch.jpg" alt="The Examination of a Witch">
+                                        <div class="era-item-text">The Examination of a Witch</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -199,30 +217,32 @@
                     <!-- ERA 3 -->
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="era-card">
-                            <div class="era-card-header">
-                                <div class="era-title">Aesthetic Reinterpretation</div>
-                                <p class="era-description">Witch as symbol of imagination, sensuality and rebellion. The figure is romanticized by poets and painters.</p>
-                            </div>
-                            <div class="era-items">
-                                <div class="era-item">
-                                    <img src="img/collection/tre_streghe.jpg" alt="The Three Witches">
-                                    <div class="era-item-text">The Three Witches</div>
+                            <div class="era-card-content">
+                                <div class="era-card-header">
+                                    <div class="era-title">Aesthetic Reinterpretation</div>
+                                    <p class="era-description">Witch as symbol of imagination, sensuality and rebellion. The figure is romanticized by poets and painters.</p>
                                 </div>
-                                <div class="era-item">
-                                    <img src="img/collection/nocedibenevento.jpeg" alt="The Walnut Tree of Benevento">
-                                    <div class="era-item-text">The Walnut Tree of Benevento</div>
-                                </div>
-                                <div class="era-item">
-                                    <img src="img/collection/poem.jpg" alt="Witchcraft was hanged">
-                                    <div class="era-item-text">Witchcraft was hung, in History</div>
-                                </div>
-                                <div class="era-item">
-                                    <img src="img/collection/Anna-Goldi.jpeg" alt="Rehabilitation of Anna Goldi">
-                                    <div class="era-item-text">Rehabilitation of Anna Goldi</div>
-                                </div>
-                                <div class="era-item">
-                                    <img src="img/collection/warhol-the-witch.webp" alt="The Myths series">
-                                    <div class="era-item-text">The Myths series</div>
+                                <div class="era-items">
+                                    <div class="era-item">
+                                        <img src="img/collection/tre_streghe.jpg" alt="The Three Witches">
+                                        <div class="era-item-text">The Three Witches</div>
+                                    </div>
+                                    <div class="era-item">
+                                        <img src="img/collection/nocedibenevento.jpeg" alt="The Walnut Tree of Benevento">
+                                        <div class="era-item-text">The Walnut Tree of Benevento</div>
+                                    </div>
+                                    <div class="era-item">
+                                        <img src="img/collection/poem.jpg" alt="Witchcraft was hanged">
+                                        <div class="era-item-text">A witchcraft was hanged</div>
+                                    </div>
+                                    <div class="era-item">
+                                        <img src="img/collection/Anna-Goldi.jpeg" alt="Rehabilitation of Anna Goldi">
+                                        <div class="era-item-text">Rehabilitation of Anna Goldi</div>
+                                    </div>
+                                    <div class="era-item">
+                                        <img src="img/collection/warhol-the-witch.webp" alt="The Myths series">
+                                        <div class="era-item-text">The Myths series</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -231,26 +251,28 @@
                     <!-- ERA 4 -->
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="era-card">
-                            <div class="era-card-header">
-                                <div class="era-title">Re-appropriation</div>
-                                <p class="era-description">Empowerment and modern reclamation, witch as icon of rebellion and identity.</p>
-                            </div>
-                            <div class="era-items">
-                                <div class="era-item">
-                                    <img src="img/collection/Petronilla.png" alt="Petronilla de Meath Place Setting">
-                                    <div class="era-item-text">Petronilla de Meath Place Setting</div>
+                            <div class="era-card-content">
+                                <div class="era-card-header">
+                                    <div class="era-title">Re-appropriation</div>
+                                    <p class="era-description">Empowerment and modern reclamation, witch as icon of rebellion and identity.</p>
                                 </div>
-                                <div class="era-item">
-                                    <img src="img/collection/StregheSonTornatePhoto_PaolaAgosti.jpg" alt="Le streghe son tornate">
-                                    <div class="era-item-text">"Le streghe son tornate"</div>
-                                </div>
-                                <div class="era-item">
-                                    <img src="img/collection/Wolf_WitchPhotograph_FrancesDenny.jpg" alt="Witches in America">
-                                    <div class="era-item-text">Witches in America</div>
-                                </div>
-                                <div class="era-item">
-                                    <img src="img/collection/lee-ann-olwage-the-big-forget-00004.jpeg" alt="Witch Camp in Ghana">
-                                    <div class="era-item-text">Witch Camp in Ghana</div>
+                                <div class="era-items">
+                                    <div class="era-item">
+                                        <img src="img/collection/Petronilla.png" alt="Petronilla de Meath Place Setting">
+                                        <div class="era-item-text">Petronilla de Meath Place Setting</div>
+                                    </div>
+                                    <div class="era-item">
+                                        <img src="img/collection/StregheSonTornatePhoto_PaolaAgosti.jpg" alt="Le streghe son tornate">
+                                        <div class="era-item-text">"Le streghe son tornate"</div>
+                                    </div>
+                                    <div class="era-item">
+                                        <img src="img/collection/Wolf_WitchPhotograph_FrancesDenny.jpg" alt="Witches in America">
+                                        <div class="era-item-text">Witches in America</div>
+                                    </div>
+                                    <div class="era-item">
+                                        <img src="img/items.png" alt="Witch Camp in Ghana">
+                                        <div class="era-item-text">Witch Camp in Ghana</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -266,6 +288,7 @@
             <div class="footer-separator"></div>
 
             <!-- Footer -->
+            <div class="thematic-divider-footer"></div>
             <footer class="text-white text-center text-lg-start">
                 <!-- Grid container -->
                 <div class="container p-4">
@@ -275,9 +298,7 @@
                     <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
                         <h5 class="text-uppercase">About the project</h5>
                         <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                        molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-                        voluptatem veniam, est atque cumque eum delectus sint!
+                        The purpose of this web site is to explore various types of typographic and layout style for museum pages, as an end-of-course project for the "Information Modeling and Web technologies" course of the Master Degree in Digital Humanities and Digital Knowledge of the University of Bologna, under prof. Fabio Vitali.
                         </p>
                     </div>
                     <!--Grid column-->
@@ -288,7 +309,7 @@
 
                         <ul class="list-unstyled mb-0">
                         <li>
-                            <a href="#!">Link 1</a>
+                            <a href="#!">Home</a>
                         </li>
                         <li>
                             <a href="#!">Link 2</a>
@@ -309,16 +330,40 @@
 
                         <ul class="list-unstyled">
                         <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                            </svg>
                             <a href="https://github.com/Maryamdadras">Maryam Dadras</a>
-                            <p>maryam.dadrasrazi@studio.unibo.it</p>
+                            <p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                                </svg>
+                                maryam.dadrasrazi@studio.unibo.it
+                            </p>
                         </li>
                         <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                            </svg>
                             <a href="https://github.com/mir-pin">Miriana Pinto</a>
-                            <p>miriana.pinto@studio.unibo.it</p>
+                            <p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                                </svg>
+                                miriana.pinto@studio.unibo.it
+                            </p>
                         </li>
                         <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                            </svg>
                             <a href="https://github.com/sararoggi">Sara Roggiani</a>
-                            <p>sara.roggiani2@studio.unibo.it</p>
+                            <p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                                </svg>
+                                sara.roggiani2@studio.unibo.it
+                            </p>
                         </li>
                         </ul>
                     </div>
@@ -330,13 +375,19 @@
 
                 <!-- Copyright -->
                 <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                    All copyrights and related rights on the content remain with their original owners. All copyright on the typographic and layout choices are 2025 © Witches through time.
+                    <p>
+                        All copyrights and related rights on the content remain with their original owners. All copyright on the typographic and layout choices are 2025 © Witches through time.
+                    </p>
                 </div>
                 <!-- Copyright -->
             </footer>
         </main>
         
-            
+         <!-- JS moved at the bottom -> in the head: it runs before the DOM is fully loaded and might fail -->    
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/main.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
     </body>
 </html>

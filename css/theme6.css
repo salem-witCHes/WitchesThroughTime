@@ -1,33 +1,36 @@
-/* Cyberpunk theme */
+/* ----- CYBERPUNK THEME ----- */
+
+/* ---------------------------
+        1. Variables           
+------------------------------ */
 
 :root {
-    --default-font: "Orbitron", sans-serif;
-    --second-font: "Rajdhani", sans-serif;
-}
+    /* fonts */
+    --font-default: "Orbitron", sans-serif;
+    --font-secondary: "Rajdhani", sans-serif;
 
-/* Global Colors */
-:root {
+    /* colors */
     --background-color: black;
     --tropical-indigo: #8386f5ff;
-    --violet-blue: #3d43b4ff;
-    --penn-blue: #041348ff;
-    --pakistan-green: #083e12ff;
     --erin-green: #1afe49ff;
     --electric-cyan: #00F6FF; 
     --magenta-glitch: #E600FF;
-    --arrow-svg-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='86' height='73' viewBox='0 0 86 73' fill='none'%3E%3Cg filter='url(%23filter0_d_314_307)'%3E%3Cpath d='M61.6602 63.4583H40.3983L55.89 36.1004L40.3983 8.7365H61.6602L77.1521 36.1004L61.6602 63.4583ZM62.5783 7.09741H37.6206L54.0422 36.1004L37.6206 65.0974H62.5783L78.9999 36.1004L62.5783 7.09741Z' fill='%231AFE49'/%3E%3Cpath d='M31.478 7.0001H7L23.9013 36.1004L7 65.1946H31.478L48.3793 36.1004L31.478 7.0001Z' fill='%231AFE49'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d_314_307' x='0' y='0' width='86' height='72.1946' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset/%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3CfeComposite in2='hardAlpha' operator='out'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.101961 0 0 0 0 0.996078 0 0 0 0 0.286275 0 0 0 1 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_314_307'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_314_307' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
+    --violet-blue: #3d43b4ff;
 
-    /* --surface-color: #E6E6E6;
-    --Greyscale-900: #1A1A1A;
-    --default-font-color: #1A1A1A;
-    --Greyscale-50: #CCC; */
+    /* decorative SVGs */
+    --arrow-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='86' height='73' viewBox='0 0 86 73' fill='none'%3E%3Cg filter='url(%23filter0_d_314_307)'%3E%3Cpath d='M61.6602 63.4583H40.3983L55.89 36.1004L40.3983 8.7365H61.6602L77.1521 36.1004L61.6602 63.4583ZM62.5783 7.09741H37.6206L54.0422 36.1004L37.6206 65.0974H62.5783L78.9999 36.1004L62.5783 7.09741Z' fill='%231AFE49'/%3E%3Cpath d='M31.478 7.0001H7L23.9013 36.1004L7 65.1946H31.478L48.3793 36.1004L31.478 7.0001Z' fill='%231AFE49'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d_314_307' x='0' y='0' width='86' height='72.1946' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset/%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3CfeComposite in2='hardAlpha' operator='out'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.101961 0 0 0 0 0.996078 0 0 0 0 0.286275 0 0 0 1 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_314_307'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_314_307' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
+    --divider-nav: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='2022' height='34' viewBox='0 0 2022 34' fill='none'><path opacity='0.6' d='M0 2.5H326.832L356.247 31.5H1733.3L1762.71 2.5H2022' stroke='%231AFE49' stroke-width='5'/></svg>");
+    --divider-footer: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='2022' height='34' viewBox='0 0 2022 34' fill='none'><path opacity='0.6' d='M0 31.5H326.832L356.247 2.5H1733.3L1762.71 31.5H2022' stroke='%231AFE49' stroke-width='5'/></svg>");
+
 }
 
-/* General styling */
+/* ----------------------------
+      2. Global reset 
+------------------------------- */
 body {
     background-color: var(--background-color);
     color: var(--erin-green);
-    font-family: var(--default-font);
+    font-family: var(--font-default);
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -35,7 +38,7 @@ body {
 
 /* headings (h1–h6) */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--default-font);
+  font-family: var(--font-default);
   color: var(--erin-green);
   font-weight: 700;
   line-height: 1.2;
@@ -45,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* paragraphs */
 p {
-  font-family: var(--second-font);
+  font-family: var(--font-secondary);
   color: var(--electric-cyan);
   font-size: 1rem;
   line-height: 1.6;
@@ -83,7 +86,7 @@ p {
 .grid-line {
   position: absolute;
   background: var(--tropical-indigo);
-  opacity: 0.5;
+  opacity: 0.25;
   animation: grid-flow 2.5s linear infinite;
 }
 
@@ -111,8 +114,11 @@ p {
   }
 }
 
+/* --------------------------
+      3. Layout components 
+----------------------------- */
 
-/* Navbar */
+/* ----- Navbar ----- */
 .navbar-nav {
   background-color: transparent;
 }
@@ -125,29 +131,29 @@ p {
 
 .navbar-nav .nav-link:hover {
   text-decoration: none;
-  border: 2px solid #1AFE49;
+  border: 2px solid var(--erin-green);
   background-color: transparent;
-  box-shadow: 0 0 7px 0 #1AFE49;
+  box-shadow: 0 0 7px 0 var(--erin-green);
 }
 
 .navbar .nav-link.active {
   color: black !important;    /* important! to override the variable --bs-navbar-active-color */
   text-decoration: none;
   background-color: var(--erin-green);
-  box-shadow: 0 0 7px 0 #1AFE49;
+  box-shadow: 0 0 7px 0 var(--erin-green);
 }
 
 /* Change logo color */
 .navbar-brand svg path {
   fill: var(--erin-green);
-  filter: drop-shadow(0 0 7px #1AFE49);
+  filter: drop-shadow(0 0 7px var(--erin-green));
 }
 
 /* Change hamburger icon */
 .navbar-toggler {
   border: 2px solid var(--erin-green) !important;
   background-color: transparent !important;
-  filter: drop-shadow(0 0 7px #1AFE49);
+  filter: drop-shadow(0 0 7px var(--erin-green));
 }
 
 .navbar-toggler:focus {
@@ -163,7 +169,7 @@ p {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%231AFE49' stroke-width='2' stroke-linecap='round' d='M4 7h22 M4 15h22 M4 23h22'/%3E%3C/svg%3E") !important;
   }
 
-  /* Change theme switcher button */
+/* Change theme switcher button */
 .layout-button svg path {
   fill: var(--erin-green);
 }
@@ -174,12 +180,31 @@ p {
 
 
 
+/* ----- Footer ----- */
+footer a {
+  color: var(--electric-cyan);
+}
+
+footer a:hover {
+  color: var(--magenta-glitch);
+}
+
+.bi-github {
+  color: var(--erin-green);
+}
+
+.bi-envelope {
+  color: var(--erin-green);
+}
+
+
+
 /* Decorative lines under the navbar and before the footer */
 .thematic-divider-nav {
   width: 100%;
   height: 20px;
   margin: 0 auto;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='2022' height='34' viewBox='0 0 2022 34' fill='none'><path opacity='0.6' d='M0 2.5H326.832L356.247 31.5H1733.3L1762.71 2.5H2022' stroke='%231AFE49' stroke-width='5'/></svg>");
+  background-image: var(--divider-nav);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -187,26 +212,31 @@ p {
   z-index: 1000 !important;
 }
 
-
 .thematic-divider-footer {
   width: 100%;
   height: 20px;
   margin: 0 auto;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='2022' height='34' viewBox='0 0 2022 34' fill='none'><path opacity='0.6' d='M0 31.5H326.832L356.247 2.5H1733.3L1762.71 31.5H2022' stroke='%231AFE49' stroke-width='5'/></svg>");
+  background-image: var(--divider-footer);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
 
 
+/* ------------------------
+      4. Home 
+--------------------------- */
 
-/* Carousel */
+/* ----- Carousel ----- */
 .carousel-frame-wrapper {
   padding: 20px 80px;
 }
 
 .carousel {
-  border: 5px solid #1AFE49;
+  border: 5px solid var(--electric-cyan);
+  box-shadow:
+    0 0 8px var(--electric-cyan),
+    0 0 15px var(--magenta-glitch);
   background-color: var(--background-color);
 }
 
@@ -217,22 +247,57 @@ p {
 
 /* Erin green grainy overlay on carousel */
 .carousel-item img {
-    filter: grayscale(20%) brightness(1.1) hue-rotate(90deg);
+    /* filter: grayscale(20%) brightness(1.1) hue-rotate(90deg); */
+    filter: brightness(1.1) contrast(1.15) saturate(1.05);
+    display: block;
+    width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
-.carousel-item::after {
+/* option a */
+/* .carousel-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+      to bottom,
+      rgba(0, 255, 255, 0.06) 0px,
+      rgba(0, 255, 255, 0.06) 1px,
+      transparent 1px,
+      transparent 3px
+  );
+  opacity: 0.4;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 2;
+} */
+
+/* option b */ 
+/* .carousel-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center,
+      rgba(0, 255, 255, 0.1) 0%,
+      transparent 70%
+  );
+  mix-blend-mode: screen;
+  pointer-events: none;
+} */
+
+/* .carousel-item::after {
     content: "";
     position: absolute;
     inset: 0;
     /* background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><filter id='n'><feTurbulence type='turbulence' baseFrequency='0.9' numOctaves='5' /></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.4' /></svg>"); */
-    background: var(--erin-green);
+    /* background: var(--erin-green); */
     /* background: radial-gradient(circle at center, #1afe49 10%, #083e12 60%, transparent 100%); */
-    background-image: url("data:image/svg+xml,%3C!-- svg: first layer --%3E%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    /* background-image: url("data:image/svg+xml,%3C!-- svg: first layer --%3E%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     mix-blend-mode: screen;
     pointer-events: none;
     opacity: 0.35;
-}
-
+} */ 
 
 /* Ensure buttons are visible and above everything */
 .carousel-control-prev,
@@ -250,7 +315,7 @@ p {
 
 /* Custom left arrow */
 .carousel-control-prev-icon {
-    background-image: var(--arrow-svg-right) !important;
+    background-image: var(--arrow-icon) !important;
     transform: rotate(180deg);
     width: 50px !important;
     height: 50px !important;
@@ -260,7 +325,7 @@ p {
 
 /* Custom right arrow → rotated version */
 .carousel-control-next-icon {
-    background-image: var(--arrow-svg-right) !important;
+    background-image: var(--arrow-icon) !important;
     width: 50px !important;
     height: 50px !important;
     background-repeat: no-repeat;
@@ -268,24 +333,11 @@ p {
 }
 
 /* Carousel captions */
-
-.carousel-caption::before {
-  background: rgba(255,0,0,0.5);
-  /* content: "";
-  position: absolute;
-  inset: -12px;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='740' height='357' viewBox='0 0 740 357' fill='none'><path d='M572.372 356.38L738.924 189.939V0.5H0.5V356.38H572.372ZM736.06 189.822L735.911 189.969L570.817 352.889L570.672 353.033H240.324L240.178 352.887L233.675 346.394H194.665L200.459 352.18L201.313 353.033H190.23L190.084 352.887L183.581 346.394H144.573L150.365 352.18L151.22 353.033H140.137L139.99 352.887L133.489 346.394H94.4795L100.273 352.18L101.128 353.033H90.0449L89.8984 352.887L83.3955 346.394H44.3877L50.1797 352.18L51.0352 353.033H43.9092L43.7627 352.887L3.51172 312.634L3.36523 312.487V44.2598L3.51172 44.1133L44.1699 3.44629L44.3164 3.2998H496.583L496.729 3.44629L503.856 10.5801H542.867L536.431 4.15332L535.575 3.2998H546.675L546.821 3.44629L553.95 10.5801H592.96L586.524 4.15332L585.669 3.2998H596.769L596.915 3.44629L604.059 10.5801H643.052L636.617 4.15332L635.763 3.2998H646.86L647.007 3.44629L654.15 10.5801H693.16L686.726 4.15332L685.87 3.2998H696.141L696.287 3.44629L735.913 43.0732L736.06 43.2197V189.822Z' fill='#8386F5' stroke='#9F79FB'/></svg>");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  pointer-events: none;
-  z-index: -1 !important ; */
-}
-
 .carousel-caption a {
   color: var(--electric-cyan);
   text-decoration: none;
   font-size: clamp(2rem, 3.5vw, 3rem);
-  font-family: var(--default-font);
+  font-family: var(--font-default);
   font-weight: bold;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
   transition: color 0.3s ease;
@@ -309,15 +361,12 @@ p {
 }
 
 
-/* ----------------------------------
-        INTRODUCTION SECTION 
---------------------------------- */
 
 /* Typing effect for title */
 .cyberpunk-animation {
   --chars: 21; /* number of visible characters */
 
-  font: bold 200% var(--default-font), monospace;
+  font: bold 200% var(--font-default), monospace;
   color: #1AFE49;
   text-shadow: 0 0 8px var(--erin-green);
   display: inline-block;
@@ -357,17 +406,18 @@ p {
 
 
 /* Glitchy documentation button */
-.link-documentation a, .link-documentation a::after {
+.link-documentation a {
   padding: 10px 50px;
   font-size: 20px;
-  border: none;
+  border: 1px solid var(--electric-cyan);
   border-radius: 5px;
   color: var(--electric-cyan);
-  text-shadow: 0 0 8px var(--tropical-indigo);
+  text-shadow: 0 0 6px var(--electric-cyan);
   background-color: transparent;
   position: relative;
 }
 
+/* Glitch overlay */
 .link-documentation a::after {
   --move1: inset(50% 50% 50% 50%);
   --move2: inset(31% 0 40% 0);
@@ -385,6 +435,7 @@ p {
   display: block;
 }
 
+/* Hover effects */
 .link-documentation a:hover::after {
   animation: glitch_4011 1s;
   text-shadow: 10 10px 10px black;
@@ -395,13 +446,10 @@ p {
 }
 
 .link-documentation a:hover {
-  text-shadow: -1px -1px 0px var(--electric-cyan), 1px 1px 0px var(--magenta-glitch);
-}
-
-.link-documentation a:hover {
   background-color: transparent;
+  text-shadow: -1px -1px 0px var(--electric-cyan), 1px 1px 0px var(--magenta-glitch);
   border: 1px solid var(--erin-green);
-  box-shadow: 0px 10px 10px -8px var(--erin-green);
+  box-shadow: 0 0 10px var(--erin-green);
 }
 
 @keyframes glitch_4011 {
@@ -462,3 +510,173 @@ p {
 }
 
 
+/* --------------------------------
+    EXHIBITION PAGE 
+--------------------------------- */
+.toggle-frame {
+  background: transparent;
+}
+
+/* Labels */
+.toggle-text {
+    font-size: 24px;
+    font-family: var(--font-secondary);
+    text-shadow: 0 0 8px var(--erin-green);
+}
+
+.toggle-pill {
+  border: 1px solid var(--erin-green);
+}
+
+.toggle-knob {
+  background: var(--erin-green);
+}
+
+/* ----- Eras page ----- */
+
+.era-title {
+    font-family: var(--font-default);
+    color: var(--magenta-glitch);
+    text-shadow: 0 0 8px var(--magenta-glitch)
+}
+
+.era-description {
+    font-family: var(--font-secondary);
+    color: var(--electric-cyan);
+}
+
+/* Rotating neon leon around cards */
+.era-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.era-card-content {
+  position: relative;
+  box-shadow: 0px 0px 10px 1px #000000ee;
+  border-radius: 16px;
+  background-color: #151515;
+  z-index: 2;
+}
+
+/* Rotating border container */
+.era-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: conic-gradient(    /* conic-gradient creates a gradient that rotates around a center point, making the neon line follow the border path */
+    transparent 0deg,
+    transparent 320deg,
+    rgba(255, 0, 255, 0.3) 330deg, /* subtle glow before main line */
+    var(--magenta-glitch) 350deg,
+    var(--magenta-glitch) 360deg
+  );
+  animation: rotation_481 4s infinite linear;
+  border-radius: 16px;
+  z-index: 0;
+}
+
+/* Inner mask to create border effect */
+.era-card::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background-color: #151515;
+  border-radius: 14px;
+  z-index: 1;
+}
+
+@keyframes rotation_481 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* ----- Chronological page ----- */
+.chronology-container {
+  background: transparent;
+}
+
+.timeline-lines::before, .ellipse, .ellipse-2 {
+  background: linear-gradient(180deg, var(--erin-green) 0%, var(--magenta-glitch) 100%);  
+  /* background: var(--magenta-glitch); */
+  box-shadow: 0 0 8px 0 var(--electric-cyan);
+}
+
+.ellipse,
+.ellipse-2 {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--magenta-glitch);
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0 0 15px var(--electric-cyan),
+              inset 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.card {
+  background-color: black;
+  box-shadow: 0px 0px 10px 0px var(--magenta-glitch);
+  transition: all .3s;
+  border-radius: 0;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 0;
+  padding: 2px; /* This controls the border thickness */
+  background: linear-gradient(163deg, var(--electric-cyan) 0%, var(--magenta-glitch) 100%);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: scale(1.02); /* card expand on hover */
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 255, 0.5),
+              0px 0px 60px 1px rgba(255, 0, 255, 0.3);
+}
+
+.text-wrapper {
+  font-family: var(--font-secondary);
+  color: var(--electric-cyan);
+}
+
+.era-item-text {
+  color: var(--electric-cyan);
+  font-family: var(--font-secondary);
+  text-shadow: 2px 2px 4px rgba(0,0,0,1);
+}
+
+
+
+/* !!! Accessibility: Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+  }
+
+  .grid-line,
+  .cyberpunk-animation,
+  .era-card::before {
+    animation: none !important;
+  }
+}

@@ -302,8 +302,9 @@ scale(0.1) = while moving, the element is dramatically shrunk to 10% of its orig
     visibility: visible;
 }
 
-/* Navbar */
-/* ------------------------------------------ */
+/* --------------------------------------- 
+                   Navbar 
+------------------------------------------ */
 .navbar {
     display: flex;
     padding: 24px;
@@ -446,6 +447,11 @@ scale(0.1) = while moving, the element is dramatically shrunk to 10% of its orig
     object-fit: contain;
     display: block;
     flex-shrink: 0;
+}
+
+.trigger-style .style-icon path {
+  fill: white !important;
+  stroke: white;
 }
 
 .trigger-style:hover .style-label { 
@@ -738,13 +744,36 @@ scale(0.1) = while moving, the element is dramatically shrunk to 10% of its orig
 }
 
 
-/* Footer 
+/* ------------------------------------
+                  FOOTER  
 -------------------------------------- */
+/* footer {
+  margin-top: 40px;
+  padding-top: 40px;
+} */
+
 .footer-separator {
     height: 2px;
     background: black;
     max-width: 90%; /* or 80%, or a fixed value like 1200px */
-    margin: 0 auto; /* centers the line */
+    margin: 20px auto; /* centers the line */
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--default-font-color);
+}
+
+.bi-github {
+  display: inline;
+  vertical-align: middle;
+  color: black;
+}
+
+.bi-envelope {
+  display: inline;
+  vertical-align: middle;
+  color: black;
 }
 
 /* ----------------- Toggle Section ----------------- */
@@ -911,6 +940,17 @@ scale(0.1) = while moving, the element is dramatically shrunk to 10% of its orig
     gap: 12px;
     background: white;
     box-sizing: border-box;
+    height: 100%;
+}
+
+/* Ho aggiunto questo, controllare se va bene con tutto il resto */
+.era-card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+    width: 100%;
+    min-width: 0;
+    gap: 12px;
     height: 100%;
 }
 
