@@ -69,7 +69,6 @@ p {
     border-radius: 0px;
 }
 
-/* Logo */
 .navbar-nav .nav-link {
     border: 1px solid var(--pale-olive);
     border-radius: 0px;
@@ -122,6 +121,23 @@ p {
   border-color: var(--soft-ice) !important; 
 }
 
+.navbar .layout-container .layout-button:hover {
+    background-color: transparent;
+}
+
+.navbar .layout-container .layout-button {
+  background-color: var(--forest-green);
+  border: 2px solid var(--pale-olive);
+}
+
+.trigger-style:hover {
+    border-color: var(--pale-olive);
+}
+
+.trigger-style:hover .style-label { 
+    color: var(--pale-olive); 
+}
+
 /* Change hamburger icon color */
 .custom-toggler .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23D3B27D' stroke-width='2' stroke-linecap='round' d='M4 7h22 M4 15h22 M4 23h22'/%3E%3C/svg%3E") !important;   
@@ -129,9 +145,7 @@ p {
 
 /* Carousel */
 /* ---------------------------------------- */
-.carousel-caption {
-  text-decoration: underline double var(--soft-ice);
-}
+
 
 .carousel-caption a {
   color: var(--soft-ice);
@@ -171,13 +185,24 @@ p {
   display: none;
 }
 
+.introduction-title {
+  /* border: 2px solid var(--pale-olive); */
+  border: 50px solid transparent; /* Required for border-image to work */
+  border-image: url('');
+  border-image-slice: 165 50 220; /* Adjust as needed for thickness */
+  border-image-repeat: none; /* Options: stretch | repeat | round | space */
+  border-image-outset: 0;
+    /* Optional: ensure the padding doesn't make the box wider than 100% */
+  box-sizing: border-box;
+}
+
 .introduction-title::after, .documentation-title::after {
   content: "";
   display: block;
   width: 100px;                         
   height: 30px;
   margin: 1em auto 1.5rem;                  /* spacing and centering */
-  background-image: url('../img/dark-romanticism/after-line2.png');
+  background-image: url('');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain; 
@@ -187,8 +212,13 @@ p {
 .link-documentation p,
 .link-documentation a {
   background-color: var(--forest-green);
-  border: 2px solid var(--pale-olive);
-  border-radius: 20px;
+  /* border: 2px solid var(--pale-olive); */
+  border: 50px solid transparent; /* Required for border-image to work */
+  border-image: url('');
+  border-image-slice: 165 200 220; /* Adjust as needed for thickness */
+  border-image-repeat: none; /* Options: stretch | repeat | round | space */
+  border-image-outset: 0;
+
   padding: 1.5rem;
   /* Optional: ensure the padding doesn't make the box wider than 100% */
   box-sizing: border-box;
@@ -350,9 +380,8 @@ p {
     font-family: var(--default-font);
 }
 
-.div {
-    font-size: 20px;
-    font-family: var(--text-font);
+.text-wrapper i {
+  font-family: var(--text-font)
 }
 
 /* Black dot */
@@ -360,11 +389,75 @@ p {
 .ellipse-2 {
     width: 20px;
     height: 20px;
-    background: var(--Greyscale-900);
+    background: var(--pale-olive);
     border-radius: 50%;
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
     top: 50%;
     z-index: 0;
+}
+
+
+@media (max-width: 768px) {
+    .toggle-frame {
+        max-width: none !important; 
+        width: 100vw !important; /* Force full width, overriding desktop var */
+    }
+    
+    /* Center the entire timeline content horizontally */
+    .timeline-lines {
+        /* Force full width and center children lines */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center all lines */
+    }
+
+    /* 2. Make each card line take full width, and stack cards vertically */
+    .line {
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Center the card horizontally */
+        align-items: flex-start;
+        margin-bottom: 20px; /* Add spacing between lines */
+    }
+
+    /* 3. Make the card itself responsive and centered */
+    .card {
+        /* Allow card to shrink, but stop at a readable minimum */
+        width: 85%; /* Use a large percentage of the screen width */
+        min-width: 250px; /* Don't allow it to shrink below this size */
+        /* Center the card if its width is less than 100% of its container */
+        margin: 0 auto; 
+        /* On mobile, cards should stack their content (image/text) vertically */
+        flex-direction: column;
+        align-self: center;
+    }
+
+    /* OVERRIDE SPECIFICITY TO CENTER CARDS *** */
+    .line:nth-child(odd),
+    .line:nth-child(even) {
+        justify-content: center; /* This overrides the flex-start/flex-end rules */
+    }
+    
+    /* Fix image/text alignment within the card on mobile */
+    .card .picture, .card .text {
+        width: 100%;
+    }
+
+    /* Fix image radius for stacked layout */
+    .card .picture {
+        /* Remove specific left-side rounding */
+        border-radius: 8px 8px 0 0; 
+    }
+    .left-card .picture {
+        /* Override specific left-side rounding for consistency */
+        border-radius: 8px 8px 0 0; 
+    }
+
+    /* put all captions at the bottom of the images */
+    .card.left-card {
+    flex-direction: column-reverse;
+    }
 }

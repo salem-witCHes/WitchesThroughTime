@@ -14,26 +14,16 @@
     /* DERIVED PIN: The total fixed height of the top section (Header + Toggle + all padding/gaps) */
 
     /* Calculation breakdown:
-
     H1 (Header) Height: var(--title-height) + var(--header-gap) (top) + 5px (bottom)
-
     H2 (Toggle) Height: calc(var(--nav-height) + var(--header-gap))
-
     Since H2's top is pinned *to* var(--title-height), the total height is:
-
     (Title Height + Padding) + (Nav Height + Gap) - (Overlap/Shared space)
 
-
     We can simplify this by using the 'top' and 'height' of the fixed elements:
-
     Header ends at: 75px + 10px (header-gap) + 5px (padding-bottom) = 90px (approx)
-
     Toggle starts at: 75px
-
     Toggle height: 70px (60px + 10px)
-
     Total Fixed Height (Bottom of Toggle): 75px (start) + 70px (height) = 145px
-
     */
 
     --fixed-top-height: calc(var(--title-height) + var(--nav-height) + var(--header-gap));
@@ -102,17 +92,18 @@ body.homepage {
 .introduction-title h1 { 
     font-size: 1.6rem; 
     margin: 5px 0 0 0; 
+    color: var(--cursed-walnut);
 }
 .introduction-title h2 { 
     font-size: 0.9rem; 
     margin: 2px 0 0 0; 
     font-weight: normal; 
+    color: var(--cursed-walnut);
 }
 
 /* navbar */
 .homepage header {
     position: fixed;
-    
     /* Starts immediately below the title (no gap here) */
     top: var(--title-height); 
     
@@ -122,11 +113,11 @@ body.homepage {
     /* Must include the gap in its total height */
     height: calc(var(--nav-height) + var(--header-gap));
     
-    /* FIX 3: Fill the background gap with the chosen color */
+    /* Fill the background gap with the chosen color */
     background-color: var(--background-color); 
     z-index: 900;
     
-    /* FIX 4: Push the internal navbar pill down by the gap amount */
+    /* Push the internal navbar pill down by the gap amount */
     padding-top: var(--header-gap);
     
     display: flex;
@@ -152,6 +143,59 @@ body.homepage {
     font-size: 0.9rem;
 }
 
+/* Change style button and logo color */
+.navbar svg path {
+    fill: var(--cursed-walnut);
+}
+
+.navbar-nav {
+    background-color: var(--background-color);
+    border-radius: 8px;
+}
+
+.navbar-nav .nav-link {
+    border: 1px solid var(--cursed-walnut);
+    border-radius: 8px;
+    color: var(--cursed-walnut);
+}
+
+.navbar-nav .nav-link:hover {
+  text-decoration: none;
+  background-color: var(--witchflame-red);
+  color: var(--background-color);
+}
+
+.navbar .nav-link.active {
+  color: var(--background-color) !important;    /* important! to override the variable --bs-navbar-active-color */
+  text-decoration: none;
+  background-color: var(--witchflame-red);
+}
+
+.navbar .layout-container .layout-button {
+    background-color: var(--background-color);
+    border: 2px solid var(--cursed-walnut);
+    border-radius: 50px;
+}
+
+.navbar .layout-container .layout-button:hover {
+    background-color: var(--witchflame-red);
+}
+
+
+.navbar .layout-options {
+    background-color: var(--background-color);
+    border: 2px solid var(--cursed-walnut);
+    border-radius: 8px;
+}
+
+.trigger-style:hover {
+    border-color: var(--witchflame-red);
+}
+
+.trigger-style:hover .style-label { 
+    color: var(--background-color); 
+}
+
 /* scrollable content */
 
 #homepage-content {
@@ -167,49 +211,48 @@ body.homepage {
     
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     padding-bottom: 30vh;
     padding-right: 10px; /* Space for scrollbar */
 }
 
+
 /* Content Styling */
 .carousel-frame-wrapper, 
-.introduction p {
+.introduction p,
+.link-documentation p {
     width: 100%;
     flex-shrink: 0;
 }
 
 .carousel-item img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     border-radius: 10px;
     border: 2px solid var(--cursed-walnut);
 }
 
-.introduction p {
+.introduction p, .link-documentation p {
     background-color: var(--background-color);
-    
-    border-radius: 15px;
     padding: 1.5rem;
     text-align: justify;
     font-family: var(--text-font);
     color: var(--cursed-walnut);
     font-size: 1rem;
-    margin: 0;
+    margin: 0 auto;
 }
 
 .introduction-title h2::after {
   content: none;
 }
 
-/* --- FIX: Override fixed bottom margin inside the scroll container --- */
-/* Target all relevant sections inside the scrollable area */
+.link-documentation h2::after {
+    background: var(--cursed-walnut);
+}
 
-.link-documentation p {
-    /* Reset bottom margin to zero to allow padding-bottom: 20vh to work */
-    margin-bottom: 0 !important;
-    font-family: var(--text-font);
+.link-documentation h2 {
+    color: var(--cursed-walnut);
 }
 
 
@@ -230,6 +273,7 @@ body.homepage {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--cursed-walnut);
 }
 
 footer p, footer a {
@@ -361,7 +405,7 @@ header .navbar {
 
 .toggle-frame {
     position: fixed;
-    top: var(--title-height);
+    top: var(--title-height); /* positioned after the navbar */
     left: 0; right: 0; margin: 0 auto;
     border: 2px solid var(--cursed-walnut);
     border-radius: 8px;
@@ -370,13 +414,44 @@ header .navbar {
     width: var(--base-width);
     height: calc(var(--nav-height) + var(--header-gap));
     padding-top: var(--header-gap);
-
     background: var(--background-color);
     gap: 20px;
 }
 
-.toggle-frame img {
-    fill: var(--witchflame-red)
+.toggle-pill {
+    width: 128px;
+    height: calc(var(--nav-height) - 5px);
+    border: 2px solid var(--cursed-walnut);
+}
+
+.toggle-frame .toggle-knob {
+    background-color: none !important;
+}
+
+.toggle-frame .toggle-knob img {
+    display: none;
+}
+
+.toggle-pill .toggle-knob {
+    background-image: url('../img/art-nouveau/chronological-toggle.svg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+}
+
+.toggle-frame .toggle-text {
+    font-family: var(--default-font);
+}
+
+.inactive-icon img {
+    display: none;
+}
+
+.inactive-icon {
+    background-image: url('../img/art-nouveau/era-toggle.svg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: none;
 }
 
 /* Ensure all ERA cards have equal height and 4 cards per row */
@@ -469,6 +544,11 @@ header .navbar {
     color: var(--witchflame-red);
 }
 
+.text-wrapper i {
+    color: var(--cursed-walnut);
+    font-family: var(--text-font);
+}
+
 /* Black dot */
 .ellipse,
 .ellipse-2 {
@@ -484,6 +564,71 @@ header .navbar {
 }
 
 @media (max-width: 768px) {
+
+    /* Covers top frame art */
+    header {
+        max-width: none !important; 
+        width: 100vw !important; /* Force full width, overriding desktop var */
+        top: 0px;
+        background-color: var(--background-color) !important;
+        padding-top: 25px;
+        border: none;
+        border-radius: 0;
+    }
+
+    .toggle-frame {
+        max-width: none !important; 
+        flex-direction: row !important;
+        width: 100vw !important; /* Force full width, overriding desktop var */
+        
+        /* Add background and padding to cover the red frame art */
+        background-color: var(--background-color) !important; 
+        border: none;
+        border-radius: 0;
+        padding-top: 15px;
+        height: auto;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border-bottom: 2px solid var(--cursed-walnut)
+    }
+
+    
+    /* Ensure the inner navbar container (the pill) is centered and constrained */
+    .eras-page header .navbar,
+    .chronological-page header .navbar {
+        width: 90%; /* Constrain the inner content */
+        margin: 0 auto; /* Center the inner content */
+        height: auto; 
+        
+        /* Remove desktop border, looks cleaner */
+        border: none;
+    }
+
+    .eras-page header .nav-link,
+    .chronological-page header .nav-link {
+        padding: 5px 15px !important; 
+        font-size: 0.85rem; 
+    }
+    
+    /* Ensure scrollable content starts below the now-expanded header */
+    #homepage-content {
+        /* You will need to calculate the new scroll start based on the auto heights. 
+           A safer temporary fix is to use a VH value until you can calculate the exact stack height. */
+        width: 75%; 
+    }
+
+    /* For the container that holds the links (the grey pill) */
+    .navbar-nav {
+      gap: 12px;
+    }
+    
+    .footer {
+        /* Ensure footer also goes full width */
+        width: 100vw !important;
+        left: 0 !important; right: 0 !important; margin: 0;
+        bottom: 0 !important;
+        height: 12vh;
+    }
     
     /* Center the entire timeline content horizontally */
     .timeline-lines {
@@ -507,7 +652,7 @@ header .navbar {
     .card {
         /* Allow card to shrink, but stop at a readable minimum */
         width: 85%; /* Use a large percentage of the screen width */
-        min-width: 300px; /* Don't allow it to shrink below this size */
+        min-width: 250px; /* Don't allow it to shrink below this size */
         /* Center the card if its width is less than 100% of its container */
         margin: 0 auto; 
         /* On mobile, cards should stack their content (image/text) vertically */
@@ -515,7 +660,7 @@ header .navbar {
         align-self: center;
     }
 
-    /* *** CRITICAL FIX: OVERRIDE SPECIFICITY TO CENTER CARDS *** */
+    /* OVERRIDE SPECIFICITY TO CENTER CARDS *** */
     .line:nth-child(odd),
     .line:nth-child(even) {
         justify-content: center; /* This overrides the flex-start/flex-end rules */
@@ -535,7 +680,13 @@ header .navbar {
         /* Override specific left-side rounding for consistency */
         border-radius: 8px 8px 0 0; 
     }
+
+
+    /* put all captions at the bottom of the images */
+    .card.left-card {
+    flex-direction: column-reverse;
+    }
 }
 
-
-/* cards must be centered on small screen, fix to have always the description under the photo */
+/* toggle height + background
+navbar hamburger menu on small screen */

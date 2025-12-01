@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title></title>
+        <title>Item page</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="keywords" content="Witch trials, Witchcraft, Sorcery, Feminism">
 
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-        <link href="https://fonts.cdnfonts.com/css/w95fa" rel="stylesheet">
 
         <!-- CSS -->
         <link rel="stylesheet" href="css/main.css">
-
+        
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
-        <!-- Cyberpunk fonts: Orbitron + Rajdhani -->
-        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet"> 
-        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
         <!-- XIX century fonts: IM Fell English + Cormorant Garamond-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,10 +30,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
     </head>
-   
-    <body class="chronological-page">
 
-         <!-- Grid effect for cyberpunk theme-->
+    <body class="item-page">
+
+        <!-- Grid effect for cyberpunk theme-->
         <div class="grid-bg">
             <div class="grid-line"></div>
             <div class="grid-line"></div>
@@ -47,7 +42,9 @@
             <div class="grid-line"></div>
         </div>
 
-        <main class="page-content">
+        <!-- item content -->
+        <main class="itempage-content" id="itempage-content">
+            <!-- navbar -->
             <header>
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
@@ -122,301 +119,56 @@
 
             </header>
 
-            <!-- Div to insert dividers with CSS for different themese -->
             <div class="thematic-divider-nav"></div>
-
-            <div class="toggle-frame">
-                <!-- Left Label -->
-                <span id="labelChrono" class="toggle-text active-text">Chronological</span>
-
-                <!-- The Toggle Pill -->
-                <div class="toggle-pill">
-                    <!-- Active Icon inside Knob -->
-                    <div class="toggle-knob">
-                        <img id="toggleIcon" src="img/chronological-active.svg" alt="Active Icon">
+            
+            <div class="container">
+                <div class="row gx-0 mb-4 item-table">
+                    <div class="col-12 col-md-6 col-lg-6 d-flex">
+                        <div class="item-box w-100 me-md-2">
+                            <img src="img/collection/Circe.jpg" alt="Pop art style illustration of a woman screaming with vibrant colors">
+                        </div>
                     </div>
 
-                    <!-- Inactive Icon on the opposite side -->
-                    <img id="inactiveIcon" class="inactive-icon" src="img/eras-inactive.svg" alt="Inactive Icon">
+                    <div class="col-12 col-md-6 col-lg-6 mt-4 mt-md-0 d-flex">
+                        <div class="table-box w-100 ms-md-2 p-">
+                            <table class="table">
+                                <thead>
+                                    <tr><th colspan="2">Item Title</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>Info header 1</th>
+                                        <td>Lorem ipsum dolor sit amet consectetur</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Info header 2</th>
+                                        <td>Lorem ipsum dolor sit amet consectetur</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Info header 3</th>
+                                        <td>Lorem ipsum dolor sit amet consectetur</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Right Label -->
-                <span id="labelEras" class="toggle-text">Eras</span>
-            </div>
-            <!-- CHRONOLOGY TIMELINE SECTION -->
-            <div class="chronology-container">
-                <div class="timeline-lines">
-
-                    <!-- Right side (odd) -->
-                    <div class="line">
-                        <div class="card">
-                            <div class="text">
-                                <div class="text-wrapper">Statue of a Triple-Bodied Hecate <br><i>2nd century A.D.</i> </div>
-                            </div>
-                            <div class="picture">
-                                <img src="img/collection/hecate.jpg" alt="">
-                            </div>
+                <div class="row g-4 pb-4">
+                    <div class="col-12">
+                        <div class="text-box">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
                         </div>
-                        <div class="ellipse"></div>
                     </div>
-                    <!-- Right side (odd) -->
-                    <div class="line">
-                        <div class="card">
-                            <div class="picture">
-                                <img src="img/collection/Medea.jpg" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="text-wrapper">Medea's Amphora<br><i>510 B.C. - 500 B.C.</i> </div>
-                            </div>
-                        </div>
-                        <div class="ellipse"></div>
-                    </div>
-
-                    <!-- Left side (even) -->
-                    <div class="line">
-                        <div class="card left-card">
-                            <div class="text">
-                                <div class="text-wrapper">Two Waldensian Witches <br><i>1451</i> </div>
-                            </div>
-                            <div class="picture">
-                                <img src="img/collection/Vaudoises.jpeg" alt="">
-                            </div>
-                        </div>
-                        <div class="ellipse"></div>
-                    </div>
-
-                    <!-- Right side (odd) -->
-                    <div class="line">
-                        <div class="card">
-                            <div class="picture">
-                                <img src="img/collection/malleus.jpeg" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="text-wrapper">Malleus Maleficarum <br><i>1487</i> </div>
-                            </div>
-                        </div>
-                        <div class="ellipse"></div>
-                    </div>
-
-                    <!-- Left side (even) -->
-                    <div class="line">
-                        <div class="card left-card">
-                            <div class="text">
-                                <div class="text-wrapper">Witches brewing up a storm <br><i>1489</i> </div>
-                            </div>
-                            <div class="picture">
-                                <img src="img/collection/xilografia.jpeg" alt="">
-                            </div>
-                        </div>
-                        <div class="ellipse"></div>
-                    </div>
-
-                    <!-- Right side (odd) -->
-                    <div class="line">
-                        <div class="card">
-                            <div class="picture">
-                                <img src="img/collection/Hortus_Titelblatt.jpg" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="text-wrapper">Hortus Sanitatis <br><i>1491</i> </div>
-                            </div>
-                        </div>
-                        <div class="ellipse"></div>
-                    </div>
-
-                    <!-- Left side (even) -->
-                    <div class="line">
-                        <div class="card left-card">
-                            <div class="text">
-                                <div class="text-wrapper">The Witches <br><i>1510</i> </div>
-                            </div>
-                            <div class="picture">
-                                <img src="img/collection/woodcut.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="ellipse"></div>
-                    </div>
-
-                    <!-- Right side (odd) -->
-                    <div class="line">
-                        <div class="card">
-                            <div class="picture">
-                                <img src="img/collection/tre_streghe.jpg" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="text-wrapper">The Three Witches<br><i>1783</i> </div>
-                            </div>
-                        </div>
-                        <div class="ellipse"></div>
-                    </div>
-
-                    <!-- Left side (even) -->
-                    <div class="line">
-                        <div class="card left-card">
-                            <div class="text">
-                                <div class="text-wrapper">The Walnut Tree of Benevento<br><i>1825</i> </div>
-                            </div>
-                            <div class="picture">
-                                <img src="img/collection/nocedibenevento.jpeg" alt="">
-                            </div>
-                        </div>
-                        <div class="ellipse"></div>
-                    </div>
-
-                    <!-- Right side (odd) -->
-                    <div class="line">
-                        <div class="card">
-                            <div class="picture">
-                                <img src="img/collection/poem.jpg" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="text-wrapper">Witchcraft was hung, in History <br><i>1830-1886</i> </div>
-                            </div>
-                        </div>
-                        <div class="ellipse"></div>
-                    </div>
-
-                    <!-- Left side (even) -->
-                    <div class="line">
-                        <div class="card left-card">
-                            <div class="text">
-                                <div class="text-wrapper">The Examination of a Witch <br><i>1853</i> </div>
-                            </div>
-                            <div class="picture">
-                                <img src="img/collection/Examination_of_a_Witch.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="ellipse"></div>
-                    </div>
-
-                    <!-- Right side (odd) -->
-                    <div class="line">
-                        <div class="card">
-                            <div class="picture">
-                                <img src="img/collection/Morgana.jpeg" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="text-wrapper">Morgan-Le-Fay<br><i>1863-1864</i> </div>
-                            </div>
-                        </div>
-                        <div class="ellipse"></div>
-                    </div>
-
-                    <!-- Left side (even) -->
-                    <div class="line">
-                        <div class="card left-card">
-                            <div class="text">
-                                <div class="text-wrapper">Rehabilitation of Anna Goldi <br><i>1865</i> </div>
-                            </div>
-                            <div class="picture">
-                                <img src="img/collection/Anna-Goldi.jpeg" alt="">
-                            </div>
-                        </div>
-                        <div class="ellipse"></div>
-                    </div>
-
-                    <!-- Right side (odd) -->
-                    <div class="line">
-                        <div class="card">
-                            <div class="picture">
-                                <img src="img/collection/Circe.jpg" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="text-wrapper">Circe offering the cup to Odysseus<br><i>1891</i> </div>
-                            </div>
-                        </div>
-                        <div class="ellipse"></div>
-                    </div>
-
-                    <!-- Left side (even) -->
-                    <div class="line">
-                        <div class="card left-card">
-                            <div class="text">
-                                <div class="text-wrapper">Baba Yaga's illustration<br><i>1900</i> </div>
-                            </div>
-                            <div class="picture">
-                                <img src="img/collection/Baba_Yaga.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="ellipse"></div>
-                    </div>
-
-                    <!-- Right side (odd) -->
-                    <div class="line">
-                        <div class="card">
-                            <div class="picture">
-                                <img src="img/collection/Petronilla.png" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="text-wrapper">Petronilla de Meath Place Setting<br><i>1974-1979</i> </div>
-                            </div>
-                        </div>
-                        <div class="ellipse"></div>
-                    </div>
-
-                    <!-- Left side (even) -->
-                    <div class="line">
-                        <div class="card left-card">
-                            <div class="text">
-                                <div class="text-wrapper">“Le streghe son tornate” <br><i>1976</i> </div>
-                            </div>
-                            <div class="picture">
-                                <img src="img/collection/StregheSonTornatePhoto_PaolaAgosti.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="ellipse"></div>
-                    </div>
-
-                    <!-- Right side (odd) -->
-                    <div class="line">
-                        <div class="card">
-                            <div class="picture">
-                                <img src="img/collection/warhol-the-witch.webp" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="text-wrapper">The Myths series<br><i>1981</i> </div>
-                            </div>
-                        </div>
-                        <div class="ellipse"></div>
-                    </div>
-
-                    <!-- Left side (even) -->
-                    <div class="line">
-                        <div class="card left-card">
-                            <div class="text">
-                                <div class="text-wrapper">Witches in America<br><i>2018</i> </div>
-                            </div>
-                            <div class="picture">
-                                <img src="img/collection/Wolf_WitchPhotograph_FrancesDenny.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="ellipse"></div>
-                    </div>
-
-                    <!-- Right side (odd) -->
-                    <div class="line">
-                        <div class="card">
-                            <div class="picture">
-                                <img src="img/collection/lee-ann-olwage-the-big-forget-00004.jpeg" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="text-wrapper">Witch Camp in Ghana <br><i>2024</i> </div>
-                            </div>
-                        </div>
-                        <div class="ellipse"></div>
-                    </div>
-
                 </div>
             </div>
-            <section class="map">
-                <div></div>
 
-            </section>
-
+            
+            
             <div class="footer-separator"></div>
 
-
-            <!-- Footer -->
             <!-- Footer -->
             <div class="thematic-divider-footer"></div>
             <footer class="text-white text-center text-lg-start">
@@ -428,7 +180,9 @@
                     <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
                         <h5 class="text-uppercase">About the project</h5>
                         <p>
-                        The purpose of this web site is to explore various types of typographic and layout style for museum pages, as an end-of-course project for the "Information Modeling and Web technologies" course of the Master Degree in Digital Humanities and Digital Knowledge of the University of Bologna, under prof. Fabio Vitali.
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+                        molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
+                        voluptatem veniam, est atque cumque eum delectus sint!
                         </p>
                     </div>
                     <!--Grid column-->
@@ -439,7 +193,7 @@
 
                         <ul class="list-unstyled mb-0">
                         <li>
-                            <a href="#!">Home</a>
+                            <a href="#!">Link 1</a>
                         </li>
                         <li>
                             <a href="#!">Link 2</a>
@@ -460,40 +214,16 @@
 
                         <ul class="list-unstyled">
                         <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
-                            </svg>
                             <a href="https://github.com/Maryamdadras">Maryam Dadras</a>
-                            <p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
-                                </svg>
-                                maryam.dadrasrazi@studio.unibo.it
-                            </p>
+                            <p>maryam.dadrasrazi@studio.unibo.it</p>
                         </li>
                         <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
-                            </svg>
                             <a href="https://github.com/mir-pin">Miriana Pinto</a>
-                            <p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
-                                </svg>
-                                miriana.pinto@studio.unibo.it
-                            </p>
+                            <p>miriana.pinto@studio.unibo.it</p>
                         </li>
                         <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
-                            </svg>
                             <a href="https://github.com/sararoggi">Sara Roggiani</a>
-                            <p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
-                                </svg>
-                                sara.roggiani2@studio.unibo.it
-                            </p>
+                            <p>sara.roggiani2@studio.unibo.it</p>
                         </li>
                         </ul>
                     </div>
@@ -505,19 +235,17 @@
 
                 <!-- Copyright -->
                 <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                    <p>
-                        All copyrights and related rights on the content remain with their original owners. All copyright on the typographic and layout choices are 2025 © Witches through time.
-                    </p>
+                    All copyrights and related rights on the content remain with their original owners. All copyright on the typographic and layout choices are 2025 © Witches through time.
                 </div>
                 <!-- Copyright -->
             </footer>
         </main>
-        
+
         <!-- JS moved at the bottom -> in the head: it runs before the DOM is fully loaded and might fail -->    
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="js/script.js"></script>
         <script src="js/main.js"></script>
-        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
     </body>
+
 </html>

@@ -632,7 +632,7 @@ scale(0.1) = while moving, the element is dramatically shrunk to 10% of its orig
 .link-documentation {
   max-width: 90%;              
   margin: 4rem auto;            /* centers the section horizontally */
-  padding: 0 2rem;              /* small horizontal breathing space */
+  padding: 0 1rem;              /* small horizontal breathing space */
   text-align: center;           /* centers heading and button */
 }
 
@@ -922,6 +922,10 @@ footer a {
 
 /* --- ERA CARDS UNDER TOGGLE --- */
 
+/* add padding-bottom to container eras */
+.p-3 {
+  padding-bottom: 12px;
+}
 
 /* Ensure all ERA cards have equal height and 4 cards per row */
 .era-card {
@@ -1195,26 +1199,117 @@ nav.navbar {
     z-index: 0;
 }
 
+@media (max-width: 768px) {
+/* Center the entire timeline content horizontally */
+    .timeline-lines {
+        /* Force full width and center children lines */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center all lines */
+    }
 
+    /* 2. Make each card line take full width, and stack cards vertically */
+    .line {
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Center the card horizontally */
+        align-items: flex-start;
+        margin-bottom: 20px; /* Add spacing between lines */
+    }
 
-/* ---------------------------------
-               MAP 
------------------------------------- */
+    /* 3. Make the card itself responsive and centered */
+    .card {
+        /* Allow card to shrink, but stop at a readable minimum */
+        width: 85%; /* Use a large percentage of the screen width */
+        min-width: 250px; /* Don't allow it to shrink below this size */
+        /* Center the card if its width is less than 100% of its container */
+        margin: 0 auto; 
+        /* On mobile, cards should stack their content (image/text) vertically */
+        flex-direction: column;
+        align-self: center;
+    }
 
-.map-container {
+    /* OVERRIDE SPECIFICITY TO CENTER CARDS *** */
+    .line:nth-child(odd),
+    .line:nth-child(even) {
+        justify-content: center; /* This overrides the flex-start/flex-end rules */
+    }
+    
+    /* 4. Fix image/text alignment within the card on mobile */
+    .card .picture, .card .text {
+        width: 100%;
+    }
+    /* Fix image radius for stacked layout */
+    .card .picture {
+        /* Remove specific left-side rounding */
+        border-radius: 8px 8px 0 0; 
+    }
+    .left-card .picture {
+        /* Override specific left-side rounding for consistency */
+        border-radius: 8px 8px 0 0; 
+    }
 
+    /* put all captions at the bottom of the images */
+    .card.left-card {
+    flex-direction: column-reverse;
+    }
 }
 
-.map-container svg {
-  width: 100%;
-  height: auto;
-  display: block;
+
+/* ITEM PAGE */
+/* Ensures the top row containers have equal height on desktop/tablet */
+.item-table > .col-12 {
+    /* Set a minimum height on the columns themselves, not the row */
+    min-height: 350px; 
 }
 
-#first-room {
-  fill: red !important;
+/* Base style for all content containers */
+.item-box, .table-box, .text-box {
+    height: 100%; 
+    border: 1px solid var(--default-font-color);
+    overflow: hidden;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
-#second-room {
-  fill: red !important;
+.item-box {
+    padding: 0;
 }
+
+.item-box img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.table-box {
+    padding: 1.5rem; 
+}
+
+.table {
+    width: 100%;
+    margin: 0;
+    border: 1px solid var(--default-font-color);
+    background-color: transparent; 
+}
+
+.table th,
+.table td {
+    border: 1px solid var(--Greyscale-50);
+    padding: 8px 10px;
+    vertical-align: top; 
+}
+
+.table thead tr:first-child th {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.text-box {
+    padding: 1.5rem;
+}
+
+
