@@ -227,3 +227,82 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+// --- Map: rooms' descriptions 
+// JavaScript object to hold the descriptions for all rooms
+const roomData = {
+    'first-room': {
+        title: "Mythic roots",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    },
+    'second-room': {
+        title: "Fires of fear",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    },
+    'third-room': {
+        title: "Visions and shadows",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    }, 
+    'fourth-room': {
+        title: "Reclaiming the spell",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    }
+};
+
+// Function to change dynamically rooms' descriptions 
+function showRoomDescription(roomId) {
+    // 1. Get the data for the specific room ID
+    const room = roomData[roomId];
+    
+    if (!room) {
+        // Handle case where room ID is not found 
+        document.getElementById('room-description-panel').innerHTML = "<h3>Error: Room Not Found</h3><p>Please click a valid room on the map.</p>";
+        return;
+    }
+
+    // 2. Build the new HTML content
+    const newHTML = `
+        <h3 class="mb-3">${room.title}</h3>
+        <p>${room.description}</p>
+    `;
+
+    // 3. Inject the new HTML into the target div
+    // We use .innerHTML to completely replace the existing content.
+    document.getElementById('room-description-panel').innerHTML = newHTML;
+}
+
+// Attach Event Listeners on Load
+// document.addEventListener('DOMContentLoaded', () => {
+//     // 1. Get ALL the rooms that you want to be interactive
+//     const interactiveRooms = document.querySelectorAll('#first-room, #second-room, #third-room, #fourth-room'); 
+
+//     // 2. Loop through each room and attach the listener
+//     interactiveRooms.forEach(room => {
+//         room.addEventListener('click', function() {
+//             // 'this' refers to the specific room path that was clicked
+//             const roomId = this.id; 
+            
+//             // Call your function, passing the room's ID
+//             showRoomDescription(roomId);
+//         });
+//     });
+// });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Test with just ONE room using getElementById
+    const room1 = document.getElementById('first-room');
+
+    if (room1) {
+        // We know the element was found, so we can attach the listener
+        room1.addEventListener('click', function() {
+            showRoomDescription(this.id);
+            // Optional: Log to the console to confirm a click was registered
+            console.log("Clicked:", this.id); 
+        });
+    } else {
+        // Log an error if the element wasn't found (CRITICAL for debugging)
+        console.error("CRITICAL ERROR: 'first-room' SVG element not found in the DOM.");
+    }
+    
+    // You'd repeat the if(roomX) block for all other rooms
+});

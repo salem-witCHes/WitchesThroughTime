@@ -1078,10 +1078,7 @@ nav.navbar {
 }
 
 
-/* =========================================
-   CHRONOLOGY TIMELINE (Smart Logic Fix)
-   ========================================= */
-
+/* Chronology Timeline */
 .chronology-container {
     display: flex;
     flex-direction: column;
@@ -1115,30 +1112,27 @@ nav.navbar {
     z-index: 1;
 }
 
-/* --- THE LINE (Positioning Container) --- */
 .line {
     display: flex;
     width: 100%;
     margin-bottom: 40px;
     position: relative;
-    
-    /* DEFAULT: Align everything to the RIGHT side */
-    justify-content: flex-end; 
 }
 
-/* SMART LOGIC: If the line contains a card with class "left-card", move it LEFT */
-/* This overrides the default right alignment based on your specific HTML class */
-.line:has(.left-card) {
+/* Odd lines - right side */
+.line:nth-child(odd) {
+    justify-content: flex-end;
+}
+
+/* Even lines - left side */
+.line:nth-child(even) {
     justify-content: flex-start;
 }
 
-/* --- THE CARD (Internal Layout) --- */
+/* Card */
 .card {
     display: flex;
-    /* Force standard row direction. 
-       We trust your HTML structure (Text-First for Left, Image-First for Right) */
-    flex-direction: row !important; 
-    
+    flex-direction: row;
     border: 1px solid var(--Greyscale-900);
     border-radius: 12px;
     overflow: hidden;
@@ -1146,6 +1140,12 @@ nav.navbar {
     max-width: 100%;
     background: white;
     z-index: 3;
+}
+
+/* Left-side card (even) image */
+.left-card .picture {
+    border-radius: 12px 0 0 12px;
+    margin-left: 0;
 }
 
 /* Image */
@@ -1162,17 +1162,17 @@ nav.navbar {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 200;
     display: block;
 }
 
-/* Text section */
+/* Text section fills remaining space */
 .text {
     flex: 1;
     padding: 16px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: left; 
+    justify-content: center; /* vertically center the title */
 }
 
 .text-wrapper {
@@ -1180,7 +1180,12 @@ nav.navbar {
     font-family: "Times New Roman";
 }
 
-/* Black dot positioning */
+.div {
+    font-size: 20px;
+    font-family: "Times New Roman";
+}
+
+/* Black dot */
 .ellipse,
 .ellipse-2 {
     width: 20px;
@@ -1194,73 +1199,118 @@ nav.navbar {
     z-index: 0;
 }
 
-/* =========================================
-   MOBILE RESPONSIVENESS (Vertical Stack)
-   ========================================= */
 @media (max-width: 768px) {
-    
-    /* 1. Hide the central desktop line */
-    .timeline-lines::before {
-        display: none;
+/* Center the entire timeline content horizontally */
+    .timeline-lines {
+        /* Force full width and center children lines */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center all lines */
     }
 
-    /* 2. Force all lines to align to the Left */
+    /* 2. Make each card line take full width, and stack cards vertically */
     .line {
-        justify-content: flex-start !important;
-        flex-direction: row !important;
-        padding-left: 10px;
-        margin-bottom: 30px;
-        
-        /* Create a new timeline line on the far left */
-        border-left: 2px solid var(--Greyscale-900); 
-        margin-left: 10px;
-        padding-left: 20px; 
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Center the card horizontally */
+        align-items: flex-start;
+        margin-bottom: 20px; /* Add spacing between lines */
     }
 
-    /* 3. Position the Dot on the new Left Line */
-    .ellipse,
-    .ellipse-2 {
-        left: -11px; /* Center dot on the 2px border */
-        transform: none; 
-        top: 0; 
-        z-index: 5;
-    }
-    
-    /* 4. Stack Card Content Vertically */
+    /* 3. Make the card itself responsive and centered */
     .card {
+        /* Allow card to shrink, but stop at a readable minimum */
+        width: 85%; /* Use a large percentage of the screen width */
+        min-width: 250px; /* Don't allow it to shrink below this size */
+        /* Center the card if its width is less than 100% of its container */
+        margin: 0 auto; 
+        /* On mobile, cards should stack their content (image/text) vertically */
+        flex-direction: column;
+        align-self: center;
+    }
+
+    /* OVERRIDE SPECIFICITY TO CENTER CARDS *** */
+    .line:nth-child(odd),
+    .line:nth-child(even) {
+        justify-content: center; /* This overrides the flex-start/flex-end rules */
+    }
+    
+    /* 4. Fix image/text alignment within the card on mobile */
+    .card .picture, .card .text {
         width: 100%;
-        max-width: 100%;
-        margin: 0;
-        
-        /* Stack Image on Top, Text on Bottom */
-        flex-direction: column !important; 
-        height: auto; 
     }
-    
-    /* 5. Reset Image/Text Widths for Vertical Stack */
-    .card .picture, 
-    .card .text {
-        width: 100%;
-        flex: none; 
+    /* Fix image radius for stacked layout */
+    .card .picture {
+        /* Remove specific left-side rounding */
+        border-radius: 8px 8px 0 0; 
     }
-    
-    /* 6. Fix Image Height */
-    .picture {
-        height: 200px; 
+    .left-card .picture {
+        /* Override specific left-side rounding for consistency */
+        border-radius: 8px 8px 0 0; 
     }
-    
-    .card .picture img {
-        border-radius: 0; 
-    }
-    
-    /* 7. Ensure text is readable */
-    .text {
-        padding: 20px;
-        text-align: left !important;
+
+    /* put all captions at the bottom of the images */
+    .card.left-card {
+    flex-direction: column-reverse;
     }
 }
 
+/* -------------------------
+            MAP 
+---------------------------- */
+.map-container svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
+#first-room,
+#second-room,
+#third-room, 
+#fourth-room {
+  fill: var(--background-color) !important; /* Example default color */
+  stroke: none;
+  opacity: 0.8; 
+  transition: fill 0.3s, opacity 0.3s;
+}
+
+/* 2. Define the hover effect */
+#first-room:hover,
+#second-room:hover,
+#third-room:hover, 
+#fourth-room:hover {
+  /* This rule will override the default rule above */
+  fill: var(--Greyscale-50) !important; 
+  opacity: 1.0;
+  cursor: pointer;
+}
+
+#text-first-room, 
+#text-second-room, 
+#text-third-room, 
+#text-fourth-room {
+  font-family: var(--default-font);
+}
+
+#door1, 
+#door2, 
+#door3, 
+#door4, 
+#door5, 
+#door6, 
+#door7, 
+#door8, 
+#door9, 
+#door10, 
+#door11 {
+  fill: var(--background-color) !important;
+}
+
+.map-description {
+  border: 2px solid var(--Greyscale-900);
+  border-radius: 8px;
+}
 
 /* ITEM PAGE */
 /* Ensures the top row containers have equal height on desktop/tablet */
@@ -1316,7 +1366,5 @@ nav.navbar {
 .text-box {
     padding: 1.5rem;
 }
-
-
 
 
