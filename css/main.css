@@ -1361,8 +1361,7 @@ nav.navbar {
 
 /* Base style for all content containers */
 .item-box, .table-box, .text-box {
-    height: 100%; 
-    border: 1px solid var(--default-font-color);
+    height: 100%;
     overflow: hidden;
     padding: 1rem;
     box-sizing: border-box;
@@ -1370,6 +1369,7 @@ nav.navbar {
 
 .item-box {
     padding: 0;
+    aspect-ratio: 16/9;
 }
 
 .item-box img {
@@ -1381,13 +1381,13 @@ nav.navbar {
 }
 
 .table-box {
-    padding: 1.5rem; 
+    padding: 1.5rem;
+    height: 100%;
 }
 
 .table {
     width: 100%;
     margin: 0;
-    border: 1px solid var(--default-font-color);
     background-color: transparent; 
 }
 
@@ -1403,8 +1403,36 @@ nav.navbar {
     font-size: 1.1rem;
 }
 
-.text-box {
-    padding: 1.5rem;
+.text-box button {
+  display: inline-block;           /* allows padding and margins */
+  padding: 0.75rem 1.5rem;         /* button size */
+  border: 2px solid var(--default-font-color);  /* outlined look */
+  border-radius: 2rem;             /* rounded edges */
+  color: var(--default-font-color);
+  text-decoration: none;           /* remove underline */
+  font-weight: 600;
+  margin-top: 1.5rem;              /* spacing above the button */
+}
+
+.text-box button:hover {
+  background-color: var(--default-font-color);
+  color: var(--background-color);
+  /* transform: scale(1.05); */         /* subtle zoom */
+}
+
+.card-footer a {
+  border: 2px solid var(--default-font-color);  /* outlined look */
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;             /* rounded edges */
+  color: var(--default-font-color);
+  text-decoration: none;           /* remove underline */
+  font-weight: 600;
+  margin-top: 1.5rem;    
 }
 
 
+.card-footer a:hover {
+  background-color: var(--default-font-color);
+  color: var(--background-color);
+  /* transform: scale(1.05); */         /* subtle zoom */
+}

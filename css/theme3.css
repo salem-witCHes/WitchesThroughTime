@@ -303,6 +303,7 @@ footer p, footer a {
         border-radius: 0;
     }
 
+
     /* 2. FULL WIDTH HEADER COVERAGE (Covers red frame art below title) */
     .homepage header {
         max-width: none !important; 
@@ -330,14 +331,16 @@ footer p, footer a {
     .homepage header .nav-link {
         padding: 5px 15px !important; 
         font-size: 0.85rem; 
+        flex-shrink: 0;
     }
     
     /* Ensure scrollable content starts below the now-expanded header */
     #homepage-content {
         /* You will need to calculate the new scroll start based on the auto heights. 
            A safer temporary fix is to use a VH value until you can calculate the exact stack height. */
-        width: 75%; 
+        width: 75%;
     }
+
 
     /* For the container that holds the links (the grey pill) */
     .navbar-nav {
@@ -424,6 +427,7 @@ header .navbar {
     border: 2px solid var(--cursed-walnut);
 }
 
+
 .toggle-frame .toggle-knob {
     background-color: none !important;
 }
@@ -436,7 +440,6 @@ header .navbar {
     background-image: url('../img/art-nouveau/chronological-toggle.svg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
-
 }
 
 .toggle-frame .toggle-text {

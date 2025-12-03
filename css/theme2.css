@@ -222,6 +222,7 @@ p {
   padding: 1.5rem;
   /* Optional: ensure the padding doesn't make the box wider than 100% */
   box-sizing: border-box;
+  border: 2px solid var(--pale-olive);
 }
 
 .link-documentation a {

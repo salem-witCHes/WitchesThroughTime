@@ -125,7 +125,9 @@
                 <div class="row gx-0 mb-4 item-table">
                     <div class="col-12 col-md-6 col-lg-6 d-flex">
                         <div class="item-box w-100 me-md-2">
-                            <img src="img/collection/Circe.jpg" alt="Pop art style illustration of a woman screaming with vibrant colors">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" aria-label="Enlarge Image" class="d-block w-100 h-100">
+                                <img src="img/collection/Circe.jpg" alt="Circe" id="itemImage">
+                            </a>
                         </div>
                     </div>
 
@@ -153,20 +155,36 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row g-4 pb-4">
                     <div class="col-12">
                         <div class="text-box">
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                             </p>
+                            <button class="btn btn-sm mb-4" id="showLess" onclick="showLess()">Show less</button>
+                            <button class="btn btn-sm mb-4" id="showMore" onclick="showMore()">Show more</button>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <a href="#" type="button" class="btn m-auto" onclick="hideFullInfo()">Next</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="imageModalLabel">Enlarged View: Circe</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="img/collection/Circe.jpg" alt="Circe Full Size" class="img-fluid" style="max-height: 85vh; width: auto">
                         </div>
                     </div>
                 </div>
             </div>
 
-            
-            
             <div class="footer-separator"></div>
 
             <!-- Footer -->
