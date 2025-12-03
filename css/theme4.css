@@ -148,7 +148,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 10;
+    z-index: 2;
 }
 
 /* Mobile override */
@@ -172,18 +172,17 @@ body {
     /* Classic "Outset" Border (White Top/Left, Black Bot/Right) */
     border-top: 2px solid var(--win-white);
     border-left: 2px solid var(--win-white);
-    border-right: 2px solid var(--win-black);
-    border-bottom: 2px solid var(--win-black);
+    border-right: 2px solid var(--win-dark-grey);
+    border-bottom: 2px solid var(--win-dark-grey);
     
-    /* The bevel shadow inside the border */
-    box-shadow: 1px 1px 0px var(--win-dark-grey) inset;
     
-    padding: 4px; /* Internal spacing between border and content */
+    
+    padding: 0px; /* Internal spacing between border and content */
     
     /* Layout */
     display: flex;
     align-items: stretch; /* vital: makes image and text same height */
-    gap: 4px; /* Space between image and text box */
+    gap: 0px; /* Space between image and text box */
 }
 
 /* --- The Image Area --- */
@@ -193,10 +192,7 @@ body {
     flex-shrink: 0; /* Prevent shrinking */
     
     /* Classic "Inset" Border (Dark Top/Left, White Bot/Right) */
-    border-top: 2px solid var(--win-dark-grey);
-    border-left: 2px solid var(--win-dark-grey);
-    border-right: 2px solid var(--win-white);
-    border-bottom: 2px solid var(--win-white);
+    
     
     background-color: var(--win-white); /* White bg behind image */
     margin: 0; 
@@ -218,10 +214,7 @@ body {
     padding: 0; /* Remove padding so blue header touches edges */
     
     /* "Inset" Border matching the image style */
-    border-top: 2px solid var(--win-dark-grey);
-    border-left: 2px solid var(--win-dark-grey);
-    border-right: 2px solid var(--win-white);
-    border-bottom: 2px solid var(--win-white);
+    
     
     background: var(--win-grey);
 }
@@ -233,7 +226,9 @@ body {
     font-family: var(--default-font);
     font-size: 16px;
     line-height: 1.2;
-    padding: 8px; /* Internal padding for the title text */
+    padding: 4px; /* Internal padding for the title text */
+    border-right: 2px solid var(--win-dark-grey);
+    
     
     /* This ensures the wrapper fills the height if text is short */
     flex-grow: 1; 
@@ -272,7 +267,7 @@ body {
     padding: 8px 12px;
     
     /* Add a white divider line between Blue and Grey */
-    border-top: 2px solid var(--win-white); 
+    border-top: 2px solid var(--win-dark-grey); 
     
     /* Ensure it fills vertical space */
     flex-grow: 1; 
