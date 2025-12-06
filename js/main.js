@@ -304,3 +304,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+// Punk zine collage effect for title 
+const fonts = [
+  'Anton', 'Oswald', 'Impact', 'Bebas Neue', 'Rock Salt', 'Permanent Marker'
+];
+
+document.querySelectorAll('.punk-collage').forEach(t => {
+  const text = t.innerText.trim();
+  t.innerHTML = '';
+  [...text].forEach(letter => {
+    const span = document.createElement('span');
+    span.innerText = letter === ' ' ? '\u00A0' : letter;
+
+    span.style.setProperty('--font', fonts[Math.floor(Math.random() * fonts.length)]);
+    span.style.setProperty('--rot', (Math.random() * 12 - 6) + 'deg');
+
+    t.appendChild(span);
+  });
+});
+
+
+
