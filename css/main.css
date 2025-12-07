@@ -480,6 +480,22 @@ scale(0.1) = while moving, the element is dramatically shrunk to 10% of its orig
   visibility: visible;
 }
 
+/* --- DEFAULT STATE (Wide Navigation) --- */
+
+/* By default, HIDE the dropdown (compact) menu */
+#nav-group-more-compact {
+    display: none !important;
+}
+
+/* 2. SHOW the flat links: Use the correct Bootstrap display type */
+.navbar-nav #nav-item-about,
+.navbar-nav #nav-item-doc,
+.navbar-nav #nav-item-disc {
+    /* Use 'flex' (which is Bootstrap's standard) to ensure correct alignment */
+    display: flex !important; 
+}
+
+
 /* --- RESPONSIVE NAVBAR --- */
 @media (max-width: 991px) {
   #menuItems {

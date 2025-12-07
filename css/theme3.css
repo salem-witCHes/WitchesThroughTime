@@ -60,6 +60,49 @@ body.homepage {
 }
 
 
+
+/* HIDE the three flat link list items */
+.navbar-nav #nav-item-about,
+.navbar-nav #nav-item-doc,
+.navbar-nav #nav-item-disc {
+    /* Using !important here is often necessary to override Bootstrap's flex/display defaults */
+    display: none !important;
+}
+
+/* SHOW the dropdown group */
+.navbar-nav #nav-group-more-compact {
+    display: block !important; 
+}
+
+/* Ensure Dropdown items fit the aesthetic */
+.navbar-nav .dropdown-menu {
+    /* Set dropdown background to match the theme color */
+    background-color: var(--background-color); 
+    border: 2px solid var(--cursed-walnut);
+    border-radius: 8px;
+    padding: 0;
+    min-width: 100%; /* Ensure it's not too wide */
+}
+
+.navbar-nav .dropdown-item {
+    color: var(--cursed-walnut);
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: var(--witchflame-red);
+    color: var(--background-color);
+}
+
+header .navbar .nav-item.dropdown .nav-link {
+    /* Style the main "About" button in the dropdown group to match other buttons */
+    border: 1px solid var(--cursed-walnut);
+    border-radius: 8px;
+    color: var(--cursed-walnut);
+    padding: 0 15px !important;
+}
+
 .introduction { display: contents; }
 
 /* =========================================
