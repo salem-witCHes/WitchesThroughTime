@@ -365,3 +365,40 @@ footer a:hover {
   color: var(--neon-pink);
   transform: scale(1.10); 
 }
+
+
+/* -------------------------------
+        MAP 
+--------------------------------- */
+#museum-walls {
+  fill: var(--neon-pink);
+  stroke: #1D1D1D;
+}
+
+#text-first-room, 
+#text-second-room, 
+#text-third-room,
+#text-fourth-room {
+  font-family: var(--font-default) !important;
+  fill: var(--carbon-black) !important;
+  font-weight: 600;
+}
+
+/* Define the hover effect */
+#first-room:hover,
+#second-room:hover,
+#third-room:hover, 
+#fourth-room:hover {
+  /* This rule will override the default rule above */
+  fill: var(--vanilla-cream) !important; 
+}
+
+.map-description {
+  background-image: ;
+  /* border: 2px solid var(--); */
+  margin-top: 25px;
+}
+
+.map-description h2 {
+  text-transform: uppercase;
+}
