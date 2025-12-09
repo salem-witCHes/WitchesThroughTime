@@ -57,7 +57,7 @@ header {
   background: var(--background-color);
 }
 nav.navbar {
-  background: transparent;
+  background: var(--background-color);
 }
 
 
@@ -65,7 +65,7 @@ nav.navbar {
                    Navbar 
 ------------------------------------------ */
 .navbar-nav {
-    background-color: var(--surface-color);
+    background: var(--background-color);
 }
 
 .navbar-nav .nav-link {
@@ -105,12 +105,12 @@ footer a {
 
 .toggle-frame {
     /* Only setting theme-specific colors and fonts */
-    background: white;
+   background: var(--background-color);
 }
 
 .toggle-pill {
     border: 1px solid var(--Greyscale-900);
-    background: white;
+    background: transparent;
 }
 
 .toggle-knob {
@@ -127,7 +127,7 @@ footer a {
 
 .era-card {
     border: 1px solid var(--Greyscale-900);
-    background: var(--surface-color);
+    background: transparent;
 }
 
 .era-title {
