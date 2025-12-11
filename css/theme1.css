@@ -25,6 +25,9 @@
   --noise-color: rgba(0, 0, 0, 0.05); /* Noise Paper effect */
 }
 
+/* Apply noise only when Theme1 is active */
+/* --- Theme1 Noise Overlay --- */
+
 /* --- 2. Base Body Style and NOISE PAPER EFFECT --- */
 
 .eras-page {
@@ -32,40 +35,50 @@
     background: var(--background-color); 
     font-family: var(--default-font);
     position: relative; 
-    z-index: 1; 
+    z-index: -1; 
 }
 
-.eras-page::before {
-    content: '';
-    position: fixed; 
+body::before {
+    content: "";                 /* required for pseudo-element */
+    position: fixed;             /* stays in viewport */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; 
+    z-index: -1;                 /* behind all content */
+    pointer-events: none;        /* clicks pass through */
     
-    background-image: 
-        radial-gradient(var(--noise-color) 1px, transparent 0);
-    
-    background-size: 8px 8px; 
-    opacity: 1; 
-    pointer-events: none; 
+    background: url("../img/beige-noise.png") repeat;
+    background-size: cover;      /* or 'auto' if you want to repeat naturally */
+    opacity: 10;               /* subtle noise */
 }
 
 /* === STICKY HEADER & NAV COLORS === */
 header {
-  background: var(--background-color);
+  background: url("../img/beige-noise.png") repeat
 }
 nav.navbar {
-  background: var(--background-color);
+  background: url("../img/beige-noise.png") repeat;
 }
 
-
+/* Divider line under navbar */
+header::after {
+    content: "";
+    position: absolute; /* position relative to header */
+    bottom: 0;          /* stick it at the bottom of the header */
+    left: 50%;          /* center horizontally */
+    transform: translateX(-50%) translateY(-10%); /* slight upward shift */
+    width: 1000px;      /* or desired width */
+    height: 20px;       /* thickness */
+    background: url("../img/divider-line.svg") no-repeat center center;
+    background-size: contain;
+    z-index: 10002;        /* above navbar if needed */
+}
 /* --------------------------------------- 
                    Navbar 
 ------------------------------------------ */
 .navbar-nav {
-    background: var(--background-color);
+    background: url("../img/beige-noise.png") repeat;
 }
 
 .navbar-nav .nav-link {
@@ -89,9 +102,56 @@ nav.navbar {
 
 /* Layout options dropdown background */
 .navbar .layout-container .layout-options.active {
-    background: var(--Greyscale-900);
+    background: var(--vitali-tan);
+}
+/* Make sure each nav link is relative so pseudo-elements position correctly */
+.navbar-nav .nav-link {
+    position: relative;
+    font-weight: 900; /* default weight */
+    transition: font-weight 0.2s ease;
+    background: transparent !important;
+    border-radius: 0 !important;
+     font-size: 1.1rem;
+    
 }
 
+/* Only add bold + top/bottom lines, keep all main CSS styles */
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+    font-weight: 900;
+    text-shadow: 0.1px 0 var(--default-font-color), -0.1px 0 var(--default-font-color); 
+    color: var(--default-font-color) !important;  /* dark text */
+    font-size: 1.1rem;
+     /* bold text on hover/active */
+}
+
+/* Top line */
+.navbar-nav .nav-link.active::before,
+.navbar-nav .nav-link:hover::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    width: 80px;
+    height: 20px;
+    background: url('../img/line.svg') no-repeat center center;
+    background-size: contain;
+    transform: translateX(-50%);
+}
+
+/* Bottom line */
+.navbar-nav .nav-link.active::after,
+.navbar-nav .nav-link:hover::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    width: 80px;
+    height: 20px;
+    background: url('../img/line.svg') no-repeat center center;
+    background-size: contain;
+    transform: translateX(-50%);
+}
 
 /* ------------------------------------
                   Footer  
@@ -105,22 +165,36 @@ footer a {
 
 .toggle-frame {
     /* Only setting theme-specific colors and fonts */
-   background: var(--background-color);
+   background: url("../img/beige-noise.png") repeat;
+   overflow: hidden;
 }
 
 .toggle-pill {
     border: 1px solid var(--Greyscale-900);
     background: transparent;
+    border-radius: 0%;
 }
 
 .toggle-knob {
     background: var(--Greyscale-900);
+    border-radius: 0;
 }
 
+/* --- Toggle Text Lines & Bold --- */
 .toggle-text {
-    color: var(--default-font-color);
-    font-family: var(--heading-font); /* Using IM Fell English for contrast */
+    position: relative;
+    font-weight: 400;
+    transition: font-weight 0.2s ease;
+    line-height: 1;
+    display: inline-block; /* ensure pseudo-elements align to text width */
 }
+
+/* Hover / Active effect */
+.toggle-text:hover,
+.toggle-text.active-text {
+    font-weight: 900; /* bold text */
+}
+
 
 
 /* ----------------- Era Cards ----------------- */
@@ -128,8 +202,54 @@ footer a {
 .era-card {
     border: 1px solid var(--Greyscale-900);
     background: transparent;
+    position: relative; 
+    border-radius: 0%;
+}
+/* Top-left corner */
+.era-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px; /* adjust size */
+    height: 30px; /* adjust size */
+    background: url("../img/operello-left.svg") no-repeat center center;
+    background-size: contain;
 }
 
+/* Top-right corner */
+.era-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px; /* adjust size */
+    height: 30px; /* adjust size */
+    background: url("../img/operello-right.svg") no-repeat center center;
+    background-size: contain;
+}
+/* Bottom-left corner */
+/* Bottom-left corner */
+.era-card .bottom-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px; /* adjust size */
+    height: 30px;
+    background: url("../img/operello-left-down.svg") no-repeat center center;
+    background-size: contain;
+}
+
+/* Bottom-right corner */
+.era-card .bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px; /* adjust size */
+    height: 30px;
+    background: url("../img/operello-right-down.svg") no-repeat center center;
+    background-size: contain;
+}
 .era-title {
     color: var(--Greyscale-900);
     font-family: var(--heading-font); 
@@ -145,4 +265,28 @@ footer a {
     color: white;
     font-family: var(--default-font); /* Using main theme font */
     text-shadow: 2px 2px 4px rgba(0,0,0,1);
+}
+.ellipse,
+.ellipse-2 {
+    width: 32px;
+    height: 32px;
+    background: url("../img/pointers.svg") center/contain no-repeat;
+    border-radius: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+/* chronology Card */
+.card {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid var(--Greyscale-900);
+    border-radius: 0px;
+    overflow: hidden;
+    width: 500px;
+    max-width: 100%;
+    background: transparent;
+    z-index: 3;
 }

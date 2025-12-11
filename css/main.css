@@ -35,6 +35,7 @@ body {
     padding: 0;
     height: 100%;
     overflow-x: hidden;
+    position: relative;
 }
 
 /* headings (h1–h6) */
