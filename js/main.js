@@ -256,13 +256,13 @@ function showRoomDescription(roomId) {
     
     if (!room) {
         // Handle case where room ID is not found 
-        document.getElementById('room-description-panel').innerHTML = "<h3>Error: Room Not Found</h3><p>Please click a valid room on the map.</p>";
+        document.getElementById('room-description-panel').innerHTML = "<h2>Error: Room Not Found</h2><p>Please click a valid room on the map.</p>";
         return;
     }
 
     // 2. Build the new HTML content
     const newHTML = `
-        <h3 class="room-title">${room.title}</h3>
+        <h2 class="room-title">${room.title}</h2>
         <p class="room-description">${room.description}</p>
     `;
 

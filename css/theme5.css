@@ -6,8 +6,10 @@
 
 :root {
     /* fonts */
-    --font-default: "Oswald", sans-serif ;
-    --font-secondary: "Work Sans", sans-serif;
+    /* --font-default: "Oswald", sans-serif ; */
+    --font-headers: "Archivo Black", sans-serif;
+    --font-secondary: "Oswald", sans-serif ;
+    --font-default: "Work Sans", sans-serif;
 
     /* colors */
     --background-color: #f7f7f3;
@@ -48,8 +50,14 @@ body::before {
 }
 
 /* headings (h1–h6) */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-default);
+h1 {
+  font-family: var(--font-headers);
+  color: var(--neon-pink);
+  font-weight: 700;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
   color: var(--neon-pink);
   font-weight: 700;
   line-height: 1.2;
@@ -59,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* paragraphs */
 p {
-  font-family: var(--font-secondary);
+  font-family: var(--font-default);
   color: var(--carbon-black);
   font-size: 1rem;
   line-height: 1.6;
@@ -90,6 +98,8 @@ p {
     position: relative;
     padding-bottom: 4px; /* space for underline */
     color: var(--neon-pink);
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .navbar-nav .nav-link:hover {
@@ -279,7 +289,7 @@ footer a:hover {
   color: var(--background-color);
   text-decoration: none;
   font-size: clamp(1.3rem, 3.2vw, 2.8rem);
-  font-family: var(--font-default);
+  font-family: var(--font-headers);
   font-weight: bold;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -350,6 +360,7 @@ footer a:hover {
 
 /* Link to documentation */
 .link-documentation a {
+  font-family: var(--font-secondary);
   border: 2px solid var(--neon-pink);  /* outlined look */
   background-color: var(--neon-pink);
   box-shadow: 1px 1px 4px rgba(0,0,0,0.7);
@@ -379,7 +390,7 @@ footer a:hover {
 #text-second-room, 
 #text-third-room,
 #text-fourth-room {
-  font-family: var(--font-default) !important;
+  font-family: var(--font-secondary) !important;
   fill: var(--carbon-black) !important;
   font-weight: 600;
 }
@@ -401,4 +412,221 @@ footer a:hover {
 
 .map-description h2 {
   text-transform: uppercase;
+}
+
+/* --------------------------------
+    EXHIBITION PAGE 
+--------------------------------- */
+
+/* ----------------- Toggle Section ----------------- */
+
+.toggle-frame {
+    background-color: var(--background-color);    
+}
+
+.toggle-frame::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url(../img/70s-feminist-protests/asfalt-dark.png);
+    background-repeat: repeat;
+    opacity: 0.65;   /* adjust intensity */
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* Labels */
+.toggle-text {
+    font-size: 24px;
+    font-family: var(--font-headers);
+    color: var(--carbon-black);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.toggle-pill {
+  border: 2px solid var(--carbon-black);
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+  border-radius: 0%;
+  background: transparent;
+}
+
+.toggle-knob {
+  background: var(--neon-pink);
+  border-radius: 0%;
+  border: 2px solid var(--carbon-black);
+}
+
+#toggle-icon {
+  fill: var(--neon-pink) !important;
+}
+
+/* ----- Eras page ----- */
+
+.era-title {
+    font-family: var(--font-secondary);
+    color: var(--background-color);
+    border: 1px solid var(--neon-pink);
+    background-color: var(--neon-pink);
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    transform: rotate(-1deg); 
+    margin-bottom: 10px;
+    text-align: center;
+    padding: auto 2px;
+}
+
+.era-description {
+    font-family: var(--font-default);
+    color: var(--electric-cyan);
+}
+
+.era-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  background-color: var(--vanilla-cream);
+  border: none;
+  border-radius: 1px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.era-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../img/70s-feminist-protests/close-up-white-crumpled-paper.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.era-item-text {
+    color: var(--vanilla-cream);
+    font-family: var(--font-default);
+    text-shadow: none;
+    font-size: 12px; 
+    letter-spacing: 2px;
+    transform: rotate(1deg);
+    /* border: 1px solid var(--carbon-black); */
+    background-color: var(--carbon-black);
+    padding: 5px;
+}
+
+/* ----- Chronological page ----- */
+.chronology-container {
+  background: transparent;
+}
+
+.timeline-lines::before {
+    width: 5px;
+    background: var(--classic-crimson);
+}
+
+.ellipse,
+.ellipse-2 {
+    width: 40px;
+    height: 40px;
+    background: url("../img/70s-feminist-protests/pointer_timeline.svg") center/contain no-repeat;
+    border-radius: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.card {
+  background-color: var(--vanilla-cream);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../img/70s-feminist-protests/close-up-white-crumpled-paper.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.left-card::after,
+.right-card::after {
+  content: "";
+  position: absolute;
+  /* width: 10vw;
+  height: 5vw; */
+  width: 80px; /* Width of the tape strip */
+  height: 30px; /* Height/thickness of the tape strip */
+  background-color: rgba(77, 63, 41, 0.95); /* Translucent tan/masking tape color */
+  z-index: 99; /* Make sure the tape is on top of the image */
+  /* Add a subtle shadow to the tape to make it look raised */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  /* Use a simple border-radius to suggest slightly torn edges */
+  border-radius: 2px;
+}
+
+/* Tape in the bottom right */
+.left-card::after {
+    bottom: 145px; /* Pull it slightly over the bottom edge */
+    right: 220px;
+    /* Angle the tape slightly */
+    transform: rotate(-5deg); 
+}
+
+.right-card::after {
+  bottom: 145px; /* Pull it slightly over the bottom edge */
+  right: 220px;
+    /* Angle the tape slightly */
+  transform: rotate(5deg); 
+}
+
+/* Adjust tape positioning whith smaller screens */
+@media (max-width: 768px) {
+  .left-card::after {
+    bottom: -5px; /* Pull it slightly over the bottom edge */
+    right: -20px;
+    /* Angle the tape slightly */
+    transform: rotate(-5deg); 
+}
+
+.right-card::after {
+  top: -5px; /* Pull it slightly over the bottom edge */
+  left: -20px;
+    /* Angle the tape slightly */
+  transform: rotate(-10deg); 
+}
+}
+
+.text-wrapper {
+  font-family: var(--font-secondary);
+  text-align: center;
+  text-transform: uppercase;
+  padding: 2px;
+  color: var(--background-color);
+  background-color: var(--neon-pink);
+}
+
+.era-item-text {
+  color: var(--carbon-black);
+  font-family: var(--font-default);
+  text-shadow: 2px 2px 4px rgba(0,0,0,1);
 }
