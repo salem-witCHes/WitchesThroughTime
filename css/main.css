@@ -754,16 +754,11 @@ scale(0.1) = while moving, the element is dramatically shrunk to 10% of its orig
 /* ------------------------------------
                   FOOTER  
 -------------------------------------- */
-/* footer {
-  margin-top: 40px;
-  padding-top: 40px;
-} */
-
 .footer-separator {
     height: 2px;
     background: black;
     max-width: 90%; /* or 80%, or a fixed value like 1200px */
-    margin: 20px auto; /* centers the line */
+    margin: 40px auto; /* centers the line */
 }
 
 footer a {

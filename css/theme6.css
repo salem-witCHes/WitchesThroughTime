@@ -174,8 +174,14 @@ p {
   fill: var(--erin-green);
 }
 
+.trigger-style {
+  background-color: var(--erin-green);
+  filter: drop-shadow(0 0 7px var(--erin-green));
+}
+
 #resetTheme svg path {
-  fill: var(--erin-green);
+  fill: black !important;
+  stroke: black !important;
 }
 
 
@@ -207,6 +213,7 @@ footer a:hover {
   width: 100%;
   height: 20px;
   margin: 0 auto;
+  background-color: var(--background-color);
   background-image: var(--divider-nav);
   background-repeat: no-repeat;
   background-position: center;
@@ -218,7 +225,7 @@ footer a:hover {
 .thematic-divider-footer {
   width: 100%;
   height: 20px;
-  margin: 0 auto;
+  margin: 40px auto;
   background-image: var(--divider-footer);
   background-repeat: no-repeat;
   background-position: center;
@@ -583,15 +590,15 @@ footer a:hover {
     EXHIBITION PAGE 
 --------------------------------- */
 .toggle-frame {
-  background: transparent;
+  background: var(--background-color);
 }
 
 /* Labels */
 .toggle-text {
     font-size: 24px;
-    font-family: var(--font-secondary);
-    color: var(--erin-green) !important;
-    text-shadow: 0 0 8px var(--erin-green);
+    font-family: var(--font-default);
+    color: var(--magenta-glitch) !important;
+    text-shadow: 0 0 4px var(--magenta-glitch);
 }
 
 .toggle-pill {
@@ -603,8 +610,12 @@ footer a:hover {
   background: var(--erin-green);
 }
 
-#toggle-icon {
+#toggleIcon rect {
   fill: black !important;
+}
+
+#inactiveIcon path {
+  fill: var(--erin-green) !important;
 }
 
 /* ----- Eras page ----- */
@@ -678,7 +689,7 @@ footer a:hover {
   background: transparent;
 }
 
-.timeline-lines::before, .ellipse, .ellipse-2 {
+.timeline-lines::before {
   background: linear-gradient(180deg, var(--erin-green) 0%, var(--magenta-glitch) 100%);  
   /* background: var(--magenta-glitch); */
   box-shadow: 0 0 8px 0 var(--electric-cyan);
@@ -686,14 +697,17 @@ footer a:hover {
 
 .ellipse,
 .ellipse-2 {
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--magenta-glitch);
-  border-radius: 50%;
-  background: transparent;
-  box-shadow: 0 0 15px var(--electric-cyan),
-              inset 0 0 10px rgba(0, 255, 255, 0.5);
+    width: 60px;
+    height: 60px;
+    background: url("../img/cyberpunk_timeline_icons.svg") center/contain no-repeat;
+    border-radius: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
 }
+
 
 .card {
   background-color: black;
@@ -729,8 +743,14 @@ footer a:hover {
 }
 
 .text-wrapper {
-  font-family: var(--font-secondary);
+  font-family: var(--font-default);
   color: var(--electric-cyan);
+}
+
+.item-date {
+  font-family: var(--font-secondary);
+  color: var(--erin-green);
+  font-weight: 500;
 }
 
 .era-item-text {

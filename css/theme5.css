@@ -172,8 +172,14 @@ p {
   fill: var(--neon-pink);
 }
 
+.trigger-style {
+  background-color: var(--neon-pink);
+  border: 1px solid black;
+}
+
 #resetTheme svg path {
-  fill: var(--neon-pink) !important;
+  fill: black !important;
+  stroke: black !important;
 }
 
 
@@ -187,7 +193,7 @@ p {
 .thematic-divider-footer {
   width: 100%;
   height: 20px;
-  margin: 0 auto;
+  margin: 40px auto;
   background-image: url(../img/70s-feminist-protests/footer_divider.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -641,6 +647,12 @@ footer a:hover {
   padding: auto 2px;
   color: var(--background-color);
   background-color: var(--neon-pink);
+}
+
+.item-date {
+  margin-top: 10px;
+  color: var(--carbon-black);
+  font-weight: 500;
 }
 
 
