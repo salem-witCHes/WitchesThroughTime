@@ -45,6 +45,8 @@
     --brown: #7F552B;
 }
 
+
+
 /* The code below ensures that all elements are sized in this more intuitive way */
 * { box-sizing: border-box; }
 
@@ -100,6 +102,7 @@ header .navbar .nav-item.dropdown .nav-link {
     color: var(--cursed-walnut);
     padding: 0 15px !important;
 }
+
 
 .introduction { display: contents; }
 
@@ -182,6 +185,7 @@ header .navbar .nav-item.dropdown .nav-link {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .homepage header .nav-link,
@@ -222,6 +226,10 @@ header .navbar .nav-item.dropdown .nav-link {
     background-color: var(--background-color);
     border: 2px solid var(--cursed-walnut);
     border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    padding: 5px; /* Reduce internal padding */
+    border: 2px solid var(--cursed-walnut);
 }
 
 .navbar .layout-container .layout-button:hover {
@@ -232,6 +240,12 @@ header .navbar .nav-item.dropdown .nav-link {
     background-color: var(--background-color);
     border: 2px solid var(--cursed-walnut);
     border-radius: 8px;
+}
+
+/* Resize the icon inside the button */
+.navbar .layout-container .layout-button svg {
+    width: 20px;
+    height: 20px;
 }
 
 .trigger-style:hover {
@@ -421,6 +435,37 @@ footer p, footer a {
         display: none !important; 
     }
 }
+
+/* =========================================
+   ART NOUVEAU SPECIAL OVERRIDE
+   Force Hamburger Menu up to 1400px to avoid text overflow
+   ========================================= */
+
+/* 1. FORCE BOOTSTRAP TO BEHAVIOR LIKE MOBILE UP TO 1399px */
+@media (max-width: 1270px) {
+    
+    /* Force the Hamburger Button to stay visible */
+    .navbar-expand-lg .navbar-toggler {
+        display: block !important;
+    }
+
+    /* Force the Menu content to stay hidden (collapsed) by default */
+    .navbar-expand-lg .navbar-collapse {
+        display: none !important; 
+        flex-basis: 100%; 
+    }
+
+    /* Show the menu ONLY when the user clicks (Bootstrap adds the 'show' class) */
+    .navbar-expand-lg .navbar-collapse.show {
+        display: block !important;
+    }
+    
+    /* Ensure the items inside stack vertically */
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: column !important;
+    }
+}
+
 
 
 

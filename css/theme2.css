@@ -45,8 +45,28 @@ p {
   color: var(--pale-olive);
 }
 
-/* fog background */
 
+/* Update in your Romanticism CSS */
+.navbar-nav, 
+.card, 
+.introduction p, 
+.introduction-title {
+    /* Change 'solid' to 'double' and increase width to 4px or 6px */
+    border: 6px double var(--pale-olive) !important; 
+    
+    /* Keep the sharp corners */
+    border-radius: 0px; 
+}
+
+/* Add this to your CSS 
+.introduction p:first-of-type::first-letter {
+    font-family: var(--default-font);
+    font-size: 3.5rem;
+    float: left;
+    line-height: 0.8;
+    margin-right: 10px;
+    margin-top: 5px;
+*/
 
 /* Navbar */
 /* ------------------------------------------ */
@@ -179,6 +199,13 @@ p {
   filter: invert(59%) sepia(39%) saturate(2385%) hue-rotate(35deg) brightness(95%) contrast(90%);
 }
 
+/* .carousel-frame-wrapper .carousel-item img{
+  /* Turn it black & white, bump up contrast to mimic ink */
+ /* filter: grayscale(100%) contrast(150%) brightness(90%) sepia(30%);
+} */
+/* mask-image: radial-gradient(circle, black 70%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle, black 70%, transparent 100%); */
+
 /* replacing the black line */
 .introduction-title h2::after, .link-documentation h2::after {
   content: none;
@@ -248,15 +275,30 @@ p {
 }
 
 
+/* ERAS PAGE */
+
 /* Toggle Frame - centered under navbar */
 .toggle-frame {
     background: var(--background-color);
     color: var(--soft-ice);
 }
 
+.toggle-text {
+  color: var(--soft-ice);
+}
+
 /* Toggle Pill */
 .toggle-pill {
     border: 1px solid var(--soft-ice);
+    background-color: transparent;
+}
+
+#toggleIcon rect {
+  fill: var(--soft-ice);
+}
+
+#inactiveIcon path {
+  fill: var(--soft-ice);
 }
 
 /* Knob inside the pill */
@@ -268,6 +310,7 @@ p {
     border: 1px solid var(--pale-olive);
     border-radius: 0px;
     background: var(--forest-green);
+
 }
 
 .era-card-header .era-title {
@@ -283,7 +326,29 @@ p {
   color: var(--pale-olive);
 }
 
+.era-card {
+    /* 1. The Arch Shape */
+    /* Horizontal radius: 50% (meets in middle) */
+    /* Vertical radius: 80px (controls height of arch) */
+    border-top-left-radius: 50% 80px;
+    border-top-right-radius: 50% 80px;
+    
+    /* Keep bottom square */
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 
+    /* 2. The Border */
+    border: 6px double var(--pale-olive);
+    /* Remove top border if you want it open, or keep it for the frame */
+    
+    /* 3. Spacing */
+    padding-top: 60px; /* Crucial: Push text down */
+    padding-left: 20px;
+    padding-right: 20px;
+    
+    /* Optional: Background */
+    background-color: var(--forest-green);
+}
 
 /* chronological page */
 
