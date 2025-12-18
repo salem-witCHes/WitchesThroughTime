@@ -660,6 +660,11 @@ scale(0.1) = while moving, the element is dramatically shrunk to 10% of its orig
   /* transform: scale(1.05); */         /* subtle zoom */
 }
 
+/* cover the title-page on default */
+.title-page {
+  display: none;
+}
+
 /* Decorative line after heading */
 .documentation-title h2::after {
   content: "";
