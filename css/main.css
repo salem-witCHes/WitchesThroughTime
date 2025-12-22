@@ -325,8 +325,7 @@ scale(0.1) = while moving, the element is dramatically shrunk to 10% of its orig
     flex-shrink: 0;
 }
 
-.navbar-nav .nav-link,
-.navbar-nav .nav-item-about {
+.navbar-nav .nav-link {
   padding: 10px 24px !important;
   justify-content: center;
   gap: 10px;
@@ -481,14 +480,6 @@ scale(0.1) = while moving, the element is dramatically shrunk to 10% of its orig
   visibility: visible;
 }
 
-/* --- DEFAULT STATE (Wide Navigation) --- */
-
-/* By default, HIDE the dropdown (compact) menu */
-#nav-group-more-compact {
-    display: none !important;
-}
-
-
 /* --- RESPONSIVE NAVBAR --- */
 @media (max-width: 991px) {
   #menuItems {
@@ -626,7 +617,8 @@ scale(0.1) = while moving, the element is dramatically shrunk to 10% of its orig
   opacity: 1;
 }
 
-.introduction-title h2::after {
+.introduction-title h2::after,
+.documentation-title h2::after {
   content: "";
   display: block;
   width: 60px;             /* line length */
@@ -651,28 +643,13 @@ scale(0.1) = while moving, the element is dramatically shrunk to 10% of its orig
   color: var(--default-font-color);
   text-decoration: none;           /* remove underline */
   font-weight: 600;
-  margin-top: 1.5rem;              /* spacing above the button */
+  margin: 1.5rem;              /* spacing above the button */
 }
 
 .link-documentation a:hover {
   background-color: var(--default-font-color);
   color: var(--background-color);
   /* transform: scale(1.05); */         /* subtle zoom */
-}
-
-/* cover the title-page on default */
-.title-page {
-  display: none;
-}
-
-/* Decorative line after heading */
-.documentation-title h2::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 2px;
-  background: var(--default-font-color);
-  margin: 1em auto 1.2em;
 }
 
 

@@ -1,651 +1,411 @@
-/* =========================================
-   THE SLENDER SETUP
-   ========================================= */
+
+/* Fonts */
 :root {
-    /* Change this one number to resize the whole page width */
-    --base-width: 45%; 
-    
-    /* Vertical Heights */
-    --title-height: 75px;  
-    --nav-height: 60px;     
-    --header-gap: 10px;
-    --footer-height: 12vh;
-
-    /* DERIVED PIN: The total fixed height of the top section (Header + Toggle + all padding/gaps) */
-
-    /* Calculation breakdown:
-    H1 (Header) Height: var(--title-height) + var(--header-gap) (top) + 5px (bottom)
-    H2 (Toggle) Height: calc(var(--nav-height) + var(--header-gap))
-    Since H2's top is pinned *to* var(--title-height), the total height is:
-    (Title Height + Padding) + (Nav Height + Gap) - (Overlap/Shared space)
-
-    We can simplify this by using the 'top' and 'height' of the fixed elements:
-    Header ends at: 75px + 10px (header-gap) + 5px (padding-bottom) = 90px (approx)
-    Toggle starts at: 75px
-    Toggle height: 70px (60px + 10px)
-    Total Fixed Height (Bottom of Toggle): 75px (start) + 70px (height) = 145px
-    */
-
-    --fixed-top-height: calc(var(--title-height) + var(--nav-height) + var(--header-gap));
-
-    /* Where the content starts scrolling */
-    --scroll-start: calc(var(--title-height) + var(--nav-height) + var(--header-gap) + 15px);
-}
-
-:root {
-    --default-font: "Bocklin", sans-serif;
-    --text-font: "Playfair Display", serif;
+    --default-font: "Federo", sans-serif;
+    --text-font: "Josefin Sans", sans-serif;
 }
 
 /* Global Colors */
 :root {
-    --background-color: #E9D9B6;
-    --witchflame-red: #9F3F33;
-    --cursed-walnut: #4B342C;
-    --brown: #7F552B;
+    --warm-canvas: #F0E4CC;
+    --green-amber: #BAA346;
+    --hexed-walnut: #9D6C44;
+    --darker-brown: #845D34;
 }
 
 
-
-/* The code below ensures that all elements are sized in this more intuitive way */
-* { box-sizing: border-box; }
-
-body.homepage {
-    background-image: url("../img/art-nouveau/background.png");
-    background-color: var(--background-color);
+body {
+    background-image: url("../img/art-nouveau/background.jpg");
+    background-color: var(--warm-canvas);
     background-size: 100% 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    overflow: hidden; 
     font-family: var(--default-font);
-    color: var(--witchflame-red);
 }
 
-/* HIDE the three flat link list items */
-.navbar-nav #nav-item-about,
-.navbar-nav #nav-item-doc,
-.navbar-nav #nav-item-disc {
-    /* Using !important here is often necessary to override Bootstrap's flex/display defaults */
-    display: none !important;
-}
-
-/* SHOW the dropdown group */
-.navbar-nav #nav-group-more-compact {
-    display: block !important; 
-}
-
-/* Ensure Dropdown items fit the aesthetic */
-.navbar-nav .dropdown-menu {
-    /* Set dropdown background to match the theme color */
-    background-color: var(--background-color); 
-    border: 2px solid var(--cursed-walnut);
-    border-radius: 8px;
-    padding: 0;
-    min-width: 100%; /* Ensure it's not too wide */
-}
-
-.navbar-nav .dropdown-item {
-    color: var(--cursed-walnut);
-    padding: 8px 15px;
-    font-size: 0.9rem;
-}
-
-.navbar-nav .dropdown-item:hover {
-    background-color: var(--witchflame-red);
-    color: var(--background-color);
-}
-
-header .navbar .nav-item.dropdown .nav-link {
-    /* Style the main "About" button in the dropdown group to match other buttons */
-    border: 1px solid var(--cursed-walnut);
-    border-radius: 8px;
-    color: var(--cursed-walnut);
-    padding: 0 15px !important;
-}
-
-
-.introduction { display: contents; }
-
-/* =========================================
-   FIXED HEADER (NARROW)
-   ========================================= */
-
-/* title box */
-.introduction-title,
-.title-page {
+/* texture effect */
+body::after {
+    content: "";
     position: fixed;
-    top: 1vh;
-    left: 0; right: 0; margin: 0 auto;
+    inset: 0;
+    z-index: 9999; /* Sit on top of everything */
+    pointer-events: none; /* Let clicks pass through */
+
+    /* Two repeating gradients crossing each other */
+    background-image: 
+        repeating-linear-gradient(0deg, transparent 0px, transparent 2px, var(--hexed-walnut) 2px, var(--hexed-walnut) 3px),
+        repeating-linear-gradient(90deg, transparent 0px, transparent 2px, var(--hexed-walnut) 2px, var(--hexed-walnut) 3px);
     
-    /* APPLY MASTER WIDTH */
-    width: var(--base-width);
-    height: var(--title-height);
-    z-index: 1000;
-    
-    /* Border & Style */
-    border: 2px solid var(--cursed-walnut);
-    border-radius: 8px;
-    background-color: var(--background-color);
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 5px;
+    background-size: 4px 4px;
+    mix-blend-mode: multiply;
+    opacity: 0.05;
 }
 
-.introduction-title h1,
-.title-page h1 { 
-    font-size: 1.6rem; 
-    margin: 5px 0 0 0; 
-    color: var(--cursed-walnut);
-}
-.introduction-title h2,
-.title-page h2 { 
-    font-size: 0.9rem; 
-    margin: 2px 0 0 0; 
-    font-weight: normal; 
-    color: var(--cursed-walnut);
+/* headings (h1–h6) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--default-font);
+  color: var(--darker-brown);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: normal;
 }
 
-/* navbar */
-.homepage header,
-.map-page header {
-    position: fixed;
-    /* Starts immediately below the title (no gap here) */
-    top: var(--title-height); 
-    
-    left: 0; right: 0; margin: 0 auto;
-    width: var(--base-width);
-    
-    /* Must include the gap in its total height */
-    height: calc(var(--nav-height) + var(--header-gap));
-    
-    /* Fill the background gap with the chosen color */
-    background-color: var(--background-color); 
-    z-index: 900;
-    
-    /* Push the internal navbar pill down by the gap amount */
-    padding-top: var(--header-gap);
-    
-    display: flex;
-    justify-content: center;
-    /* IMPORTANT: Align items to the top so they start after the padding */
-    align-items: flex-start; 
+p {
+  font-family: var(--default-font);
+  color: var(--darker-brown);
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
 }
 
-.homepage header .navbar,
-.map-page header .navbar {
-    width: 100%;
-    height: 100%;
-    border: 2px solid var(--cursed-walnut);
-    background-color: var(--background-color);
-    border-radius: 8px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+header {
+  background-color: var(--warm-canvas);
+  border-bottom: 6px solid var(--hexed-walnut);
+  border-radius: 0px;
+  z-index: 99999;
 }
 
-.homepage header .nav-link,
-.map-page header .nav-link {
-    padding: 0 15px !important;
-    font-size: 0.9rem;
+.navbar-nav {
+    background-color: transparent;
 }
 
 /* Change style button and logo color */
 .navbar svg path {
-    fill: var(--cursed-walnut);
+    fill: var(--hexed-walnut);
 }
 
-.navbar-nav {
-    background-color: var(--background-color);
-    border-radius: 8px;
+.layout-container .layout-button svg path:hover {
+  fill: var(--warm-canvas);
 }
 
 .navbar-nav .nav-link {
-    border: 1px solid var(--cursed-walnut);
-    border-radius: 8px;
-    color: var(--cursed-walnut);
+  color: var(--darker-brown);
+  border: 2px solid var(--green-amber);
+  border-radius: 2px;
 }
 
 .navbar-nav .nav-link:hover {
   text-decoration: none;
-  background-color: var(--witchflame-red);
-  color: var(--background-color);
+  background-color: var(--green-amber);
+  color: var(--warm-canvas);
+  border: 2px solid var(--darker-brown);
 }
 
 .navbar .nav-link.active {
-  color: var(--background-color) !important;    /* important! to override the variable --bs-navbar-active-color */
-  text-decoration: none;
-  background-color: var(--witchflame-red);
+  color: var(--warm-canvas) !important;    /* important! to override the variable --bs-navbar-active-color */
+  background-color: var(--green-amber);
+  border: 2px solid var(--darker-brown);
 }
 
-.navbar .layout-container .layout-button {
-    background-color: var(--background-color);
-    border: 2px solid var(--cursed-walnut);
-    border-radius: 50px;
-    width: 40px;
-    height: 40px;
-    padding: 5px; /* Reduce internal padding */
-    border: 2px solid var(--cursed-walnut);
+
+
+.navbar .layout-container .layout-options {
+    background-color: var(--warm-canvas);
+    border: 4px solid var(--darker-brown);    /* frame color */
+    border-radius: 0px;                      /* round corners */
+    padding: 16px;
 }
 
 .navbar .layout-container .layout-button:hover {
-    background-color: var(--witchflame-red);
+    background-color: var(--green-amber);
 }
 
-.navbar .layout-options {
-    background-color: var(--background-color);
-    border: 2px solid var(--cursed-walnut);
-    border-radius: 8px;
+.navbar .layout-container .layout-button {
+  background-color: var(--warm-canvas);
+  border: 2px solid var(--darker-brown);
+  border-radius: 2px;
 }
 
-/* Resize the icon inside the button */
-.navbar .layout-container .layout-button svg {
-    width: 20px;
-    height: 20px;
-}
 
 .trigger-style:hover {
-    border-color: var(--witchflame-red);
+    border-color: var(--green-amber);
 }
 
 .trigger-style:hover .style-label { 
-    color: var(--background-color); 
+    color: var(--warm-canvas); 
 }
 
-/* scrollable content */
-
-#homepage-content {
-    position: fixed;
-    top: var(--scroll-start);
-    bottom: 12vh;
-    left: 0; right: 0; margin: 0 auto;
-    
-    /* APPLY MASTER WIDTH */
-    width: 80%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding-right: 10px; /* Space for scrollbar */
-}
-
-
-/* Content Styling */
-.carousel-frame-wrapper, 
-.introduction p,
-.link-documentation p {
-    width: 100%;
-    flex-shrink: 0;
+/* Carousel */
+/* ---------------------------------------- */
+.carousel-frame-wrapper {
+    width: 90%;
+    margin: 4rem auto;
 }
 
 .carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid var(--cursed-walnut);
+  border: 6px solid var(--hexed-walnut);
+  border-radius: 2px;
 }
 
-.introduction p, .link-documentation p {
-    background-color: var(--background-color);
-    padding: 1.5rem;
-    text-align: justify;
-    font-family: var(--text-font);
-    color: var(--cursed-walnut);
-    font-size: 1rem;
-    margin: 0 auto;
+.carousel-caption {
+  background-color: var(--green-amber);
+  border: 2px solid var(--hexed-walnut);
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  /* This creates the space between the squares and the text */
+  gap: 5px;
 }
 
-.introduction-title h2::after {
-  content: none;
+.carousel-caption::before,
+.carousel-caption::after {
+  content: "";
+  display: block;
+  /* We want 3 squares. Let's say each square is 12px high. 
+     3 squares + 2 gaps = roughly 45px - 50px height. */
+  height: 30px; 
+  width: 10px; /* Width determines the 'squareness'. Adjust this to match the block height visually */
+  
+  background-color: var(--warm-canvas);
+
+  /* This gradient creates a stripe: Black (visible) then Transparent (gap) */
+  -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 65%);
+  mask-image: linear-gradient(to bottom, black 65%, transparent 65%);
+  
+  /* Size of one "Square + Gap" unit. 33.33% means it repeats exactly 3 times in 100% height */
+  -webkit-mask-size: 100% 33.33%;
+  mask-size: 100% 33.33%;
+  -webkit-mask-repeat: repeat-y;
+  mask-repeat: repeat-y;
 }
 
+.carousel-caption a {
+  color: var(--warm-canvas);
+  font-weight: normal;
+  text-shadow: none;
+  line-height: 1; 
+  font-size: 32px; /* Adjust this until it looks visually equal to the squares */
+  font-weight: 300; /* Keeps it elegant/thin */
+  letter-spacing: 0.1em;
+}
+
+.carousel-caption a:hover {
+  color: var(--darker-brown);
+  transform: none;
+}
+
+/* --- MOBILE STYLES (Max Width 576px) --- */
+/* --- MOBILE STYLES (Max Width 576px) --- */
+@media (max-width: 576px) {
+  
+  .carousel-caption {
+    /* 1. POSITIONING (Back to Left) */
+    right: auto !important;
+    left: 5% !important;
+    bottom: 5% !important;
+    
+    /* 2. FORCE NO WRAPPING */
+    white-space: nowrap; /* This stops the text from stacking */
+    width: fit-content;  /* Shrink the box to fit the text exactly */
+    max-width: 90%;      /* Safety limit */
+    
+    /* 3. REDUCE SPACING */
+    padding: 6px 12px; 
+    gap: 8px;
+  }
+
+  .carousel-caption a {
+    /* 4. TEXT SIZE (Must be small to fit on one line) */
+    /* 0.9rem is approx 14px. If it still wraps, try 0.8rem */
+    font-size: 0.9rem !important; 
+    line-height: 1;
+  }
+
+  /* 5. SQUARE SIZING (Proportional to small text) */
+  /* Height: 15px (3 x 5px squares) | Width: 5px */
+  .carousel-caption::before,
+  .carousel-caption::after {
+    height: 15px !important;
+    width: 5px !important;
+  }
+}
+
+.introduction-title h2::after,
 .link-documentation h2::after {
-    background: var(--cursed-walnut);
+  content: "";
+  display: block;
+  margin: 1em auto 1.5rem;                  /* spacing and centering */
+  width: 160px;  
+  height: 16px; /* Height of the square */
+  background-color: transparent !important;
+  
+  /* THE SQUARE PATTERN */
+  /* This draws a square (color) and a gap (transparent) */
+  background-image: linear-gradient(
+      to right, 
+      var(--green-amber) 50%, 
+      transparent 50%
+  );
+  
+  /* Control the size: 16px width means 8px color / 8px transparent */
+  background-size: 32px 100%;
+  background-repeat: repeat-x;
 }
 
-.link-documentation h2 {
-    color: var(--cursed-walnut);
+.introduction-title h1 {
+  margin-bottom: 0;
 }
 
-
-.footer {
-    position: fixed;
-    bottom: 3vh; /* Start where the scrolling content ends */
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: var(--base-width);
-    height: 8vh; /* The space we reserved above */
-    
-    /* Ensure it has the background to hide the frame */
-    background-color: var(--background-color); 
-    z-index: 100;
-    
-    /* Add any other styling needed for the footer content */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--cursed-walnut);
+.introduction-title h2 {
+  margin-top: 5px;
 }
 
-footer p, footer a {
-    font-family: var(--text-font);
-
+.introduction,
+.link-documentation {
+  background-color: var(--warm-canvas);
+  border: 2px solid var(--hexed-walnut);
+  border-radius: 2px;
+  padding: 30px;
 }
 
-/* Scrollbar */
-#homepage-content::-webkit-scrollbar { width: 6px; }
-#homepage-content::-webkit-scrollbar-track { background: transparent; }
-#homepage-content::-webkit-scrollbar-thumb { background-color: var(--cursed-walnut); border-radius: 8px; }
+/* 
+.link-documentation {
+  transform: rotate(-0.5deg);
+} */
 
-.page-content::-webkit-scrollbar { width: 6px; }
-.page-content::-webkit-scrollbar-track { background: transparent; }
-.page-content::-webkit-scrollbar-thumb { background-color: var(--cursed-walnut); border-radius: 8px; }
-
-@media (max-width: 768px) {
-    
-    /* Covers top frame art */
-    .introduction-title,
-    .title-page {
-        max-width: none !important; 
-        width: 100vw !important; /* Force full width, overriding desktop var */
-        top: 0px;
-        
-        /* Add background and padding to cover the red frame art */
-        background-color: var(--background-color) !important;
-        padding-top: 25px;
-        
-        /* Remove desktop border, looks cleaner when it's full width */
-        border: none;
-        border-radius: 0;
-    }
-
-
-    /* 2. FULL WIDTH HEADER COVERAGE (Covers red frame art below title) */
-    .homepage header,
-    .map-page header {
-        max-width: none !important; 
-        width: 100vw !important; /* Force full width, overriding desktop var */
-        
-        /* Add background and padding to cover the red frame art */
-        background-color: var(--background-color) !important; 
-        padding-top: 15px;
-        height: auto;
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-        border-bottom: 2px solid var(--cursed-walnut)
-    }
-    
-    /* Ensure the inner navbar container (the pill) is centered and constrained */
-    .homepage header .navbar,
-    .map-page header .navbar {
-        width: 90%; /* Constrain the inner content */
-        margin: 0 auto; /* Center the inner content */
-        height: auto; 
-        
-        /* Remove desktop border, looks cleaner */
-        border: none;
-    }
-
-    .homepage header .nav-link,
-    .map-page header .nav-link {
-        padding: 5px 15px !important; 
-        font-size: 0.85rem; 
-        flex-shrink: 0;
-    }
-    
-    /* Ensure scrollable content starts below the now-expanded header */
-    #homepage-content {
-        /* You will need to calculate the new scroll start based on the auto heights. 
-           A safer temporary fix is to use a VH value until you can calculate the exact stack height. */
-        width: 75%;
-    }
-
-
-    /* For the container that holds the links (the grey pill) */
-    .navbar-nav {
-      gap: 12px;
-    }
-    
-    .footer {
-        /* Ensure footer also goes full width */
-        width: 100vw !important;
-        left: 0 !important; right: 0 !important; margin: 0;
-        bottom: 0 !important;
-        height: 12vh;
-    }
-
-    /* HIDE the three flat link list items */
-    .navbar-nav #nav-item-about,
-    .navbar-nav #nav-item-doc,
-    .navbar-nav #nav-item-disc {
-        /* Using !important here is often necessary to override Bootstrap's flex/display defaults */
-        display: block !important;
-    }
-
-    /* SHOW the dropdown group */
-    .navbar-nav #nav-group-more-compact {
-        display: none !important; 
-    }
+.link-documentation a {
+  border: 2px solid var(--hexed-walnut);  /* outlined look */
+  color: var(--hexed-walnut);
 }
 
-/* =========================================
-   ART NOUVEAU SPECIAL OVERRIDE
-   Force Hamburger Menu up to 1400px to avoid text overflow
-   ========================================= */
-
-/* 1. FORCE BOOTSTRAP TO BEHAVIOR LIKE MOBILE UP TO 1399px */
-@media (max-width: 1270px) {
-    
-    /* Force the Hamburger Button to stay visible */
-    .navbar-expand-lg .navbar-toggler {
-        display: block !important;
-    }
-
-    /* Force the Menu content to stay hidden (collapsed) by default */
-    .navbar-expand-lg .navbar-collapse {
-        display: none !important; 
-        flex-basis: 100%; 
-    }
-
-    /* Show the menu ONLY when the user clicks (Bootstrap adds the 'show' class) */
-    .navbar-expand-lg .navbar-collapse.show {
-        display: block !important;
-    }
-    
-    /* Ensure the items inside stack vertically */
-    .navbar-expand-lg .navbar-nav {
-        flex-direction: column !important;
-    }
+.link-documentation a:hover {
+  background-color: var(--green-amber);
+  color: var(--warm-canvas);
 }
 
 
 
-
-/* OTHER PAGES */
-
-body {
-    background-image: url("../img/art-nouveau/background.png");
-    background-color: var(--background-color);
-    background-size: 100% 100%;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    overflow: hidden; 
-    font-family: var(--default-font);
-    color: var(--witchflame-red);
+/* MAP PAGE */
+.map {
+  padding: 20px;
 }
 
-
-/* navbar */
-header {
-    position: fixed;
-    top: 0vh;
-    left: 0; right: 0; margin: 0 auto;
-    width: var(--base-width);
-    height: var(--title-height);
-    background-color: var(--background-color); 
-    z-index: 1000;
-    padding-top: var(--header-gap);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* Align items to the top so they start after the padding */
-    align-items: flex-start;
-    padding-bottom: 5px;
+.map-description {
+  background-color: var(--warm-canvas);
+  border: 2px solid var(--hexed-walnut);
+  border-radius: 2px;
 }
 
-header .navbar {
-    width: 100%;
-    height: 100%;
-    border: 2px solid var(--cursed-walnut);
-    background-color: var(--background-color);
-    border-radius: 8px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.map-container svg {
+    /* This creates a circle background image behind the SVG paths */
+    background: radial-gradient(
+        circle closest-side at 50% 50%, /* Position: Center X, Center Y */
+        var(--warm-canvas) 0%,                       /* Color starts at center */
+        var(--warm-canvas) 95%,                      /* Color stays solid until edge */
+        transparent 96%                   /* Becomes transparent immediately outside */
+    );
 }
 
-.eras-page header .nav-link, .chronological-page header .nav-link,
-.item-page header .nav-link, .map-page header .nav-link {
-    padding: 0 15px !important;
-    font-size: 0.9rem;
+#door1,
+#door2,
+#door3,
+#door4,
+#door5,
+#door6,
+#door7,
+#door8,
+#door9,
+#door10,
+#door11 {
+  fill: var(--warm-canvas) !important;
 }
 
-/* eras page */
+#museum-walls {
+  fill: var(--darker-brown);
+}
+
+#entrance-door {
+  stroke: var(--hexed-walnut);
+}
+
+#first-room,
+#second-room,
+#third-room,
+#fourth-room {
+  fill: var(--warm-canvas) !important; /* Example default color */
+  stroke: none;
+  opacity: 0.8;
+  transition: fill 0.3s, opacity 0.3s;
+}
+
+#text-first-room, 
+#text-second-room, 
+#text-third-room, 
+#text-fourth-room {
+  font-family: var(--default-font) !important;
+  fill: var(--darker-brown) !important;
+  font-weight: 600;
+}
+
+/* Define the hover effect */
+#first-room:hover,
+#second-room:hover,
+#third-room:hover, 
+#fourth-room:hover {
+  /* This rule will override the default rule above */
+  fill: var(--green-amber) !important;
+}
+
+#first-room:hover + #text-first-room,
+#second-room:hover + #text-second-room,
+#third-room:hover + #text-third-room, 
+#fourth-room:hover + #text-fourth-room {
+  fill: var(--warm-canvas) !important;
+} 
+
+
+/* CHRONOLOGICAL PAGE */
+.chronology-container {
+    background-color: transparent;
+}
+
+/* Central vertical line */
+.timeline-lines::before {
+    background: var(--hexed-walnut);
+    z-index: 0;
+}
+
 .toggle-frame {
-    position: fixed;
-    top: var(--title-height); /* positioned after the navbar */
-    left: 0; right: 0; margin: 0 auto;
-    border: 2px solid var(--cursed-walnut);
-    border-radius: 8px;
-    
-    /* APPLY MASTER WIDTH */
-    width: var(--base-width);
-    height: calc(var(--nav-height) + var(--header-gap));
-    padding-top: var(--header-gap);
-    background: var(--background-color);
-    gap: 20px;
+  background-color: var(--green-amber);
+  border: 2px solid var(--hexed-walnut);
+  border-radius: 0px;
+  z-index: 10000; /* above the small grid effect of the whole body */
+}
+
+.toggle-text {
+    font-family: var(--default-font);
+    color: var(--warm-canvas) !important;
 }
 
 .toggle-pill {
-    width: 128px;
-    height: calc(var(--nav-height) - 5px);
-    border: 2px solid var(--cursed-walnut);
+  background-color: transparent ;
+  border: 4px dotted var(--warm-canvas);
+  border-radius: 0px;
+
 }
 
-.toggle-frame .toggle-knob {
-    background-color: none !important;
+.toggle-knob {
+  background: transparent;
 }
 
-.toggle-frame .toggle-knob img {
-    display: none;
+#toggleIcon rect {
+  fill: var(--hexed-walnut) !important;
 }
 
-.toggle-pill .toggle-knob {
-    background-image: url('../img/art-nouveau/chronological-toggle.svg');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+#inactiveIcon path {
+  fill: var(--warm-canvas) !important;
 }
 
-.toggle-frame .toggle-text {
-    font-family: var(--default-font);
-}
-
-.inactive-icon img {
-    display: none;
-}
-
-.inactive-icon {
-    background-image: url('../img/art-nouveau/era-toggle.svg');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-color: none;
-}
-
-/* Ensure all ERA cards have equal height and 4 cards per row */
-.page-content {
-    position: fixed;
-    top: var(--scroll-start);
-    bottom: var(--footer-height);
-    left: 0; right: 0; margin: 0 auto;
-    width: 80%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding-bottom: 20px;
-    padding-right: 10px; /* Space for scrollbar */
-}
-
-.era-card {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 100%;
-    width: 100%;
-    min-width: 0;
-    padding: 12px 16px;
-    border: 2px solid var(--cursed-walnut);
-    border-radius: 16px;
-    gap: 12px;
-    background: var(--background-color);
-    box-sizing: border-box;
-    height: 100%;
-}
-
-.era-title {
-    font-family: var(--default-font);
-    color: var(--witchflame-red);
-}
-
-.era-description {
-    font-family: var(--text-font);
-    color: var(--cursed-walnut);
-}
-
-/* Text overlay */
-.era-item-text {
-    color: var(--background-color);
-    font-family: var(--text-font);
-}
-
-
-/* chronological page */
-.chronology-container {
-    background-color: var(--background-color);
-}
-/* Central vertical line */
-.timeline-lines::before {
-    background: var(--cursed-walnut);
-    transform: translateX(-50%);
-    z-index: 1;
-}
-
-/* Card */
 .card {
-    border: 2px solid var(--cursed-walnut);
-    border-radius: 8px;
-    overflow: hidden;
-    width: 500px;
-    background: var(--background-color);
-    z-index: 3;
+    background-color: var(--warm-canvas);
+    border: 2px solid var(--hexed-walnut);
+    border-radius: 2px;
 }
 
-/* Left-side card (even) image */
-.left-card .picture {
-    border-radius: 12px 0 0 12px;
-    margin: 0 auto;
-}
-
-/* Text section fills remaining space */
 .text {
     flex: 1;
     padding: 16px;
@@ -657,151 +417,83 @@ header .navbar {
 .text-wrapper {
     font-size: 24px;
     font-family: var(--default-font);
-    color: var(--witchflame-red);
+    color: var(--darker-brown);
+    text-transform: uppercase;
 }
 
-.text-wrapper i {
-    color: var(--cursed-walnut);
-    font-family: var(--text-font);
+.item-date {
+  font-family: var(--default-font);
+  color: var(--darker-brown);
+  font-style: normal;
+  display: inline-flex;   /* Forces children into a row */
+  align-items: center;    /* Vertically centers the squares with the text */
+  gap: 5px;
 }
 
-/* Black dot */
+
+.item-date::before,
+.item-date::after {
+  content: "";
+  display: block;
+  /* We want 3 squares. Let's say each square is 12px high. 
+     3 squares + 2 gaps = roughly 45px - 50px height. */
+  height: 15px; 
+  width: 5px; /* Width determines the 'squareness'. Adjust this to match the block height visually */
+  background-color: var(--hexed-walnut);
+  --mask-pattern: linear-gradient(to bottom, black 60%, transparent 60%);
+  -webkit-mask-image: var(--mask-pattern);
+  mask-image: var(--mask-pattern);
+  /* 33.33% height ensures exactly 3 squares fit in 100% height */
+  -webkit-mask-size: 100% 33.33%;
+  mask-size: 100% 33.33%;
+  
+  -webkit-mask-repeat: repeat-y;
+  mask-repeat: repeat-y;
+
+}
+
 .ellipse,
 .ellipse-2 {
-    width: 20px;
-    height: 20px;
-    background: var(--cursed-walnut);
-    border-radius: 50%;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    z-index: 0;
+    background: var(--darker-brown);
+    border: 2px solid var(--warm-canvas);
+    border-radius: 2px;
 }
 
-@media (max-width: 768px) {
 
-    /* Covers top frame art */
-    header {
-        max-width: none !important; 
-        width: 100vw !important; /* Force full width, overriding desktop var */
-        top: 0px;
-        background-color: var(--background-color) !important;
-        padding-top: 25px;
-        border: none;
-        border-radius: 0;
-    }
+/* ERAS PAGE */
 
-    .toggle-frame {
-        max-width: none !important; 
-        flex-direction: row !important;
-        width: 100vw !important; /* Force full width, overriding desktop var */
-        
-        /* Add background and padding to cover the red frame art */
-        background-color: var(--background-color) !important; 
-        border: none;
-        border-radius: 0;
-        padding-top: 15px;
-        height: auto;
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-        border-bottom: 2px solid var(--cursed-walnut)
-    }
-
-    
-    /* Ensure the inner navbar container (the pill) is centered and constrained */
-    .eras-page header .navbar,
-    .chronological-page header .navbar {
-        width: 90%; /* Constrain the inner content */
-        margin: 0 auto; /* Center the inner content */
-        height: auto;
-        border: none;
-    }
-
-    .eras-page header .nav-link,
-    .chronological-page header .nav-link {
-        padding: 5px 15px !important; 
-        font-size: 0.85rem; 
-    }
-    
-    /* Ensure scrollable content starts below the now-expanded header */
-    #homepage-content {
-        /* You will need to calculate the new scroll start based on the auto heights. 
-           A safer temporary fix is to use a VH value until you can calculate the exact stack height. */
-        width: 75%; 
-    }
-
-    /* For the container that holds the links (the grey pill) */
-    .navbar-nav {
-      gap: 12px;
-    }
-    
-    .footer {
-        /* Ensure footer also goes full width */
-        width: 100vw !important;
-        left: 0 !important; right: 0 !important; margin: 0;
-        bottom: 0 !important;
-        height: 12vh;
-    }
-    
-    /* Center the entire timeline content horizontally */
-    .timeline-lines {
-        /* Force full width and center children lines */
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Center all lines */
-    }
-
-    /* 2. Make each card line take full width, and stack cards vertically */
-    .line {
-        width: 100%;
-        display: flex;
-        justify-content: center; /* Center the card horizontally */
-        align-items: flex-start;
-        margin-bottom: 20px; /* Add spacing between lines */
-    }
-
-    /* 3. Make the card itself responsive and centered */
-    .card {
-        /* Allow card to shrink, but stop at a readable minimum */
-        width: 85%; /* Use a large percentage of the screen width */
-        min-width: 250px; /* Don't allow it to shrink below this size */
-        /* Center the card if its width is less than 100% of its container */
-        margin: 0 auto; 
-        /* On mobile, cards should stack their content (image/text) vertically */
-        flex-direction: column;
-        align-self: center;
-    }
-
-    /* OVERRIDE SPECIFICITY TO CENTER CARDS *** */
-    .line:nth-child(odd),
-    .line:nth-child(even) {
-        justify-content: center; /* This overrides the flex-start/flex-end rules */
-    }
-    
-    /* 4. Fix image/text alignment within the card on mobile */
-    .card .picture, .card .text {
-        width: 100%;
-    }
-
-    /* Fix image radius for stacked layout */
-    .card .picture {
-        /* Remove specific left-side rounding */
-        border-radius: 8px 8px 0 0; 
-    }
-    .left-card .picture {
-        /* Override specific left-side rounding for consistency */
-        border-radius: 8px 8px 0 0; 
-    }
-
-
-    /* put all captions at the bottom of the images */
-    .card.left-card {
-    flex-direction: column-reverse;
-    }
+/* add padding-bottom to container eras */
+.era-card {
+    border: 2px solid var(--hexed-walnut);
+    border-radius: 2px;
+    background: var(--warm-canvas);
 }
 
-/* toggle height + background
-navbar hamburger menu on small screen */
+.era-title {
+    font-family:var(--default-font);
+    color: var(--darker-brown);
+    letter-spacing: 0.1em;
+    font-weight: normal;
+    text-transform: uppercase;
+}
 
+.era-description {
+    font-family: var(--darker-brown);
+    color: var(--darker-brown);
+}
+
+.era-item {
+    border-radius: 2px;
+    border: 2px dotted var(--green-amber);
+}
+
+/* Text overlay */
+.era-item-text {
+    width: fit-content;
+    background-color: var(--warm-canvas);
+    border: 1px solid var(--darker-brown);
+    border-radius: 2px;
+    color: var(--darker-brown);
+    font-family: var(--default-font);
+    text-shadow: none;
+}

@@ -46,7 +46,6 @@ p {
 }
 
 
-/* Update in your Romanticism CSS */
 .navbar-nav, 
 .card, 
 .introduction p, 
@@ -57,16 +56,6 @@ p {
     /* Keep the sharp corners */
     border-radius: 0px; 
 }
-
-/* Add this to your CSS 
-.introduction p:first-of-type::first-letter {
-    font-family: var(--default-font);
-    font-size: 3.5rem;
-    float: left;
-    line-height: 0.8;
-    margin-right: 10px;
-    margin-top: 5px;
-*/
 
 /* Navbar */
 /* ------------------------------------------ */
