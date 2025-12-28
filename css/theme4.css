@@ -730,3 +730,7 @@ footer {
     background-color: var(--win-grey);
     box-shadow: none;
 }
+
+.navbar .layout-container .layout-options.active {
+    background: var(--win-grey);
+}

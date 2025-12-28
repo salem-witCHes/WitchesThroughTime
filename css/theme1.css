@@ -361,3 +361,68 @@ footer a {
     background: url("../img/operello-right-down.svg") no-repeat center;
     background-size: contain;
 }
+
+.introduction-title h2::after, .documentation-title h2::after {
+    content: "";
+    width: 600px;
+    height: 25px;
+    background: url("../img/divider-line.svg")no-repeat center;
+    margin: 1em auto 1em;
+}
+    
+/* ----------------- Link Documentation Button ----------------- */
+.link-documentation a {
+    position: relative;              /* ensures pseudo-elements position relative to link */
+    display: inline-block;           /* allows proper sizing for pseudo-elements */
+    font-family: var(--default-font);
+    font-weight: 400;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: var(--default-font-color) !important; /* ensures text is visible */
+    border: 0;
+    background: none !important;
+    box-shadow: none !important;
+    transition: font-weight 0.2s ease;
+}
+
+/* Hover / Active effect */
+.link-documentation a:hover {
+    font-weight: 900; /* bold text on hover */
+    color: var(--default-font-color) !important; /* prevent disappearing */
+}
+
+/* Top line */
+.link-documentation a::before {
+    content: "";
+    position: absolute;
+    top: -6px;                /* adjust distance from text */
+    left: 50%;                /* center horizontally */
+    width: 80px;              /* adjust line width */
+    height: 20px;             /* adjust line height */
+    background: url("../img/line.svg") no-repeat center center;
+    background-size: contain;
+    transform: translateX(-50%);
+    opacity: 0;               /* hidden by default */
+    transition: opacity 0.3s ease;
+}
+
+/* Bottom line */
+.link-documentation a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;             /* adjust distance from text */
+    left: 50%;                /* center horizontally */
+    width: 80px;              /* adjust line width */
+    height: 20px;             /* adjust line height */
+    background: url("../img/line.svg") no-repeat center center;
+    background-size: contain;
+    transform: translateX(-50%);
+    opacity: 0;               /* hidden by default */
+    transition: opacity 0.3s ease;
+}
+
+/* Show lines on hover */
+.link-documentation a:hover::before,
+.link-documentation a:hover::after {
+    opacity: 1;               /* show lines */
+}
