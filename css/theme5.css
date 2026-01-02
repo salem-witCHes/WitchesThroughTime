@@ -76,6 +76,12 @@ p {
   /* keeps text readable on wide screens */
 }
 
+strong {
+  background-color: var(--neon-pink);
+  color: var(--background-color);
+  font-weight: 400 !important;
+}
+
 /* --------------------------
       3. Layout components 
 ----------------------------- */

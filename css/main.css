@@ -78,6 +78,10 @@ section p {
   text-align: justify;
 }
 
+main strong {
+  font-weight: 700;
+}
+
 
 /* =========================================
     OPENING PAGE
