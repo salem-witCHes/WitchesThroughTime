@@ -4,34 +4,28 @@
 
 /* --- 1. Global Variables & Fonts --- */
 :root {
-  /* Colors from Figma Export: D9C3A6 (background), 1B1A18/2A2722 (dark text) */
   --vitali-tan: #D9C3A6;
-  --vitali-black: #1A1A1A; /* Primary dark color for outline, knobs, active states */
+  --vitali-black: #1A1A1A; 
   --vitali-white: #FFFFFF;
-  --vitali-dark-text: #2A2722; /* General text and link color */
+  --vitali-dark-text: #2A2722; 
 
-  /* Override Main CSS Variables */
   --background-color: var(--vitali-tan);
   --surface-color: var(--vitali-white);
   --default-font-color: var(--vitali-dark-text);
   
-  /* Reverting to previous preferred fonts */
   --default-font: 'Cormorant Garamond', serif; 
   --heading-font: 'IM Fell English', serif; 
   
-  /* Set theme-specific color/variable aliases */
   --Greyscale-900: var(--vitali-black);
-  --Greyscale-50: var(--vitali-grey); /* Assuming light gray */
-  --noise-color: rgba(0, 0, 0, 0.05); /* Noise Paper effect */
+  --Greyscale-50: var(--vitali-grey); 
+  --noise-color: rgba(0, 0, 0, 0.05); 
 }
 
-/* Apply noise only when Theme1 is active */
-/* --- Theme1 Noise Overlay --- */
 
 /* --- 2. Base Body Style and NOISE PAPER EFFECT --- */
 
 .eras-page {
-    /* Set only theme-specific styling: background and font-family */
+
     background: var(--background-color); 
     font-family: var(--default-font);
     position: relative; 
@@ -39,18 +33,18 @@
 }
 
 body::before {
-    content: "";                 /* required for pseudo-element */
-    position: fixed;             /* stays in viewport */
+    content: "";                 
+    position: fixed;             
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;                 /* behind all content */
-    pointer-events: none;        /* clicks pass through */
+    z-index: -1;                 
+    pointer-events: none;        
     
     background: url("../img/beige-noise.png") repeat;
-    background-size: cover;      /* or 'auto' if you want to repeat naturally */
-    opacity: 10;               /* subtle noise */
+    background-size: cover;      
+    opacity: 10; /* subtle noise */
 }
 
 /* === STICKY HEADER & NAV COLORS === */
@@ -64,15 +58,15 @@ nav.navbar {
 /* Divider line under navbar */
 header::after {
     content: "";
-    position: absolute; /* position relative to header */
-    bottom: 0;          /* stick it at the bottom of the header */
-    left: 50%;          /* center horizontally */
-    transform: translateX(-50%) translateY(-10%); /* slight upward shift */
-    width: 1000px;      /* or desired width */
-    height: 20px;       /* thickness */
+    position: absolute; 
+    bottom: 0;          
+    left: 50%;          
+    transform: translateX(-50%) translateY(-10%); 
+    width: 1000px;      
+    height: 20px;     
     background: url("../img/divider-line.svg") no-repeat center center;
     background-size: contain;
-    z-index: 10002;        /* above navbar if needed */
+    z-index: 10002;        /* above navbar, due to coursol setting */
 }
 /* --------------------------------------- 
                    Navbar 
@@ -89,11 +83,10 @@ header::after {
 .navbar .nav-link.active {
     color: var(--surface-color) !important;
     background-color: var(--Greyscale-900);
-    /* Reapplying specific active link deco colors */
     position: relative;
 }
 
-/* Active Decoration: Lines and dots should use theme colors */
+/* Active Decoration */
 .navbar .nav-link.active::before,
 .navbar .nav-link.active::after,
 .navbar .nav-link.active div::before {
@@ -104,7 +97,6 @@ header::after {
 .navbar .layout-container .layout-options.active {
     background: var(--vitali-tan);
 }
-/* Make sure each nav link is relative so pseudo-elements position correctly */
 .navbar-nav .nav-link {
     position: relative;
     font-weight: 900; /* default weight */
@@ -115,7 +107,7 @@ header::after {
     
 }
 
-/* Only add bold + top/bottom lines, keep all main CSS styles */
+/* Only add bold + top/bottom  */
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link:hover {
     font-weight: 900;
@@ -164,7 +156,6 @@ footer a {
 /* ----------------- Toggle Section ----------------- */
 
 .toggle-frame {
-    /* Only setting theme-specific colors and fonts */
    background: url("../img/beige-noise.png") repeat;
    overflow: hidden;
 }
@@ -211,8 +202,8 @@ footer a {
     position: absolute;
     top: 0;
     left: 0;
-    width: 30px; /* adjust size */
-    height: 30px; /* adjust size */
+    width: 30px; 
+    height: 30px; 
     background: url("../img/operello-left.svg") no-repeat center center;
     background-size: contain;
 }
@@ -223,8 +214,8 @@ footer a {
     position: absolute;
     top: 0;
     right: 0;
-    width: 30px; /* adjust size */
-    height: 30px; /* adjust size */
+    width: 30px; 
+    height: 30px; 
     background: url("../img/operello-right.svg") no-repeat center center;
     background-size: contain;
 }
@@ -234,7 +225,7 @@ footer a {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 30px; /* adjust size */
+    width: 30px; 
     height: 30px;
     background: url("../img/operello-left-down.svg") no-repeat center center;
     background-size: contain;
@@ -245,7 +236,7 @@ footer a {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 30px; /* adjust size */
+    width: 30px; 
     height: 30px;
     background: url("../img/operello-right-down.svg") no-repeat center center;
     background-size: contain;
@@ -263,7 +254,7 @@ footer a {
 /* Text overlay (Caption) */
 .era-item-text {
     color: rgb(220, 211, 211);
-    font-family: var(--default-font); /* Using main theme font */
+    font-family: var(--default-font); 
     text-shadow:
         0 1px 2px rgba(19, 19, 19, 0.9),
         0 2px 6px rgba(22, 21, 21, 0.8);;
@@ -300,15 +291,12 @@ footer a {
 }
 
 .link-documentation a {
-  
-  border-radius: 0px;             /* rounded edges */
-
+  border-radius: 0px;
 }
 #first-room:hover,
 #second-room:hover,
 #third-room:hover,
 #fourth-room:hover {
-  /* This rule will override the default rule above */
   fill: var(--noise-color) !important;
   opacity: 1.0;
   cursor: pointer;
@@ -325,8 +313,8 @@ footer a {
     position: absolute;
     top: 0;
     left: 0;
-    width: 30px; /* adjust size */
-    height: 30px; /* adjust size */
+    width: 30px; 
+    height: 30px; 
     background: url("../img/operello-left.svg") no-repeat center center;
     background-size: contain;
 }
@@ -337,8 +325,8 @@ footer a {
     position: absolute;
     top: 0;
     right: 0;
-    width: 30px; /* adjust size */
-    height: 30px; /* adjust size */
+    width: 30px; 
+    height: 30px; 
     background: url("../img/operello-right.svg") no-repeat center center;
     background-size: contain;
 }
@@ -371,38 +359,46 @@ footer a {
 }
     
 /* ----------------- Link Documentation Button ----------------- */
+.introduction, .link-documentation {
+    max-width: 90%;
+    padding-left: 150px;
+    padding-right: 150px;
+    text-align: center;
+}
 .link-documentation a {
-    position: relative;              /* ensures pseudo-elements position relative to link */
-    display: inline-block;           /* allows proper sizing for pseudo-elements */
+    position: relative;              
+    display: inline-block;           
     font-family: var(--default-font);
     font-weight: 400;
     font-size: 1.1rem;
     text-decoration: none;
-    color: var(--default-font-color) !important; /* ensures text is visible */
+    color: var(--default-font-color) !important; 
     border: 0;
     background: none !important;
     box-shadow: none !important;
     transition: font-weight 0.2s ease;
+    margin: 16px 20px 20px 20px !important; 
+    padding: 6px 12px !important;
 }
 
 /* Hover / Active effect */
 .link-documentation a:hover {
     font-weight: 900; /* bold text on hover */
-    color: var(--default-font-color) !important; /* prevent disappearing */
+    color: var(--default-font-color) !important; /* prevent disappearing- importsnt to keep */
 }
 
 /* Top line */
 .link-documentation a::before {
     content: "";
     position: absolute;
-    top: -6px;                /* adjust distance from text */
-    left: 50%;                /* center horizontally */
-    width: 80px;              /* adjust line width */
-    height: 20px;             /* adjust line height */
+    top: -6px;                
+    left: 50%;                
+    width: 80px;              
+    height: 20px;             
     background: url("../img/line.svg") no-repeat center center;
     background-size: contain;
     transform: translateX(-50%);
-    opacity: 0;               /* hidden by default */
+    opacity: 0;               /* hidden by default-bug fix */
     transition: opacity 0.3s ease;
 }
 
@@ -410,19 +406,24 @@ footer a {
 .link-documentation a::after {
     content: "";
     position: absolute;
-    bottom: -6px;             /* adjust distance from text */
-    left: 50%;                /* center horizontally */
-    width: 80px;              /* adjust line width */
-    height: 20px;             /* adjust line height */
+    bottom: -6px;             
+    left: 50%;                
+    width: 80px;              
+    height: 20px;             
     background: url("../img/line.svg") no-repeat center center;
     background-size: contain;
     transform: translateX(-50%);
-    opacity: 0;               /* hidden by default */
+    opacity: 0;               /* hidden by default- same as above */
     transition: opacity 0.3s ease;
 }
 
 /* Show lines on hover */
 .link-documentation a:hover::before,
 .link-documentation a:hover::after {
-    opacity: 1;               /* show lines */
+    opacity: 1;               /* show lines-necessary */
+}
+.introduction p,
+.link-documentation p {
+    font-size: 20px;   
+    line-height: 1.6;
 }
