@@ -628,6 +628,22 @@ scaleX(-1) re-introduces the horizontal flip */
   text-align: center;           /* centers heading and button */
 }
 
+.introduction-text,
+.documentation-text {
+  /* Scales from 16px on mobile to 80px on large screens */
+  padding-inline: clamp(1rem, 3vw, 2rem); 
+  
+  /* Limits text width for readability */
+  max-width: 70ch; /* ensure redability: 70 characters per line is the best for reading comfort" */
+  margin-inline: auto; /* Centers the text block */
+  
+  /* Standard readability leading */
+  line-height: 1.6;
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem);
+  text-wrap: pretty; /* prevents orphans at the end of the paragraphs */
+
+}
+
 .link-documentation a {
   display: inline-block;           /* allows padding and margins */
   padding: 0.75rem 1.5rem;         /* button size */
