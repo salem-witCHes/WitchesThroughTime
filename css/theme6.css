@@ -565,11 +565,13 @@ footer a:hover {
   background: var(--erin-green);
 }
 
-#toggleIcon rect {
+#toggleIcon rect,
+#toggleIcon path {
   fill: black !important;
 }
 
-#inactiveIcon path {
+#inactiveIcon rect, 
+#inactiveIcon path  {
   fill: var(--erin-green) !important;
 }
 

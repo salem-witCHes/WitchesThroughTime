@@ -484,9 +484,20 @@ footer a:hover {
   border: 2px solid var(--carbon-black);
 }
 
-#toggle-icon {
-  fill: var(--neon-pink) !important;
+#toggleIcon rect {
+  fill: var(--carbon-black) !important;
 }
+
+#toggleIcon path {
+  fill: var(--carbon-black) !important;
+}
+
+#inactiveIcon rect, 
+#inactiveIcon path  {
+  fill: var(--carbon-black) !important;
+}
+
+
 
 /* ----- Eras page ----- */
 
