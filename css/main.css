@@ -1176,6 +1176,17 @@ nav.navbar {
     z-index: 0;
 }
 
+/* Removes default link styling for your cards */
+.text-decoration-none {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+}
+
+.card:hover, .era-item:hover {
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
 /* Center the entire timeline content horizontally */
     .timeline-lines {
@@ -1323,8 +1334,8 @@ nav.navbar {
 }
 
 #item-container {
-    padding-top: 5px !important;
-    margin-top: 0px;
+  padding-top: 5px !important;
+  margin-top: 0px;
 }
 
 /* Base style for all content containers */
@@ -1340,11 +1351,12 @@ nav.navbar {
 }
 
 .item-box img {
-    height: 100%;
     width: 100%;
+    aspect-ratio: 4/3;
     display: block;
     object-fit: cover;
     object-position: center;
+    
 }
 
 .table-box {
@@ -1368,6 +1380,10 @@ nav.navbar {
 .table thead tr:first-child th {
     text-align: center;
     font-size: 1.1rem;
+}
+
+#item-date, #item-room {
+    cursor: pointer;
 }
 
 .text-box button {
@@ -1396,7 +1412,6 @@ nav.navbar {
   font-weight: 600;
   margin-top: 1.5rem;
 }
-
 
 .card-footer button:hover {
   background-color: var(--default-font-color);

@@ -31,16 +31,10 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
 
-        <!-- Art Nouveau fonts: Bocklin + Playfair Display -->
-        <!-- <link href="https://fonts.cdnfonts.com/css/bocklin" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"> -->
-
+        <!-- Vienna Secession font: Federo -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Federo&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
     </head>
 
@@ -55,9 +49,8 @@
             <div class="grid-line"></div>
         </div>
 
-        <!-- item content -->
-        <main class="page-content" id="itempage-content">
-            <!-- navbar -->
+        
+        <!-- navbar -->
         <header id="header">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
@@ -141,7 +134,7 @@
                     <div class="col-12 col-md-6 col-lg-6 d-flex mb-4 mb-md-0">
                         <div class="item-box w-100 me-md-2">
                             <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" aria-label="Enlarge Image" class="d-block w-100 h-100">
-                                <img src="img/collection/Circe.jpg" alt="" id="item-image-display">
+                                <img src="" alt="" id="item-image-display">
                             </a>
                         </div>
                     </div>
@@ -150,10 +143,30 @@
                         <div class="table-box w-100 ms-md-2 p-">
                             <table class="table">
                                 <thead>
-                                    <tr><th colspan="2" id="item-title-display">Circe Offering the cup to Odysseus</th></tr>
+                                    <tr><th colspan="2" id="item-title"></th></tr>
                                 </thead>
                                 <tbody id="metadata-tbody">
-                                    </tbody>
+                                    <tr>
+                                        <th>Creator</th>
+                                        <td id="item-creator"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Type</th>
+                                        <td id="item-type"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Date</th>
+                                        <td id="item-date"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Location</th>
+                                        <td id="item-location"></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="narrative">Room</th>
+                                        <td id="item-room"></td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -162,35 +175,40 @@
                 <div class="row g-4 pb-4">
                     <div class="col-12">
                         <div class="text-box">
-                            
                             <div class="mb-3">
-                                <button class="btn btn-sm btn-outline-dark me-1" onclick="renderText('short')">Shorter Text</button>
-                                <button class="btn btn-sm btn-outline-dark me-1" onclick="renderText('long')">Longer Text</button>
-                                <button class="btn btn-sm btn-outline-dark me-1" onclick="renderText('simple')">Simple</button>
-                                <button class="btn btn-sm btn-outline-dark" onclick="renderText('academic')">Advanced</button>
+                                <div class="btn-group" role="group" id="length-buttons">
+                                    <button class="btn btn-sm btn-outline-dark active" data-length=""="short">Short</button>
+                                    <button class="btn btn-sm btn-outline-dark" data-length="medium">Medium</button>
+                                    <button class="btn btn-sm btn-outline-dark" data-length="long">Long</button>
+                                </div>
+                                <div class="btn-group ms-2" role="group" id="tone-buttons">
+                                    <button class="btn btn-sm btn-outline-dark" data-tone="fun-kid">Kid</button>
+                                    <button class="btn btn-sm btn-outline-dark active" data-tone="educational-adult">Educational</button>
+                                    <button class="btn btn-sm btn-outline-dark" data-tone="scholar">Scholar</button>
+                                </div>
                             </div>
-                            <p id="item-description-display">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
+                            <p id="item-description-display"></p>
                         </div>
                     </div>
                     
                     <div class="card-footer d-flex justify-content-between">
                         <button type="button" class="btn m-auto" id="btn-prev">Previous</button>
+                        <div id="room-nav-controls" class="d-none">
+                            <span class="text-muted small">Current Room: <span id="current-room-name"></span></span>
+                            <br>
+                            <button class="btn btn-sm">Prev Room</button>
+                            <button class="btn btn-sm">Next Room</button>
+                        </div>
                         <button type="button" class="btn m-auto" id="btn-next">Next</button>
                     </div>
                 </div>
             </div>
 
             <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-dialog modal-dialog-centered" style="max-width: fit-content;">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" data-bs-dismiss="modal" id="modal-title-display">Enlarged View</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
                         <div class="modal-body text-center">
-                            <img src="img/collection/Circe.jpg" alt="Circe" id="modal-image-display" class="img-fluid" style="max-height: 85vh; width: auto; cursor: default;" onclick="event.stopPropagation()">   <!-- stop the "click" signal from reaching the .moda-content wrapper  -->
+                            <img src="" alt="" id="modal-image-display" class="img-fluid" style="max-height: 85vh; width: auto; cursor: default;" onclick="event.stopPropagation()">   <!-- stop the "click" signal from reaching the modal-content wrapper  -->
                         </div>
                     </div>
                 </div>
@@ -199,7 +217,7 @@
 
         <div class="footer-separator" id="footerSeparator"></div>
 
-            <!-- Footer -->
+        <!-- Footer -->
         <div class="thematic-divider-footer" id="thematicDividerFooter"></div>
         <footer class="text-white text-center">
             <!-- Grid container -->

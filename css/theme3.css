@@ -98,8 +98,8 @@ header {
 
 .navbar .layout-container .layout-options {
     background-color: var(--warm-canvas);
-    border: 4px solid var(--darker-brown);    /* frame color */
-    border-radius: 0px;                      /* round corners */
+    border: 4px solid var(--darker-brown);
+    border-radius: 0px;
     padding: 16px;
 }
 
@@ -109,7 +109,6 @@ header {
 
 .navbar .layout-container .layout-button {
   background-color: var(--warm-canvas);
-  border: 2px solid var(--darker-brown);
   border-radius: 2px;
 }
 
@@ -424,7 +423,7 @@ footer a {
 
 .card {
     background-color: var(--warm-canvas);
-    border: 2px solid var(--hexed-walnut);
+    border: 4px solid var(--hexed-walnut);
     border-radius: 2px;
 }
 

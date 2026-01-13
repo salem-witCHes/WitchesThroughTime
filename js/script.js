@@ -1,5 +1,8 @@
 // localStorage.removeItem('hasVisited'); // 🧪 comment this out when you go live
 
+
+// ---- OPENING PAGE ----
+
 function openCurtains() {
   const forest = document.getElementById('forestContainer');
   const gradient = forest.querySelector('.forest-gradient');
@@ -46,141 +49,262 @@ document.addEventListener('DOMContentLoaded', () => {
         element.classList.add('visible');
         
         // We force a "reflow" so the browser accepts the change, then restore transition
-        // (This is a niche CSS trick, but useful if you want hover effects to work later)
         void element.offsetWidth; 
         element.style.transition = ''; 
     });
   } 
 });
 
-
-// NARRATIVES
-let db = null; // Will hold the JSON data
-let currentNarrative = 'chronological';
-let currentItemId = 'circe';
-
-// Helper function to trigger the narrative switch from a metadata click
-function switchFromMeta(newNarrative) {
-    // This is the functional link between the metadata click and the page reload
-    changeNarrative(newNarrative);
-}
-
-
-// 1. Initialize on Page Load
 document.addEventListener('DOMContentLoaded', () => {
-    // Get URL params to see where we are (e.g., item.html?id=malleus&narrative=rooms)
-    const params = new URLSearchParams(window.location.search);
-    if(params.has('narrative')) currentNarrative = params.get('narrative');
-    if(params.has('id')) currentItemId = params.get('id');
+    // --- STATE ---
+    let allItems = {};
+    let narratives = {};
+    let roomsData = {}; 
+    let roomKeys = [];  
 
-    // NOTE: Removed the line document.getElementById('narrative-select').value = currentNarrative; 
-    // since the select box is no longer the main control.
+    // Navigation State
+    let currentIdList = []; 
+    let currentIndex = 0;
+    let currentNarrativeName = ''; 
+    
+    // Filters
+    let currentLength = 'short';
+    let currentTone = 'educational-adult';
 
-    // Fetch Data
+    // --- INITIALIZATION ---
     fetch('data.json')
         .then(response => response.json())
         .then(data => {
-            db = data;
-            loadItem(currentItemId);
+            allItems = data.items;
+            
+            // 1. Setup Narratives
+            narratives['chronological'] = data.narratives.chronological;
+            
+            roomsData = data.narratives.eras; 
+            roomKeys = Object.keys(roomsData); 
+            narratives['eras'] = [];
+            roomKeys.forEach(key => {
+                narratives['eras'].push(...roomsData[key]);
+            });
+
+            // --- NEW LOGIC: READ URL PARAMETERS ---
+            const urlParams = new URLSearchParams(window.location.search);
+            const targetId = urlParams.get('id');             // e.g., "hecate"
+            const targetNarrative = urlParams.get('narrative'); // e.g., "eras"
+
+            // logic: If URL has ID, load that. If not, load default Chronological start.
+            if (targetId && allItems[targetId]) {
+                // If the URL specifies a narrative (e.g. ?narrative=eras), use it. 
+                // Otherwise default to chronological.
+                const startNarrative = targetNarrative || 'chronological';
+                switchNarrative(startNarrative, targetId);
+            } else {
+                // No ID in URL? Start at the beginning of Chronological
+                switchNarrative('chronological', narratives['chronological'][0]);
+            }
         })
-        .catch(err => console.error("Error loading data:", err));
-});
-
-// 2. Load Content for a Specific Item (MODIFIED SECTION)
-function loadItem(id) {
-    const item = db.items[id];
-    if (!item) return;
-
-    // Images
-    document.getElementById('item-image-display').src = item.image;
-    document.getElementById('item-image-display').alt = item.title;
-    document.getElementById('modal-image-display').src = item.image;
-
-    // Title & Room
-    document.getElementById('item-title-display').innerText = item.title;
-    document.getElementById('modal-title-display').innerText = item.title;
-    // You can use this to display the currently selected narrative mode
-    const narrativeName = currentNarrative === 'chronological' ? 'Chronological' : 'Thematic Rooms';
-    document.getElementById('room-indicator').innerText = `Current Path: ${narrativeName} | Room: ${item.room}`;
+        .catch(error => console.error("Error loading JSON:", error));
 
 
-    // Metadata Table (Dynamic Generation with Narrative Triggers)
-    const tbody = document.getElementById('metadata-tbody');
-    tbody.innerHTML = ''; // Clear existing
+    // --- CORE: SWITCH NARRATIVE ---
+    function switchNarrative(name, targetItemId = null) {
+        // Safety check: if narrative name is invalid, fallback to chronological
+        if (!narratives[name]) name = 'chronological';
+        
+        currentNarrativeName = name;
+        currentIdList = narratives[name];
+
+        if (targetItemId) {
+            const newIndex = currentIdList.indexOf(targetItemId);
+            // If item is found in this narrative, go to it. Else start at 0.
+            currentIndex = (newIndex !== -1) ? newIndex : 0;
+        } else {
+            currentIndex = 0;
+        }
+
+        renderItem();
+        updateUIState();
+    }
+
+
+    // --- RENDER ---
+    function renderItem() {
+        const itemId = currentIdList[currentIndex];
+        const item = allItems[itemId];
+        
+        if (!item) return;
+
+        // Basic Info
+        document.getElementById('item-image-display').src = item.image;
+        document.getElementById('item-title').textContent = item.title;
+
+        // Metadata
+        const meta = item.metadata || {};
+        document.getElementById('item-creator').textContent = Array.isArray(meta.creator) ? meta.creator.join(', ') : meta.creator;
+        document.getElementById('item-type').textContent = meta.type;
+        document.getElementById('item-location').textContent = meta.location;
+        
+        // Clickable Table Cells
+        const dateCell = document.getElementById('item-date');
+        dateCell.textContent = meta.date;
+        dateCell.title = "Switch to Chronological Narrative"; 
+
+        const roomCell = document.getElementById('item-room');
+        roomCell.textContent = meta.room; 
+        roomCell.title = "Switch to Eras Narrative"; 
+        
+        // Update "Current Room" Label
+        document.getElementById('current-room-name').textContent = meta.room;
+
+        updateDescriptionText(item);
+    }
     
-    item.metadata.forEach(entry => {
-        let valueHtml = entry.value; // Default: just text
+    function updateDescriptionText(item) { 
+        const textKey = `${currentLength}-${currentTone}`;
+        if (item.texts && item.texts[textKey]) {
+            document.getElementById('item-description-display').textContent = item.texts[textKey];
+        } else {
+            document.getElementById('item-description-display').textContent = "Description not available.";
+        }
+    }
 
-        // Check for Year/Date to enable Chronological switch
-        if (entry.label.toLowerCase().includes("year") || entry.label.toLowerCase().includes("date")) {
-            // Only make it a link if the current narrative is NOT chronological
-            if (currentNarrative !== 'chronological') {
-                valueHtml = `<a href="#" class="meta-link" onclick="switchFromMeta('chronological'); return false;">
-                                ${entry.value} 
-                                <span class="link-icon">↻</span>
-                             </a>`;
+    // --- HELPER: FIND CURRENT ROOM INDEX ---
+    function getCurrentRoomIndex() {
+        const currentItemId = currentIdList[currentIndex];
+        for (let i = 0; i < roomKeys.length; i++) {
+            const roomKey = roomKeys[i];
+            if (roomsData[roomKey].includes(currentItemId)) {
+                return i;
             }
         }
-        // Check for Room/Location to enable Thematic switch
-        else if (entry.label.toLowerCase().includes("room") || entry.label.toLowerCase().includes("location")) {
-            // Only make it a link if the current narrative is NOT rooms
-            if (currentNarrative !== 'rooms') {
-                valueHtml = `<a href="#" class="meta-link" onclick="switchFromMeta('rooms'); return false;">
-                                ${entry.value}
-                                <span class="link-icon">↹</span>
-                             </a>`;
-            }
-        }
+        return -1;
+    }
 
-        let row = `<tr>
-            <th>${entry.label}</th>
-            <td>${valueHtml}</td>
-        </tr>`;
-        tbody.innerHTML += row;
+    // --- UI FEEDBACK & VISIBILITY ---
+    function updateUIState() {
+        const dateCell = document.getElementById('item-date');
+        const roomCell = document.getElementById('item-room');
+        const roomNavControls = document.getElementById('room-nav-controls');
+        
+        dateCell.style.fontWeight = (currentNarrativeName === 'chronological') ? 'bold' : 'normal';
+        dateCell.style.textDecoration = (currentNarrativeName === 'chronological') ? 'underline' : 'none';
+        
+        roomCell.style.fontWeight = (currentNarrativeName === 'eras') ? 'bold' : 'normal';
+        roomCell.style.textDecoration = (currentNarrativeName === 'eras') ? 'underline' : 'none';
+
+        if (currentNarrativeName === 'eras') {
+            roomNavControls.classList.remove('d-none'); 
+        } else {
+            roomNavControls.classList.add('d-none');    
+        }
+    }
+
+
+    // --- EVENT LISTENERS ---
+    document.getElementById('item-date').addEventListener('click', () => {
+        if (currentNarrativeName !== 'chronological') {
+            switchNarrative('chronological', currentIdList[currentIndex]);
+        }
     });
 
-    // Default Text
-    renderText('short');
-    
-    // Ensure navigation buttons reflect the current pathway
-    updateNavigationButtons();
-}
+    document.getElementById('item-room').addEventListener('click', () => {
+        if (currentNarrativeName !== 'eras') {
+            switchNarrative('eras', currentIdList[currentIndex]);
+        }
+    });
+
+    document.getElementById('btn-next').addEventListener('click', () => {
+        if (currentIndex < currentIdList.length - 1) {
+            currentIndex++;
+            renderItem();
+        }
+    });
+
+    document.getElementById('btn-prev').addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            renderItem();
+        }
+    });
+
+    // Room Jump Buttons
+    const roomControlsDiv = document.getElementById('room-nav-controls');
+    const roomButtons = roomControlsDiv.querySelectorAll('button');
+    const prevRoomBtn = roomButtons[0];
+    const nextRoomBtn = roomButtons[1];
+
+    if (nextRoomBtn) {
+        nextRoomBtn.addEventListener('click', () => {
+            const currentRoomIdx = getCurrentRoomIndex();
+            if (currentRoomIdx < roomKeys.length - 1) {
+                const nextRoomKey = roomKeys[currentRoomIdx + 1];
+                const firstItemOfNextRoom = roomsData[nextRoomKey][0];
+                
+                const newIndex = currentIdList.indexOf(firstItemOfNextRoom);
+                if (newIndex !== -1) {
+                    currentIndex = newIndex;
+                    renderItem();
+                }
+            }
+        });
+    }
+
+    if (prevRoomBtn) {
+        prevRoomBtn.addEventListener('click', () => {
+            const currentRoomIdx = getCurrentRoomIndex();
+            if (currentRoomIdx > 0) {
+                const prevRoomKey = roomKeys[currentRoomIdx - 1];
+                const firstItemOfPrevRoom = roomsData[prevRoomKey][0];
+                
+                const newIndex = currentIdList.indexOf(firstItemOfPrevRoom);
+                if (newIndex !== -1) {
+                    currentIndex = newIndex;
+                    renderItem();
+                }
+            }
+        });
+    }
+
+    // Text Filters
+    const lengthBtns = document.querySelectorAll('#length-buttons button');
+    lengthBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            lengthBtns.forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            currentLength = e.target.getAttribute('data-length');
+            renderItem();
+        });
+    });
+
+    const toneBtns = document.querySelectorAll('#tone-buttons button');
+    toneBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            toneBtns.forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            currentTone = e.target.getAttribute('data-tone');
+            renderItem();
+        });
+    });
 
 
-// 3. Handle Text Switching (Source 83: "Tell me more / less")
-function renderText(type) {
-    // ... (This function remains unchanged)
-    const item = db.items[currentItemId];
-    const textDisplay = document.getElementById('item-description-display');
+    var imageModal = document.getElementById('imageModal');
     
-    textDisplay.style.opacity = 0;
-    setTimeout(() => {
-        textDisplay.innerText = item.texts[type] || item.texts['short'];
-        textDisplay.style.opacity = 1;
-    }, 200);
-}
+    if (imageModal) { // Check if modal exists to avoid errors on other pages
+        imageModal.addEventListener('show.bs.modal', function (event) {
+            // Button/Link that triggered the modal
+            var triggerLink = event.relatedTarget;
 
-// 4. Handle Navigation (Source 39: "Next / Previous buttons") - Renamed/Updated
-function updateNavigationButtons() {
-    // This function is called on load to ensure the buttons reflect the current state
-    const timeline = db.narratives[currentNarrative];
-    let index = timeline.indexOf(currentItemId);
-    
-    let nextId = timeline[(index + 1) % timeline.length]; // Loop to start
-    let prevId = timeline[(index - 1 + timeline.length) % timeline.length]; // Loop to end
-    
-    // Assign new onclick functions to the buttons
-    document.getElementById('btn-next').onclick = () => {
-        window.location.href = `?id=${nextId}&narrative=${currentNarrative}`;
-    };
-    
-    document.getElementById('btn-prev').onclick = () => {
-        window.location.href = `?id=${prevId}&narrative=${currentNarrative}`;
-    };
-}
+            // Extract the link and image source
+            var destinationUrl = triggerLink.getAttribute('data-bs-link');
+            var imageSource = triggerLink.querySelector('img').getAttribute('src');
 
-// 5. Switch Narrative (USED BY switchFromMeta)
-function changeNarrative(newNarrative) {
-    // Reload page with same item but new narrative context
-    window.location.href = `?id=${currentItemId}&narrative=${newNarrative}`;
-}
+            // Find the elements inside the modal
+            var modalLink = imageModal.querySelector('#modal-link-display');
+            var modalImage = imageModal.querySelector('#modal-image-display');
+
+            // Update the modal content
+            if (modalLink) modalLink.href = destinationUrl;
+            if (modalImage) modalImage.src = imageSource;
+        });
+    }
+});

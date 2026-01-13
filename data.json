@@ -83,7 +83,7 @@
         "title": "Malleus Maleficarum",
         "creator": ["Jakob Sprenger", "Heinrich Kraemer"],
         "type": "Manuscript",
-        "date": "1519",
+        "date": "1487",
         "location": "Bavarian State Library, Munich",
         "room": "Fear and Persecution",
         "identifier": ["https://archive.org/details/bub_gb_TTg8AAAAcAAJ/page/n3/mode/2up"]
@@ -301,7 +301,7 @@
       }
     },
     "anna-goldi": {
-      "title": "Rehabilitation of Anna Goldi",
+      "title": "Atto Göldin 4",
       "image": "img/collection/Anna-Goldi.jpeg",
 
       "metadata": {
@@ -499,6 +499,15 @@
         "medium-scholar": "",
         "long-scholar": ""
       }
+    }
+  },
+  "narratives": {
+    "chronological": ["hecate", "medea-amphora", "waldensian-witches", "malleus-maleficarum", "brewing-storm", "hortus-sanitatis", "woodcut-witches", "anna-goldi", "three-witches", "walnut-tree", "witchcraft-hung", "examination-witch", "morgan-le-fay", "circe-odysseus", "baba-yaga", "petronilla-de-meath", "streghe-tornate", "myths-series", "witches-america", "witch-camp-ghana"],
+    "eras": {
+      "myth-room": ["hecate", "medea-amphora", "circe-odysseus", "morgan-le-fay", "baba-yaga"],
+      "persecution-room": ["waldensian-witches", "malleus-maleficarum", "brewing-storm", "hortus-sanitatis", "woodcut-witches", "examination-witch"],
+      "reinterpretation-room": ["three-witches", "walnut-tree", "witchcraft-hung", "myths-series"],
+      "re-appropriation-room": ["anna-goldi", "petronilla-de-meath", "streghe-tornate", "witches-america", "witch-camp-ghana"]
     }
   }
 }
