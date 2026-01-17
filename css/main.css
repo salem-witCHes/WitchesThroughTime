@@ -1264,7 +1264,7 @@ nav.navbar {
   display: block;
 }
 
-
+#entrance-room,
 #first-room,
 #second-room,
 #third-room,
@@ -1276,6 +1276,7 @@ nav.navbar {
 }
 
 /* 2. Define the hover effect */
+#entrance-room:hover,
 #first-room:hover,
 #second-room:hover,
 #third-room:hover,
@@ -1286,6 +1287,7 @@ nav.navbar {
   cursor: pointer;
 }
 
+#text-entrance-room,
 #text-first-room,
 #text-second-room,
 #text-third-room,

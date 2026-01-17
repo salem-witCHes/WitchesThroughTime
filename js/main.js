@@ -233,55 +233,112 @@ document.addEventListener("DOMContentLoaded", () => {
 const roomData = {
     'first-room': {
         title: "Mythic roots",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        description: `
+        <p>Before the witch was feared, she was <strong>revered</strong>.</p> 
+        
+        <p>This room explores the earliest representation of witch-like figures, rooted in <strong>myth, legend and pagan rituals</strong>. 
+        Here, the witch appears as a healer, a priestess, a goddess or a mediator between the human and natural worlds. These figures were often associated with 
+        fertility, cycles of life and death, herbal medicine and spiritual wisdom. In ancient societies, magic was not something to be feared. It was considered 
+        <strong>complementary to faith and daily life</strong>, with practitioners enjoying respect for their wisdom and power. <i>Mythic roots</i> invites visitors to encounter the witch 
+        not as a transgressor, but as a foundational cultural figure.</p>
+        `,
     },
     'second-room': {
         title: "Fires of fear",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        description: `
+        <p>When knowledge became a <strong>crime</strong>.</p> 
+
+        <p>This room confronts the historical reality of <strong>witch hunts, accusations and trials</strong>. Through documents, testimonies and visual records, 
+        Fires of fear examines how the figure of the witch was transformed into a legal and <strong>moral enemy</strong>, particularly during the late Middle Ages 
+        and early modern period. With the rise of Christianity, practices once embedded in pagan traditions were increasingly denounced as heretical, 
+        marking the beginning of an era in which magic became a crime.</p> 
+
+        <p>Here, witchcraft emerges as a tool of <strong>social control</strong>: accusations were often directed at women whose knowledge, independence or marginality 
+        threatened established power structures. Torture, execution and public punishment turned fear into spectacle, reinforcing patriarchal and religious authority.</p> 
+
+        <p>This room reveals how persecution was not driven by superstition alone, but by deeply embedded systems of power and how its consequences still resonate today.</p> 
+        `,
     },
     'third-room': {
         title: "Visions and shadows",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        description: `
+        <p>Between <strong>fear</strong> and <strong>fascination</strong>.</p> 
+
+        <p>In this room, the witch enters the realm of representation. <strong>Literature, film and visual art</strong> reimagine her as a figure of ambiguity: 
+        monstrous, seductive, comic and powerful. From fairy tales to pop culture, the witch becomes a mirror reflecting society’s anxieties and desires.</p> 
+
+        <p><i>Visions and Shadows</i> explores how these images both perpetuate and complicate <strong>stereotypes</strong>. The witch is no longer executed, yet she is reframed and 
+        aestheticized through the gaze of others, appearing as a figure of fascination, fear or spectacle. This section invites visitors to question how 
+        representation shapes perception and how cultural imagery can both obscure and reveal deeper truths.</p> 
+        `,
     }, 
     'fourth-room': {
         title: "Reclaiming the spell",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        description: `
+        <p><strong>Witches are back.</strong></p>
+
+        <p>The final room focuses on contemporary reappropriations of the witch as a <strong>symbol of resistance, identity and empowerment</strong>. 
+        From the rehabilitation of Anna Göldin to feminist movements of the 20th century and present-day self-identified witches, the term once used to 
+        persecute women is reclaimed by women as a declaration of power and autonomy.</p> 
+
+        <p>Here, the witch becomes <strong>political</strong>. She embodies refusal, self-definition and collective memory, but also vulnerability, 
+        as persecution has not disappeared in all parts of the world. <i>Reclaiming the spell</i> connects past and present, revealing how the logic of witch hunts 
+        still operates, even as new forms of resistance emerge.</p>
+
+        <p>This room invites visitors to reflect on the present moment: if witches were once burned, today they may instead be silenced, displaced and forgotten. 
+        It calls on visitors not to forget the past, and to recognize and challenge the ongoing continuity of <strong>women’s suppression</strong>.</p>
+
+        `,
     }
 };
 
+let introHTML = ""; // Variable to store original HTML with intro text
+
 // Function to change dynamically rooms' descriptions 
 function showRoomDescription(roomId) {
-    // 1. Get the data for the specific room ID
+    const panel = document.getElementById('room-description-panel')
+
+    // 1. Check if the user clicked the entrance 
+    if (roomId === 'entrance-room') {
+        panel.innerHTML = introHTML; // Restore intro text
+        return;
+    }
+    // 2. Get the data for the specific room ID
     const room = roomData[roomId];
     
     if (!room) {
         // Handle case where room ID is not found 
-        document.getElementById('room-description-panel').innerHTML = "<h2>Error: Room Not Found</h2><p>Please click a valid room on the map.</p>";
+        panel.innerHTML = "<h2>Error: Room Not Found</h2><p>Please click a valid room on the map.</p>";
         return;
     }
 
-    // 2. Build the new HTML content
+    // 3. Build the new HTML content
     const newHTML = `
         <h2 class="room-title">${room.title}</h2>
         <p class="room-description">${room.description}</p>
     `;
 
-    // 3. Inject the new HTML into the target div
+    // 4. Inject the new HTML into the target div
     // We use .innerHTML to completely replace the existing content.
-    document.getElementById('room-description-panel').innerHTML = newHTML;
+    panel.innerHTML = newHTML;
 }
 
 // Attach Event Listeners on Load
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Define a list of ALL interactive room IDs
+    // Save the initial content before any clicks happen
+    const panel = document.getElementById('room-description-panel');
+    introHTML = panel.innerHTML;
+
+    // Define a list of ALL interactive room IDs
     const roomIds = [
+        'entrance-room',
         'first-room', 
         'second-room', 
         'third-room', 
         'fourth-room'
     ];
 
-    // 2. Loop through the list to attach listeners to all rooms
+    // Loop through the list to attach listeners to all rooms
     roomIds.forEach(roomId => {
         const roomElement = document.getElementById(roomId);
 
@@ -292,9 +349,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 showRoomDescription(this.id);
                 console.log("Clicked:", this.id);
             });
-            
-            // Optional: You can add an extra class here for visual feedback
-            // roomElement.classList.add('interactive-room'); 
         } else {
             console.warn(`Warning: SVG element with ID '${roomId}' not found in the DOM.`);
         }
