@@ -185,7 +185,7 @@ body {
 .ellipse-2 {
     width: 32px;
     height: 32px;
-    background: url("../img/minesweeper-square.svg") center/contain no-repeat;
+    background: url("../img/windows95/minesweeper-square.svg") center/contain no-repeat;
     border-radius: 0;
     position: absolute;
     top: 50%;
@@ -270,7 +270,7 @@ body {
     content: '';
     width: 16px;
     height: 16px;
-    background: url('../img/windows95-folder.svg') no-repeat center/contain;
+    background: url('../img/windows95/windows95-folder.svg') no-repeat center/contain;
     display: block; 
 }
 
@@ -646,4 +646,171 @@ footer {
 
 .navbar .layout-container .layout-options.active {
     background: var(--win-grey);
+}
+/* -------------------------------------
+  ITEM PAGE BUTTONS (Fixed to match Navbar)
+   ------------------------------------- */
+
+/* 1. Reset and Default "UP" State */
+.item-page .btn-outline-dark {
+    position: relative;
+    display: inline-block;
+    
+    /* Typography */
+    font-family: var(--default-font) !important;
+    font-size: 14px !important;
+    color: var(--win-text) !important;
+    text-decoration: none !important;
+    
+    /* Sizing */
+    padding: 10px 20px !important;
+    margin: 10px; /* Add breathing room if multiple buttons exist */
+    
+    /* The Windows 95 "UP" Look (Outset) */
+    background-color: var(--win-grey) !important;
+    border: none !important;
+    border-radius: 0 !important;
+    
+    /* Classic 3D Outset Shadow */
+    box-shadow: inset 2px 2px 0px var(--win-white),
+                inset -2px -2px 0px var(--win-dark-grey),
+                1px 1px 0px 0px #000 !important; /* Extra crisp black outer line */
+                
+    transition: none !important; /* No smooth fading in 95! */
+}
+
+/* 2. Hover State (Stays "UP") */
+.item-page .btn-outline-dark:hover {
+    /* In Win95, hovering usually doesn't depress the button. 
+       It stays grey and "up". */
+    background-color: var(--win-grey) !important;
+    color: var(--win-text) !important;
+    
+    /* Keep the Outset Shadow */
+    box-shadow: inset 2px 2px 0px var(--win-white),
+                inset -2px -2px 0px var(--win-dark-grey),
+                1px 1px 0px 0px #000 !important;
+                
+    transform: none !important;
+}
+
+/* 3. Active / Clicked State (The "DOWN" Look) */
+.item-page .btn-outline-dark:active,
+.item-page .btn-outline-dark.active {
+    /* Background gets slightly darker/dithered look */
+    background-color: #E6E6E6 !important;
+    color: black !important;
+    
+    /* The Complex Inset Shadow (Depressed) */
+    box-shadow: -2px -2px 0 0 #F0F0F0 inset, 
+                2px 2px 0 0 #262626 inset, 
+                4px 4px 0 0 #7E7E7E inset, 
+                -4px -4px 0 0 #B1B1B1 inset !important;
+                
+    /* Physically move the button down 1px to simulate pressing */
+    transform: translate(1px, 1px) !important;
+}
+
+/* 4. The Dashed Focus Line (Only appears when Pressed/Active) */
+.item-page .btn-outline-dark:active::after,
+.item-page .btn-outline-dark.active::after {
+    content: "";
+    position: absolute;
+    top: 4px; 
+    left: 4px; 
+    right: 4px; 
+    bottom: 4px; 
+    border: 1px dashed #1A1A1A;
+    pointer-events: none; 
+}
+
+/* 5. Clean up Theme 1 leftovers */
+.item-page .btn-outline-dark::before {
+    display: none !important;
+}
+
+/* Ensure ::after doesn't show when not active */
+.item-page .btn-outline-dark:not(:active):not(.active)::after {
+    content: none !important;
+}
+/* -------------------------------------
+   PREVIOUS & NEXT BUTTONS (Windows 95 Style)
+   ------------------------------------- */
+
+/* 1. Default & Hover State */
+#btn-prev,
+#btn-next {
+    position: relative;
+    display: inline-block;
+    
+    /* Typography */
+    font-family: var(--default-font) !important;
+    font-size: 14px !important;
+    font-weight: normal !important; /* Prevent bolding */
+    color: var(--win-text) !important;
+    text-shadow: none !important;   /* Remove text shadow from theme 1 */
+    
+    /* Sizing */
+    padding: 10px 20px !important;
+    min-width: 100px; /* Optional: ensures they are the same width */
+    
+    /* Windows 95 "UP" Look */
+    background-color: var(--win-grey) !important;
+    border: none !important;
+    border-radius: 0 !important;
+    
+    /* Classic 3D Outset Shadow */
+    box-shadow: inset 2px 2px 0px var(--win-white),
+                inset -2px -2px 0px var(--win-dark-grey),
+                1px 1px 0px 0px #000 !important; 
+                
+    transition: none !important; 
+}
+
+/* Ensure Hover doesn't change the 3D effect (Stays UP) */
+#btn-prev:hover,
+#btn-next:hover {
+    background-color: var(--win-grey) !important;
+    color: var(--win-text) !important;
+    font-weight: normal !important;
+    transform: none !important;
+    box-shadow: inset 2px 2px 0px var(--win-white),
+                inset -2px -2px 0px var(--win-dark-grey),
+                1px 1px 0px 0px #000 !important; 
+}
+
+/* 2. Active / Click State (The "DOWN" Look) */
+#btn-prev:active,
+#btn-next:active {
+    background-color: #E6E6E6 !important;
+    
+    /* The "Pressed" Shadow */
+    box-shadow: -2px -2px 0 0 #F0F0F0 inset, 
+                2px 2px 0 0 #262626 inset, 
+                4px 4px 0 0 #7E7E7E inset, 
+                -4px -4px 0 0 #B1B1B1 inset !important;
+                
+    /* Physically move down */
+    transform: translate(1px, 1px) !important;
+}
+
+/* 3. The Dashed Focus Line (Only when clicking) */
+#btn-prev:active::after,
+#btn-next:active::after {
+    content: "";
+    position: absolute;
+    top: 4px; left: 4px; right: 4px; bottom: 4px; 
+    border: 1px dashed #1A1A1A;
+    pointer-events: none; 
+}
+
+/* 4. Cleanup Theme 1 Leftovers */
+#btn-prev::before,
+#btn-next::before {
+    display: none !important; 
+}
+
+#btn-prev:not(:active)::after,
+#btn-next:not(:active)::after {
+    content: none !important;
 }
