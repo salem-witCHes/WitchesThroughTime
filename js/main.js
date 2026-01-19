@@ -233,6 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const roomData = {
     'first-room': {
         title: "Mythic roots",
+        link: "item_page.html?id=hecate&narrative=eras",
         description: `
         <p>Before the witch was feared, she was <strong>revered</strong>.</p> 
         
@@ -245,6 +246,7 @@ const roomData = {
     },
     'second-room': {
         title: "Fires of fear",
+        link: "item_page.html?id=waldensian-witches&narrative=eras",
         description: `
         <p>When knowledge became a <strong>crime</strong>.</p> 
 
@@ -261,6 +263,7 @@ const roomData = {
     },
     'third-room': {
         title: "Visions and shadows",
+        link: "item_page.html?id=three-witches&narrative=eras",
         description: `
         <p>Between <strong>fear</strong> and <strong>fascination</strong>.</p> 
 
@@ -274,6 +277,7 @@ const roomData = {
     }, 
     'fourth-room': {
         title: "Reclaiming the spell",
+        link: "item_page.html?id=anna-goldi&narrative=eras",
         description: `
         <p><strong>Witches are back.</strong></p>
 
@@ -316,6 +320,11 @@ function showRoomDescription(roomId) {
     const newHTML = `
         <h2 class="room-title">${room.title}</h2>
         <p class="room-description">${room.description}</p>
+        <div class="text-center mt-4">
+          <a href="${room.link}" id="explore-room-btn" class="btn btn-sm btn-outline-dark custom-room-btn">
+            Explore Room Items 
+          </a>
+        </div>
     `;
 
     // 4. Inject the new HTML into the target div
