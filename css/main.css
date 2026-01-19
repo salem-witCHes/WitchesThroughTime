@@ -416,20 +416,47 @@ scaleX(-1) re-introduces the horizontal flip */
 
 /* Hide label by default */
 .trigger-style .style-label {
-    display: none;
+    /* display: none; */
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    white-space: nowrap;
     font-size: 20px;
+    transition: opacity 0.2s ease;
+}
+
+/* .trigger-style.active-theme .style-label {
+  opacity: 1 !important;
+  visibility: visible !important;
+} */
+
+.trigger-style:hover {
+    transform: translateY(-2px); /* a little lift when you hover */
 }
 
 /* Reveal label on hover */
-.trigger-style:hover {
+.trigger-style.active-theme .style-label,
+.trigger-style:hover .style-label {
+    opacity: 1 !important;
+    visibility: visible !important;
     width: auto;
-    /* padding: 6px 10x 6px 6px; */
-    /* border-radius: 50%; */
     justify-content: flex-start;
-    transform: translateY(-2px); /* a little lift when you hover */
-    border: solid;
-    border-color: #1A1A1A;
+    padding: 5px 15px;
+    align-self: center;
+    display: flex;
+    margin-left: 8px;
+    white-space: nowrap;
+    color: white;
 }
+
+/* .trigger-style:hover .style-label {
+    padding: 5px 15px;
+    align-self: center;
+    display: flex;
+    margin-left: 8px;
+    white-space: nowrap;
+    color: white;
+} */
 
 /* Image inside the circle */
 .trigger-style .style-icon {
@@ -444,15 +471,6 @@ scaleX(-1) re-introduces the horizontal flip */
 .trigger-style .style-icon path {
   fill: black !important;
   stroke: black;
-}
-
-.trigger-style:hover .style-label {
-    padding: 5px 15px;
-    align-self: center;
-    display: flex;
-    margin-left: 8px;
-    white-space: nowrap;
-    color: white;
 }
 
 /* Dark overlay when dropdown is open */
@@ -629,8 +647,8 @@ scaleX(-1) re-introduces the horizontal flip */
   text-align: center;           /* centers heading and button */
 }
 
-.introduction-text,
-.documentation-text {
+.introduction-text p,
+.documentation-text p {
   /* Scales from 16px on mobile to 80px on large screens */
   padding-inline: clamp(1rem, 3vw, 2rem); 
   
@@ -1282,6 +1300,17 @@ nav.navbar {
 #second-room:hover,
 #third-room:hover,
 #fourth-room:hover {
+  /* This rule will override the default rule above */
+  fill: var(--Greyscale-50) !important;
+  opacity: 1.0;
+  cursor: pointer;
+}
+
+#entrance-room.active,
+#first-room.active,
+#second-room.active,
+#third-room.active,
+#fourth-room.active {
   /* This rule will override the default rule above */
   fill: var(--Greyscale-50) !important;
   opacity: 1.0;

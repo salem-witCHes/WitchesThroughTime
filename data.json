@@ -10,7 +10,7 @@
         "type": "Statue",
         "date": "2nd century A.D.",
         "location": "Galleria Borghese, Rome (Italy), Room 6 - Aeneas and Anchises Room",
-        "room": "Origins and Myth",
+        "room": "Mythic roots",
         "identifier": ["https://www.collezionegalleriaborghese.it/en/opere/statue-of-a-triple-bodied-hecate"]
       },
       "texts": {
@@ -35,7 +35,7 @@
         "type": "Neck-amphora",
         "date": "510 B.C. - 500 B.C.",
         "location": "Unknown",
-        "room": "Origins and Myth",
+        "room": "Mythic roots",
         "identifier": ["https://www.britishmuseum.org/collection/object/G_1837-0609-62"]
       },
       "texts": {
@@ -60,7 +60,7 @@
         "type": "Manuscript Illumination",
         "date": "1451",
         "location": "Paris, Bibliothèque nationale de France",
-        "room": "Fear and Persecution",
+        "room": "Fires of fear",
         "identifier": ["https://commons.wikimedia.org/wiki/File:Champion_des_dames_Vaudoises.JPG"]
       },
       "texts": {
@@ -85,7 +85,7 @@
         "type": "Manuscript",
         "date": "1487",
         "location": "Bavarian State Library, Munich",
-        "room": "Fear and Persecution",
+        "room": "Fires of fear",
         "identifier": ["https://archive.org/details/bub_gb_TTg8AAAAcAAJ/page/n3/mode/2up"]
       },
       "texts": {
@@ -110,7 +110,7 @@
         "type": "Woodcut print",
         "date": "1489",
         "location": "From De lamiis et pythonicis mulieribus",
-        "room": "Fear and Persecution",
+        "room": "Fires of fear",
         "identifier": ["https://archive.org/details/delamiisetphiton00moli/page/n39/mode/2up"]
       },
      "texts": {
@@ -135,7 +135,7 @@
         "type": "Printed book",
         "date": "1491",
         "location": "Mainz, Germany",
-        "room": "Fear and Persecution",
+        "room": "Fires of fear",
         "identifier": ["https://rarebooksdigest.com/2019/02/27/ambivalent-censorship-of-medieval-science-in-17th-century-spain-the-example-of-the-hortus-sanitatis-mainz-1491/"]
       },
       "texts": {
@@ -160,7 +160,7 @@
         "type": "Chiaroscuro woodcut print",
         "date": "1510",
         "location": "The Metropolitan Museum of Art, New York",
-        "room": "Fear and Persecution",
+        "room": "Fires of fear",
         "identifier": ["https://www.metmuseum.org/art/collection/search/336235"]
       },
       "texts": {
@@ -185,7 +185,7 @@
         "type": "Painting",
         "date": "1783",
         "location": "Kunsthaus Zürich, Switzerland",
-        "room": "Aesthetic Reinterpretation",
+        "room": "Visions and shadows",
         "identifier": ["https://it.m.wikipedia.org/wiki/File:Johann_Heinrich_F%C3%BCssli_019.jpg"]
       },
       "texts": {
@@ -210,7 +210,7 @@
         "type": "Ballet",
         "date": "1825",
         "location": "Teatro alla Scala, Milan, Italy",
-        "room": "Aesthetic Reinterpretation",
+        "room": "Visions and shadows",
         "identifier": ["https://archive.org/details/ilnocedibenevent00sssm/mode/2up"]
       },
       "texts": {
@@ -235,7 +235,7 @@
         "type": "Poem/Manuscript",
         "date": "1830-1886",
         "location": "Amherst College Archives & Special Collections, Amherst, Massachusetts, USA",
-        "room": "Aesthetic Reinterpretation",
+        "room": "Visions and shadows",
         "identifier": ["https://acdc.amherst.edu/view/Emily%20Dickinson/ed0528#page/1"]
       },
       "texts": {
@@ -260,7 +260,7 @@
         "type": "Painting",
         "date": "1853",
         "location": "Peabody Essex Museum, Salem, Massachusetts, USA",
-        "room": "Fear and Persecution",
+        "room": "Fires of fear",
         "identifier": ["https://en.wikipedia.org/wiki/The_Examination_of_a_Witch_(painting)"]
       },
       "texts": {
@@ -285,7 +285,7 @@
         "type": "Painting",
         "date": "1864",
         "location": "Birmingham Museum and Art Gallery, Birmingham",
-        "room": "Origins and Myth",
+        "room": "Mythic roots",
         "identifier": ["https://artsandculture.google.com/asset/morgan-le-fay/bQG4hil-9FMmYA?hl=en"]
       },
       "texts": {
@@ -310,19 +310,19 @@
         "type": "Archival document",
         "date": "1782",
         "location": "Landesarchiv des Kantons Glarus (State Archives of the Canton of Glarus)",
-        "room": "Aesthetic Reinterpretation",
+        "room": "Reclaiming the spell",
         "identifier": ["https://hls-dhs-dss.ch/it/articles/043539/2021-11-30/"]
       },
       "texts": {
-        "short-fun-kid": "",
-        "medium-fun-kid": "",
-        "long-fun-kid": "",
-        "short-educational-adult": "",
-        "medium-educational-adult": "",
-        "long-educational-adult": "",
-        "short-scholar": "",
-        "medium-scholar": "",
-        "long-scholar": ""
+        "short-fun-kid": "Anna Göldin lived more than 200 years ago and worked as a maid. In 1782, she was accused of hurting a child with magic and these pages show part of her trial. She said the devil made her do it and was killed because of these accusations. Only in 2008 she was officially declared innocent. Today, she is considered the last woman in Europe to be killed as a “witch”.",
+        "medium-fun-kid": "Anna Göldin lived more than 200 years ago and worked as a maid. In 1782, she was accused of putting sharp objects into a child’s food. People believed she had used magic, so she was punished and killed as a witch, even though the official documents do not mention witchcraft. Many people at the time were on her side and believed the judge had made a wrong decision. However, only in 2008 Anna Göldin was officially declared innocent. Today, she is considered the last woman in Europe to be killed as a “witch”.",
+        "long-fun-kid": "Anna Göldin lived more than 200 years ago and worked as a maid. When the child in her household became sick, people accused her of putting pins and nails into the child’s milk, saying that she had used magic. During questioning, Anna said the devil, in the shape of a cat, had forced her to act that way, and the documents shown here record part of that questioning. Even though her story changed, she was found guilty and killed. Many people at the time were on her side and believed the judge had made a wrong decision, but only in 2008 she was officially declared innocent. Today, she is considered the last woman in Europe to be killed as a “witch”.",
+        "short-educational-adult": "This judicial document records the interrogation of Anna Göldin, executed in 1782 after being accused of poisoning a child. Although the trial avoided the term “witchcraft,” it relied on similar beliefs and fears. In 2008, the Canton of Glarus formally recognized her conviction as a miscarriage of justice.",
+        "medium-educational-adult": "This judicial document records the interrogation of Anna Göldin, accused in 1782 of poisoning a child in her care with metal fragments. These pages belong to the trial records known as Göldi-Akte 4. While the legal language avoided explicit references to witchcraft, the accusations and methods of punishment echoed older beliefs and practices associated with witch trials. Göldin was executed on 24 June 1782; her conviction was formally overturned in 2008 by the Canton of Glarus.",
+        "long-educational-adult": "This judicial document records the interrogations of Anna Göldin, accused in 1782 of poisoning a child in her care, putting pins, nails and metal fragments in the child’s milk. These pages form part of the trial records known as Göldi-Akte 4, in which the term “witchcraft” is deliberately avoided, even though the entire case relied on ideas traditionally associated with it, including the devil’s influence and forms of supernatural harm. Despite inconsistent testimony, Göldin was condemned on 17 June 1782 and executed on 24 June of the same year. Contemporary commentators and later historians quickly denounced the affair as a “judicial murder”. In 2008, the Canton of Glarus formally recognized her conviction as a miscarriage of justice, acknowledging her innocence and the persistence of witch-hunt logic well into the Enlightenment.",
+        "short-scholar": "This judicial document records the interrogation of Anna Göldin, accused in 1782 of poisoning a child in her care through the use of metal fragments and alleged magical practices. Although the official documents avoid explicit references to witchcraft, Göldin’s case exemplifies the late survival of witchcraft paradigms within Enlightenment-era criminal law, reframed in medical and juridical terms. In 2008, the Canton of Glarus formally recognized her conviction as a miscarriage of justice. She is often described as the last woman executed in Europe in a case associated with witchcraft.",
+        "medium-scholar": "This judicial document records the interrogation of Anna Göldin, accused in 1782 of poisoning a child in her care with pins and nails. During questioning, Göldin initially admitted placing these objects in the child’s milk and later claimed to have administered a sweet containing metal fragments, an act she attributed to the influence of the devil, who appeared to her in the form of a cat. Although the official documents deliberately avoid references to witchcraft, Göldin’s case demonstrates the endurance of supernatural explanatory frameworks within an ostensibly rational judicial system. Despite inconsistent testimony, Göldin was condemned on 17 June 1782 and executed on 24 June of the same year. In 2008, the Canton of Glarus formally recognized her conviction as a miscarriage of justice. This act is widely recognized as one of the first official acknowledgements in Europe of wrongful execution in a case rooted in witchcraft-like accusations. She is often described as the last woman executed in Europe in a case associated with witchcraft.",
+        "long-scholar": "This judicial document records the interrogation of Anna Göldin and Rudolf Steinmüller, both imprisoned in the Canton of Glarus in 1782 and accused of poisoning Anna Maria Tschudi, the young daughter of the household in which Göldin was employed as a maid. According to historical accounts, a number of pins, nails, and pieces of metal were allegedly discovered in the child’s milk and later in her bodily excretions, giving rise to claims that Göldin had inflicted these harms with Steinmüller’s complicity. These pages displayed here refer to the first informal interrogation, conducted on 21 March 1782 (1 April according to the Gregorian calendar). During questioning, Göldin initially admitted placing these objects in the child’s milk and later claimed to have administered a sweet containing metal fragments, an act she attributed to the influence of the devil, who appeared to her in the form of a cat. Throughout the proceedings, her testimony oscillated between these two accounts. Despite these inconsistencies, Göldin was condemned on 17 June 1782 as a poisoner and executed on 24 June of the same year. These documents form part of the trial records known as Göldi-Akte 4 (Landesarchiv des Kantons Glarus, AE I.G:4), which culminated in Göldin’s execution. She is often described as the last woman executed in Europe in a case associated with witchcraft, although the language of the document deliberately avoids the term. By the late eighteenth century, explicit references to witchcraft were increasingly replaced by charges framed in medical or criminal terminology. This semantic shift allowed deeply rooted beliefs in maleficent practices to persist within a modernising and rational legal system. Göldin's case has since become emblematic of the endurance of obscurantism and judicial violence within the Old Swiss Confederation at the height of the Age of Enlightenment, only a few years before the French Revolution. Contemporary commentators and later historians rapidly denounced the affair as a “judicial murder”, exposing the tension between enlightened ideals and institutional practices. More than two centuries later, in 2008, the parliament of the Canton of Glarus formally rehabilitated Anna Göldin, annulling her conviction and recognizing that she had been a victim of a miscarriage of justice. This act represents one of the first official acknowledgements in Europe of wrongful execution in a case rooted in witchcraft-like accusations, transforming a symbol of persecution into one of historical reckoning."
       }
     },
     "circe-odysseus": {
@@ -335,7 +335,7 @@
         "type": "Painting",
         "date": "1891",
         "location": "Unknown",
-        "room": "Origins and Myth",
+        "room": "Mythic roots",
         "identifier": ["https://commons.wikimedia.org/wiki/File:Circe_Offering_the_Cup_to_Odysseus.jpg"]
       },
       "texts": {
@@ -360,7 +360,7 @@
         "type": "Illustration",
         "date": "1900",
         "location": "Unknown",
-        "room": "Origins and Myth",
+        "room": "Mythic roots",
         "identifier": ["https://commons.wikimedia.org/wiki/File:Bilibin._Baba_Yaga.jpg"]
       },
       "texts": {
@@ -385,19 +385,19 @@
         "type": "Sculpture",
         "date": "1974–1979",
         "location": "Brooklyn Museum",
-        "room": "Re-appropriation",
+        "room": "Reclaiming the spell",
         "identifier": ["https://www.brooklynmuseum.org/objects/166085"]
       },
       "texts": {
-        "short-fun-kid": "",
-        "medium-fun-kid": "",
-        "long-fun-kid": "",
-        "short-educational-adult": "",
-        "medium-educational-adult": "",
-        "long-educational-adult": "",
-        "short-scholar": "",
-        "medium-scholar": "",
-        "long-scholar": ""
+        "short-fun-kid": "This artwork is part of a big table created by artist Judy Chicago to remember important women from history. This place is dedicated to Petronilla de Meath, a woman who lived in the Middle Ages and was killed because people accused her of using magic. Today, this artwork helps us remember Petronilla and many other women whose voices were silenced, showing that their stories still matter.",
+        "medium-fun-kid": "This artwork is part of a big table created by artist Judy Chicago to remember important women from history. This place is for Petronilla de Meath, a woman who lived in the Middle Ages and was killed because people accused her of using magic. Petronilla was the first Irish woman to have been executed after being accused of witchcraft, long before the big wave of witch trials in Europe. Today, this artwork helps us remember Petronilla and many other women whose voices were silenced, showing that their stories still matter.",
+        "long-fun-kid": "This artwork is part of a big table created by artist Judy Chicago to remember important women from history. This place is for Petronilla de Meath, a woman who lived in the Middle Ages and was killed because people accused her of using magic. The place setting includes many symbols that recall witchcraft: the letter “P” on the runner hides the shape of a broomstick and on the plate we can recognize a bell, a book, a candle and a cauldron, together with flames that recall the painful death reserved for “witches” in the past. Petronilla was the first Irish woman to have been executed for witchcraft, many centuries before the big wave of witch trials in Europe. Today, this artwork helps us remember Petronilla and many other women whose voices were silenced, showing that their stories still matter.",
+        "short-educational-adult": "Petronilla de Meath’s place setting is part of a monumental installation known as The Dinner Party (1974–1979) by Judy Chicago, in which the artist commemorates women from myth, history or legend whose contributions have been marginalized in the past. Petronilla de Meath is honored as one of the earliest women executed for witchcraft-related accusations, many centuries before the great wave of witch trials in Europe: she was burned at the stake on 3 November 1324. Her place setting transforms a story of persecution into a gesture of remembrance and feminist reclamation.",
+        "medium-educational-adult": "Petronilla de Meath’s place setting is part of a monumental installation known as The Dinner Party (1974–1979) by Judy Chicago, in which the artist commemorates women from myth, history or legend whose contributions have been marginalized in history. In this artwork, Petronilla de Meath is honored as one of the earliest women executed for witchcraft-related accusations, many centuries before the great wave of witch trials in Europe: she was burned at the stake on 3 November 1324. Through symbolic objects and embroidered imagery, the place setting reframes her story as one of remembrance, transforming historical violence into a powerful act of feminist recognition.",
+        "long-educational-adult": "Petronilla de Meath’s place setting is part of a monumental installation known as The Dinner Party (1974–1979) by Judy Chicago, in which the artist commemorates women from myth, history or legend whose contributions have been marginalized in history. Petronilla de Meath was one of the earliest women in Ireland executed for charges of sorcery and heresy, many centuries before the great wave of witch trials in Europe. Petronilla worked as a maid to Lady Alice Kyteler, who was charged with sorcery, demonism and the murder of her husbands, but while she managed to escape Petronilla was tortured and burned at the stake on 3 November 1324. Through symbolic objects and embroidered imagery recalling witchcraft, this place setting reframes her story as one of remembrance: the runner features the letter “P” which hides the shape of a broomstick, while the reverse side displays a horned animal which alludes to the goat, associated with demonological imagery. The plate itself includes emblematic objects associated with witches, like a bell, a book, a candle and a cauldron, together with the flames which recall Petronilla’s execution by burning. The Dinner Party restores silenced voices from history, recalling them to the table, rewriting the past with a feminist lens.",
+        "short-scholar": "Petronilla de Meath’s place setting is part of a monumental installation, Judy Chicago’s The Dinner Party (1974–1979), conceived by the artist to commemorate women from myth, history and legend whose contributions have been marginalized or erased from dominant historical narratives. Petronilla de Meath was one of the first Irish women known to have been executed for heresy and burned at the stake on 3 November 1324, several centuries before the peak of the witch trials in Europe. This artwork reframes her story as a foundational moment in the gendered history of persecution, reclaiming the accused woman as a figure of feminist memory.",
+        "medium-scholar": "Petronilla de Meath’s place setting is part of a monumental installation, Judy Chicago’s The Dinner Party, conceived by the artist as a way to commemorate women from myth, history and legend whose contributions have been marginalized or erased from dominant historical narratives. Petronilla de Meath served as a maid to Lady Alice Kytler, one of the earliest women formally accused of witchcraft in Europe, several centuries before the peak of the witch trials. While Lady Alice, charged with sorcery, demonism and the murder of her husbands, managed to escape, Petronilla was tortured into confession and forced to accuse her mistress. She was subsequently condemned to death and executed alongside other alleged accomplices. Her trial is often regarded as a foundational moment in the construction of witchcraft as an organized and predominantly female crime, anticipating later patterns of persecution. Petronilla thus stands as an emblem of the many women who suffered this fate during the Middle Ages. This artwork reframes her story and incorporates a rich symbolic language that merges medieval references with modern feminist reinterpretation. The runner features an illuminated letter “P” concealing the shape of a broomstick, while its reverse side displays a horned form alluding to the goat associated with demonological imagery. The plate itself includes emblematic objects traditionally associated with witchcraft, such as a bell, a book, a candle and a cauldron, while flames recur as a tragic inversion of sacred fire, directly recalling Petronilla’s execution by burning. Through Petronilla’s inclusion in The Dinner Party, Chicago reclaims a figure long defined by accusation and punishment, transforming her from a victim of misogynistic violence into a bearer of collective memory and feminist resistance.",
+        "long-scholar": "The Dinner Party (1974-1979) is a monumental art installation by American feminist artist Judy Chicago. Conceived and realized through a collaborative process involving hundreds of volunteers skilled in ceramics, textiles, and embroidery, the work consists of a triangular dinner table with three wings, each set with thirteen place settings each, for a total of thirty-nine. Each setting commemorates a woman from myth, history and legend who left a lasting mark in history. Beneath the table lies the Heritage Floor, composed of 2304 porcelain tiles inscribed in gold with the names of 999 additional women. The installation is permanently housed at the Brooklyn Museum, within the Elizabeth A. Sackler Center for Feminist Art. One of the thirty-nine place settings is dedicated to Petronilla de Meath, the first Irish woman known to have been executed for heresy, burned at the stake on 3 November 1324. Petronilla served as a maid to Lady Alice Kytler, one of the earliest women formally accused of witchcraft in Europe, several centuries before the peak of the witch trials. While Lady Alice, charged with sorcery, demonism and the murder of her husbands, managed to escape, Petronilla was tortured into confession and forced to accuse her mistress. She was subsequently condemned to death and executed alongside other alleged accomplices. Her trial is often regarded as a foundational moment in the construction of witchcraft as an organized and predominantly female crime, anticipating later patterns of persecution. Petronilla thus stands as an emblem of the many women who suffered this fate during the Middle Ages. The Petronilla de Meath Place Setting incorporates a rich symbolic language that merges medieval references with modern feminist reinterpretation. The runner features an illuminated letter “P” concealing the shape of a broomstick, while its reverse side displays a horned form alluding to the goat, associated with pagan worship and later demonological imagery. Significantly, the elaborately embroidered back of the runner is visible only from across the table, alluding to the invisibility and erasure historically imposed on women’s achievements. The plate itself also incorporates emblematic objects traditionally associated with witchcraft, such as a bell, a book, a candle and a cauldron. Flames appear as a tragic inversion of the sacred fire, recalling Petronilla’s execution by burning. Through Petronilla’s inclusion in The Dinner Party, Chicago reclaims a figure long defined by accusation and punishment, transforming her from a victim of misogynistic violence into a bearer of collective memory and feminist resistance. The work reframes medieval persecution within a contemporary political discourse, converting the fire that once destroyed women’s bodies into a metaphorical flame of historical recovery and feminist awakening. In doing so, The Dinner Party restores silenced voices to history’s table, both literally and symbolically, asserting the necessity of rewriting the past from a feminist perspective. "
       }
     },
     "streghe-tornate": {
@@ -410,19 +410,19 @@
         "type": "Photograph",
         "date": "1976",
         "location": "Archivio fotografico Paola Agosti",
-        "room": "Re-appropriation",
+        "room": "Reclaiming the spell",
         "identifier": ["https://www.stsenzatitolo.com/allarchivio-fotografico-paola-agosti-sul-movimento-femminista-premio-tempo-ritrovato-fotografie-non-perdere/"]
       },
       "texts": {
-        "short-fun-kid": "",
-        "medium-fun-kid": "",
-        "long-fun-kid": "",
-        "short-educational-adult": "",
-        "medium-educational-adult": "",
-        "long-educational-adult": "",
-        "short-scholar": "",
-        "medium-scholar": "",
-        "long-scholar": ""
+        "short-fun-kid": "This photo was taken by Paola Agosti in 1976, on Women’s Day in Rome. The women in the image are making a banner that says “The witches are back”. Long ago, women were called witches to hurt them, but here the word becomes a symbol of courage, friendship and unity.",
+        "medium-fun-kid": "This photo was taken by Paola Agosti in 1976, on Women’s Day in Rome. The women in the image are making a banner that says “The witches are back.” Long ago, women were called witches to hurt them, but here this word becomes a symbol of courage, friendship and unity between women. The message is clear: “Witches are back, not to be burned but to be heard”.",
+        "long-fun-kid": "This photo was taken by Paola Agosti in 1976, on Women’s Day in Rome. The women in the image are making a banner that says “The witches are back.” Laughing and working together, they show that being a “witch” can mean being brave, free and powerful. Long ago, women were called witches to hurt them, but here the word becomes a symbol of courage and unity, announcing that “Witches are back, not to be burned but to be heard”.",
+        "short-educational-adult": "This photograph by Paola Agosti documents a feminist march in Rome in 1976. The banner reading “The witches are back” reclaims a word once used to persecute women, transforming it into a symbol of empowerment and collective resistance.",
+        "medium-educational-adult": "This photograph by Paola Agosti documents a feminist march in Rome in 1976, during the International Women’s Day. Between 1968 and 1982, Agosti captured Italian second-wave feminism in action, documenting its rise and the growing awareness that led to battles for divorce, abortion rights and the fight against domestic violence. The banner reading “The witches are back” reclaims a word once used to persecute women, transforming it into a symbol of empowerment and collective resistance.",
+        "long-educational-adult": "This photograph by Paola Agosti documents a feminist march in Rome in 1976, during the International Women’s Day. Between 1968 and 1982, Agosti captured Italian second-wave feminism in action, documenting its rise and the growing awareness that led to battles for divorce, abortion rights and the fight against domestic violence. By portraying moments of collaboration, joy and determination, Agosti highlights how feminist activism transformed both language and public space, linking historical oppression to contemporary struggles for autonomy and rights. The banner reading “The witches are back” reclaims a word once used to persecute women, transforming it into a symbol of empowerment and collective resistance.",
+        "short-scholar": "This photograph by Paola Agosti, taken during the International Women’s Day march in Rome in 1976, exemplifies the feminist reappropriation of the witch as a political metaphor. The slogan “Le streghe son tornate” (Witches are back) articulates a continuity between historical persecution and contemporary feminist resistance.",
+        "medium-scholar": "This photograph by Paola Agosti, taken during the International Women’s Day march in Rome in 1976, documents a pivotal moment in the history of second-wave feminism in Italy. Between 1968 and 1982, Agosti systematically documented the emergence and evolution of the Italian feminist movement, tracing its grassroots origins, its public demonstrations and its growing political influence, which culminated in key struggles for divorce, reproductive rights, and legal recognition of gender-based violence. This photograph depicts a group of young women preparing a banner bearing the slogan “Le streghe son tornate”, which articulates a continuity between historical persecution and contemporary feminist resistance and exemplifies the feminist appropriation of the witch as a political metaphor. ",
+        "long-scholar": "This photograph by Paola Agosti, taken during the International Women’s Day march in Rome on 8 March 1976, documents a pivotal moment in the history of second-wave feminism in Italy. It depicts a group of young women preparing a banner bearing the slogan “Le streghe son tornate” (“The witches are back”), a phrase that explicitly reclaims a term historically used to stigmatize and persecute women, transforming it into a symbol of feminist resistance and empowerment. Agosti’s image captures the intersection of the personal and political that characterized feminist activism of the period. The women’s laughter, collaboration and bodily proximity convey a sense of collective energy, underscoring how feminist movements reconfigured public space through shared action and solidarity. Between 1968 and 1982, Agosti systematically documented the emergence and evolution of the Italian feminist movement, tracing its grassroots origins, its public demonstrations and its growing political influence, which culminated in key struggles for divorce, reproductive rights, and legal recognition of gender based violence. By invoking the figure of the witch, the photograph established a powerful connection between contemporary feminist activism and a long history of gendered persecution. The witch functions here as a historical metaphor for the marginalization, control and punishment of women who transgressed social norms. Within feminist discourse, this figure is reimagined not as a victim, but as a subject of defiance, autonomy and collective identity. Agosti’s photograph thus operates on multiple levels: as historical documentation, as visual testimony of political mobilization and as a symbolic articulation of feminist memory. The slogan “The witches are back” transforms centuries of accusation into a declaration of presence, asserting continuity between past oppression and present resistance. These women proclaim not a return to superstition, but the persistence of feminist struggles, announcing that “The Witches are back, not to be burned but to be heard”."
       }
     },
     "myths-series": {
@@ -435,19 +435,19 @@
         "type": "Screenprint",
         "date": "1981",
         "location": "United States",
-        "room": "Aesthetic Reinterpretation",
+        "room": "Visions and shadows",
         "identifier": ["https://revolverwarholgallery.com/portfolio/the-witch-261-2/"]
       },
       "texts": {
-       "short-fun-kid": "",
-        "medium-fun-kid": "",
-        "long-fun-kid": "",
-        "short-educational-adult": "",
-        "medium-educational-adult": "",
-        "long-educational-adult": "",
-        "short-scholar": "",
-        "medium-scholar": "",
-        "long-scholar": ""
+       "short-fun-kid": "In this artwork, Andy Warhol turned the Wicked Witch from The Wizard of Oz into a colorful pop star. Look at her smile and the bright red outlines! She’s spooky and funny at the same time, no longer a monster, but a superstar!",
+        "medium-fun-kid": "Andy Warhol created this artwork in 1981 and it shows the Wicked Witch from The Wizard of Oz. He asked the actress who played her in the old movie to pose again, then turned her image into art. With bright colors and a spooky smile, she looks both scary and cool, showing how witches are longer monsters, but superstars.",
+        "long-fun-kid": "Andy Warhol created this artwork in 1981 and it shows the Wicked Witch from The Wizard of Oz. He asked the actress who played her in the old movie to pose again, then turned her image into art. Warhol used bright colors like green, red and purple to make her look strange and magical. The witch looks scary but also fun, reminding us that witches are not just bad characters, but powerful figures people remember.",
+        "short-educational-adult": "Andy Warhol’s The Witch 261 is part of his Myths portfolio (1981), a series focused on famous fictional characters from twentieth-century pop culture. The artwork portrays the Wicked Witch of the West from The Wizard of Oz using bright colors and bold outlines. By turning a villain into a pop icon, Warhol transforms the witch into a figure of visibility and power.",
+        "medium-educational-adult": "Andy Warhol’s The Witch 261 is part of his Myths portfolio (1981), a series focused on famous fictional characters from twentieth-century pop culture. The artwork portrays the Wicked Witch of the West from The Wizard of Oz using bright colors and bold outlines, blending fear, humor and nostalgia. It is based on real photographs of Margaret Hamilton, who reenacted her role during a polaroid session at The Factory. By turning a villain into a pop icon, Warhol transforms the witch into a figure of visibility and power, suggesting a shift from fear toward fascination and empowerment.",
+        "long-educational-adult": "Andy Warhol’s The Witch 261 is part of his Myths portfolio (1981), a series focused on famous fictional characters from twentieth-century pop culture. The artwork portrays the Wicked Witch of the West from The Wizard of Oz using bright colors and bold outlines, blending fear, humor and nostalgia. The artwork is based on real photographs of Margaret Hamilton, who reenacted her role during a polaroid session at The Factory. Each figure in the Myths portfolio can be read as a projection of different shades of the artist’s personality, filtered through the media icons of his childhood. By turning a villain into a pop icon, Warhol transforms the witch into a figure of visibility and power, suggesting a shift from fear toward fascination and empowerment. ",
+        "short-scholar": "Andy Warhol’s The Witch 261, from the Myths portfolio (1981), depicts the Wicked Witch of the West from The Wizard of Oz using the visual language of Pop Art. Based on polaroids of Margaret Hamilton, the print exemplifies the transformation of the witch from a figure of fear into a media icon and a symbol of reinvention and cultural empowerment.",
+        "medium-scholar": "The Witch (261) is part of Andy Warhol’s Myths series (1981), which examines iconic fictional figures through Pop Art aesthetics. Drawing on Polaroids of Margaret Hamilton reenacting her role as the Wicked Witch of the West, the print merges cinematic nostalgia with mass-produced imagery. Beyond its engagement with popular culture, The Witch reflects Warhol’s interest in contradiction and ambivalence. Each figure in the Myths portfolio can be read as a projection of different facets of the artist’s psyche, filtered through the media icons of his childhood. By translating the witch into the visual language of Pop Art, Warhol participates in a broader cultural shift that reframes the archetype as a figure of ambivalence, visibility and symbolic power within popular culture.",
+        "long-scholar": "The Witch 261 belongs to Andy Warhol’s celebrated Myths portfolio (1981), a series of ten screenprints depicting some of the most iconic fictional characters of 20th century popular culture drawn from literature, cinema, television and folklore. Through these figures, Warhol examined the mechanisms of fame, repetition and collective imagination that shaped American visual culture. This print portrays the Wicked Witch of the West, a fictional character from the classic children’s novel The Wonderful Wizard of Oz (1900) by L. Frank Baum, popularized globally through Victor Fleming’s 1939 film adaptation. Set against a flat purple background, the witch appears with eerie green skin, a pointed black hat and an exaggerated, unsettling grin. The strong contrast created by the red and electric green outlines infuses the image with theatrical menace. Unlike other works in the series, The Witch 261 is rooted in authenticity: Warhol invited Margaret Hamilton, the original actress from the 1939 film The Wizard of Oz, to reenact her famous role for a Polaroid session at The Factory. These photographs served as the basis for the screenprint, merging mass-produced pop imagery with personal memory and cinematic nostalgia. The result captures the tension between childhood fear and fascination embodied by Hamilton’s character. Beyond demonstrating Warhol’s ability to distill American popular culture into unforgettable images, each print in Myths also reflects a different facet of the artist’s personality, filtered through the media icons of his childhood – blending humor, nostalgia and cultural critique. In particular, The Witch embodies transformation and power: grotesque yet glamorous, humorous yet menacing, a contradiction that Warhol found irresistible. This duality mirrors his own complex relationship with visibility, performance and fear within a culture dominated by spectacle. By translating the witch into the visual language of Pop Art, Warhol participates in a broader cultural shift that reframes the archetype. No longer a figure of fear and persecution, the witch becomes a symbol of visibility, self-invention and empowerment. Warhol’s interpretation bridges myth and celebrity, helping to transform the witch into a media icon rather than a monster. "
       }
     },
     "witches-america": {
@@ -460,19 +460,19 @@
         "type": "Photograph / Archival pigment print",
         "date": "2016",
         "location": "CLAMP Art (NY)",
-        "room": "Re-appropriation",
+        "room": "Reclaiming the spell",
         "identifier": ["https://clampart.com/2018/03/wolf-brooklyn-ny/"]
       },
       "texts": {
-        "short-fun-kid": "",
-        "medium-fun-kid": "",
-        "long-fun-kid": "",
-        "short-educational-adult": "",
-        "medium-educational-adult": "",
-        "long-educational-adult": "",
-        "short-scholar": "",
-        "medium-scholar": "",
-        "long-scholar": ""
+        "short-fun-kid": "This photo was taken by artist Frances F. Denny and shows Wolf, a young woman who calls herself a witch today. She is not wearing a costume or doing magic tricks. Instead, she stands calmly, looking straight at us while smoking a cigar. The artist shows that being a witch today means being yourself and not being afraid to be seen.",
+        "medium-fun-kid": "This photo was taken by artist Frances F. Denny and shows Wolf, a young woman who calls herself a witch today. She is not wearing a costume or doing magic tricks. Instead, she stands calmly, looking straight at us while smoking a cigar. The witch is no longer hidden in the woods, but stands openly in the contemporary world. The artist shows that being a witch today means being confident, free and not afraid to be seen.",
+        "long-fun-kid": "This photo was taken by artist Frances F. Denny in 2016 and is part of a larger project called Major Arcana: Witches in America (2016-2018). The project includes portraits of women and gender-diverse people who identify as modern-day witches. This picture shows Wolf, a young woman who calls herself a witch. She is not wearing a costume or doing magic tricks. Instead, she stands calmly, looking straight at us while smoking a cigar. The witch is no longer hidden in the woods, but stands openly in the contemporary world, with new strength and confidence. Through this project, the artist shows that witchcraft still exists today and can be practiced in personal ways. Calling oneself a “witch” becomes a way to feel strong, free and proud of who you are.",
+        "short-educational-adult": "This photograph by Frances F. Denny is part of a broader project called Major Arcana: Witches in America, a series documenting people who identify as modern-day witches. In this portrait, Denny captures Wolf, a young witch who stands confidently, smoking a cigar and looking straight at the camera. The image emphasizes presence and self-assurance rather than theatrical imagery, reframing the witch as a visible and empowered figure in contemporary society.",
+        "medium-educational-adult": "This photograph by Frances F. Denny is part of a broader project called Major Arcana: Witches in America, a series documenting people who identify as modern-day witches. Through these works, Denny examines how the notion of witchhood is claimed and redefined, presenting the witch as a self-chosen identity rather than a stereotype. In this portrait, Denny captures Wolf, a young witch who stands confidently, smoking a cigar and looking straight at the camera. The image emphasizes presence and self-assurance rather than theatrical imagery, reframing the witch as a visible and empowered figure in contemporary society.",
+        "long-educational-adult": "This photograph by Frances F. Denny is part of a broader project called Major Arcana: Witches in America, a series documenting people who identify as modern-day witches. Through these works, Denny examines how the notion of witchhood is claimed and redefined, representing the witch as a self-chosen identity rather than a stereotype. In this portrait, Denny captures Wolf, a young witch who stands confidently in natural light,  smoking a cigar and looking straight at the camera. The image challenges centuries of demonization and historical stereotypes: the witch is no longer hidden at the margins of society but she stands openly in the contemporary world, recharged with new power. By emphasizing presence and restraint rather than theatrical imagery, the portrait reframes the witch as a visible and empowered figure within modern society.",
+        "short-scholar": "This photograph by Frances F. Denny is part of Major Arcana: Witches in America (2016-2018), a series that examines witchcraft as a contemporary identity claimed by women and gender-diverse individuals. The portrait of Wolf emphasizes restraint and presence, challenging traditional iconographies of witchcraft and reframing the witch as a visible, self-possessed subject within modern society.",
+        "medium-scholar": "This photograph by Frances F. Denny belongs to her broader project Major Arcana: Witches in America (2016–2018), a series that reflects the artist’s long-standing interest in investigating female identity and self-representation through portraiture. The project consists of portraits of women, as well as gender-fluid and trans individuals, from across the United States who identify as contemporary witches. Through these works, Denny examines how the concept of witchcraft is claimed, redefined and politicized, presenting witchhood as a self-determined identity rather than an imposed stigma. In this portrait from 2016, Denny depicts Wolf, a young witch, illuminated by stark natural light. Her posture is direct and her gaze unwavering as she calmly smokes a cigar. The visual restraint of the image underscores a central theme of the series: power is not located in spectacle, costume or ritual display, but in presence and self-possession. Dressed in dark, urban clothing and devoid of theatrical attributes, Wolf asserts visibility, autonomy and defiance through her quiet confidence alone. This representation directly challenges centuries of demonization, secrecy and marginalization historically associated with the figure of the witch. Here, the witch no longer exists at the edges of society, but occupies contemporary space openly and unapologetically.",
+        "long-scholar": "This photograph by Frances F. Denny belongs to her broader project Major Arcana: Witches in America (2016-2018), a series that reflects the artist’s long-standing interest in investigating female identity and self-representation through portraiture. The project consists of portraits of women, as well as gender-fluid and trans individuals, from across the United States who identify as contemporary witches. Through these works, Denny examines how the concept of witchcraft is claimed, redefined and politicized, representing witchhood as a self-chosen identity rather than an imposed stigma. Each participant practices a personal form of witchcraft, whether rooted in established spiritual traditions such as Wicca or Voudou, or developed through individual belief systems. In this portrait from 2016, Denny depicts Wolf, a young witch, illuminated by stark natural light. Her posture is direct and her gaze unwavering as she calmly smokes a cigar. The visual restraint of the image underscores a central theme of the series: power is not located in spectacle, costume or ritual display, but in presence and self-possession. Dressed in dark, urban clothing and devoid of theatrical attributes, Wolf asserts visibility, defiance and autonomy through her quiet confidence alone. This representation directly challenges centuries of demonization, secrecy and marginalization historically associated with the figure of the witch. Here, the witch no longer exists at the edges of society, but occupies contemporary space openly and unapologetically. Through Major Arcana, Denny dismantles stereotypical representation of witchcraft and constructs a more inclusive and pluralistic image of the witch as a feminist archetype. Her work reframes witchhood as a contemporary expression of unsanctioned femininity, self-determination and resistance, bridging historical memory with present-day struggles for identity, visibility and empowerment. "
       }
     },
     "witch-camp-ghana": {
@@ -485,19 +485,19 @@
         "type": "Photograph",
         "date": "2022-10-27",
         "location": "Bob & Diane Fund, for Der Spiegel / World Press Photo archive",
-        "room": "Re-appropriation",
+        "room": "Reclaiming the spell",
         "identifier": ["https://www.worldpressphoto.org/collection/photo-contest/2023/Lee-Ann-Olwage/1"]
       },
       "texts": {
-        "short-fun-kid": "",
-        "medium-fun-kid": "",
-        "long-fun-kid": "",
-        "short-educational-adult": "",
-        "medium-educational-adult": "",
-        "long-educational-adult": "",
-        "short-scholar": "",
-        "medium-scholar": "",
-        "long-scholar": ""
+        "short-fun-kid": "This photo was taken by photographer Lee-Ann Olwage in Ghana in 2022. It shows Sugri Zenabu, an elderly woman who lives in a place called a “witch camp.” Some women are sent there because people believe illness or confusion is caused by magic. This photo reminds us that fear and misunderstanding can still cause injustice, and that kindness and care are important, especially for older people.",
+        "medium-fun-kid": "This photo was taken by photographer Lee-Ann Olwage in Ghana in 2022. It shows Sugri Zenabu, an elderly woman who lives in a place called a “witch camp.” Some women are sent there because people believe illness or confusion is caused by magic. Olwage decided to investigate the stories of these women with her project called The Big Forget. The title comes from the fact that in many African languages there is no word for “dementia”, which is often described as “confusion” or “madness”. This photo reminds us that fear and misunderstanding can still cause injustice, and that kindness and care are important, especially for older people.",
+        "long-fun-kid": "This photo was taken by photographer Lee-Ann Olwage in 2022 in Ghana. It shows Sugri Zenabu, an elderly woman who was accused of being a witch because she showed signs of illness and confusion. In some communities, when people do not understand diseases like dementia, they may believe that magic or evil forces are responsible. Women like Zenabu are sometimes sent away to special camps, where they are safe from violence but also separated from their families. Olwage decided to investigate the stories of these women with her project called The Big Forget. The title comes from the fact that in many African languages there is no word for “dementia”, which is often described as “confusion” or “madness”. This photo reminds us that fear and misunderstanding can still cause injustice, and that kindness and care are important, especially for older people.",
+        "short-educational-adult": "This photograph by Lee-Ann Olwage, taken in 2022 in a “witch camp” in Ghana, portrays Sugri Zenabu, an elderly woman accused of witchcraft due to symptoms associated with dementia. The image exposes how superstition and gendered discrimination continue to shape the treatment of vulnerable women today.",
+        "medium-educational-adult": "This photograph by Lee-Ann Olwage, taken in 2022 in a “witch camp” in Ghana, portrays Sugri Zenabu, an elderly woman accused of witchcraft after exhibiting symptoms associated with dementia. The image forms part of The Big Forget, a long-term project examining how dementia is misunderstood and stigmatized across the African continent. The title derives from the discovery that in most indigenous African languages there is no word for “dementia”, which is often described through terms such as “confusion” or “madness”, carrying strong negative connotations. Olwage’s work reveals how accusations of witchcraft persist in some parts of the world as a gendered response to illness, age, and social vulnerability.",
+        "long-educational-adult": "This photograph by Lee-Ann Olwage, taken in 2022 in a “witch camp” in Ghana, portrays Sugri Zenabu, an elderly woman accused of witchcraft after exhibiting symptoms associated with dementia. The image forms part of The Big Forget, a long-term project investigating the social consequences of dementia across the African continent. The project’s title refers to the absence of a direct equivalent for “dementia” in many indigenous  African languages, which is often described through terms such as “confusion” or “madness”, carrying strong negative connotations. In contexts where illness is interpreted through spiritual belief systems, elderly women are particularly vulnerable to accusations of sorcery. Many are banished to witch camps that offer protection from violence but also reinforce isolation and stigma. By placing Zenabu in this frame, Olwage recalls the ritual of accusations, where women were encircled and condemned, but also hints at the enduring architecture of patriarchy. Olwage’s photograph draws a powerful connection between historical witch hunts and contemporary forms of gendered exclusion, reminding viewers that persecution has not disappeared, but changed form. Here, the witch is no longer a mythic monster, a pop icon or a feminist symbol, but once again a vulnerable woman subject to fear, banishment and neglect.",
+        "short-scholar": "Taken in 2022 in northern Ghana, this photograph by Lee-Ann Olwage forms part of The Big Forget, a long-term project examining dementia and its social stigma across the African continent. The image portrays Sugri Zenabu, an elderly woman accused of witchcraft and banished to a “witch camp.” Olwage’s work establishes a continuity between historical witch hunts and contemporary mechanisms of gendered exclusion.",
+        "medium-scholar": "Taken in 2022 in northern Ghana, this photograph by Lee-Ann Olwage forms part of The Big Forget, a long-term project examining dementia and its social stigma across the African continent. The project’s title refers to the absence of a direct equivalent for the term “dementia” in many indigenous African languages, where the condition is often described through concepts such as “confusion” or “madness,” terms that carry strong social stigma. The image portrays Sugri Zenabu, an elderly woman accused of witchcraft and banished to a “witch camp.” She is depicted seated and encircled by other residents of the camp, displaying visible signs of confusion associated with dementia. As life expectancy increases, dementia is becoming a growing public health and socio-cultural issue in many African contexts. In communities where spiritual belief systems shape everyday interpretations of illness, symptoms such as disorientation, incoherent speech, or erratic behavior are frequently attributed to witchcraft or possession. Those accused are often banished to so-called “witch camps”: controversial spaces that may offer protection from immediate violence while simultaneously reinforcing stigma and isolation. Olwage’s work reveals how accusations of sorcery function as a gendered tool of marginalization, particularly affecting elderly women whose illness disrupts normative social roles. Viewers are confronted with a broader realization: witch hunts are not a closed chapter of European history, but a recurring global pattern, resurfacing in multiple postcolonial contexts, including parts of Africa, India, Latin America and Southeast Asia. By echoing the visual logic of historical accusation rituals, the photograph highlights the enduring structures of patriarchal control that link early modern witch hunts to contemporary practices of exclusion.",
+        "long-scholar": "This portrait, captured in 2022 by Lee-Ann Olwage in one of the Gambaga “witch camps” in Ghana, depicts Sugri Zenabu, the mangazia (leader) of a community that lives in liminality, suspended between protection and exile. Zenabu sits encircled by other residents, displaying visible signs of confusion associated with dementia. This photograph forms part of Olwage’s long-term project The Big Forget, a photographic investigation into the lives of elderly women affected by dementia across the African continent. The project’s title refers to the absence of a direct equivalent for the term “dementia” in many indigenous African languages, where the condition is often described through concepts such as “confusion” or “madness”, terms that carry strong social skills. Commissioned by the Bob & Diane Fund and later published by Der Spiegel, the project received international recognition, with this image winning a World Press Photo Award in 2023. As life expectancy increases, dementia is becoming a growing public health and socio-cultural issue in many African contexts. In communities where superstition and spiritual beliefs systems shape everyday interpretation of illness, symptoms such as disorientation, incoherent speech or erratic behavior are frequently attributed to witchcraft or possession. Women, particularly elderly women, are disproportionately targeted, making accusations of witchcraft a persistently gendered mechanism of marginalization. Those accused are often banished to so-called “witch camps”: controversial spaces that may offer protection from immediate violence while simultaneously reinforcing stigma, isolation and systems of control governed by local authorities who profit from ritual practices and trials. By framing Zenabu within a circle of onlookers, Olwage evokes the historical ritual of accusation –  women surrounded, scrutinized and judged – while also exposing the enduring structures of patriarchal power. The image establishes a disturbing continuity between early modern witch hunts and contemporary forms of gendered exclusion. Here, the witch is neither myth nor metaphor, but a vulnerable woman subjected to fear, neglect and social abandonment. In interviews, Olwage emphasizes the importance of culturally sensitive interventions, advocating collaboration between communities and health professionals to promote education around dementia and reduce stigma. Yet the photograph ultimately confronts viewers with a broader realization: witch hunts are not a closed chapter of European history, but a recurring global pattern, resurfacing in parts of postcolonial Africa, India, Latin America and Southeast Asia. As feminist theorist Silvia Federici has argued, elderly and economically unproductive women are often perceived as burdens to be eliminated, yet they simultaneously embody repositories of collective memory and social cohesion. Woman, in Federici’s view, embodies a subversive potential rooted in her connection to nature, sexuality and social agency, a potential that patriarchy seeks to repress, discipline and redirect toward utilitarian ends. Witch hunts thus serve a dual function: they remove figures deemed dangerous and expendable, while their public cruelty disciplines other women into compliance. From medieval Europe to contemporary Ghana, the underlying mechanism remains strikingly similar. This image therefore resists historical closure. It warns that witch persecutions are not relics of the past, but evolving practices of exclusion. The patriarchal order continues to define which women are visible and which must disappear. If witches were once burned, today they may instead be silenced, displaced and forgotten. This photograph closes the exhibition’s historical arc while opening a contemporary ethical gaze, urging viewers not only to witness the continuity of women’s suppression, but to recognize their responsibility within it."
       }
     }
   },

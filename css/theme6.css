@@ -246,7 +246,7 @@ footer a:hover {
 
 /* High tech viewport effect */
 .carousel-frame-wrapper {
-  padding: 20px 80px;
+  padding: 20px;
 }
 
 .carousel {
@@ -375,7 +375,6 @@ footer a:hover {
 }
 
 
-
 /* Typing effect for title */
 .cyberpunk-animation {
   --chars: 21; /* number of visible characters */
@@ -383,7 +382,12 @@ footer a:hover {
   font: bold 200% var(--font-default), monospace;
   color: #1AFE49;
   text-shadow: 0 0 8px var(--erin-green);
-  display: inline-block;
+  /* display: inline-block; */
+  display: block; 
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content; /* Keeps the typing width logic intact */
+  margin-top: 0;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid var(--erin-green);
@@ -418,6 +422,25 @@ footer a:hover {
 }
 
 
+.introduction-text p,
+.documentation-text p {
+  /* Scales from 16px on mobile to 80px on large screens */
+  padding-inline: clamp(1rem, 3vw, 2rem); 
+  /* Limits text width for readability */
+  max-width: 70ch; /* ensure redability: 70 characters per line is the best for reading comfort" */
+  margin-inline: auto; /* Centers the text block */
+  
+  /* Standard readability leading */
+  line-height: 1.6;
+  /* font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem); */
+  text-wrap: pretty; /* prevents orphans at the end of the paragraphs */
+}
+
+/* Apply padding to the container to prevent text touching screen edges */
+.introduction-text,
+.documentation-text {
+  padding-inline: clamp(1rem, 3vw, 2rem); 
+}
 
 /* Glitchy documentation button */
 .link-documentation a {
@@ -585,6 +608,24 @@ footer a:hover {
 #second-room:hover + #text-second-room,
 #third-room:hover + #text-third-room, 
 #fourth-room:hover + #text-fourth-room {
+  fill: var(--magenta-glitch) !important;
+  text-shadow: 0 0 6px var(--magenta-glitch);
+} 
+
+#entrance-room.active,
+#first-room.active,
+#second-room.active,
+#third-room.active,
+#fourth-room.active {
+  fill: var(--erin-green) !important; 
+  filter: drop-shadow(0 0 10px var(--erin-green));
+}
+
+#entrance-room.active + #text-entrance-room,
+#first-room.active + #text-first-room,
+#second-room.active + #text-second-room,
+#third-room.active + #text-third-room, 
+#fourth-room.active + #text-fourth-room {
   fill: var(--magenta-glitch) !important;
   text-shadow: 0 0 6px var(--magenta-glitch);
 } 
