@@ -433,9 +433,6 @@ footer a {
     font-size: 20px;   
     line-height: 1.6;
 }
-/* =========================================
-   ITEM PAGE BUTTONS – THEME 1 NAV EFFECT
-========================================= */
 
 /* Base button reset */
 .item-page .btn-outline-dark {
@@ -509,7 +506,7 @@ footer a {
     box-shadow: none !important;
     outline: none !important;
 }
-/* PREVIOUS / NEXT — SAME AS NAV BUTTONS */
+/* PREVIOUS / NEXT  */
 #btn-prev,
 #btn-next {
     position: relative;
@@ -568,9 +565,6 @@ footer a {
 #btn-next:hover::after {
     opacity: 1;
 }
-/* =========================================
-   ITEM PAGE – TRANSPARENT TABLE (THEME 1)
-========================================= */
 
 .item-page table,
 .item-page .table,
@@ -578,4 +572,64 @@ footer a {
 .item-page .table td {
     background-color: transparent !important;
     border-color: var(--vitali-black);
+}
+/* map page button*/
+
+.custom-room-btn {
+    position: relative;              
+    display: inline-block;           
+    font-family: var(--default-font);
+    font-weight: 400;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: var(--default-font-color) !important; 
+    border: 0;
+    background: none !important;
+    box-shadow: none !important;
+    transition: font-weight 0.2s ease;
+    margin: 16px 20px 20px 20px !important; 
+    padding: 6px 12px !important;
+}
+
+/* Hover / Active effect */
+.custom-room-btn:hover {
+    font-weight: 900; /* bold text on hover */
+    color: var(--default-font-color) !important;
+    border: none /* prevent disappearing- importsnt to keep */
+}
+
+/* Top line */
+.custom-room-btn::before {
+    content: "";
+    position: absolute;
+    top: -6px;                
+    left: 50%;                
+    width: 80px;              
+    height: 20px;             
+    background: url("../img/early-modern-era/line.svg") no-repeat center center;
+    background-size: contain;
+    transform: translateX(-50%);
+    opacity: 0;               /* hidden by default-bug fix */
+    transition: opacity 0.3s ease;
+}
+
+/* Bottom line */
+.custom-room-btn::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;             
+    left: 50%;                
+    width: 80px;              
+    height: 20px;             
+    background: url("../img/early-modern-era/line.svg") no-repeat center center;
+    background-size: contain;
+    transform: translateX(-50%);
+    opacity: 0;               /* hidden by default- same as above */
+    transition: opacity 0.3s ease;
+}
+
+/* Show lines on hover */
+.custom-room-btn:hover::before,
+.custom-room-btn:hover::after {
+    opacity: 1;               /* show lines-necessary */
 }
