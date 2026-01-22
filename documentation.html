@@ -2,40 +2,39 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Homepage</title>
+        <title></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="keywords" content="Witch trials, Witchcraft, Sorcery, Feminism">
 
         <!-- Favicon -->
         <link rel="icon" type="image/svg+xml" href="img/logo.svg">
-        
+
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
         <!-- CSS -->
         <link rel="stylesheet" href="css/main.css">
-        
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
-        <!-- W95FA Windows 95 font -->
-        <link href="https://fonts.cdnfonts.com/css/w95fa" rel="stylesheet">
-
         <!-- Theme 1 Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700;900&family=IM+Fell+English:ital,wght@0,400;0,700&display=swap" rel="stylesheet">
 
+        <!-- W95FA Windows 95 font -->
+        <link href="https://fonts.cdnfonts.com/css/w95fa" rel="stylesheet">
 
         <!-- Cyberpunk fonts: Orbitron + Rajdhani -->
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        <!-- XIX century fonts: IM Fell English + Libre Bodoni -->
+        <!-- XIX century fonts: IM Fell English + Cormorant Garamond-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
 
         <!-- Vienna Secession font: Federo -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,9 +46,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
+   
+    <body class="chronological-page">
 
-        <!-- Grid effect for cyberpunk theme-->
-        <div class="grid-bg content-to-reveal">
+         <!-- Grid effect for cyberpunk theme-->
+        <div class="grid-bg">
             <div class="grid-line"></div>
             <div class="grid-line"></div>
             <div class="grid-line"></div>
@@ -57,12 +58,11 @@
             <div class="grid-line"></div>
         </div>
 
-        <!-- homepage content -->
-        <!-- navbar -->
-        <header class="content-to-reveal" id="header">
+        
+        <header id="header">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="index.html">
                         <!-- old logo <img src="img/logo_ex.png" alt="Logo" width="80" height="47.2px"> -->
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 185" fill="none">
                             <path d="M47.5612 6.66403C33.7838 3.00659 19.7741 10.7527 16.2696 23.9649C12.7653 37.1772 21.093 50.8529 34.8704 54.5103C44.3544 57.028 53.9488 54.1422 60.1503 47.7891L60.1493 47.7889C55.3489 50.3386 49.5185 51.1439 43.7356 49.6088C31.9101 46.4695 24.7616 34.731 27.77 23.3902C30.4837 13.1586 40.5374 6.74595 51.1626 7.89508C50.0107 7.40804 48.8082 6.99512 47.5612 6.66403Z" fill="black"/>
@@ -78,29 +78,13 @@
                     <ul class="navbar-nav">
                         <li class="nav-item text-center"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item text-center"><a class="nav-link" href="map.html">Map</a></li>
-                        <li class="nav-item text-center"><a class="nav-link" href="chronological.html">Exhibition</a></li>
+                        <li class="nav-item text-center"><a class="nav-link " href="chronological.html">Exhibition</a></li>
                         <li class="nav-item text-center"><a class="nav-link" href="#">About</a></li>
                         <li class="nav-item text-center"><a class="nav-link active" href="documentation.html">Documentation</a></li>
                         <li class="nav-item text-center"><a class="nav-link" href="#">Disclaimer</a></li>
-<!-- 
-
-                        <li class="nav-item dropdown text-center" id="nav-group-more-compact">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                More
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">About</a></li>
-                                <li><a class="dropdown-item" href="#">Documentation</a></li>
-                                <li><a class="dropdown-item" href="#">Disclaimer</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item text-center" id="nav-link"><a class="nav-link" href="#">About</a></li>
-                        <li class="nav-item text-center" id="nav-link"><a class="nav-link" href="#">Documentation</a></li>
-                        <li class="nav-item text-center" id="nav-item-disc"><a class="nav-link" href="#">Disclaimer</a></li> -->
                     </ul>
                 </div>
 
-            
                 <!-- Theme switcher -->
                 <div class="layout-container">
                     <button class="layout-button" id="layoutButton" area-label="Layout options">
@@ -110,57 +94,58 @@
                         </svg>
                     </button>
 
-                    <ul class="layout-options" id="layoutOptions">
-                        <li class="trigger-style" data-theme="theme1">
-                            <span class="style-label" style="font-family: 'Cormorant Garamond';">Early Modern Era</span>
-                            <img class="style-icon" src="img/early-modern-era/theme1.svg" alt="Style 1">
-                        </li>
-                        <li class="trigger-style" data-theme="theme2">
-                            <span class="style-label" style="font-family: 'IM Fell English', serif;">Romanticism</span>
-                            <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 2">
-                        </li>
-                        <li class="trigger-style" data-theme="theme3">
-                            <span class="style-label" style="font-family: 'Federo', sans-serif;">Vienna Secession</span>
-                            <img class="style-icon" src="img/art-nouveau/icon.svg" alt="Style 3">
-                        </li>
-                        <li class="trigger-style" data-theme="theme4">
-                            <span class="style-label" style="font-family: 'Press Start 2P', cursive;"> Windows 95</span>
-                            <img class="style-icon" src="img/windows95/theme4.svg" alt="Style 4">
-                        </li>
-                        <li class="trigger-style" data-theme="theme5">
-                            <span class="style-label" style="font-family: 'Archivo Black', sans-serif;">70s Feminist protests</span>
-                            <img class="style-icon" src="img/70s-feminist-protests/70s_feminism_icon.svg" alt="Style 5">
-                        </li>
-                        <li class="trigger-style" data-theme="theme6">
-                            <span class="style-label" style="font-family: 'Orbitron', sans-serif;">Cyberpunk 2035</span>
-                            <img class="style-icon" src="img/cyberpunk_icon.svg" alt="Cyberpunk style">
-                        </li>
-                        <li class="trigger-style" id="resetTheme">
-                            <span class="style-label">Reset to Default</span>
-                            <svg class="style-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                <path d="M24.1022 10.7969C25.7807 11.808 27.319 14.1902 27.8239 16.5811C28.3544 19.0949 28.1173 23.5037 24.5934 26.8066C22.188 28.7859 19.1131 29.9801 15.7594 29.999V30.001H5.99963V31.9199L3.44104 30.001H3.33362V29.9199L0.666626 27.9199L3.33362 25.9199V25.8389H3.44104L5.99963 23.9199V25.8389H16.5065V25.8018C21.4916 25.388 25.427 21.2749 25.5553 16.2139L25.5582 15.959C25.5581 14.0667 25.0249 12.2992 24.1022 10.7969ZM9.83167 23.9199H9.78967L9.7262 23.8418C9.76109 23.8682 9.79641 23.894 9.83167 23.9199ZM15.6793 8.08008C20.0303 8.08043 23.5579 11.608 23.5582 15.959C23.5582 20.3103 20.0305 23.8385 15.6793 23.8389C11.3279 23.8388 7.80042 20.3104 7.80042 15.959C7.80077 11.6078 11.3281 8.08017 15.6793 8.08008ZM30.8912 4L25.5582 8V6.08105H15.7155C15.7034 6.08101 15.6914 6.08008 15.6793 6.08008C15.6674 6.08008 15.6551 6.08101 15.6432 6.08105H14.8854V6.11523C9.80081 6.51963 5.80075 10.7705 5.80042 15.959C5.80042 17.846 6.33081 19.6087 7.24866 21.1084C5.57858 20.09 4.05116 17.7194 3.54846 15.3389C3.01642 12.8183 3.25492 8.391 6.80627 5.08496C6.82102 5.0712 6.83483 5.05649 6.84924 5.04297C9.26123 3.08982 12.333 1.91898 15.6783 1.91895H25.5582V0L30.8912 4ZM15.5729 10.748C15.0872 10.7481 14.6934 11.1423 14.693 11.6279V16.5723L14.9508 16.8291L17.2877 19.166C17.6313 19.5096 18.1882 19.5095 18.5319 19.166C18.875 18.8223 18.8753 18.2654 18.5319 17.9219L16.4528 15.8428V11.6279C16.4524 11.1424 16.0585 10.7482 15.5729 10.748ZM21.5826 8L21.6686 8.10449C21.6224 8.06921 21.5758 8.03448 21.5289 8H21.5826Z" fill="none"/>
-                            </svg>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+                        <ul class="layout-options" id="layoutOptions">
+                            <li class="trigger-style" data-theme="theme1">
+                                <span class="style-label" style="font-family: 'Cormorant Garamond';">Early Modern Era</span>
+                                <img class="style-icon" src="img/early-modern-era/theme1.svg" alt="Style 1">
+                            </li>
+                            <li class="trigger-style" data-theme="theme2">
+                                <span class="style-label" style="font-family: 'IM Fell English', serif;">Romanticism</span>
+                                <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 2">
+                            </li>
+                            <li class="trigger-style" data-theme="theme3">
+                                <span class="style-label" style="font-family: 'Bocklin', sans-serif;">Art Nouveau</span>
+                                <img class="style-icon" src="img/layoutbuttonEX.png" alt="Style 3">
+                            </li>
+                            <li class="trigger-style" data-theme="theme4">
+                                <span class="style-label" style="font-family: 'Press Start 2P', cursive;"> Windows 95</span>
+                                <img class="style-icon" src="img/windows95/theme4.svg" alt="Style 4">
+                            </li>
+                            <li class="trigger-style" data-theme="theme5">
+                                <span class="style-label" style="font-family: 'Archivo Black', sans-serif;">70s Feminist protests</span>
+                                <img class="style-icon" src="img/70s-feminist-protests/70s_feminism_icon.svg" alt="Style 5">
+                            </li>
+                            <li class="trigger-style" data-theme="theme6">
+                                <span class="style-label" style="font-family: 'Orbitron', sans-serif;">Cyberpunk 2035</span>
+                                <img class="style-icon" src="img/cyberpunk_icon.svg" alt="Style 6">
+                            </li>
+                            <li class="trigger-style" id="resetTheme">
+                                <span class="style-label"> Reset to Default</span>
+                                <svg class="style-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                    <path d="M24.1022 10.7969C25.7807 11.808 27.319 14.1902 27.8239 16.5811C28.3544 19.0949 28.1173 23.5037 24.5934 26.8066C22.188 28.7859 19.1131 29.9801 15.7594 29.999V30.001H5.99963V31.9199L3.44104 30.001H3.33362V29.9199L0.666626 27.9199L3.33362 25.9199V25.8389H3.44104L5.99963 23.9199V25.8389H16.5065V25.8018C21.4916 25.388 25.427 21.2749 25.5553 16.2139L25.5582 15.959C25.5581 14.0667 25.0249 12.2992 24.1022 10.7969ZM9.83167 23.9199H9.78967L9.7262 23.8418C9.76109 23.8682 9.79641 23.894 9.83167 23.9199ZM15.6793 8.08008C20.0303 8.08043 23.5579 11.608 23.5582 15.959C23.5582 20.3103 20.0305 23.8385 15.6793 23.8389C11.3279 23.8388 7.80042 20.3104 7.80042 15.959C7.80077 11.6078 11.3281 8.08017 15.6793 8.08008ZM30.8912 4L25.5582 8V6.08105H15.7155C15.7034 6.08101 15.6914 6.08008 15.6793 6.08008C15.6674 6.08008 15.6551 6.08101 15.6432 6.08105H14.8854V6.11523C9.80081 6.51963 5.80075 10.7705 5.80042 15.959C5.80042 17.846 6.33081 19.6087 7.24866 21.1084C5.57858 20.09 4.05116 17.7194 3.54846 15.3389C3.01642 12.8183 3.25492 8.391 6.80627 5.08496C6.82102 5.0712 6.83483 5.05649 6.84924 5.04297C9.26123 3.08982 12.333 1.91898 15.6783 1.91895H25.5582V0L30.8912 4ZM15.5729 10.748C15.0872 10.7481 14.6934 11.1423 14.693 11.6279V16.5723L14.9508 16.8291L17.2877 19.166C17.6313 19.5096 18.1882 19.5095 18.5319 19.166C18.875 18.8223 18.8753 18.2654 18.5319 17.9219L16.4528 15.8428V11.6279C16.4524 11.1424 16.0585 10.7482 15.5729 10.748ZM21.5826 8L21.6686 8.10449C21.6224 8.06921 21.5758 8.03448 21.5289 8H21.5826Z" fill="#1A1A1A"/>
+                                </svg>
+                            </li>
+                        </ul>
+                    </div> 
+                </nav>
 
             <div class="dropdown-overlay" id="dropdownOverlay"></div>
 
         </header>
 
-       
-
-                <!-- Documentation -->
-    <section id="documentation" class="lg-m-5 sm-m-0 p-4 mt-5">
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 col-md-10 col-sm-12 text-box">
-                    <h1>Documentation</h1>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-10 col-md-10 col-sm-12 text-box">
+        <main class="page-content" id="pageContent">
+            <div class="thematic-divider-nav"></div>
+            
+            <!-- Documentation -->
+            <section id="documentation" class="lg-m-5 sm-m-0 p-4 mt-5">
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 col-md-10 col-sm-12 text-box">
+                            <h1>Documentation</h1>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 col-md-10 col-sm-12 text-box">
 
                     <!-- 1. General scope and purpose -->
                     <h2 id="#1.general">1. General scope and purpose</h2>
@@ -796,18 +781,17 @@
                     <p> </p>
 
                     
+                        </div>
                     </div>
                 </div>
-            </div>
-        
-    </section>
+            </section>
         </main>
         
-        <div class="footer-separator content-to-reveal" id="footerSeparator"></div>
+<div class="footer-separator" id="footerSeparator"></div>
 
         <!-- Footer -->
-        <div class="thematic-divider-footer content-to-reveal" id="thematicDividerFooter"></div>
-        <footer class="text-white text-center content-to-reveal" id="footer">
+        <div class="thematic-divider-footer" id="thematicDividerFooter"></div>
+        <footer class="text-white text-center" id="footer">
             <!-- Grid container -->
             <div class="container p-4">
                 <!--Grid row-->
@@ -878,12 +862,12 @@
             </div>
             <!-- Copyright -->
         </footer>
-
+        
         <!-- JS moved at the bottom -> in the head: it runs before the DOM is fully loaded and might fail -->    
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="js/script.js"></script>
         <script src="js/main.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
     </body>
-
 </html>
