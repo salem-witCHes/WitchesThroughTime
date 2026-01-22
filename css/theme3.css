@@ -1,18 +1,25 @@
+/* ----- VIENNA SECESSION THEME ----- */
 
-/* Fonts */
+/* ---------------------------
+    1. Variables           
+------------------------------ */
+
 :root {
-    --default-font: "Federo", sans-serif;
+  /* Fonts */
+  --default-font: "Kolo W01 RegularLP", sans-serif;
+  --text-font: "Federo", sans-serif;
+  
+  /* Colors */
+  --warm-canvas: #F0E4CC;
+  --green-amber: #BAA346;
+  --hexed-walnut: #9D6C44;
+  --darker-brown: #845D34;
 }
 
-/* Global Colors */
-:root {
-    --warm-canvas: #F0E4CC;
-    --green-amber: #BAA346;
-    --hexed-walnut: #9D6C44;
-    --darker-brown: #845D34;
-}
 
-
+/* ----------------------------
+    2. Global Reset & Typography
+------------------------------- */
 body {
     background-image: url("../img/art-nouveau/background.jpg");
     background-color: var(--warm-canvas);
@@ -27,8 +34,8 @@ body::after {
     content: "";
     position: fixed;
     inset: 0;
-    z-index: 9999; /* Sit on top of everything */
-    pointer-events: none; /* Let clicks pass through */
+    z-index: 9999;
+    pointer-events: none;
 
     /* Two repeating gradients crossing each other */
     background-image: 
@@ -40,7 +47,6 @@ body::after {
     opacity: 0.05;
 }
 
-/* headings (h1–h6) */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--default-font);
   color: var(--darker-brown);
@@ -50,12 +56,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  font-family: var(--default-font);
+  font-family: var(--text-font);
   color: var(--darker-brown);
   font-weight: 300;
   line-height: 1.6;
   letter-spacing: 0.02em;
 }
+
+
+/* --------------------------
+  3. Layout components: Background, Nav & Footer
+----------------------------- */
+
+/* ----- Navbar ----- */
 
 header {
   background-color: var(--warm-canvas);
@@ -66,15 +79,6 @@ header {
 
 .navbar-nav {
     background-color: transparent;
-}
-
-/* Change style button and logo color */
-.navbar svg path {
-    fill: var(--hexed-walnut);
-}
-
-.layout-container .layout-button svg path:hover {
-  fill: var(--warm-canvas);
 }
 
 .navbar-nav .nav-link {
@@ -91,16 +95,29 @@ header {
 }
 
 .navbar .nav-link.active {
-  color: var(--warm-canvas) !important;    /* important! to override the variable --bs-navbar-active-color */
+  color: var(--warm-canvas) !important;
   background-color: var(--green-amber);
   border: 2px dotted var(--darker-brown);
+}
+
+/* Change theme button and logo color */
+.navbar svg path {
+    fill: var(--hexed-walnut);
+}
+
+/* Change hamburger icon */
+.navbar-toggler {
+  color: var(--hexed-walnut);
+}
+
+.navbar-toggler-icon {
+  filter: invert(48%) sepia(13%) saturate(2253%) hue-rotate(345deg) brightness(93%) contrast(88%);
 }
 
 .navbar .layout-container .layout-options {
     background-color: var(--warm-canvas);
     border: 4px solid var(--darker-brown);
     border-radius: 0px;
-    padding: 16px;
 }
 
 .navbar .layout-container .layout-button:hover {
@@ -109,16 +126,63 @@ header {
 
 .navbar .layout-container .layout-button {
   background-color: var(--warm-canvas);
-  border-radius: 2px;
+  border: 1px dotted var(--hexed-walnut);
 }
 
-.trigger-style:hover {
-    border-color: var(--green-amber);
+.navbar .layout-container .layout-options .trigger-style {
+  background-color: transparent;
 }
 
-.trigger-style:hover .style-label { 
-    color: var(--warm-canvas); 
+.navbar .layout-container .layout-options .trigger-style:hover {
+  border: 2px dotted var(--green-amber);
 }
+
+.trigger-style.active-theme .style-label,
+.trigger-style:hover .style-label {
+  color: var(--warm-canvas);
+}
+
+
+/* ----- Footer ----- */
+footer {
+  background-color: var(--warm-canvas);
+  border-top: 4px solid var(--hexed-walnut);
+}
+
+.footer-separator {
+  display: none;
+}
+
+footer h5 {
+  color: var(--hexed-walnut);
+}
+
+footer p,
+footer a {
+  color: var(--hexed-walnut);
+}
+
+.bi-github {
+  color: var(--hexed-walnut);
+}
+
+.bi-envelope {
+  color: var(--hexed-walnut);
+}
+
+footer .copyright-text {
+  background-color: rgba(186, 163, 70, 0.5) !important;
+}
+
+footer .copyright-text p {
+  color: var(--darker-brown) !important;
+}
+
+
+
+/* -------------------------------
+  4. HOMEPAGE
+--------------------------------- */
 
 /* Carousel */
 /* ---------------------------------------- */
@@ -183,35 +247,25 @@ header {
   transform: none;
 }
 
-/* --- MOBILE STYLES (Max Width 576px) --- */
-/* --- MOBILE STYLES (Max Width 576px) --- */
+
 @media (max-width: 576px) {
   
   .carousel-caption {
-    /* 1. POSITIONING (Back to Left) */
     right: auto !important;
     left: 5% !important;
     bottom: 5% !important;
-    
-    /* 2. FORCE NO WRAPPING */
-    white-space: nowrap; /* This stops the text from stacking */
-    width: fit-content;  /* Shrink the box to fit the text exactly */
-    max-width: 90%;      /* Safety limit */
-    
-    /* 3. REDUCE SPACING */
+    white-space: nowrap;
+    width: fit-content;
+    max-width: 90%;
     padding: 6px 12px; 
     gap: 8px;
   }
 
   .carousel-caption a {
-    /* 4. TEXT SIZE (Must be small to fit on one line) */
-    /* 0.9rem is approx 14px. If it still wraps, try 0.8rem */
     font-size: 0.9rem !important; 
     line-height: 1;
   }
 
-  /* 5. SQUARE SIZING (Proportional to small text) */
-  /* Height: 15px (3 x 5px squares) | Width: 5px */
   .carousel-caption::before,
   .carousel-caption::after {
     height: 15px !important;
@@ -223,20 +277,18 @@ header {
 .link-documentation h2::after {
   content: "";
   display: block;
-  margin: 1em auto 1.5rem;                  /* spacing and centering */
+  margin: 1em auto 1.5rem;
   width: 160px;  
-  height: 16px; /* Height of the square */
+  height: 16px;
   background-color: transparent !important;
   
-  /* THE SQUARE PATTERN */
+  /* square pattern */
   /* This draws a square (color) and a gap (transparent) */
   background-image: linear-gradient(
       to right, 
       var(--green-amber) 50%, 
       transparent 50%
   );
-  
-  /* Control the size: 16px width means 8px color / 8px transparent */
   background-size: 32px 100%;
   background-repeat: repeat-x;
 }
@@ -257,14 +309,10 @@ header {
   padding: 30px;
 }
 
-/* 
-.link-documentation {
-  transform: rotate(-0.5deg);
-} */
-
 .link-documentation a {
-  border: 2px solid var(--hexed-walnut);  /* outlined look */
+  border: 2px dotted var(--hexed-walnut);  /* outlined look */
   color: var(--hexed-walnut);
+  border-radius: 0px;
 }
 
 .link-documentation a:hover {
@@ -273,37 +321,9 @@ header {
 }
 
 
-footer {
-  background-color: var(--green-amber);
-  border-top: 4px solid var(--darker-brown);
-}
-
-.footer-separator {
-    background-color: transparent;
-}
-
-footer h5 {
-  color: black;
-}
-
-footer p,
-footer a {
-  color: var(--warm-canvas);
-}
-
-.bi-github {
-  color: var(--darker-brown);
-}
-
-.bi-envelope {
-  color: var(--darker-brown);
-}
-
-
-/* MAP PAGE */
-.map {
-  padding: 20px;
-}
+/* -------------------------------
+    5. MAP 
+--------------------------------- */
 
 .map-description {
   background-color: var(--warm-canvas);
@@ -311,13 +331,28 @@ footer a {
   border-radius: 2px;
 }
 
+.map-description h2::after {
+  content: "";
+  display: block;
+  margin: 1em auto 1.5rem;
+  width: 160px;  
+  height: 16px;
+  background-color: transparent !important;
+  background-image: linear-gradient(
+      to right, 
+      var(--green-amber) 50%, 
+      transparent 50%
+  );
+  background-size: 32px 100%;
+  background-repeat: repeat-x;
+}
+
 .map-container svg {
-    /* This creates a circle background image behind the SVG paths */
     background: radial-gradient(
-        circle closest-side at 50% 50%, /* Position: Center X, Center Y */
-        var(--warm-canvas) 0%,                       /* Color starts at center */
-        var(--warm-canvas) 95%,                      /* Color stays solid until edge */
-        transparent 96%                   /* Becomes transparent immediately outside */
+        circle closest-side at 50% 50%,
+        var(--warm-canvas) 0%,
+        var(--warm-canvas) 95%,
+        transparent 96%
     );
 }
 
@@ -339,20 +374,22 @@ footer a {
   fill: var(--darker-brown);
 }
 
-#entrance-door {
-  stroke: var(--hexed-walnut);
+#entrance-door path {
+  stroke: var(--hexed-walnut) !important;
 }
 
+#entrance-room,
 #first-room,
 #second-room,
 #third-room,
 #fourth-room {
-  fill: var(--warm-canvas) !important; /* Example default color */
+  fill: var(--warm-canvas) !important;
   stroke: none;
   opacity: 0.8;
   transition: fill 0.3s, opacity 0.3s;
 }
 
+#text-entrance-room,
 #text-first-room, 
 #text-second-room, 
 #text-third-room, 
@@ -362,15 +399,15 @@ footer a {
   font-weight: 600;
 }
 
-/* Define the hover effect */
+#entrance-room:hover,
 #first-room:hover,
 #second-room:hover,
 #third-room:hover, 
 #fourth-room:hover {
-  /* This rule will override the default rule above */
   fill: var(--green-amber) !important;
 }
 
+#entrance-room:hover + #text-entrance-room,
 #first-room:hover + #text-first-room,
 #second-room:hover + #text-second-room,
 #third-room:hover + #text-third-room, 
@@ -378,8 +415,37 @@ footer a {
   fill: var(--warm-canvas) !important;
 } 
 
+#entrance-room.active,
+#first-room.active,
+#second-room.active,
+#third-room.active,
+#fourth-room.active {
+  fill: var(--green-amber) !important;
+}
 
-/* CHRONOLOGICAL PAGE */
+#entrance-room.active + #text-entrance-room,
+#first-room.active + #text-first-room,
+#second-room.active + #text-second-room,
+#third-room.active + #text-third-room, 
+#fourth-room.active + #text-fourth-room {
+  fill: var(--warm-canvas) !important;
+} 
+
+
+#explore-room-btn {
+  border: 2px dotted var(--hexed-walnut);
+  color: var(--hexed-walnut);
+  border-radius: 0px;
+}
+
+#explore-room-btn:hover {
+  background-color: var(--green-amber);
+  color: var(--warm-canvas);
+}
+
+/* -------------------------------
+  6. CHRONOLOGICAL 
+--------------------------------- */
 .chronology-container {
     background-color: transparent;
 }
@@ -402,19 +468,32 @@ footer a {
     color: var(--warm-canvas) !important;
 }
 
+.active-text {
+   text-decoration-line: underline;
+   color: var(--darker-brown) !important;
+   text-decoration-style: dotted;
+}
+
 .toggle-pill {
   background-color: transparent ;
   border: 4px dotted var(--warm-canvas);
   border-radius: 0px;
-
 }
 
 .toggle-knob {
   background: transparent;
 }
 
+#toggleIcon path {
+  fill: var(--darker-brown) !important;
+}
+
+#inactiveIcon rect {
+  fill: var(--warm-canvas) !important;
+}
+
 #toggleIcon rect {
-  fill: var(--hexed-walnut) !important;
+  fill: var(--darker-brown) !important;
 }
 
 #inactiveIcon path {
@@ -427,50 +506,35 @@ footer a {
     border-radius: 2px;
 }
 
-.text {
-    flex: 1;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* vertically center the title */
-}
-
 .text-wrapper {
-    font-size: 24px;
     font-family: var(--default-font);
     color: var(--darker-brown);
     text-transform: uppercase;
 }
 
 .item-date {
-  font-family: var(--default-font);
+  font-family: var(--text-font);
   color: var(--darker-brown);
   font-style: normal;
-  display: inline-flex;   /* Forces children into a row */
-  align-items: center;    /* Vertically centers the squares with the text */
+  display: inline-flex;
+  align-items: center;
   gap: 5px;
 }
-
 
 .item-date::before,
 .item-date::after {
   content: "";
   display: block;
-  /* We want 3 squares. Let's say each square is 12px high. 
-     3 squares + 2 gaps = roughly 45px - 50px height. */
   height: 15px; 
-  width: 5px; /* Width determines the 'squareness'. Adjust this to match the block height visually */
-  background-color: var(--hexed-walnut);
+  width: 5px;
+  background-color: var(--darker-brown);
   --mask-pattern: linear-gradient(to bottom, black 60%, transparent 60%);
   -webkit-mask-image: var(--mask-pattern);
   mask-image: var(--mask-pattern);
-  /* 33.33% height ensures exactly 3 squares fit in 100% height */
   -webkit-mask-size: 100% 33.33%;
   mask-size: 100% 33.33%;
-  
   -webkit-mask-repeat: repeat-y;
   mask-repeat: repeat-y;
-
 }
 
 .ellipse,
@@ -480,17 +544,17 @@ footer a {
 }
 
 
-/* ERAS PAGE */
-
-/* add padding-bottom to container eras */
+/* -------------------------------
+   7. ERAS
+--------------------------------- */
 .era-card {
-    border: 2px solid var(--hexed-walnut);
+    border: 1px dotted var(--hexed-walnut);
     border-radius: 2px;
     background: var(--warm-canvas);
 }
 
 .era-title {
-    font-family:var(--default-font);
+    font-family: var(--default-font);
     color: var(--darker-brown);
     letter-spacing: 0.1em;
     font-weight: normal;
@@ -498,7 +562,7 @@ footer a {
 }
 
 .era-description {
-    font-family: var(--darker-brown);
+    font-family: var(--text-font);
     color: var(--darker-brown);
 }
 
@@ -507,57 +571,113 @@ footer a {
     border: 2px dotted var(--green-amber);
 }
 
-/* Text overlay */
 .era-item-text {
     width: fit-content;
+    font-size: 0.7rem;
+    padding: 2px 4px;
     background-color: var(--warm-canvas);
-    border: 1px solid var(--darker-brown);
+    border: 1px dotted var(--darker-brown);
     border-radius: 2px;
     color: var(--darker-brown);
-    font-family: var(--default-font);
+    font-family: var(--text-font);
+    text-align: center;
     text-shadow: none;
 }
 
-/* ITEM PAGE */
-/* Base style for all content containers */
-.item-box, .table-box, .text-box {
-  background-color: var(--warm-canvas);
-  border: 2px solid var(--hexed-walnut);
-  border-radius: 2px;
-  color: var(--darker-brown);
+
+/* -------------------------------
+    8. ITEM PAGE 
+--------------------------------- */
+/* 1. THE OUTER FRAME */
+#item-container {
+    background-color: var(--warm-canvas);
+    padding: 0 !important; /* Allows inner lines to touch the edge */
+    background-image:
+        radial-gradient(circle, var(--green-amber) 2.5px, transparent 3px), /* Top */
+        radial-gradient(circle, var(--green-amber) 2.5px, transparent 3px), /* Bottom */
+        radial-gradient(circle, var(--green-amber) 2.5px, transparent 3px), /* Left */
+        radial-gradient(circle, var(--green-amber) 2.5px, transparent 3px); /* Right */
+    background-position: top left, bottom left, top left, top right;
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 10px 6px, 10px 6px, 6px 10px, 6px 10px;
 }
 
-.item-box {
-    padding: 0;
-    aspect-ratio: 16/9;
+.item-table {
+    --bs-gutter-x: 0; /* remove column gaps */
+    background-image: radial-gradient(circle, var(--green-amber) 2.5px, transparent 3px);
+    background-position: bottom left;
+    background-repeat: repeat-x;
+    background-size: 10px 6px;
+    margin-bottom: 0 !important;
+}
+
+.table-box {
+    height: 100%;
+    background-image: radial-gradient(circle, var(--green-amber) 2.5px, transparent 3px);
+    background-position: top left;
+    background-repeat: repeat-y;
+    background-size: 6px 10px;
+}
+
+.item-box, .table-box, .text-box {
+    padding: 2rem;
+    background-color: transparent;
+    border: none !important;
+}
+
+/* Mobile Fix: On small screens, switch vertical line to horizontal */
+@media (max-width: 767px) {
+    .table-box {
+        background-image: radial-gradient(circle, var(--green-amber) 2.5px, transparent 3px);
+        background-position: top left;
+        background-repeat: repeat-x; /* Switch to horizontal line */
+        background-size: 10px 6px;
+    }
+}
+
+.table tr {
+    border: 1px solid var(--green-amber);
+    /* border-bottom: 1px solid var(--green-amber);
+    border-top: 1px solid var(--green-amber); */
+    background-color: transparent;
+    color: var(--darker-brown);
 }
 
 .table th,
 .table td {
     border: none;
-    border-bottom: 4px dotted var(--green-amber);
     background-color: transparent;
     color: var(--darker-brown);
 }
 
-.table thead tr:first-child th {
-    text-align: center;
-    font-size: 1.1rem;
+.table thead {
+  font-family: var(--default-font);
+}
+
+.table tbody {
+  font-family: var(--text-font);
 }
 
 .text-box button {
-  border: 2px solid var(--hexed-walnut);  /* outlined look */
+  border: 2px dotted var(--hexed-walnut);  /* outlined look */
   color: var(--hexed-walnut);
+  border-radius: 2px;
 }
 
 .text-box button:hover {
   background-color: var(--green-amber);
   color: var(--warm-canvas);
-  border: 2px solid var(--hexed-walnut);
+  border: 2px dotted var(--hexed-walnut);
+}
+
+.text-box button.active {
+  background-color: var(--green-amber);
+  border: 2px dotted var(--hexed-walnut);
+  color: var(--warm-canvas);
 }
 
 .card-footer button {
-  border: 2px solid var(--green-amber);  /* outlined look */
+  border: 2px dotted var(--green-amber);  /* outlined look */
   border-radius: 2px;             /* rounded edges */
   color: var(--darker-brown);
   background-color: var(--warm-canvas);
@@ -566,6 +686,11 @@ footer a {
 .card-footer button:hover {
   background-color: var(--green-amber);
   color: var(--warm-canvas);
-  border: 2px solid var(--hexed-walnut);
+  border: 2px dotted var(--hexed-walnut);
   border-radius: 2px;
+}
+
+#room-nav-controls span {
+  font-family: var(--text-font);
+  color: var(--hexed-walnut) !important;
 }

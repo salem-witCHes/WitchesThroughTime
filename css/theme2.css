@@ -1,203 +1,285 @@
+/* ----- PENNY DREADFUL THEME UPDATED ----- */
+
+/* ---------------------------
+    1. Variables
+------------------------------ */
 :root {
-    --default-font: "IM Fell English", serif;
-    --text-font: "Libre Bodoni", serif;
-
-    --witch-plum:        #594182;
-    --antique-gold:      #DFB663;
-    --dusty-lavender:    #B79EB2;
-    --sage-green:        #958B48;
-    --forest-green:      #434615;
-    --dark-cocoa:        #463221;
-    --warm-parchment:    #EDD2B7;
-    --red: #A13025;
+  --default-font: "Abril Fatface", serif;
+  --sub-header-font: "IM Fell English SC", serif;
+  --text-font: "IM Fell English", serif;
+    
+  /* Colors */
+  --background-color: #EBB35C;
+  --paper-tone: #F3EAE1;
+  --charcoal-ink: #303030;
+  --burnt-terracotta: #BC3D1C;
+  --olive-bronze: #837622;
+  --dark-umber: #302226;
 }
 
-/* General styling */
+
+/* ----------------------------
+    2. Global Reset & Typography
+------------------------------- */
+
 body {
-    background-color: var(--witch-plum);
+    background-color: var(--background-color);
+    color: var(--charcoal-ink);
+}
+
+h1 {
     font-family: var(--default-font);
+    font-size: 3rem; 
+    color: var(--charcoal-ink);
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 0.85;
+    transform: scaleY(1.3); 
+    /* text-shadow: 
+        3px 3px 0px var(--paper-tone),
+        5px 5px 0px rgba(0,0,0,0.2); */
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    /* This gradient creates a tiny gold dot every 40px */
-    background-image: radial-gradient(var(--dusty-lavender) 1.5px, transparent 1.5px);
-    background-size: 40px 40px; 
-    opacity: 0.3; /* Subtle texture */
-    z-index: -1;
+/* Subheaders with "Rule Lines" */
+h2, h3, h4, h5, h6 {
+    font-family: var(--sub-header-font);
+    color: var(--charcoal-ink);
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 1em;
+    border-bottom: 3px double var(--charcoal-ink);
+    letter-spacing: 1px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--default-font);
-  color: var(--antique-gold);
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 0px #000000;
-}
-
+/* Body Text: The "Newspaper" Look */
 p {
-  font-family: var(--default-font);
-  color: var(--dusty-lavender);
+    font-family: var(--text-font);
+    font-size: 1.15rem;
+    line-height: 1.4;
+    text-align: justify;
 }
 
+/* ---------------------------
+  3. Layout components: Background, Nav & Footer
+------------------------------ */
+.page-content {
+    width: min(95%, 64rem);
+    margin: 4vh auto;
+    padding: 2rem;
+    background: var(--paper-tone);
+    border: 2px solid var(--charcoal-ink);
+    /* outline: 6px solid var(--charcoal-ink);
+    outline-offset: 6px; */
+}
+
+
+/* ----- Navbar ----- */
 .navbar {
-  background-color: var(--sage-green) !important;
-  font-family: var(--default-font);
-  border-bottom: 2px solid var(--antique-gold);
+  border-bottom: 6px double var(--dark-umber);
 }
 
 .navbar-nav {
-    background-color: transparent;
-    border: none;
-}
-
-.navbar svg path {
-    fill: var(--dark-cocoa);
+  background-color: transparent;
+  border-top: 6px double var(--dark-umber);
+  border-bottom: 6px double var(--dark-umber);
+  border-radius: 0px;
 }
 
 .navbar-nav .nav-link {
-  color: var(--dark-cocoa);
-  text-transform: uppercase;
-  font-size: 0.9rem;
+  background-color: transparent;
+  font-family: var(--sub-header-font);
+  color: var(--burnt-terracotta);
+  border: none;
+  border-radius: 2px;
+  font-size: 1em;
 }
 
-.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:hover {
+  background-color: var(--burnt-terracotta);
+  color: var(--paper-tone);
+}
+
 .navbar .nav-link.active {
-    color: var(--warm-parchment) !important;
-    background-color: var(--red);
-    border: 1px solid var(--antique-gold);
+  color: var(--paper-tone) !important;
+  background-color: var(--burnt-terracotta);
+}
+
+/* Change theme button and logo color */
+.navbar svg path {
+    fill: var(--burnt-terracotta);
+}
+
+/* Change hamburger icon */
+.navbar-toggler {
+  color: var(--burnt-terracotta);
+}
+
+.navbar-toggler-icon {
+  filter: brightness(0) saturate(100%) invert(25%) sepia(70%) saturate(1514%) hue-rotate(345deg) brightness(105%) contrast(97%);
 }
 
 .navbar .layout-container .layout-button:hover {
-    background-color: var(--red);
-    border: 1px solid var(--antique-gold);
+    background-color: var(--background-color);
+    border: 2px solid var(--dark-umber);
 }
 
 .navbar .layout-container .layout-options {
-    background-color: var(--witch-plum);
-    border: 4px double var(--dusty-lavender);
+  background-color: transparent;
 }
 
-.trigger-style:hover {
-    border-color: var(--sage-green);
+.navbar .layout-container .layout-options .trigger-style {
+  background-color: var(--background-color);
+  border: 2px solid var(--dark-umber);
 }
 
-.trigger-style:hover .style-label { 
-    color: var(--dusty-lavender); 
+.navbar .layout-container .layout-options .trigger-style:hover {
+  border: 2px solid var(--burnt-terracotta);
 }
 
-.trigger-style .style-icon path {
-  fill: black !important;
-  stroke: none;
+.trigger-style.active-theme .style-label,
+.trigger-style:hover .style-label {
+  color: var(--background-color);
 }
 
-.page-content {
-  width: 85%;
-  margin: 60px auto;
-  padding: 80px 60px;
-  position: relative;
-  background-color: var(--witch-plum);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-  border-left: 2px solid var(--antique-gold);
-  border-right: 2px solid var(--antique-gold);
-  border-top: none;
-  border-bottom: none;
-  overflow: visible;
+/* ----- Footer ----- */
+footer {
+  background-color: var(--warm-canvas);
 }
 
-.page-content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px; /* Height of the top frame section */
-  
-  /* Draw the top and middle horizontal lines */
-  border-top: 2px solid var(--antique-gold);
-  border-bottom: 2px solid var(--antique-gold);
-  background-image: linear-gradient(to right, 
-    transparent 15%, 
-    var(--rantique-gold) 15%, var(--antique-gold) 15.2%, 
-    transparent 15.2%, transparent 84.8%, 
-    var(--antique-gold) 84.8%, var(--antique-gold) 85%, 
-    transparent 85%
-  );
+.footer-separator {
+  height: 2px;
+  background: var(--dark-umber);
+  max-width: 50%;
 }
 
-.page-content::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40px;
-  border-top: 2px solid var(--antique-gold);
-  border-bottom: 2px solid var(--antique-gold);
+footer h5 {
+  font-family: var(--sub-header-font);
+  color: var(--burnt-terracotta);
+  border: none;
 }
 
-.introduction-title h2::after, .link-documentation h2::after, .map-description h2::after {
-  content: "";
-  display: block;
-  width: 80px; 
-  height: 4px;  
-  background-color: var(--antique-gold);
-  margin: 1.5rem auto 2rem auto;
-  /* Diamond shape ends */
-  clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+footer p,
+footer a {
+  color: var(--burnt-terracotta);
+  font-family: var(--text-font);
+  text-align: center;
+}
+
+.bi-github {
+  color: var(--burnt-terracotta);
+}
+
+.bi-envelope {
+  color: var(--burnt-terracotta);
+}
+
+footer .copyright-text {
+  background-color: transparent;
+}
+
+footer .copyright-text p {
+  color: var(--paper-tone) !important;
+  text-align: justify;
 }
 
 
-.carousel {
-  width: 100%; /* larghezza del content page!!!!! */
-}
-
-.carousel-item img {
-    border: 2px solid var(--antique-gold);
-    /* Sepia tone for vintage feel */
-    filter: sepia(40%) contrast(110%) brightness(90%);
-    clip-path: none; /* Removed the ellipse for a more "Book Plate" look */
+/* ---------------------------
+    4. HOMEPAGE
+------------------------------ */
+.carousel-caption {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: auto;
+    width: auto;
+    min-width: 200px;
+    padding: 8px 20px;
+    text-align: center;
 }
 
 .carousel-caption a {
-    background-color: rgba(89, 65, 130, 0.8);
-    padding: 10px 20px;
-    border: 1px solid var(--antique-gold);
-    color: var(--antique-gold);
-    text-shadow: none;
+    color: var(--paper-tone);
+    font-family: var(--sub-header-font);
+    text-decoration: none;
+    letter-spacing: 1px;
 }
 
 .carousel-caption a:hover {
-  color: var(--red);
-  transform: translateX(3px);
-  border: 1px solid var(--red);
+  color: var(--burnt-terracotta);
+  transform: none;
+}
+
+.carousel-frame-wrapper img {
+  border-radius: 50%;
+  border: 4px solid var(--charcoal-ink);
+  filter:
+    grayscale(100%)
+    contrast(100%)
+    brightness(1.1)
+    sepia(20%);
+  mix-blend-mode: multiply;
+}
+
+.introduction-title h1 {
+    width: 100%; 
+    max-width: 800px;
+    margin: -50px auto 20px auto; 
+    display: block;
+    text-align: center;
+}
+
+.introduction-title h2::after,
+.link-documentation h2::after {
+  display: none;
+}
+
+.introduction-title h1 .std-text {
+    display: none !important;
+}
+
+.introduction-title h1 .curved-svg {
+    display: block !important;
+    margin: 0 auto;
 }
 
 .link-documentation a {
-  border: 1px solid var(--antique-gold);
-  color: var(--antique-gold);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  background: transparent;
-  transition: all 0.3s ease;
+  border: none;
+  font-family: var(--sub-header-font);
+  color: var(--burnt-terracotta);
+  font-size: 1.2em;
 }
 
 .link-documentation a:hover {
-  background-color: var(--antique-gold);
-  color: var(--witch-plum);
-  box-shadow: 0 0 15px var(--antique-gold);
+  background-color: transparent;
+  color: var(--burnt-terracotta);
+  border: 6px double var(--burnt-terracotta);
+  border-radius: 2px;
 }
 
 
 
-
-/* MAP PAGE */
+/* -------------------------------
+    5. MAP 
+--------------------------------- */
 .map-description {
   background-color: transparent;
-  border: 2px solid var(--antique-gold);
-  border-radius: 0px;
+  border: none;
 }
+
+.map-description h2 {
+  font-family: var(--default-font);
+  font-size: 2em;
+}
+
+/* .map-container svg {
+  background: radial-gradient(
+      circle closest-side at 50% 50%,
+      var(--charcoal-ink) 0%,
+      var(--charcoal-ink) 95%,
+      transparent 96%
+  );
+} */
 
 #door1,
 #door2,
@@ -210,50 +292,304 @@ p {
 #door9,
 #door10,
 #door11 {
-  fill: var(--witch-plum) !important;
+  fill: var(--paper-tone) !important;
 }
 
 #museum-walls {
-  fill: none;
-  stroke: var(--antique-gold);
-  stroke-width: 2px;
+  fill: var(--charcoal-ink);
 }
 
-#entrance-door {
-  stroke: var(--witch-plum);
+#entrance-door path {
+  stroke: var(--charcoal-ink) !important;
 }
 
+#entrance-room,
 #first-room,
 #second-room,
 #third-room,
 #fourth-room {
-  fill: none !important; /* Example default color */
+  fill: var(--paper-tone) !important;
   stroke: none;
-  opacity: 0.8;
+  opacity: 1;
   transition: fill 0.3s, opacity 0.3s;
 }
 
+#text-entrance-room,
 #text-first-room, 
 #text-second-room, 
 #text-third-room, 
 #text-fourth-room {
-  font-family: var(--default-font) !important;
-  fill: var(--antique-gold) !important;
+  font-family: var(--text-font) !important;
+  fill: var(--charcoal-ink) !important;
   font-weight: 600;
 }
 
-/* Define the hover effect */
+#entrance-room:hover,
 #first-room:hover,
 #second-room:hover,
 #third-room:hover, 
 #fourth-room:hover {
-  /* This rule will override the default rule above */
-  fill: var(--red) !important;
+  fill: var(--charcoal-ink) !important;
 }
 
+#entrance-room:hover + #text-entrance-room,
 #first-room:hover + #text-first-room,
 #second-room:hover + #text-second-room,
 #third-room:hover + #text-third-room, 
 #fourth-room:hover + #text-fourth-room {
-  fill: var(--dark-cocoa) !important;
+  fill: var(--paper-tone) !important;
 } 
+
+#entrance-room.active,
+#first-room.active,
+#second-room.active,
+#third-room.active,
+#fourth-room.active {
+  fill: var(--charcoal-ink) !important;
+}
+
+#entrance-room.active + #text-entrance-room,
+#first-room.active + #text-first-room,
+#second-room.active + #text-second-room,
+#third-room.active + #text-third-room, 
+#fourth-room.active + #text-fourth-room {
+  fill: var(--paper-tone) !important;
+} 
+
+
+#explore-room-btn {
+  border: none;
+  font-family: var(--sub-header-font);
+  color: var(--burnt-terracotta);
+  font-size: 1.2em;
+}
+
+#explore-room-btn:hover {
+  background-color: transparent;
+  color: var(--burnt-terracotta);
+  border: 6px double var(--burnt-terracotta);
+  border-radius: 2px;
+}
+
+
+
+/* -------------------------------
+  6. CHRONOLOGICAL 
+--------------------------------- */
+.chronology-container {
+    background-color: transparent;
+}
+
+.timeline-lines::before {
+    background: var(--dark-umber);
+    z-index: 0px;
+}
+
+.toggle-frame {
+  background-color: var(--paper-tone);
+  border-bottom: 6px double var(--dark-umber);
+  border-radius: 0px;
+}
+
+.toggle-text {
+    font-family: var(--default-font);
+    color: var(--charcoal-ink) !important;
+    text-transform: uppercase;
+}
+
+.active-text {
+   color: var(--burnt-terracotta) !important;
+}
+
+.toggle-pill {
+  background-color: transparent ;
+  border: none;
+  
+}
+
+.toggle-knob {
+  background: transparent;
+}
+
+#toggleIcon path {
+  fill: var(--burnt-terracotta) !important;
+}
+
+#inactiveIcon rect {
+  fill: var(--dark-umber) !important;
+}
+
+#toggleIcon rect {
+  fill: var(--burnt-terracotta) !important;
+}
+
+#inactiveIcon path {
+  fill: var(--dark-umber) !important;
+}
+
+.card {
+    background-color: var(--paper-tone);
+    border: 4px double var(--charcoal-ink);
+    border-radius: 0px;
+}
+
+.text-wrapper {
+    font-family: var(--default-font);
+    color: var(--burnt-terracotta);
+    text-transform: uppercase;
+}
+
+.item-date {
+  font-family: var(--text-font);
+  color: var(--charcoal-ink);
+  font-style: normal;
+  font-size: 1.2em;
+}
+
+.ellipse,
+.ellipse-2 {
+    background: var(--dark-umber);
+}
+
+
+/* -------------------------------
+   7. ERAS
+--------------------------------- */
+.era-card {
+    border: none;
+    background: transparent;
+}
+
+.era-title {
+    font-family: var(--sub-header-font);
+    color: var(--charcoal-ink);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.era-description {
+    font-family: var(--text-font);
+    color: var(--charcoal-ink);
+    text-align: center;
+}
+
+.era-item {
+    border-radius: 2px;
+    border: 2px dotted var(--green-amber);
+}
+
+.era-item-text {
+    background-color: transparent;
+    border: none;
+    border-radius: 2px;
+    color: var(--burnt-terracotta);
+    font-family: var(--text-font);
+    text-align: center;
+    text-shadow: none;
+}
+
+.era-items img {
+  border-radius: 20%;
+  border: 2px solid var(--charcoal-ink);
+  filter:
+    grayscale(100%)
+    contrast(100%)
+    brightness(1.1)
+    sepia(20%);
+  mix-blend-mode: multiply;
+}
+
+
+/* -------------------------------
+    8. ITEM PAGE 
+--------------------------------- */
+/* 1. THE OUTER FRAME */
+#item-container {
+    border: 6px double var(--charcoal-ink);
+}
+
+.table-box {
+    border: 2px solid var(--charcoal-ink)
+}
+
+.item-box img {
+  border-radius: 20%;
+  border: 2px solid var(--charcoal-ink);
+  filter:
+    grayscale(100%)
+    contrast(100%)
+    brightness(1.1)
+    sepia(20%);
+  mix-blend-mode: multiply;
+}
+
+.table tr {
+    border-bottom: 1px solid var(--charcoal-ink);
+    background-color: transparent;
+    color: var(--charcoal-ink);
+}
+
+.table th,
+.table td {
+    border: none;
+    background-color: transparent;
+    color: var(--charcoal-ink);
+}
+
+.table thead {
+  font-family: var(--default-font);
+  text-transform: uppercase;
+}
+
+.table tbody {
+  font-family: var(--text-font);
+}
+
+.text-box button {
+  font-family: var(--sub-header-font);
+  border: none;
+  color: var(--charcoal-ink);
+}
+
+.text-box button:hover {
+  background-color: transparent;
+  color: var(--charcoal-ink);
+  border: 2px solid var(--charcoal-ink);
+  border-radius: 2px;
+}
+
+.text-box button.active {
+  background-color: transparent;
+  border: 2px solid var(--charcoal-ink);
+  color: var(--charcoal-ink);
+  border-radius: 2px;
+}
+
+.buttons-box {
+  padding: 1.2em;
+  border-bottom: 2px solid var(--charcoal-ink);
+}
+
+.card-footer button {
+  font-family: var(--sub-header-font);
+  font-size: 1.2em;
+  border: none;
+  border-bottom: 2px solid var(--charcoal-ink);
+  border-top: 2px solid var(--charcoal-ink);
+  border-radius: 0px;
+  color: var(--charcoal-ink);
+  background-color: transparent;
+}
+
+.card-footer button:hover {
+  background-color: transparent;
+  color: var(--burnt-terracotta);
+  border-bottom: 2px solid var(--burnt-terracotta);
+  border-top: 2px solid var(--burnt-terracotta);
+  border-radius: 2px;
+}
+
+#room-nav-controls span {
+  font-family: var(--text-font);
+  color: var(--burnt-terracotta) !important;
+}

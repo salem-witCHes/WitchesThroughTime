@@ -47,38 +47,39 @@ document.addEventListener('DOMContentLoaded', () => {
         element.style.transition = 'none'; 
         element.classList.add('visible');
         
-        // We force a "reflow" so the browser accepts the change, then restore transition
+        // force a "reflow" so the browser accepts the change, then restore transition
         void element.offsetWidth; 
         element.style.transition = ''; 
     });
   } 
 });
 
+
 // --- ITEM PAGE ---
 
 document.addEventListener('DOMContentLoaded', () => {
-    // variables to hold information
-    let allItems = {};      // store the dictionary of all items from the json file
+    // variables to hold data
+    let allItems = {};
     let narratives = {};
     let roomsData = {}; 
     let roomKeys = [];  
 
-    // Navigation State
-    let currentIdList = [];     // currently active narrative
+    // navigation state
+    let currentIdList = [];
     let currentIndex = 0;
-    let currentNarrativeName = '';  // remember the narrative mode
+    let currentNarrativeName = '';
     
-    // Filters
+    // filters
     let currentLength = 'short';
     let currentTone = 'educational-adult';
 
-    // INITIALIZATION
+    // load and store json data
     fetch('data.json')
         .then(response => response.json())
         .then(data => {
             allItems = data.items;
             
-            // Setup Narratives
+            // setup narratives
             narratives['chronological'] = data.narratives.chronological;
             
             roomsData = data.narratives.eras; 
@@ -88,27 +89,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 narratives['eras'].push(...roomsData[key]);
             });
 
-            // Read URL parameters
-            const urlParams = new URLSearchParams(window.location.search);  // this reads the address bar
+            // read URL parameters and decide exactly which item to show
+            const urlParams = new URLSearchParams(window.location.search);
             const targetId = urlParams.get('id');
             const targetNarrative = urlParams.get('narrative');
 
-            // if URL has ID, load that; if not, load default Chronological start.
+            // if URL has id, load that; if not, load default chronological start.
             if (targetId && allItems[targetId]) {
-                // If the URL specifies a narrative use it. otherwise default to chronological.
                 const startNarrative = targetNarrative || 'chronological';
                 switchNarrative(startNarrative, targetId);
             } else {
-                // No ID in URL? Start at the beginning of Chronological
                 switchNarrative('chronological', narratives['chronological'][0]);
             }
         })
+
         .catch(error => console.error("Error loading JSON:", error));
-
-
-    // --- CORE: SWITCH NARRATIVE ---
+    
+    // --- FUNCTIONS ---
+    // switch narrative
     function switchNarrative(name, targetItemId = null) {
-        // Safety check: if narrative name is invalid, fallback to chronological
         if (!narratives[name]) name = 'chronological';
         
         currentNarrativeName = name;
@@ -116,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (targetItemId) {
             const newIndex = currentIdList.indexOf(targetItemId);
-            // If item is found in this narrative, go to it. Else start at 0.
+            // if item is found in this narrative, go to it, else start at 0
             currentIndex = (newIndex !== -1) ? newIndex : 0;
         } else {
             currentIndex = 0;
@@ -127,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // RENDER
+    // render information
     // take the data from memory and populate the screen
     function renderItem() {
         const itemId = currentIdList[currentIndex];
@@ -157,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // update "current room" Label
         document.getElementById('current-room-name').textContent = meta.room;
         
-        updateDescriptionText(item); // check the buttons and pick the correct text from the json to display
+        updateDescriptionText(item);
     }
     
     // UPDATE: .textContent treats <strong> as literal text so it's better to use innerHTML
@@ -173,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 }
 
-    // FIND CURRENT ROOM INDEX
+    // find current index room
     function getCurrentRoomIndex() {
         const currentItemId = currentIdList[currentIndex];
         for (let i = 0; i < roomKeys.length; i++) {
@@ -185,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return -1;
     }
 
-    // UI FEEDBACK & VISIBILITY
+    // UI feedback and visibility
     function updateUIState() {
         const dateCell = document.getElementById('item-date');
         const roomCell = document.getElementById('item-room');
@@ -204,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // EVENT LISTENERS -> connect the click to the functions
+    // connect the event click to the functions
     document.getElementById('item-date').addEventListener('click', () => {
         if (currentNarrativeName !== 'chronological') {
             switchNarrative('chronological', currentIdList[currentIndex]);
@@ -231,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Room Jump Buttons
+    // room jump buttons
     const roomControlsDiv = document.getElementById('room-nav-controls');
     const roomButtons = roomControlsDiv.querySelectorAll('button');
     const prevRoomBtn = roomButtons[0];
@@ -290,7 +289,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
     var imageModal = document.getElementById('imageModal');
     
     if (imageModal) { // check if modal exists to avoid errors on other pages
@@ -310,5 +308,34 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modalLink) modalLink.href = destinationUrl;
             if (modalImage) modalImage.src = imageSource;
         });
+    }
+});
+
+
+// ---- THEME 2 CURVED TITLE ----
+document.addEventListener("DOMContentLoaded", function() {
+    const introTitle = document.querySelector('.introduction-title h1');
+
+    // Only run if the title exists and we haven't already added the curve
+    if(introTitle && !introTitle.querySelector('.curved-svg')) {
+        const textContent = introTitle.innerText;
+        const width = 800;
+        const curvePath = `M 0,40 Q 400, 140 800,40`;
+        
+        const svgHTML = `
+            <svg class="curved-svg" viewBox="0 0 ${width} 200" width="100%" height="100%" preserveAspectRatio="xMidYMin meet" style="overflow: visible;">
+                <defs>
+                    <path id="curve-title" d="${curvePath}" />
+                </defs>
+                <text width="${width}" text-anchor="middle">
+                    <textPath xlink:href="#curve-title" startOffset="50%" 
+                        style="fill:var(--charcoal-ink); font-family: 'Abril Fatface', serif; font-size: 60px; text-transform:uppercase; letter-spacing: 2px;">
+                        ${textContent}
+                    </textPath>
+                </text>
+            </svg>
+        `;
+        
+        introTitle.innerHTML = `<span class="std-text">${textContent}</span>${svgHTML}`;
     }
 });

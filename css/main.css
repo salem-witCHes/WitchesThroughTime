@@ -565,8 +565,8 @@ scaleX(-1) re-introduces the horizontal flip */
 
 .carousel {
   width: 100%;
-  aspect-ratio: 16/9;   /* fixed ratio as the images */
-  max-height: 70vh;   /* fix the visible height */
+  aspect-ratio: 16/9;
+  max-height: 70vh;
   background: none;
   overflow: hidden;
   position: relative;
@@ -574,7 +574,7 @@ scaleX(-1) re-introduces the horizontal flip */
 
 .carousel-inner {
   width: 100%;
-  height: 100%; /* ensure it always has height */
+  height: 100%;
   position: relative;
 }
 
@@ -586,8 +586,8 @@ scaleX(-1) re-introduces the horizontal flip */
 
 .carousel-item img {
   width: 100%;
-  height: 100%;       /* maintain aspect ratio */
-  object-fit: cover;  /* fills container, crops overflow */
+  height: 100%;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -629,6 +629,14 @@ scaleX(-1) re-introduces the horizontal flip */
   opacity: 1;
 }
 
+.introduction,
+.link-documentation {
+  max-width: 90%;
+  margin: 4rem auto;            /* centers the section horizontally */
+  padding: 0 1rem;              /* small horizontal breathing space */
+  text-align: center;           /* centers heading and button */
+}
+
 .introduction-title h2::after,
 .documentation-title h2::after {
   content: "";
@@ -639,39 +647,35 @@ scaleX(-1) re-introduces the horizontal flip */
   margin: 1em auto 1em;  /* spacing and centering */
 }
 
-.introduction,
-.link-documentation {
-  max-width: 90%;
-  margin: 4rem auto;            /* centers the section horizontally */
-  padding: 0 1rem;              /* small horizontal breathing space */
-  text-align: center;           /* centers heading and button */
+/* Hide the curve by default */
+.introduction-title h1 .curved-svg {
+    display: none;
+}
+
+/* Ensure normal text is visible */
+.introduction-title h1 .std-text {
+    display: block;
 }
 
 .introduction-text p,
 .documentation-text p {
-  /* Scales from 16px on mobile to 80px on large screens */
   padding-inline: clamp(1rem, 3vw, 2rem); 
-  
-  /* Limits text width for readability */
-  max-width: 70ch; /* ensure redability: 70 characters per line is the best for reading comfort" */
-  margin-inline: auto; /* Centers the text block */
-  
-  /* Standard readability leading */
+  max-width: 70ch;
+  margin-inline: auto;
   line-height: 1.6;
   font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem);
-  text-wrap: pretty; /* prevents orphans at the end of the paragraphs */
-
+  text-wrap: pretty;
 }
 
 .link-documentation a {
-  display: inline-block;           /* allows padding and margins */
-  padding: 0.75rem 1.5rem;         /* button size */
-  border: 2px solid var(--default-font-color);  /* outlined look */
-  border-radius: 2rem;             /* rounded edges */
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--default-font-color);
+  border-radius: 2rem;
   color: var(--default-font-color);
-  text-decoration: none;           /* remove underline */
+  text-decoration: none;
   font-weight: 600;
-  margin: 1.5rem;              /* spacing above the button */
+  margin: 1.5rem;
 }
 
 .link-documentation a:hover {
@@ -1064,16 +1068,13 @@ nav.navbar {
     position: sticky;
     top: var(--nav-height);
     z-index: 9;
-
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 24px;
-
     width: 100%;
     background: white;
     padding: 12px 0;
-
     box-sizing: border-box;
 }
 
@@ -1385,16 +1386,14 @@ nav.navbar {
 }
 
 
-/* ITEM PAGE */
+
+/* -------------------------
+    ITEM PAGE
+---------------------------- */
 /* Ensures the top row containers have equal height on desktop/tablet */
 .item-table > .col-12 {
     /* Set a minimum height on the columns themselves, not the row */
     min-height: 350px;
-}
-
-#item-container {
-  padding-top: 5px !important;
-  margin-top: 0px;
 }
 
 /* Base style for all content containers */
@@ -1405,17 +1404,12 @@ nav.navbar {
     box-sizing: border-box;
 }
 
-.item-box {
-    padding: 0;   
-}
-
 .item-box img {
     width: 100%;
     aspect-ratio: 4/3;
     display: block;
     object-fit: cover;
     object-position: center;
-    
 }
 
 .table-box {
@@ -1451,9 +1445,9 @@ nav.navbar {
   border: 1px solid var(--default-font-color);
   border-radius: 2rem;
   color: var(--default-font-color);
-  text-decoration: none;           /* remove underline */
+  text-decoration: none;
   font-weight: 600;
-  margin-top: 1.5rem;              /* spacing above the button */
+  margin-top: 1.5rem;
 }
 
 .text-box button:hover {
@@ -1492,13 +1486,17 @@ nav.navbar {
   /* transform: scale(1.05); */         /* subtle zoom */
 }
 
+#room-nav-controls span {
+  font-family: var(--default-font);
+  color: var(--Greyscale-900) !important;
+  text-align: center;
+}
 
 /* Styling for the enlarged image in the modal */
 #imageModal .modal-body {
     padding: 0 !important;
     background-color: transparent;
 }
-
 
 #imageModal .modal-body img {
     width: auto !important;
