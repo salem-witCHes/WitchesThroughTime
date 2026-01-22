@@ -160,14 +160,18 @@ document.addEventListener('DOMContentLoaded', () => {
         updateDescriptionText(item); // check the buttons and pick the correct text from the json to display
     }
     
+    // UPDATE: .textContent treats <strong> as literal text so it's better to use innerHTML
     function updateDescriptionText(item) { 
-        const textKey = `${currentLength}-${currentTone}`;
-        if (item.texts && item.texts[textKey]) {
-            document.getElementById('item-description-display').textContent = item.texts[textKey];
-        } else {
-            document.getElementById('item-description-display').textContent = "Description not available.";
-        }
+    const textKey = `${currentLength}-${currentTone}`;
+    const displayPanel = document.getElementById('item-description-display');
+
+    if (item.texts && item.texts[textKey]) {
+        // .innerHTML tells the browser to render the <strong> and <br> tags
+        displayPanel.innerHTML = item.texts[textKey];
+    } else {
+        displayPanel.innerHTML = "<em>Description not available.</em>";
     }
+}
 
     // FIND CURRENT ROOM INDEX
     function getCurrentRoomIndex() {

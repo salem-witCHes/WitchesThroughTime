@@ -302,6 +302,22 @@ let introHTML = ""; // Variable to store original HTML with intro text
 function showRoomDescription(roomId) {
     const panel = document.getElementById('room-description-panel')
 
+    // MANAGE ACTIVE CLASS
+    // First, remove "active" from every possible room
+    const allRoomIds = ['entrance-room', 'first-room', 'second-room', 'third-room', 'fourth-room'];
+    allRoomIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.classList.remove('active');
+        }
+    });
+
+    // Then, add "active" to the room that was just clicked
+    const currentRoom = document.getElementById(roomId);
+    if (currentRoom) {
+        currentRoom.classList.add('active');
+    }
+
     // 1. Check if the user clicked the entrance 
     if (roomId === 'entrance-room') {
         panel.innerHTML = introHTML; // Restore intro text
