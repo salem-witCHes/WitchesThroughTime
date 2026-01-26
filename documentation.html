@@ -133,899 +133,934 @@
         <main class="page-content" id="pageContent">
             <div class="thematic-divider-nav"></div>
             
-            <!-- Documentation -->
+            <!-- Documentation -->            
             <section id="documentation" class="lg-m-5 sm-m-0 p-4 mt-5">
                 <div class="container-fluid documentation-box">
                     <div class="row justify-content-center">
-                        <div class="col-lg-10 col-md-10 col-sm-12 text-box">
-                            <div class="documentation-title">
-                                <h1>Documentation</h1>
+                        <div class="col-lg-10 col-md-10 col-sm-12 text-box documentation-title">
+                            <h1>Documentation</h1>
+                        </div>
+                        <div class="card mb-5 bg-white">
+                            <div class="card-body">
+                                <h4 class="card-title" style="color: black; font-weight: 700;">Table of Contents</h4>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <a href="#general" class="text-decoration-none text-black">
+                                            <strong>1. General scope and purpose</strong>
+                                        </a>
+                                        <ul class="list-unstyled ms-4 mt-1"> <li><a href="#theme" class="text-decoration-none text-black">1.1 Exhibition theme and concept</a></li>
+                                            <li><a href="#content" class="text-decoration-none text-black">1.2 Content and Item description</a></li>
+                                            <li><a href="#structure" class="text-decoration-none text-black">1.3 Structure and thematic rooms</a></li>
+                                            <li><a href="#metadata" class="text-decoration-none text-black">1.4 Metadata model</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#presentation" class="text-decoration-none text-black">
+                                            <strong>2. Presentation and Navigation</strong>
+                                        </a>
+                                        <ul class="list-unstyled ms-4 mt-1">
+                                            <li><a href="#index-page" class="text-decoration-none text-black">2.1 Index Page</a></li>
+                                            <li><a href="#map-page" class="text-decoration-none text-black">2.2 Map Page</a></li>
+                                            <li><a href="#exhibition-page" class="text-decoration-none text-black">2.3 Exhibition Page</a></li>
+                                            <li><a href="#item-page" class="text-decoration-none text-black">2.4 Item Page</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#themes" class="text-decoration-none text-black">
+                                            <strong>3. Themes</strong>
+                                        </a>
+                                        <ul class="list-unstyled ms-4 mt-1">
+                                            <li><a href="#early-modern-era" class="text-decoration-none text-black">3.1 Early Modern Era</a></li>
+                                            <li><a href="#penny-dreadfuls" class="text-decoration-none text-black">3.2 Penny Dreadfuls</a></li>
+                                            <li><a href="#vienna-secession" class="text-decoration-none text-black">3.3 Vienna Secession</a></li>
+                                            <li><a href="#feminist-protest" class="text-decoration-none text-black">3.4 70s Feminist Protests</a></li>
+                                            <li><a href="#windows-95" class="text-decoration-none text-black">3.5 Windows 95</a></li>
+                                            <li><a href="#cyberpunk" class="text-decoration-none text-black">3.6 Cyberpunk 2035</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             </div>
+                            <hr style="border-top: 1px solid black; opacity: 1;">
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-lg-10 col-md-10 col-sm-12 text-box">
-
-                    <!-- 1. General scope and purpose -->
-                    <h2 id="#1.general">1. General scope and purpose</h2>
-                    <p>
-                        The virtual exhibition <em>Witches Through Time: From Myth to Empowerment</em> was developed in alignment with the principles of the
-                        <em>Multimedia Museum Meta Mirror</em> project, designed by Professor Fabio Vitali within the course
-                        <em>Information Modeling and Web Technologies</em> at the University of Bologna.
-                    </p>
-
-                    <p>
-                        The project aims to investigate and emulate contemporary web and application design practices adopted by museums,
-                        in order to create a digital companion capable of supporting visitors before, during or in place of an on-site visit.
-                    </p>
-
-                    <p>
-                        In accordance with the project specifications, <em>Witches Through Time</em> offers a complete digital overview
-                        of a hypothetical museum exhibition whose goal is to present a new perspective on the history of witchcraft
-                        through a feminist lens. The application functions as a <em>meta mirror</em> of the physical museum: it reproduces
-                        the exhibition’s spatial organization through a faithful interactive map and recreates the curatorial experience
-                        through a narrative-driven navigation mode.
-                    </p>
-
-                    <p>
-                        The exhibition brings together a wide range of media, including artworks, books, historical documents,
-                        photographs and contemporary installations, connected through interpretative texts that guide the visitor along
-                        the curatorial narrative.
-                    </p>
-
-                    <p>
-                        In addition, the project includes mandatory features such as switchable themes, whose design choices
-                        and conceptual motivations are discussed and justified in the third chapter of the documentation.
-                    </p>                    
-                    <!-- 1.1 Exhibition theme and concept -->
-                    <h3 id="#1.1exhibition-theme and concept">1.1 Exhibition theme and concept</h3>
-                    <p>
-                        <em>Witches Through Time</em> is conceived as a critical exploration of the figure of the witch as a historically
-                        constructed and politically charged archetype. The project aims to guide the visitor through a journey, as
-                        suggested by the exhibition’s title: from the ancient and pre-Christian origins of the witch, through the
-                        persecutions of the Middle Ages, to her modern and contemporary reconfigurations. Adopting a feminist
-                        interpretative lens, the exhibition presents the witch not merely as a victim of superstition, but as a figure
-                        shaped by enduring systems of control and resistance.
-                    </p>
-
-                    <p>
-                        The exhibition challenges dominant narratives that have alternately feared, ridiculed or romanticized witches,
-                        while rarely addressing witchcraft as a form of cultural and political agency. By foregrounding the relationship
-                        between witchcraft and forms of female knowledge, such as healing practices, herbal medicine, reproductive care
-                        and spiritual mediation, the exhibition positions the witch as operating outside state control, thereby framing
-                        her as a threat to established power structures. Within this framework, witch hunts are interpreted not solely as
-                        episodes of religious fanaticism, but as mechanisms of social discipline that targeted women whose roles and
-                        expertise disrupted patriarchal and institutional norms.
-                    </p>
-
-                    <p>
-                        Historically, the exhibition traces the transformation of witch-like figures from ancient goddesses, healers and
-                        mythological sorceresses connected to nature and fertility, to symbols of fear and deviance during the late Middle
-                        Ages and early modern period. The widespread persecution of alleged witches across Europe and beyond is presented
-                        as a deeply gendered phenomenon, whose cultural consequences extend far beyond the decline of formal trials.
-                        Although the legal repression of witchcraft eventually declined, the symbolic figure of the witch persisted,
-                        continuing to shape literature, folklore and popular imagination, while constantly shifting in meaning and form.
-                    </p>
-
-                    <p>
-                        A central focus of the exhibition is the re-emergence and re-signification of the witch in modern and contemporary
-                        contexts, particularly within poetry, theatre and pop culture. From the late nineteenth century onward, and
-                        particularly within twentieth-century feminist movements, the term “witch” was progressively reclaimed as a
-                        marker of self-determination and resistance, as well as a tool of feminist and decolonial critique. The exhibition
-                        highlights this shift by referencing the case of Anna Göldi, the last woman executed for witchcraft and also the
-                        first to be officially rehabilitated in 2008 by the Canton of Glarus.
-                    </p>
-
-                    <p>
-                        The curatorial approach of the exhibition emphasizes continuity rather than rupture, suggesting that witch hunts
-                        should not be understood as a closed chapter of the past. The final section, and in particular the last item of
-                        the exhibition, serves as a warning, inviting reflection on the persistence of analogous mechanisms of gendered
-                        marginalization and stigmatization in the present. By juxtaposing historical material with contemporary artistic
-                        practices, <em>Witches Through Time</em> reframes the witch as an evolving figure whose meanings are continuously
-                        negotiated across time and cultural contexts.
-                    </p>
-                    <!-- 1.2 Content of the exhibition and Item description -->
-                    <h3 id="#1.2content-exhibition">1.2 Content of the exhibition and Item description </h3>
-                    <h4>Justification of text versions</h4>
-
-                        <p>
-                            The content of <em>Witches Through Time</em> was conceived to reflect both the thematic
-                            complexity of the exhibition and the diversity of its potential audiences. Given the historical depth, political
-                            sensitivity, and cultural stratification of the figure of the witch, particular attention was paid to how
-                            information is mediated through text. Rather than assuming a single, universal visitor, the project adopts a
-                            pluralistic approach to interpretation, in line with contemporary museum practices that emphasize accessibility,
-                            inclusivity, and visitor-centered design.
-                        </p>
-
-                        <p>
-                            As required by the project guidelines, there are three main categories for the audience, introduced as personas: a teacher in a middle school, a businessman from out of town and a PhD student. Therefore, the exhibition offers visitors the possibility to switch between different textual descriptions for each item. These descriptions vary according to length, level of competence, and communicative intent, allowing users to choose the version that best suits their interests, prior knowledge, and reading preferences.
-                        </p>
-
-                        <h4>Defining the dimensions</h4>
-
-                        <p>
-                            At the initial design stage, four dimensions were identified as relevant for shaping textual interpretation:
-                        </p>
-
-                        <ul>
-                            <li><strong>Length</strong>: short / medium / long</li>
-                            <li><strong>Complexity</strong>: simple / difficult</li>
-                            <li><strong>Audience</strong>: kids / adults / scholars</li>
-                            <li><strong>Tone</strong>: fun / educational</li>
-                        </ul>
-
-                        <p>
-                            While this framework allowed for a theoretically rich combination of possibilities, it quickly became evident
-                            that exposing all potential permutations would be counterproductive. The number of combinations was excessively
-                            high, and many of them either overlapped conceptually or resulted in contradictory communicative goals. For
-                            example, a short, difficult and fun text aimed at children would undermine clarity, while a long, difficult and
-                            fun text for adults risks tonal inconsistency. Likewise, texts designed for scholars almost inevitably require a
-                            longer format and an academic tone, regardless of stylistic variation.
-                        </p>
-
-                        <p>
-                            Museums frequently operate along similar interpretive dimensions, but they rarely make all possible combinations
-                            explicit to visitors. Instead, they curate a limited and coherent set of interpretive layers to avoid cognitive
-                            overload and decision fatigue. Following this principle, we refined our framework by collapsing overlapping
-                            dimensions and prioritizing clarity and usability.
-                        </p>
-
-                        <h4>Final structure: length and audience</h4>
-
-                        <p>
-                            The final model is based on two primary dimensions: audience and length. Tone and complexity are embedded within
-                            these categories rather than treated as independent variables. This resulted in nine text versions for each
-                            item, organized as follows:
-                        </p>
-
-                        <h5>Kids (short, medium, long)</h5>
-
-                        <p>
-                            Texts intended for younger audiences use clear, accessible language and concrete examples.
-                        </p>
-
-                        <ul>
-                            <li>The <strong>short</strong> version introduces the object in a concise and engaging way.</li>
-                            <li>The <strong>medium</strong> version provides additional contextual information while maintaining simplicity.</li>
-                            <li>
-                                The <strong>long</strong> version is designed for children with prior knowledge or strong interest, allowing
-                                for deeper exploration without abandoning a clear and consistent tone.
-                            </li>
-                        </ul>
-
-                        <p>
-                            Across all three versions, the tone remains approachable and coherent, avoiding oversimplification while
-                            maintaining accessibility.
-                        </p>
-
-                        <h5>Adults (short, medium, long)</h5>
-
-                        <p>
-                            Texts aimed at the general adult public assume varying degrees of familiarity with the topic.
-                        </p>
-
-                        <ul>
-                            <li>The <strong>short</strong> version offers an essential overview, suitable for visitors who prefer quick insights.</li>
-                            <li>The <strong>medium</strong> version expands on the historical and cultural context.</li>
-                            <li>
-                                The <strong>long</strong> version provides a more articulated interpretation, engaging visitors who wish to
-                                deepen their understanding.
-                            </li>
-                        </ul>
-
-                        <p>
-                            In this group, linguistic complexity increases alongside text length, reflecting the assumption that visitors
-                            who seek longer explanations are already more at ease with the subject matter.
-                        </p>
-
-                        <h5>Scholars (short, medium, long)</h5>
-
-                        <p>
-                            Texts for scholars adopt an academic tone in all versions, prioritizing analytical depth and conceptual
-                            precision.
-                        </p>
-
-                        <ul>
-                            <li>
-                                Even the <strong>short</strong> version presents a critical perspective rather than a simplified summary.
-                            </li>
-                            <li>
-                                The <strong>medium</strong> and <strong>long</strong> versions progressively expand the interpretive
-                                framework, integrating historical references, theoretical considerations, and disciplinary vocabulary.
-                            </li>
-                        </ul>
-
-                        <p>
-                            Here, length does not alter tone but rather the degree of analytical development, allowing scholarly users to
-                            select the depth most appropriate to their research or reading context.
-                        </p>
-
-                        <h4>Rationale and curatorial value</h4>
-
-                        <p>
-                            This structured yet flexible system allows the exhibition to address a wide range of audiences without
-                            fragmenting the interpretive experience. By limiting the number of versions while maintaining meaningful
-                            differentiation, the project balances interpretive richness with usability. Visitors are empowered to actively
-                            shape their own experience, choosing how deeply to engage with each object, while remaining guided by a coherent
-                            curatorial voice.
-                        </p>
-
-                        <p>
-                            In the context of <em>Witches Through Time</em>, this approach is particularly significant. The figure of the
-                            witch carries layered meanings, mythological, historical, political and symbolic, that cannot be communicated
-                            effectively through a single narrative register. Multiple text versions allow the exhibition to address these
-                            layers responsibly, making space for education, critical reflection and scholarly inquiry while remaining
-                            accessible to younger and non-specialist audiences.
-                        </p>
-
-                        <p>
-                            Overall, the design of the item descriptions reflects the exhibition’s broader aim: to question inherited
-                            narratives, reveal hidden power structures, and invite visitors to reconsider the witch not as a marginal figure
-                            of superstition, but as a complex and enduring symbol of cultural resistance and empowerment.
-                        </p>
-
-
-                    <!-- 1.3 Exhibition structure and thematic rooms -->
-                    <h3 id="#1.3exhibition-structure">1.3 Exhibition structure and thematic rooms</h3>
-                    <p>
-                            The exhibition’s conceptual framework is closely tied to its spatial and narrative structure.
-                            <em>Witches Through Time</em> is organized into four thematic rooms, each addressing a distinct
-                            dimension of the figure of the witch across history and artistic representation.
-                        </p>
-
-                        <p>
-                            <strong>Room 1 – Mythic roots</strong> focuses on the mythological and pre-Christian origins of
-                            witch-like figures, establishing the witch as a foundational cultural figure.
-                        </p>
-
-                        <p>
-                            <strong>Room 2 – Fires of fear</strong> addresses the historical phenomenon of witch hunts and
-                            executions, particularly during the late Middle Ages and early modern period. Through historical
-                            documents and visual material of the time, the room examines how the witch was redefined as a legal
-                            and moral enemy.
-                        </p>
-
-                        <p>
-                            <strong>Room 3 – Visions and shadows</strong> explores representations of the witch in literature,
-                            visual art and pop culture. Here, the witch emerges as a figure of ambiguity, oscillating between
-                            fear and fascination.
-                        </p>
-
-                        <p>
-                            <strong>Room 4 – Reclaiming the spell</strong> focuses on modern and contemporary reappropriations
-                            of the witch as a symbol of feminist resistance and empowerment. At the same time, the room
-                            acknowledges the continued vulnerability of women accused of witchcraft in various parts of the
-                            world, connecting historical persecution with contemporary forms of gendered exclusion.
-                        </p>
-
-                        <p>
-                            While allowing both chronological and thematic navigation, the exhibition is conceived as a
-                            cyclical narrative, emphasizing the recurrence of specific patterns: persecution,
-                            marginalization, resistance and reappropriation.
-                        </p>
-
-                        <p>
-                            The spatial organization of the exhibition is represented through a pentacle-shaped map.
-                            Traditionally associated with balance and interconnected forces, the pentacle is used here as a
-                            conceptual device to visualize the dynamics underlying the history of witchcraft, such as the
-                            tension between knowledge and repression, visibility and erasure, empowerment and punishment.
-                            Each point of the pentacle corresponds to one thematic room, while the central space remains
-                            intentionally inaccessible.
-                        </p>
-
-                        <p>
-                            This absence reflects the curatorial position that the history of witchcraft does not follow a
-                            linear or progressive trajectory, but instead repeats and transforms across time. Consequently,
-                            the exhibition has no definitive center or conclusive endpoint; the final room reopens the
-                            narrative rather than closing it, reinforcing the exhibition’s central question: when, and
-                            under what conditions, the witch hunt truly ends?
-                        </p>
-                    <!-- 1.4 Metadata model and standards -->
-                    <h3 id="#1.4Metadata-model">1.4 Metadata model and standards</h3>
-                    <p>
-                        Metadata for the digital collection were collected directly from institutional websites hosting the digital items. To ensure semantic interoperability across these heterogeneous sources, metadata were standardized using the Dublin Core Metadata Element Set (DCMES). This process unified varying cataloguing standards into a consistent schema – mapping attributes such as Creator, Date, Type, and Location – which was then consolidated into a single JSON file acting as the application’s central repository.
-                    </p>
-                    <p>
-                        The application utilizes JavaScript to dynamically populate the item interface without requiring page reloads. Upon initialization, the script fetches the JSON file and parses the items into a JavaScript object. The core function, displayItemDetails(), retrieves the specific metadata object for the active item ID. It then targets the corresponding table cells in the HTML (e.g., item-creator, item-type) and renders the content.
-                    </p>
-
-
-                    <!-- 2. Presentation -->
-                    <h2 id="#2.presentation">2. Presentation and Navigation</h2>
-
-                    <!-- 2.1 Index Page -->
-                    <h3>2.1 Index Page</h3>
-                    <p>
-                        The Index page functions as the primary point of access to the digital exhibition
-                        <em>Witches Through Time</em>. Rather than operating as a neutral menu
-                        or informational landing page, the homepage is conceived as a threshold experience, designed
-                        to introduce visitors to the exhibition’s atmosphere, themes, and narrative logic before any
-                        explicit curatorial content is presented.
-                    </p>
-
-                    <p>
-                        This approach aligns with a growing tendency in digital exhibitions to treat the homepage as
-                        an interpretive space in its own right, rather than a purely navigational interface. Projects
-                        such as Google Arts &amp; Culture immersive exhibitions, The British Museum online storytelling
-                        features, and experimental digital archives like Europeana thematic collections demonstrate
-                        how visual immersion and narrative framing can guide user engagement from the very first
-                        interaction.
-                    </p>
-
-                    <h4>Narrative and visual metaphor</h4>
-
-                    <p>
-                        The homepage opens with a forest scene, a recurring symbolic environment in the cultural
-                        imagination of witchcraft. Forests have historically functioned as liminal spaces: places of
-                        exclusion, secrecy, fear, and resistance. By situating the visitor within a forest before
-                        entry, the exhibition establishes an immediate metaphorical framework that anticipates the
-                        themes explored throughout the collection: persecution, marginality, transformation, and
-                        empowerment.
-                    </p>
-
-                    <p>
-                        The absence of textual explanation in this opening moment is intentional. Instead of
-                        presenting information immediately, the interface prioritizes atmosphere over exposition,
-                        encouraging curiosity and emotional engagement. This design choice reflects strategies used
-                        in immersive museum installations, where sensory experience precedes interpretation, allowing
-                        visitors to enter the narrative world before confronting historical or analytical content.
-                    </p>
-
-                    <h4>Controlled entry and visitor agency</h4>
-
-                    <p>
-                        The presence of a single call-to-action (<em>“Enter the spell”</em>) reinforces the idea of
-                        intentional access. Visitors are not immediately confronted with menus, categories, or
-                        metadata, but are instead invited to actively choose to cross into the exhibition space. This
-                        mirrors ritualistic and performative elements associated with witchcraft, while also granting
-                        the user a clear moment of agency.
-                    </p>
-
-                    <p>
-                        Similar strategies can be observed in digital storytelling projects and virtual exhibitions
-                        that emphasize performative navigation, where entering the exhibition becomes part of the
-                        narrative experience rather than a purely functional step.
-                    </p>
-
-                    <h4>Transition between worlds</h4>
-
-                    <p>
-                        After entry, the homepage gradually reveals its full interface, including the navigation bar
-                        and thematic visual elements associated with later sections of the exhibition. This staged
-                        revelation reflects a conceptual transition from mythic space to structured knowledge. The
-                        initial forest environment represents the symbolic and folkloric dimension of witchcraft,
-                        while the revealed interface introduces the analytical, historical, and curatorial framework
-                        of the exhibition.
-                    </p>
-
-                    <p>
-                        This transition echoes the exhibition’s broader narrative arc: moving from myth and fear
-                        toward contextualization, reinterpretation, and empowerment. The homepage thus anticipates the
-                        exhibition’s internal logic and prepares visitors for the thematic progression they will
-                        encounter.
-                    </p>
-
-                    <h4>Curatorial function of the Index page</h4>
-
-                    <p>
-                        From a curatorial perspective, the Index page fulfills three main functions:
-                    </p>
-
-                    <ul>
-                        <li><strong>Orientation</strong> – establishing the thematic and emotional tone of the exhibition.</li>
-                        <li><strong>Engagement</strong> – capturing visitor attention through visual immersion rather than textual density.</li>
-                        <li><strong>Framing</strong> – positioning the figure of the witch as a subject of cultural complexity before any historical judgment or academic interpretation is introduced.</li>
-                    </ul>
-
-                    <p>
-                        By avoiding immediate didactic explanations, the homepage respects the diversity of its
-                        audience and mirrors the exhibition’s overall commitment to layered interpretation. Visitors
-                        are invited to enter the exhibition not as passive readers, but as participants in a
-                        narrative journey.
-                    </p>
-
-                    <p>
-                        In this sense, the Index page is not merely a technical starting point but an integral
-                        component of the exhibition’s interpretive strategy, bridging visual storytelling, symbolic
-                        space, and user-centered design.
-                    </p>
-
-
-                    <!-- 2.2 Map Page -->
-                    <h3>2.2 Map Page</h3>
-                    <p>
-                        The Map page is not intended to function as the primary navigational interface, since the
-                        Exhibition page provides a more comprehensive overview of the contents of each room. Instead,
-                        this page was designed to visually translate the exhibition’s conceptual framework into an
-                        interactive spatial structure, mirroring the on-site experience in which visitors enter each
-                        room blindly, without prior knowledge of its artworks.
-                    </p>
-
-                    <p>
-                        The page layout is organized using a two-column grid system. On larger screens, the left side
-                        of the page is occupied by an embedded SVG map, while the right side hosts a textual
-                        description panel. On smaller devices, the layout adapts responsively, stacking the elements
-                        vertically to preserve readability and usability. This structure allows the map to remain
-                        the focal point of interaction while maintaining constant access to interpretative content.
-                    </p>
-
-                    <p>
-                        The SVG map was created starting from a pre-designed element in Canva and then further
-                        modified using BoxySVG in order to add transparent SVG paths corresponding to each room over
-                        the graphical representation. These paths are fully interactive: they highlight on hover and
-                        change color when active, providing visual feedback when a room is selected. Text labels are
-                        embedded within the SVG to identify each room and reinforce spatial orientation.
-                    </p>
-
-                    <p>
-                        The right-hand panel, which by default presents the introductory section (<em>“Enter the
-                        spell”</em>), functions as a dynamic content container. It displays the title and description
-                        of the currently selected room, as well as a button linking to the first item of that room.
-                        Interactive behaviors, such as room selection and content updates within the description
-                        panel, are handled through JavaScript event listeners applied to the SVG elements, while the
-                        associated texts are stored within the same JavaScript file. This interaction model
-                        maintains narrative continuity while avoiding disruptive page transitions.
-                    </p>
-
-                    <!-- 2.3 Exhibiyion Page -->
-                    <h3>2.3 Exhibition Page</h3>
-                    <p>
-                        The Exhibition page functions as the central curatorial hub of
-                        <em>Witches Through Time</em>. Accessible directly from the navigation
-                        bar, this page does not present items itself, but instead defines how the collection can be
-                        explored. Its primary role is to introduce and mediate between two distinct modes of access
-                        to the exhibition content: <strong>Chronological</strong> and <strong>Eras</strong>, each
-                        implemented as a separate HTML page.
-                    </p>
-
-                    <p>
-                        Rather than enforcing a single interpretive structure, the Exhibition page foregrounds the
-                        act of selection, making the organizational logic of the exhibition explicit and accessible
-                        to the visitor.
-                    </p>
-
-                    <h4>Dual access to the same collection</h4>
-
-                    <p>
-                        Both the Chronological and Eras views present the same set of exhibition items, but organize
-                        them according to different interpretive principles. This separation reflects a conscious
-                        curatorial decision to distinguish between historical sequencing and contextual grouping,
-                        two approaches that are frequently discussed in museum studies and digital humanities.
-                    </p>
-
-                    <p>
-                        By separating these views into individual pages, the project avoids conflating interpretive
-                        logics and allows each structure to remain conceptually coherent and readable.
-                    </p>
-
-                    <h4>Chronological view</h4>
-
-                    <p>
-                        The Chronological view organizes items according to temporal progression. This mode
-                        emphasizes historical continuity, transformation, and rupture, allowing visitors to trace
-                        how representations of witchcraft evolve across time.
-                    </p>
-
-                    <p>
-                        This structure supports visitors who prefer a linear, historically grounded narrative and
-                        aligns with traditional historiographical models. At the same time, the digital environment
-                        preserves non-linearity: users can move freely between periods without being constrained to a
-                        fixed path.
-                    </p>
-
-                    <h4>Eras view</h4>
-
-                    <p>
-                        The Eras view organizes items according to culturally and historically defined periods rather
-                        than strict dates. In this mode, items are grouped by shared aesthetic, ideological, and
-                        symbolic characteristics associated with specific eras.
-                    </p>
-
-                    <p>
-                        This approach highlights how representations of witches intensify or shift within particular
-                        cultural contexts, emphasizing discourse and visual language over chronology. It reflects
-                        curatorial strategies commonly used in physical exhibitions, where thematic or period-based
-                        rooms encourage comparative interpretation.
-                    </p>
-
-                    <h4>Curatorial transparency and user agency</h4>
-
-                    <p>
-                        The Exhibition page makes curatorial structure visible by explicitly offering these two
-                        organizational choices. Rather than presenting one model as neutral or authoritative, the
-                        interface acknowledges that structure itself produces meaning.
-                    </p>
-
-                    <p>
-                        Visitors are thus invited to actively choose how they want to engage with the collection,
-                        reinforcing a user-centered and interpretive approach consistent with contemporary digital
-                        exhibition practices.
-                    </p>
-
-                    <!-- 2.4 Item Page -->
-                    <h3>2.4 Item Page</h3>
-                    <p>
-                        The Item Page is designed as a responsive, modular interface that adapts its layout based on the device screen size using the Bootstrap grid system. The structure is divided into two primary sections. The <strong>upper section</strong> contains the interactive <u>item image</u>, clicking on that triggers a Bootstrap Modal for a high-resolution detailed view, and the <u>metadata table</u> which provides standardized information about the artifact. The <strong>lower section</strong> contains the <u>descriptive content</u> and allows visitors to choose between different text lengths (Short, Medium, Long) and tones (Kid, Adult, Scholar). The navigation controls are positioned at the bottom, dynamically updating based on the selected narrative mode.
-                    </p>
-                    <p>
-                        To ensure that every artifact in the collection is uniquely addressable and accessible directly from external pages (such as the Exhibition page), the application implements a <strong>URL parameter system</strong>. Each item is identified by a unique key passed via the ?id=parameter. Additionally, a ?narrative=parameter tracks the user’s navigational context (eras or chronological). Upon loading, the script inspects the browser’s URL query string using URLSearchParams. If a valid ID is found, the system immediately initializes the view with that specific item and sets the correct narrative context via the switchNarrative() function. If no ID is present, it defaults to the first item in the chronological sequence. This approach ensures that users can bookmark specific items or navigate seamlessly from other pages to a detailed view without losing their place in the narrative structure.
-                    </p>
-                    <p>
-                        The Item Page functions as a data-driven template. Content is injected dynamically via JavaScript, ensuring scalability and ease of maintenance. On page load, the script asynchronously fetches the JSON file, that acts as the central repository containing all item objects and their associated metadata. The script maintains the current state using variables for the active currentIdList (the list of items to show) and currentIndex (the specific item currently being viewed). The core of this system is the function displayItemDetails(): the function uses the currentIndex to find the correct item ID and retrieves the corresponding object from the loaded JSON data; it targets specific DOM elements by ID (e.g., item-title, item-creator) and populates them. The function uses innerHTML that allows the browser to correctly render any semantic HTML tags stored within the metadata.
-                    </p>
-                    <p>
-                        To address diverse audiences, the Item Page enables users to switch between <strong>different textual descriptions</strong> for each item. The JavaScript logic constructs a composite key based on user selection to retrieve the correct text block. When a user clicks a button (e.g., “Kid” tone and “Short” length), the script concatenates these values into a key string: ‘${currentLength}-${currentTone}’ (e.g., “short-kid”). It checks if this specific key exists in the item’s texts object within the JSON. If found, it updates the description panel instantly without reloading the page.
-                    </p>
-                    <p>
-                        The page supports two distinct modes of navigation, controlled by the switchNarrative() function. This system allows users to view the same artifact through different contextual lenses.
-                    </p>
-                    <ul>
-                        <li>The <u>Chronological Narrative</u> is the default mode. The currentIdList is populated with the complete list of items sorted by date and Previous and Next buttons traverse this entire collection. In this mode, the “Room Navigation” controls are hidden (d-none).</li>
-                        <li>The <u>Eras Narrative</u> is activated by clicking the “Room” link in the metadata table. The code creates a filtered list of items belonging only to specific rooms. In this mode, additional navigation buttons appear, allowing users to jump between rooms rather than just between individual items.</li>
-                    </ul>
-
-                    <!-- 3. Themes/ Layouts -->
-                    <h2 id="#3.themes">3. Themes/ Layouts</h2>
-
-                    <!-- 3.1 Early Modern Era-->
-
-                    <h3 id="early-modern-era">3.1 Early Modern Era</h3>
-                    
-                    <p>
-                        This theme represents a conceptual experiment: what would a website look like if the internet existed during the Renaissance?
-                        To answer this, the design philosophy focuses on extreme minimalism and authenticity. In an era before digital screens, information was conveyed through the "basic technologies" of the time: ink and paper. Consequently, this layout strips away all modern web aesthetics—there are no glossy gradients, drop shadows, or bright "digital" colors. The palette is strictly limited to organic tones: a parchment-like tan (<code>#D9C3A6</code>) for the background and a deep charcoal (<code>#1A1A1A</code>) for the text, simulating the high contrast of iron gall ink on rag paper.
-                    </p>
-                    <p>
-                        The goal was to create an interface that feels "old" not just through decoration, but through the absence of distraction. The UI is deliberately sparse, forcing the visitor to focus on the text and content, much like a reader would focus on a printed page in the 16th century.
-                    </p>
-
-                    <h4>Atmosphere and Texture</h4>
-                    <p>
-                        A key technical challenge was ensuring the page didn't feel like a flat digital screen. To achieve a tactile "paper" quality, we implemented a global noise overlay. By applying a semi-transparent noise texture (<code>beige-noise.png</code>) to a fixed <code>::before</code> pseudo-element on the body, we created a static grain that remains consistent even as the user scrolls. This subtle layering (managed via <code>z-index: -1</code>) ensures the text appears to sit on top of the texture, mimicking the physical depth of ink pressed into fiber.
-                    </p>
-
-                    <h4>Typography</h4>
-                    <p>Typography is the primary vehicle for this theme, using fonts that are historically grounded rather than merely "old-looking":</p>
-                    <ul>
-                        <li><strong>Headings:</strong> We utilized <em>IM Fell English SC</em>, a digital revival of the typefaces bequeathed to the University of Oxford by Bishop John Fell in the 17th century. Its slightly irregular edges and varying ink weight evoke the manual nature of early letterpress printing.</li>
-                        <li><strong>Body Text:</strong> For readability, we chose <em>Cormorant Garamond</em>. This is a tribute to the famous 16th-century French punchcutter Claude Garamont, whose work defined the elegance of Renaissance typography.</li>
-                    </ul>
-
-                    <h4>The "Operello" UI System</h4>
-                    <p>
-                        Since standard rectangular buttons would look anachronistic in this setting, we developed a custom UI system based on "Operellos" (decorative corner flourishes).
-                        Instead of using solid borders, the content cards and description boxes are framed by four distinct SVG ornaments positioned absolutely in the corners (<code>.top-left</code>, <code>.bottom-right</code>, etc.). This technique mimics the modular woodcut borders used in 16th-century bookbinding, allowing the containers to expand dynamically with content while maintaining a rigid, classical structure. These operellos serve as the only necessary UI framing, keeping the interface minimal and focused on the era's aesthetic.
-                    </p>
-
-                    <h4>Navigation and Interaction</h4>
-                    <p>
-                        Interaction design was kept intentionally subtle to avoid breaking immersion. In the navigation bar, we avoided modern "active state" color changes or background highlights. Instead, we used CSS pseudo-elements to render a decorative SVG line (<code>line.svg</code>) above and below the active link.
-                        This effect, triggered via opacity transitions, mimics the hand-ruling sometimes found in manuscripts to emphasize titles. Furthermore, a slight text-shadow was applied to hovered links (<code>0.1px 0 var(--default-font-color)</code>), simulating the "ink bleed" or bolding effect of a printing press applying more pressure. Finally, all modern rounded corners were strictly removed (<code>border-radius: 0</code>), ensuring every element has the sharp, straight cut of a page.
-                    </p>
-
-                    <figure class="figure mt-4 mb-5 w-100">
-                        <img src="img/early-modern-era/moodboard.png" class="figure-img img-fluid border border-dark" alt="Early Modern Era Design Mood Board">
-                        <figcaption class="figure-caption text-center">Fig 1. Mood board and design inspiration for the Early Modern Era theme.</figcaption>
-                    </figure>
-
-                    <p><strong>Bibliography</strong></p>
-                    <ol class="mb-5">
-                        <li>
-                            IGINO MARINI. "IM Fell English." Igino Marini Fonts. 
-                            <a href="https://iginomarini.com/fell/" target="_blank">https://iginomarini.com/fell/</a>
-                        </li>
-                        <li>
-                            Catharsis Fonts. "Cormorant Garamond." Google Fonts. 
-                            <a href="https://fonts.google.com/specimen/Cormorant+Garamond" target="_blank">https://fonts.google.com/specimen/Cormorant+Garamond</a>
-                        </li>
-                    </ol>
-
-
-                    <!-- 3.2 Penny Dreadfuls -->
-                    <h3>3.2 Penny Dreadfuls</h3>
-                    <h4>Historical background</h4>
-                    <p>
-                        The second theme is rooted in a 19th century British phenomenon, originally known as «penny bloods» and later renamed <strong>Penny Dreadfuls</strong>. Born form the surge in working-class literacy and the industrialization of printing, these publications introduced a new form of mass entertainment. They were designed to be consumed rapidly, catering to a public hungry for tales of gothic horror, notorious criminals, and supernatural mysteries.
-                    </p>
-                    <p>
-                        The Penny Dreadful was the direct result of manufacturing developments that allowed paper to be produced cheaply. Publishers quickly realized that mass-producing genre fiction would sell at a penny a time – thus, the penny periodical was born. Typically, eight to sixteen pages long, each weekly number or episode featured a black-and-white illustration on the top half of the front page. These covers were particularly gruesome, depicting murderers and highwaymen to capture the attention of a semiliterate audience. 
-                    </p>
-                    <p>
-                        The visual identity of this theme captures the raw urgency of those early serials. The imagery draws heavily on the style of crude woodcuts and broadsides. This approach aligns perfectly with the exhibition’s exploration of fear and folklore, utilizing a design language that feels historically authentic: raw, unrefined, and evocative of the printing press's urgency.
-                    </p>
-
-                    <h4>Layout and color palette</h4>
-                    <p>
-                       The interface design is based on a layout that feels dense and tactile, evoking the <em>horror vacui</em> (fear of empty space) typical of Victorian broadsheets. The composition relies on heavy framing and compartmentalization; content is enclosed within thick borders and dividers, mimicking the layout of Penny Dreadful publications where every inch of paper was maximized for narrative impact.
-                    </p>
-                    <p>
-                        Since original Penny Dreadfuls targeted working-class readers, the illustrations were crucial to their appeal. The theme replicates this by prioritizing bold, dramatic images that serve not just as decoration, but as integral storytelling devices - capturing attention and reinforcing the sensationalism of the tales just as they did in the 1830s.
-                    </p>
-                    <p>
-                        The colour palette is strictly material, simulating the textures of Penny Dreadfuls. The interface alternates between <code>--background-color</code> (a saturated, pulp-yellow ochre) and <code>--paper-tone</code> (a pale, off-white parchment). These tones replicate the look of high-acid wood pulp paper that has yellowed with age and exposure. All primary text and borders use <code>-–charcoal-ink</code>, a softer alternative to pure black that suggests the matte finish of carbon-based printing ink. Highlights are applied using <code>-–burnt-terracotta</code>, a desaturated red reminiscent of dried blood or the cheap hand-colouring applied to premium editions of Spring-Heeled Jack. Secondary accents in <code>–-dark-umber</code> ground the design in earthy, murky tones, reinforcing the mood of the darker corners of Victorian London.
-                    </p>
-
-                    <h4>Typography choices</h4>
-                    <p>
-                       The 19th century witnessed a typographic renaissance driven by the Industrial Revolution, which transformed printing into a genuine mass medium. Printers of "murder broadsides" utilized a dizzying array of new display typefaces designed for the advertising industry. This theme mirrors that aesthetic evolution. The typographic system deliberately employs two distinct typefaces for headings to replicate the visual language of Penny Dreadful covers.
-                    </p>
-                    <p>
-                        <strong>Abril Fatface</strong> is the primary display type, a heavy-weight serif that serves as a modern reinterpretation of the classic Didone (or "Fat Face") styles. Its extreme contrast between thick and thin lines mimics the "shouting" nature of Penny Dreadful headlines, which were designed to grab attention from across a crowded street. It provides a theatrical, dramatic presence that anchors the page.
-                    </p>
-                    <p>
-                        Navigational elements and sub-headings utilize <strong>IM Fell English SC (Small Caps)</strong>. This typeface introduces a roughness that Abril Fatface lacks, simulating the irregular edges of ink bleeding into paper.
-                    </p>
-                    <p>
-                        For long-form reading, the Roman version of <strong>IM Fell English</strong> is used. While it retains the "fell" — the historic roughness and uneven baseline of 17th and 18th-century types - it remains highly legible.
-                    </p>
-
-                    <figure class="figure mt-4 mb-5 w-100">
-                        <img src="#" class="figure-img img-fluid border border-dark" alt="Penny Dreadfuls Moodboard">
-                        <figcaption class="figure-caption text-center">Fig 3. Moodboard and design inspiration for the Penny Dreadfuls theme.</figcaption>
-                    </figure>
-
-                    <p><strong>Bibliography</strong></p>
-                    <ol class="mb-5">
-                        <li>
-                            <a href="https://www.britishlibrary.cn/en/articles/penny-dreadfuls/" target="_blank">https://www.britishlibrary.cn/en/articles/penny-dreadfuls/</a>
-                        </li>
-                        <li>
-                            <a href="https://ilovetypography.com/2020/10/19/penny-dreadfuls-murder-broadsides/" target="_blank">https://ilovetypography.com/2020/10/19/penny-dreadfuls-murder-broadsides/</a>
-                        </li>
-                        <li>
-                            <a href="https://thegothicbookworm.wordpress.com/2020/10/13/the-penny-dreadfuls-a-brief-history/" target="_blank">https://thegothicbookworm.wordpress.com/2020/10/13/the-penny-dreadfuls-a-brief-history/</a>
-                        </li>
-                        <li>
-                            <a href="https://travelswithmyart.wordpress.com/2025/02/28/the-dark-art-of-the-penny-dreadful-illustrators/" target="_blank">https://travelswithmyart.wordpress.com/2025/02/28/the-dark-art-of-the-penny-dreadful-illustrators/</a>
-                        </li>
-                        <li>
-                            <a href="https://dfordreadful.wordpress.com/history/" target="_blank">https://dfordreadful.wordpress.com/history/</a>
-                        </li>
-                    </ol>
-
-                    <!-- 3.3 Vienna Secession -->
-                    <h3>3.3 Vienna Secession</h3>
-                    <h4>Historical background</h4>
-                    <p> 
-                        The Vienna Secession theme draws its primary inspiration by the work of <strong>Koloman Moser</strong>, one of the founding members of the movement. Active at the turn of the 20th century, the <strong>Vienna Secession</strong> emerged as a reaction against academic historicism, advocating for a modern, unified approach to art. Its members sought to dissolve the rigid boundaries between fine and applied arts, promoting the concept of <em>Gesamtkunstwerk</em> (the “total work of art”), in which every visual element contributes to a coherent aesthetic whole. 
-                    </p>
-                    <p>
-                        Moser played a central role in shaping this vision. His designs for <em>Die Quelle</em> (<em>Flächen Schmuck</em>, 1901) exemplify the Secessionist pursuit of clarity, rhythm, and abstraction. Unlike traditional ornamentation rooted in illusionistic depth or naturalistic imitation, Moser’s work proposes a modern approach: motifs are flattened, stylized, and organized into modular systems governed by geometric rigor and a refined sense of balance. This philosophy laid the groundwork for the <em>Wiener Werkstätte</em>, founded in 1903 by Moser and Josef Hoffmann. The workshop functioned as a brand where artist and artisan worked as equals to bring high-quality design into all areas of life.
-                    </p>
-                    <p>
-                        The ideal of art as a tool for cultural renewal aligns perfectly with the exhibition's topic, reflecting the transformative flow that shaped the imaginary of witchcraft.
-                    </p>
-
-                    <h4>Layout and color palette</h4>
-                    <p>
-                        The <u>layout</u> and visual identity of the theme is based on the Secessionist principles of geometric organization, symmetry and repetition. The interface relies on clearly defined frames and grids that structure content into balanced, self-contained units. Content does not flow freely but is contained within decorative boundaries, echoing the controlled and ordered design of the period.
-                    </p>
-                    <p>
-                        The <u>colour palette</u> is restrained and derived from one of the plates designed by Moser for the series <em>Flächen Schmuck</em>. Muted, earthy tones are favoured over bright saturation, evoking the material qualities of ink, paper, and handcrafted objects. The reduced palette enhances legibility and reinforces the flatness of decorative surfaces, while subtle contrasts are employed to guide navigation and hierarchy.
-                    </p>
-                    <p>
-                        <u>Decorative elements</u> – such as square patterns and heavy borders – are not merely embellishments but structural devices that define margins and visual hierarchy. The design also references the Verso of <em>Wiener Werkstätte</em> postcards, characterized by defined dotted margins and distinct spacing.
-                    </p>
-                    <p>
-                        To replicate the materiality of early 20th century print, the theme implements a grid effect. Using a CSS <code>::after</code> pseudo-element on the body, the design applies a fixed overlay. It consists of two repeating linear gradients that intersect to form a micro-grid. Blended with a multiply mode and low opacity (0.05), this grid simulates the texture of the graph paper Moser used for his patterns.
-                    </p>
-
-                    <h4>Typography choices</h4>
-                    <p>
-                        Typography plays a fundamental role in expressing the Vienna Secession’s graphic identity. For this theme, the typographic system is inspired by the lettering and layout experiments developed by Koloman Moser for <em>Die Quelle</em>, where typography was conceived as an integral component of the overall composition. 
-                    </p>
-                    <p>
-                        <strong>Kolo W01 RegularLP</strong> was inspired by and named after Koloman Moser. It is used for headings, titles, and navigational elements. Defined by geometric rigor and angular terminals, the typeface recalls early twentieth-century Secessionist lettering and Moser’s emphasis on clarity through structure. The typeface conveys a strong decorative presence while remaining disciplined and orderly, making it suitable for display text that establishes hierarchy.
-                    </p>
-                    <p>
-                        For body text, <strong>Federo</strong> is employed due to its high legibility. Its more restrained character provides a visual counterbalance to the decorative expressiveness of the heading typeface. This contrast reflects the Secessionist practice of harmonizing ornament with function, ensuring that readability is never compromised by stylistic expression. It is an Art Deco-inspired sans serif, designed by Jakob Erbar and first cast by Ludwig & Mayer in 1909, optimized for web, by refining details and ensuring legibility with increased counters and regular figure proportions.
-                    </p>
-
-                    <figure class="figure mt-4 mb-5 w-100">
-                        <img src="img/vienna-secession/moodboard.png" class="figure-img img-fluid border border-dark" alt="Vienna Secession Moodboard">
-                        <figcaption class="figure-caption text-center">Fig 3. Moodboard and design inspiration for the Vienna Secession theme.</figcaption>
-                    </figure>
-
-                    <p><strong>Bibliography</strong></p>
-                    <ol class="mb-5">
-                        <li>
-                            <a href="https://www.theviennasecession.com/vienna-secession/" target="_blank">https://www.theviennasecession.com/vienna-secession/</a>
-                        </li>
-                        <li>
-                            <a href="https://www.theviennasecession.com/a-history/" target="_blank">https://www.theviennasecession.com/a-history/</a>
-                        </li>
-                        <li>
-                            <a href="https://www.theviennasecession.com/die-quelle/" target="_blank">https://www.theviennasecession.com/die-quelle/</a>
-                        </li>
-                        <li>
-                            <a href="https://www.frizzifrizzi.it/2023/07/04/tesori-darchivio-i-pattern-di-koloman-moser/" target="_blank">https://www.frizzifrizzi.it/2023/07/04/tesori-darchivio-i-pattern-di-koloman-moser/</a>
-                        </li>
-                        <li>
-                            <a href="https://www.onlinewebfonts.com/download/5f48bbaab9d184a5466d1354cae30512" target="_blank">https://www.onlinewebfonts.com/download/5f48bbaab9d184a5466d1354cae30512</a>
-                        </li>
-                        <li>
-                            <a href="https://www.figma.com/fonts/federo/" target="_blank">https://www.figma.com/fonts/federo/</a>
-                        </li>
-                    </ol>
-                    
-                    <!-- 3.4 70s feminist protests -->
-                    <h3>3.4 70s feminist protests</h3>
-                    <h4>Historical background</h4>
-                    <p> 
-                        The visual identity of this theme is inspired by <strong>radical feminist graphic protest aesthetics</strong>, particularly the <strong>punk zine culture</strong> of the 1970s and several <strong>second-wave feminist periodicals</strong> of the time (e.g., <em>Spare Rib</em>, <em>Off Our Back</em>, <em>Effe</em> magazine).  
-                    </p>
-                    <p>
-                        <strong>Feminist zines</strong> of this era were not conceived as polished editorial products, but as spaces of self-expression and political resistance, distributed independently and outside institutional and commercial circuits. They were often produced with limited resources, using <strong>low-cost techniques</strong> such as photocopying, collage and manual typography. 
-                        Their visual language was deeply connected to political content: fragmented layouts, bold typography and the mixing of images and text reflected a desire to break with patriarchal norms and mainstream visual standards. These publications challenged traditional publishing aesthetics by embracing <strong>imperfection</strong>, which became a core aesthetic principle informing the layout of this theme. 
-                    </p>
-                    <p>
-                        A key reference for this aesthetic comes from <em>Spare Rib</em>, a feminist magazine launched in 1972 by founding editors Marsha Rowe and Rosie Boycott, with designers Sally Doust and Kate Hepburn. In sharp contrast to existing women’s magazines in both form and content, <em>Spare Rib</em> addressed issues ranging from sexual and racial equality to household tips, child- and healthcare, within a radical and contemporary framework. 
-                        The visual design of the magazine was crucial to its aims: it had to “look like a women’s magazine, yet with contents that did not reflect the conformist stereotyping of women”. Irregular layouts, <strong>collage compositions</strong> combining photographs and typewritten text, <strong>high-contrast colors</strong> and <strong>expressive typography</strong> were central to its visual identity. 
-                    </p>
-                    <p>
-                        These influences informed the decision to reject clean, minimal digital design in favour of <strong>visual noise</strong> and <strong>tactile interfaces</strong> that communicate activism and materiality. The interface is therefore not designed to look “perfect”, but rather intentional, expressive and handmade, reflecting the values and communication strategies of 1970s feminist publishing.
-                    </p>
-
-                    <h4>Layout and color palette</h4>
-                    <p>The layout of the interface translates the aesthetic principles of feminist zines and magazines into a digital environment by embracing irregularity and visual tension, echoing the <strong>collage-based construction</strong> typical of zine culture. The interface frequently employs visual metaphors such as <strong>tape, paper and pinned images</strong>.
-                        The layout is structured through overlapping layers and the <strong>background textures</strong> aim to reproduce the feeling of pinning things on printed paper. Elements such as cards, buttons, images and containers are intentionally rotated using small <code>transform</code> values, creating a sense of physical placement, as if elements were manually positioned on a page using glue or “tape”, 
-                        which is added as a decoration using CSS pseudo-elements (<code>::before</code> and <code>::after</code>). 
-                    </p>
-                    <p>The color palette is derived both from feminist symbolism and analogue printing practices. The main colors are:
-                        <ul>
-                            <li><strong>neon pink</strong> (<code>#FB2E86</code>): represents feminist activism. Historically associated with femininity, pink is reappropriated here as a radical color rather than a decorative one.</li>
-                            <li><strong>carbon black</strong> (<code>#1D1D1D</code>): evokes ink and typography, providing strong contrast and referencing print culture.</li>
-                            <li><strong>vanilla cream</strong> (<code>#F2E9D0</code>): simulates paper and photocopied backgrounds, creating a warm analogue base.</li>
-                        </ul>
-                    </p>
-                    <p>
-                        Additional colors include <strong>classic crimson</strong> (<code>#D7263D</code>), associated with urgency and political intensity, and <strong>silver</strong> (<code>#AFAFAE</code>), used for secondary contrast. Colors are not decorative but semantic: pink communicates identity, black communicates print, cream communicates paper and red communicates urgency.
-                    </p>
-
-                    <h4>Typography choices</h4>
-                    <p>The project uses a multi-font system to simulate the visual diversity and heterogeneity typical of zine production. 
-                    </p>
-                    <p>
-                        <em>Archivo</em>, a grotesque sans-serif typeface designed by Hector Gatti and released in 2012, is used for <strong>headers</strong>. Inspired by late 19th-century American typography, it conveys a retro aesthetic that recalls protest posters. 
-                        <br><em>Oswald</em>, a condensed neo-grotesque sans-serif created by Vernon Adams in 2011, is used as a <strong>secondary font</strong>, evoking magazine headlines and editorial layouts.
-                        <br><em>Work Sans</em> is used as the <strong>default body text font</strong> due to its neutrality and high readability, ensuring usability without compromising visual identity.  
-                        <br>Finally, <em>Courier New</em> is used to create a typewriter effect for metadata, referencing archival documents and typewritten materials.
-                    </p>
-                    <p>
-                        Instead of visual uniformity, the interface embraces typographic plurality, which reflects collective authorship, DIY publishing and non-professional print culture. Particular attention is also given to <strong>typographic emphasis</strong>. Key words within the text are highlighted in <strong>neon pink</strong>, visually recalling the act of manually 
-                        marking passages with a highlighter or marker pen. This technique references practices common in activist reading and zine culture, where texts were often annotated, underlined or emphasized by hand. In the interface, this visual strategy reinforces the importance of specific concepts, guides the reader’s attention and further contributes to the handmade aesthetic. 
-                    </p>
-
-                    <figure class="figure mt-4 mb-5 w-100">
-                        <img src="img/documentation/70sfeministprotest_moodboard.png" class="figure-img img-fluid border border-dark" alt="'70s feminist protest aesthetic Design Moodboard">
-                        <figcaption class="figure-caption text-center">Fig 4. Moodboard and design inspiration for the '70s feminist protest aesthetic theme.</figcaption>
-                    </figure>
-
-                    <p><strong>Bibliography</strong></p>
-                    <ol class="mb-5">
-                        <li>
-                            PUNKZINE // Fanzine Tipográfico by Maria Victoria Marrone.
-                            <a href="https://www.behance.net/gallery/237225993/PUNKZINE-Fanzine-Tipografico" target="_blank">https://www.behance.net/gallery/237225993/PUNKZINE-Fanzine-Tipografico</a>
-                        </li>
-                        <li>
-                            Feminist Zines Have Have Been Around Longer Than You Thought—Here’s Where One Began by By Anna Merlan.
-                            <a href="https://www.vice.com/en/article/in-the-70s-two-women-embarked-on-an-epic-road-trip-to-find-other-feminists/" target="_blank">https://www.vice.com/en/article/in-the-70s-two-women-embarked-on-an-epic-road-trip-to-find-other-feminists/</a>
-                        </li>
-                    </ol>
-
-
-
-                    <!--3.5 Windows 95 -->
-                    <h3 id="windows-95">3.5 Windows 95</h3>
-                    
-                    <p>
-                        The Windows 95 layout is a homage to the operating system that defined the graphical user interface for a generation. Released by Microsoft in August 1995 under the codename "Chicago," it introduced the Start menu and the taskbar—elements that remain standards in UX design today. This layout was chosen to evoke the specific nostalgia of the mid-90s "Vaporwave" aesthetic, prioritizing a utilitarian, gray-scale "3D" look over modern flat design.
-                    </p>
-                    <p>
-                        Visually, the design strictly adheres to the aesthetic standards of the era. The background color is set to the specific "Windows Teal" (<code>#008081</code>), providing high contrast for the windows. Unlike later iterations like Windows 98, which introduced gradients in window title bars, this theme utilizes solid dark blue (<code>#000181</code>) for active headers and silver-gray (<code>#C3C3C3</code>) for surfaces, maintaining historical accuracy.
-                    </p>
-
-                    <h4>Technical Implementation</h4>
-                    <p>
-                        The primary technical challenge was neutralizing the modern "softness" of the base framework to replicate the rigid, pixel-perfect nature of 1995 software. A global override (<code>* { border-radius: 0 !important; }</code>) was applied to strip away all rounded corners.
-                    </p>
-                    <p>
-                        To replicate the iconic "chiseled" 3D look of buttons and windows, we avoided standard drop-shadows. Instead, we reverse-engineered the "Windows 95 UI Kit" from the Figma Community [1] to implement two distinct CSS techniques:
-                    </p>
-                    <ul>
-                        <li><strong>Complex Borders:</strong> For content containers, we assigned distinct colors to each side of the border—white for top/left and dark gray for bottom/right.</li>
-                        <li><strong>Inset Box-Shadows:</strong> For interactive elements like navigation links, we used <code>box-shadow: inset</code> values (e.g., <code>inset 2px 2px 0px white</code>) to simulate depth without altering the element's dimensions.</li>
-                    </ul>
-                    <p>
-                        For the active "pressed" state of buttons, the code inverts these shadow colors and applies a <code>transform: translate(1px, 1px)</code> shift, creating a tactile feeling of mechanical depression.
-                    </p>
-
-                    <h4>Typography and Iconography</h4>
-                    <p>
-                        Typography is handled by the custom web font 'W95FA', which reproduces the bitmap appearance of the original MS Sans Serif. To ensure crispness on modern high-DPI displays, the CSS property <code>image-rendering: pixelated</code> was enforced globally.
-                    </p>
-                    <p>
-                        Finally, the theme is identified by the icon of "Clippy," the animated paperclip assistant. Although Clippy was technically introduced in Microsoft Office 97 rather than the initial Windows 95 launch, he has become a cultural shorthand for the Microsoft ecosystem of that era. His inclusion serves as a deliberate nod to the intrusive yet memorable user interfaces of the late 90s.
-                    </p>
-
-                    <figure class="figure mt-4 mb-5 w-100">
-                        <img src="img/windows95/moodboard.png" class="figure-img img-fluid border border-dark" alt="Windows 95 Design Mood Board">
-                        <figcaption class="figure-caption text-center">Fig 5. Mood board and design inspiration for the Windows 95 theme.</figcaption>
-                    </figure>
-
-                    <p><strong>Bibliography</strong></p>
-                    <ol class="mb-5">
-                        <li>
-                            Figma Community. "Windows 95 UI Kit (Community)." Figma. 
-                            <a href="https://www.figma.com/community/file/" target="_blank">https://www.figma.com/community/file/</a>
-                        </li>
-                        <li>
-                            FontsArena. "W95FA Font." 
-                            <a href="https://fontsarena.com/w95fa-by-fontsarena/" target="_blank">https://fontsarena.com/w95fa-by-fontsarena/</a>
-                        </li>
-                        <li>
-                            Themesberg. "Windows 95 UI Kit." 
-                            <a href="https://demo.themesberg.com/windows-95-ui-kit/" target="_blank">https://demo.themesberg.com/windows-95-ui-kit/</a>
-                        </li>
-                    </ol>
-
-                
-                    
-                    
-                    <!-- 3.6 Cyberpunk 2035 -->
-                    <h3>3.6 Cyberpunk 2035</h3>
-                    
-                    <h4>Historical Background</h4>
-                    <p>This last theme interprets the witch as a technologically augmented figure in a dystopian near-future, in which she inhabits a hybrid space between the occult and the digital, bridging ancient magic and futuristic technology.
-                        The main inspiration comes from <strong>cyberpunk</strong>, a dark subgenre of science fiction that emerged in the late twentieth century, portraying societies in which advanced technology and unregulated capitalism have radically reshaped 
-                        everyday life, often leading to social decay and inequality. The combination of the punk and hacker subcultures played a fundamental role in shaping the cyberpunk imaginary. The movement gained visibility in the 1980s with the publishing of 
-                        influential works such as <em>Blade Runner</em> (Ridley Scott, 1982), <em>Akira</em> (Katsuhiro Otomo, 1988) and later <em>Ghost in the Shell</em> (Mamoru Oshii, 1995). This dark style then entered mainstream culture with the release of <em>The Matrix</em> trilogy and has since 
-                        influenced a wide range of media, from videogames such as <em>Cyberpunk 2077RPG</em> to fashion  and graphic design, becoming a dominant visual language for imagining the future. 
-                    </p>
-                    <p>
-                        Within this framework, we decided to reimagine 2035 as a cyberpunk world in which <strong>magic</strong> and <strong>technology</strong> coexist and the witch is a figure of resistance. In order to recreate this kind of aesthetic, neon cyberpunk elements 
-                        are blended with hi-tech and sci-fi references, emphasizing the idea of rebellion and disruption of the dominant system operated from within. The ultimate goal is to echo the exhibition’s broader narrative: witchcraft reshaped through time, from myth to <strong>digital empowerment</strong>. 
-                    </p>
-
-                    <h4>Layout and color palette</h4>
-                    <p>In graphic design, cyberpunk aesthetics break modernist conventions through digitally altered typography, irregular layouts, and aggressive color palettes. We adopted a primary three-color palette, <strong>erin green</strong> (<code>#1AFE49</code>), <strong>neon magenta</strong> (<code>#E600FF</code>) and <strong>electric cyan</strong> (<code>#00F6FF</code>), 
-                        complemented by <strong>violet blue</strong> (<code>#3D43B4</code>), which is used sparingly for contrast. These chromatic choices recall classic cyberpunk visual codes: neon green evokes energy and the visual language of hacking and signal interference, electric cyan is used for holographic effects and magenta introduces a 
-                        sense of danger and rebellion, reinforcing the cyber-witchy vibe of the website.
-                    </p>
-
-                    <p>
-                        The background features an <strong>animated holographic grid</strong> inspired by retro CRT interfaces, creating spatial depth and anchoring the entire experience inside a “digital space”. To avoid overstimulation, animations are used selectively, primarily in glitch-based hover states and small UI elements, that simulate 
-                        instability and technological malfunction. Accessibility considerations are addressed through the use of the <code>prefers-reduced-motion</code> media query, which allows users who require reduced motion to experience a calmer interface without animated effects. High-contrast color combinations 
-                        further support readability on dark backgrounds. 
-                    </p>
-                    
-                    <h4>Typography choices</h4>
-                    <p>The videogame <strong>Cyberpunk 2077</strong> played an essential role in reviving public interest in cyberpunk aesthetics, particularly through its user interface design. Its typographic system served as a key reference for our theme. While the game primarily employs Rajdhani for interface elements and Orbitron for secondary text, 
-                        we slightly reversed this hierarchy. 
-                    </p>
-
-                    <p><em>Orbitron</em>, a geometric sans-serif typeface designed by Matt McInerney in 2009, features futuristic and post-apocalyptic influences. Due to its strong visual personality, it is used primarily for <strong>headlines, navigation elements and titles</strong>. <br>For <strong>body text</strong>, we selected <em>Rajdhani</em>, a sans-serif font family designed by 
-                        Satya Rajpurohit and Peter Bilak, characterized by squared letterforms and a clean geometric structure. Its clarity and legibility make it suitable for extended reading while maintaining a technological tone.  
-                        <br>This dual typography system ensures both visual impact and readability, reinforcing the high-tech cyberpunk atmosphere without compromising usability. In addition to this, a limited use of <em>Courier New</em> is introduced within the item page to reference command-line interfaces and early computing environments. Its restrained use creates a visual distinction 
-                        between descriptive text and technical or archival data, reinforcing the idea of interacting with a digital system rather than a traditional webpage.
-                    </p>
-
-                    <figure class="figure mt-4 mb-5 w-100">
-                        <img src="img/documentation/cyberpunk_moodboard.png" class="figure-img img-fluid border border-dark" alt="Cyberpunk Design Moodboard">
-                        <figcaption class="figure-caption text-center">Fig 6. Moodboard and design inspiration for the Cyberpunk theme.</figcaption>
-                    </figure>
-
-                    <p><strong>Bibliography</strong></p>
-                    <ol class="mb-5">
-                        <li>
-                            Cyberpunk: how to master the futuristic style by Marion Gerlinger.
-                            <a href="https://www.linearity.io/blog/cyberpunk-style/" target="_blank">https://www.linearity.io/blog/cyberpunk-style/</a>
-                        </li>
-                        <li>
-                            Cyberpunk 2077—User Interface (Part 2) by Vladimír Vilimovský.
-                            <a href="https://www.behance.net/gallery/133185623/Cyberpunk-2077User-Interface-(Part-2)" target="_blank">https://www.behance.net/gallery/133185623/Cyberpunk-2077User-Interface-(Part-2)</a>
-                        </li>
-                    </ol>
+                        <div class="col-lg-10 col-md-10 col-sm-12 text-box text-center">
+
+                            <!-- 1. General scope and purpose -->
+                            <h2 id="general">1. General scope and purpose</h2>
+                            <p>
+                                The virtual exhibition <em>Witches Through Time: From Myth to Empowerment</em> was developed in alignment with the principles of the
+                                <em>Multimedia Museum Meta Mirror</em> project, designed by Professor Fabio Vitali within the course
+                                <em>Information Modeling and Web Technologies</em> at the University of Bologna.
+                            </p>
+
+                            <p>
+                                The project aims to investigate and emulate contemporary web and application design practices adopted by museums,
+                                in order to create a digital companion capable of supporting visitors before, during or in place of an on-site visit.
+                            </p>
+
+                            <p>
+                                In accordance with the project specifications, <em>Witches Through Time</em> offers a complete digital overview
+                                of a hypothetical museum exhibition whose goal is to present a new perspective on the history of witchcraft
+                                through a feminist lens. The application functions as a <em>meta mirror</em> of the physical museum: it reproduces
+                                the exhibition’s spatial organization through a faithful interactive map and recreates the curatorial experience
+                                through a narrative-driven navigation mode.
+                            </p>
+
+                            <p>
+                                The exhibition brings together a wide range of media, including artworks, books, historical documents,
+                                photographs and contemporary installations, connected through interpretative texts that guide the visitor along
+                                the curatorial narrative.
+                            </p>
+
+                            <p>
+                                In addition, the project includes mandatory features such as switchable themes, whose design choices
+                                and conceptual motivations are discussed and justified in the third chapter of the documentation.
+                            </p>                    
+                            <!-- 1.1 Exhibition theme and concept -->
+                            <h3 id="theme">1.1 Exhibition theme and concept</h3>
+                            <p>
+                                <em>Witches Through Time</em> is conceived as a critical exploration of the figure of the witch as a historically
+                                constructed and politically charged archetype. The project aims to guide the visitor through a journey, as
+                                suggested by the exhibition’s title: from the ancient and pre-Christian origins of the witch, through the
+                                persecutions of the Middle Ages, to her modern and contemporary reconfigurations. Adopting a feminist
+                                interpretative lens, the exhibition presents the witch not merely as a victim of superstition, but as a figure
+                                shaped by enduring systems of control and resistance.
+                            </p>
+
+                            <p>
+                                The exhibition challenges dominant narratives that have alternately feared, ridiculed or romanticized witches,
+                                while rarely addressing witchcraft as a form of cultural and political agency. By foregrounding the relationship
+                                between witchcraft and forms of female knowledge, such as healing practices, herbal medicine, reproductive care
+                                and spiritual mediation, the exhibition positions the witch as operating outside state control, thereby framing
+                                her as a threat to established power structures. Within this framework, witch hunts are interpreted not solely as
+                                episodes of religious fanaticism, but as mechanisms of social discipline that targeted women whose roles and
+                                expertise disrupted patriarchal and institutional norms.
+                            </p>
+
+                            <p>
+                                Historically, the exhibition traces the transformation of witch-like figures from ancient goddesses, healers and
+                                mythological sorceresses connected to nature and fertility, to symbols of fear and deviance during the late Middle
+                                Ages and early modern period. The widespread persecution of alleged witches across Europe and beyond is presented
+                                as a deeply gendered phenomenon, whose cultural consequences extend far beyond the decline of formal trials.
+                                Although the legal repression of witchcraft eventually declined, the symbolic figure of the witch persisted,
+                                continuing to shape literature, folklore and popular imagination, while constantly shifting in meaning and form.
+                            </p>
+
+                            <p>
+                                A central focus of the exhibition is the re-emergence and re-signification of the witch in modern and contemporary
+                                contexts, particularly within poetry, theatre and pop culture. From the late nineteenth century onward, and
+                                particularly within twentieth-century feminist movements, the term “witch” was progressively reclaimed as a
+                                marker of self-determination and resistance, as well as a tool of feminist and decolonial critique. The exhibition
+                                highlights this shift by referencing the case of Anna Göldi, the last woman executed for witchcraft and also the
+                                first to be officially rehabilitated in 2008 by the Canton of Glarus.
+                            </p>
+
+                            <p>
+                                The curatorial approach of the exhibition emphasizes continuity rather than rupture, suggesting that witch hunts
+                                should not be understood as a closed chapter of the past. The final section, and in particular the last item of
+                                the exhibition, serves as a warning, inviting reflection on the persistence of analogous mechanisms of gendered
+                                marginalization and stigmatization in the present. By juxtaposing historical material with contemporary artistic
+                                practices, <em>Witches Through Time</em> reframes the witch as an evolving figure whose meanings are continuously
+                                negotiated across time and cultural contexts.
+                            </p>
+                            <!-- 1.2 Content of the exhibition and Item description -->
+                            <h3 id="content">1.2 Content of the exhibition and Item description </h3>
+                            <h4>Justification of text versions</h4>
+
+                                <p>
+                                    The content of <em>Witches Through Time</em> was conceived to reflect both the thematic
+                                    complexity of the exhibition and the diversity of its potential audiences. Given the historical depth, political
+                                    sensitivity, and cultural stratification of the figure of the witch, particular attention was paid to how
+                                    information is mediated through text. Rather than assuming a single, universal visitor, the project adopts a
+                                    pluralistic approach to interpretation, in line with contemporary museum practices that emphasize accessibility,
+                                    inclusivity, and visitor-centered design.
+                                </p>
+
+                                <p>
+                                    As required by the project guidelines, there are three main categories for the audience, introduced as personas: a teacher in a middle school, a businessman from out of town and a PhD student. Therefore, the exhibition offers visitors the possibility to switch between different textual descriptions for each item. These descriptions vary according to length, level of competence, and communicative intent, allowing users to choose the version that best suits their interests, prior knowledge, and reading preferences.
+                                </p>
+
+                                <h4>Defining the dimensions</h4>
+
+                                <p>
+                                    At the initial design stage, four dimensions were identified as relevant for shaping textual interpretation:
+                                </p>
+
+                                <ul>
+                                    <li><strong>Length</strong>: short / medium / long</li>
+                                    <li><strong>Complexity</strong>: simple / difficult</li>
+                                    <li><strong>Audience</strong>: kids / adults / scholars</li>
+                                    <li><strong>Tone</strong>: fun / educational</li>
+                                </ul>
+
+                                <p>
+                                    While this framework allowed for a theoretically rich combination of possibilities, it quickly became evident
+                                    that exposing all potential permutations would be counterproductive. The number of combinations was excessively
+                                    high, and many of them either overlapped conceptually or resulted in contradictory communicative goals. For
+                                    example, a short, difficult and fun text aimed at children would undermine clarity, while a long, difficult and
+                                    fun text for adults risks tonal inconsistency. Likewise, texts designed for scholars almost inevitably require a
+                                    longer format and an academic tone, regardless of stylistic variation.
+                                </p>
+
+                                <p>
+                                    Museums frequently operate along similar interpretive dimensions, but they rarely make all possible combinations
+                                    explicit to visitors. Instead, they curate a limited and coherent set of interpretive layers to avoid cognitive
+                                    overload and decision fatigue. Following this principle, we refined our framework by collapsing overlapping
+                                    dimensions and prioritizing clarity and usability.
+                                </p>
+
+                                <h4>Final structure: length and audience</h4>
+
+                                <p>
+                                    The final model is based on two primary dimensions: audience and length. Tone and complexity are embedded within
+                                    these categories rather than treated as independent variables. This resulted in nine text versions for each
+                                    item, organized as follows:
+                                </p>
+
+                                <h5>Kids (short, medium, long)</h5>
+
+                                <p>
+                                    Texts intended for younger audiences use clear, accessible language and concrete examples.
+                                </p>
+
+                                <ul>
+                                    <li>The <strong>short</strong> version introduces the object in a concise and engaging way.</li>
+                                    <li>The <strong>medium</strong> version provides additional contextual information while maintaining simplicity.</li>
+                                    <li>
+                                        The <strong>long</strong> version is designed for children with prior knowledge or strong interest, allowing
+                                        for deeper exploration without abandoning a clear and consistent tone.
+                                    </li>
+                                </ul>
+
+                                <p>
+                                    Across all three versions, the tone remains approachable and coherent, avoiding oversimplification while
+                                    maintaining accessibility.
+                                </p>
+
+                                <h5>Adults (short, medium, long)</h5>
+
+                                <p>
+                                    Texts aimed at the general adult public assume varying degrees of familiarity with the topic.
+                                </p>
+
+                                <ul>
+                                    <li>The <strong>short</strong> version offers an essential overview, suitable for visitors who prefer quick insights.</li>
+                                    <li>The <strong>medium</strong> version expands on the historical and cultural context.</li>
+                                    <li>
+                                        The <strong>long</strong> version provides a more articulated interpretation, engaging visitors who wish to
+                                        deepen their understanding.
+                                    </li>
+                                </ul>
+
+                                <p>
+                                    In this group, linguistic complexity increases alongside text length, reflecting the assumption that visitors
+                                    who seek longer explanations are already more at ease with the subject matter.
+                                </p>
+
+                                <h5>Scholars (short, medium, long)</h5>
+
+                                <p>
+                                    Texts for scholars adopt an academic tone in all versions, prioritizing analytical depth and conceptual
+                                    precision.
+                                </p>
+
+                                <ul>
+                                    <li>
+                                        Even the <strong>short</strong> version presents a critical perspective rather than a simplified summary.
+                                    </li>
+                                    <li>
+                                        The <strong>medium</strong> and <strong>long</strong> versions progressively expand the interpretive
+                                        framework, integrating historical references, theoretical considerations, and disciplinary vocabulary.
+                                    </li>
+                                </ul>
+
+                                <p>
+                                    Here, length does not alter tone but rather the degree of analytical development, allowing scholarly users to
+                                    select the depth most appropriate to their research or reading context.
+                                </p>
+
+                                <h4>Rationale and curatorial value</h4>
+
+                                <p>
+                                    This structured yet flexible system allows the exhibition to address a wide range of audiences without
+                                    fragmenting the interpretive experience. By limiting the number of versions while maintaining meaningful
+                                    differentiation, the project balances interpretive richness with usability. Visitors are empowered to actively
+                                    shape their own experience, choosing how deeply to engage with each object, while remaining guided by a coherent
+                                    curatorial voice.
+                                </p>
+
+                                <p>
+                                    In the context of <em>Witches Through Time</em>, this approach is particularly significant. The figure of the
+                                    witch carries layered meanings, mythological, historical, political and symbolic, that cannot be communicated
+                                    effectively through a single narrative register. Multiple text versions allow the exhibition to address these
+                                    layers responsibly, making space for education, critical reflection and scholarly inquiry while remaining
+                                    accessible to younger and non-specialist audiences.
+                                </p>
+
+                                <p>
+                                    Overall, the design of the item descriptions reflects the exhibition’s broader aim: to question inherited
+                                    narratives, reveal hidden power structures, and invite visitors to reconsider the witch not as a marginal figure
+                                    of superstition, but as a complex and enduring symbol of cultural resistance and empowerment.
+                                </p>
+
+
+                            <!-- 1.3 Exhibition structure and thematic rooms -->
+                            <h3 id="structure">1.3 Exhibition structure and thematic rooms</h3>
+                            <p>
+                                    The exhibition’s conceptual framework is closely tied to its spatial and narrative structure.
+                                    <em>Witches Through Time</em> is organized into four thematic rooms, each addressing a distinct
+                                    dimension of the figure of the witch across history and artistic representation.
+                                </p>
+
+                                <p>
+                                    <strong>Room 1 – Mythic roots</strong> focuses on the mythological and pre-Christian origins of
+                                    witch-like figures, establishing the witch as a foundational cultural figure.
+                                </p>
+
+                                <p>
+                                    <strong>Room 2 – Fires of fear</strong> addresses the historical phenomenon of witch hunts and
+                                    executions, particularly during the late Middle Ages and early modern period. Through historical
+                                    documents and visual material of the time, the room examines how the witch was redefined as a legal
+                                    and moral enemy.
+                                </p>
+
+                                <p>
+                                    <strong>Room 3 – Visions and shadows</strong> explores representations of the witch in literature,
+                                    visual art and pop culture. Here, the witch emerges as a figure of ambiguity, oscillating between
+                                    fear and fascination.
+                                </p>
+
+                                <p>
+                                    <strong>Room 4 – Reclaiming the spell</strong> focuses on modern and contemporary reappropriations
+                                    of the witch as a symbol of feminist resistance and empowerment. At the same time, the room
+                                    acknowledges the continued vulnerability of women accused of witchcraft in various parts of the
+                                    world, connecting historical persecution with contemporary forms of gendered exclusion.
+                                </p>
+
+                                <p>
+                                    While allowing both chronological and thematic navigation, the exhibition is conceived as a
+                                    cyclical narrative, emphasizing the recurrence of specific patterns: persecution,
+                                    marginalization, resistance and reappropriation.
+                                </p>
+
+                                <p>
+                                    The spatial organization of the exhibition is represented through a pentacle-shaped map.
+                                    Traditionally associated with balance and interconnected forces, the pentacle is used here as a
+                                    conceptual device to visualize the dynamics underlying the history of witchcraft, such as the
+                                    tension between knowledge and repression, visibility and erasure, empowerment and punishment.
+                                    Each point of the pentacle corresponds to one thematic room, while the central space remains
+                                    intentionally inaccessible.
+                                </p>
+
+                                <p>
+                                    This absence reflects the curatorial position that the history of witchcraft does not follow a
+                                    linear or progressive trajectory, but instead repeats and transforms across time. Consequently,
+                                    the exhibition has no definitive center or conclusive endpoint; the final room reopens the
+                                    narrative rather than closing it, reinforcing the exhibition’s central question: when, and
+                                    under what conditions, the witch hunt truly ends?
+                                </p>
+                            <!-- 1.4 Metadata model and standards -->
+                            <h3 id="metadata">1.4 Metadata model and standards</h3>
+                            <p>
+                                Metadata for the digital collection were collected directly from institutional websites hosting the digital items. To ensure semantic interoperability across these heterogeneous sources, metadata were standardized using the Dublin Core Metadata Element Set (DCMES). This process unified varying cataloguing standards into a consistent schema – mapping attributes such as Creator, Date, Type, and Location – which was then consolidated into a single JSON file acting as the application’s central repository.
+                            </p>
+                            <p>
+                                The application utilizes JavaScript to dynamically populate the item interface without requiring page reloads. Upon initialization, the script fetches the JSON file and parses the items into a JavaScript object. The core function, displayItemDetails(), retrieves the specific metadata object for the active item ID. It then targets the corresponding table cells in the HTML (e.g., item-creator, item-type) and renders the content.
+                            </p>
+
+
+                            <!-- 2. Presentation -->
+                            <h2 id="presentation">2. Presentation and Navigation</h2>
+
+                            <!-- 2.1 Index Page -->
+                            <h3 id="index-page">2.1 Index Page</h3>
+                            <p>
+                                The Index page functions as the primary point of access to the digital exhibition
+                                <em>Witches Through Time</em>. Rather than operating as a neutral menu
+                                or informational landing page, the homepage is conceived as a threshold experience, designed
+                                to introduce visitors to the exhibition’s atmosphere, themes, and narrative logic before any
+                                explicit curatorial content is presented.
+                            </p>
+
+                            <p>
+                                This approach aligns with a growing tendency in digital exhibitions to treat the homepage as
+                                an interpretive space in its own right, rather than a purely navigational interface. Projects
+                                such as Google Arts &amp; Culture immersive exhibitions, The British Museum online storytelling
+                                features, and experimental digital archives like Europeana thematic collections demonstrate
+                                how visual immersion and narrative framing can guide user engagement from the very first
+                                interaction.
+                            </p>
+
+                            <h4>Narrative and visual metaphor</h4>
+
+                            <p>
+                                The homepage opens with a forest scene, a recurring symbolic environment in the cultural
+                                imagination of witchcraft. Forests have historically functioned as liminal spaces: places of
+                                exclusion, secrecy, fear, and resistance. By situating the visitor within a forest before
+                                entry, the exhibition establishes an immediate metaphorical framework that anticipates the
+                                themes explored throughout the collection: persecution, marginality, transformation, and
+                                empowerment.
+                            </p>
+
+                            <p>
+                                The absence of textual explanation in this opening moment is intentional. Instead of
+                                presenting information immediately, the interface prioritizes atmosphere over exposition,
+                                encouraging curiosity and emotional engagement. This design choice reflects strategies used
+                                in immersive museum installations, where sensory experience precedes interpretation, allowing
+                                visitors to enter the narrative world before confronting historical or analytical content.
+                            </p>
+
+                            <h4>Controlled entry and visitor agency</h4>
+
+                            <p>
+                                The presence of a single call-to-action (<em>“Enter the spell”</em>) reinforces the idea of
+                                intentional access. Visitors are not immediately confronted with menus, categories, or
+                                metadata, but are instead invited to actively choose to cross into the exhibition space. This
+                                mirrors ritualistic and performative elements associated with witchcraft, while also granting
+                                the user a clear moment of agency.
+                            </p>
+
+                            <p>
+                                Similar strategies can be observed in digital storytelling projects and virtual exhibitions
+                                that emphasize performative navigation, where entering the exhibition becomes part of the
+                                narrative experience rather than a purely functional step.
+                            </p>
+
+                            <h4>Transition between worlds</h4>
+
+                            <p>
+                                After entry, the homepage gradually reveals its full interface, including the navigation bar
+                                and thematic visual elements associated with later sections of the exhibition. This staged
+                                revelation reflects a conceptual transition from mythic space to structured knowledge. The
+                                initial forest environment represents the symbolic and folkloric dimension of witchcraft,
+                                while the revealed interface introduces the analytical, historical, and curatorial framework
+                                of the exhibition.
+                            </p>
+
+                            <p>
+                                This transition echoes the exhibition’s broader narrative arc: moving from myth and fear
+                                toward contextualization, reinterpretation, and empowerment. The homepage thus anticipates the
+                                exhibition’s internal logic and prepares visitors for the thematic progression they will
+                                encounter.
+                            </p>
+
+                            <h4>Curatorial function of the Index page</h4>
+
+                            <p>
+                                From a curatorial perspective, the Index page fulfills three main functions:
+                            </p>
+
+                            <ul>
+                                <li><strong>Orientation</strong> – establishing the thematic and emotional tone of the exhibition.</li>
+                                <li><strong>Engagement</strong> – capturing visitor attention through visual immersion rather than textual density.</li>
+                                <li><strong>Framing</strong> – positioning the figure of the witch as a subject of cultural complexity before any historical judgment or academic interpretation is introduced.</li>
+                            </ul>
+
+                            <p>
+                                By avoiding immediate didactic explanations, the homepage respects the diversity of its
+                                audience and mirrors the exhibition’s overall commitment to layered interpretation. Visitors
+                                are invited to enter the exhibition not as passive readers, but as participants in a
+                                narrative journey.
+                            </p>
+
+                            <p>
+                                In this sense, the Index page is not merely a technical starting point but an integral
+                                component of the exhibition’s interpretive strategy, bridging visual storytelling, symbolic
+                                space, and user-centered design.
+                            </p>
+
+
+                            <!-- 2.2 Map Page -->
+                            <h3 id="map-page">2.2 Map Page</h3>
+                            <p>
+                                The Map page is not intended to function as the primary navigational interface, since the
+                                Exhibition page provides a more comprehensive overview of the contents of each room. Instead,
+                                this page was designed to visually translate the exhibition’s conceptual framework into an
+                                interactive spatial structure, mirroring the on-site experience in which visitors enter each
+                                room blindly, without prior knowledge of its artworks.
+                            </p>
+
+                            <p>
+                                The page layout is organized using a two-column grid system. On larger screens, the left side
+                                of the page is occupied by an embedded SVG map, while the right side hosts a textual
+                                description panel. On smaller devices, the layout adapts responsively, stacking the elements
+                                vertically to preserve readability and usability. This structure allows the map to remain
+                                the focal point of interaction while maintaining constant access to interpretative content.
+                            </p>
+
+                            <p>
+                                The SVG map was created starting from a pre-designed element in Canva and then further
+                                modified using BoxySVG in order to add transparent SVG paths corresponding to each room over
+                                the graphical representation. These paths are fully interactive: they highlight on hover and
+                                change color when active, providing visual feedback when a room is selected. Text labels are
+                                embedded within the SVG to identify each room and reinforce spatial orientation.
+                            </p>
+
+                            <p>
+                                The right-hand panel, which by default presents the introductory section (<em>“Enter the
+                                spell”</em>), functions as a dynamic content container. It displays the title and description
+                                of the currently selected room, as well as a button linking to the first item of that room.
+                                Interactive behaviors, such as room selection and content updates within the description
+                                panel, are handled through JavaScript event listeners applied to the SVG elements, while the
+                                associated texts are stored within the same JavaScript file. This interaction model
+                                maintains narrative continuity while avoiding disruptive page transitions.
+                            </p>
+
+                            <!-- 2.3 Exhibiyion Page -->
+                            <h3 id="exhibition-page">2.3 Exhibition Page</h3>
+                            <p>
+                                The Exhibition page functions as the central curatorial hub of
+                                <em>Witches Through Time</em>. Accessible directly from the navigation
+                                bar, this page does not present items itself, but instead defines how the collection can be
+                                explored. Its primary role is to introduce and mediate between two distinct modes of access
+                                to the exhibition content: <strong>Chronological</strong> and <strong>Eras</strong>, each
+                                implemented as a separate HTML page.
+                            </p>
+
+                            <p>
+                                Rather than enforcing a single interpretive structure, the Exhibition page foregrounds the
+                                act of selection, making the organizational logic of the exhibition explicit and accessible
+                                to the visitor.
+                            </p>
+
+                            <h4>Dual access to the same collection</h4>
+
+                            <p>
+                                Both the Chronological and Eras views present the same set of exhibition items, but organize
+                                them according to different interpretive principles. This separation reflects a conscious
+                                curatorial decision to distinguish between historical sequencing and contextual grouping,
+                                two approaches that are frequently discussed in museum studies and digital humanities.
+                            </p>
+
+                            <p>
+                                By separating these views into individual pages, the project avoids conflating interpretive
+                                logics and allows each structure to remain conceptually coherent and readable.
+                            </p>
+
+                            <h4>Chronological view</h4>
+
+                            <p>
+                                The Chronological view organizes items according to temporal progression. This mode
+                                emphasizes historical continuity, transformation, and rupture, allowing visitors to trace
+                                how representations of witchcraft evolve across time.
+                            </p>
+
+                            <p>
+                                This structure supports visitors who prefer a linear, historically grounded narrative and
+                                aligns with traditional historiographical models. At the same time, the digital environment
+                                preserves non-linearity: users can move freely between periods without being constrained to a
+                                fixed path.
+                            </p>
+
+                            <h4>Eras view</h4>
+
+                            <p>
+                                The Eras view organizes items according to culturally and historically defined periods rather
+                                than strict dates. In this mode, items are grouped by shared aesthetic, ideological, and
+                                symbolic characteristics associated with specific eras.
+                            </p>
+
+                            <p>
+                                This approach highlights how representations of witches intensify or shift within particular
+                                cultural contexts, emphasizing discourse and visual language over chronology. It reflects
+                                curatorial strategies commonly used in physical exhibitions, where thematic or period-based
+                                rooms encourage comparative interpretation.
+                            </p>
+
+                            <h4>Curatorial transparency and user agency</h4>
+
+                            <p>
+                                The Exhibition page makes curatorial structure visible by explicitly offering these two
+                                organizational choices. Rather than presenting one model as neutral or authoritative, the
+                                interface acknowledges that structure itself produces meaning.
+                            </p>
+
+                            <p>
+                                Visitors are thus invited to actively choose how they want to engage with the collection,
+                                reinforcing a user-centered and interpretive approach consistent with contemporary digital
+                                exhibition practices.
+                            </p>
+
+                            <!-- 2.4 Item Page -->
+                            <h3 id="item-page">2.4 Item Page</h3>
+                            <p>
+                                The Item Page is designed as a responsive, modular interface that adapts its layout based on the device screen size using the Bootstrap grid system. The structure is divided into two primary sections. The <strong>upper section</strong> contains the interactive <u>item image</u>, clicking on that triggers a Bootstrap Modal for a high-resolution detailed view, and the <u>metadata table</u> which provides standardized information about the artifact. The <strong>lower section</strong> contains the <u>descriptive content</u> and allows visitors to choose between different text lengths (Short, Medium, Long) and tones (Kid, Adult, Scholar). The navigation controls are positioned at the bottom, dynamically updating based on the selected narrative mode.
+                            </p>
+                            <p>
+                                To ensure that every artifact in the collection is uniquely addressable and accessible directly from external pages (such as the Exhibition page), the application implements a <strong>URL parameter system</strong>. Each item is identified by a unique key passed via the ?id=parameter. Additionally, a ?narrative=parameter tracks the user’s navigational context (eras or chronological). Upon loading, the script inspects the browser’s URL query string using URLSearchParams. If a valid ID is found, the system immediately initializes the view with that specific item and sets the correct narrative context via the switchNarrative() function. If no ID is present, it defaults to the first item in the chronological sequence. This approach ensures that users can bookmark specific items or navigate seamlessly from other pages to a detailed view without losing their place in the narrative structure.
+                            </p>
+                            <p>
+                                The Item Page functions as a data-driven template. Content is injected dynamically via JavaScript, ensuring scalability and ease of maintenance. On page load, the script asynchronously fetches the JSON file, that acts as the central repository containing all item objects and their associated metadata. The script maintains the current state using variables for the active currentIdList (the list of items to show) and currentIndex (the specific item currently being viewed). The core of this system is the function displayItemDetails(): the function uses the currentIndex to find the correct item ID and retrieves the corresponding object from the loaded JSON data; it targets specific DOM elements by ID (e.g., item-title, item-creator) and populates them. The function uses innerHTML that allows the browser to correctly render any semantic HTML tags stored within the metadata.
+                            </p>
+                            <p>
+                                To address diverse audiences, the Item Page enables users to switch between <strong>different textual descriptions</strong> for each item. The JavaScript logic constructs a composite key based on user selection to retrieve the correct text block. When a user clicks a button (e.g., “Kid” tone and “Short” length), the script concatenates these values into a key string: ‘${currentLength}-${currentTone}’ (e.g., “short-kid”). It checks if this specific key exists in the item’s texts object within the JSON. If found, it updates the description panel instantly without reloading the page.
+                            </p>
+                            <p>
+                                The page supports two distinct modes of navigation, controlled by the switchNarrative() function. This system allows users to view the same artifact through different contextual lenses.
+                            </p>
+                            <ul>
+                                <li>The <u>Chronological Narrative</u> is the default mode. The currentIdList is populated with the complete list of items sorted by date and Previous and Next buttons traverse this entire collection. In this mode, the “Room Navigation” controls are hidden (d-none).</li>
+                                <li>The <u>Eras Narrative</u> is activated by clicking the “Room” link in the metadata table. The code creates a filtered list of items belonging only to specific rooms. In this mode, additional navigation buttons appear, allowing users to jump between rooms rather than just between individual items.</li>
+                            </ul>
+
+                            <!-- 3. Themes -->
+                            <h2 id="themes">3. Themes</h2>
+
+                            <!-- 3.1 Early Modern Era-->
+
+                            <h3 id="early-modern-era">3.1 Early Modern Era</h3>
+                            
+                            <p>
+                                This theme represents a conceptual experiment: what would a website look like if the internet existed during the Renaissance?
+                                To answer this, the design philosophy focuses on extreme minimalism and authenticity. In an era before digital screens, information was conveyed through the "basic technologies" of the time: ink and paper. Consequently, this layout strips away all modern web aesthetics—there are no glossy gradients, drop shadows, or bright "digital" colors. The palette is strictly limited to organic tones: a parchment-like tan (<code>#D9C3A6</code>) for the background and a deep charcoal (<code>#1A1A1A</code>) for the text, simulating the high contrast of iron gall ink on rag paper.
+                            </p>
+                            <p>
+                                The goal was to create an interface that feels "old" not just through decoration, but through the absence of distraction. The UI is deliberately sparse, forcing the visitor to focus on the text and content, much like a reader would focus on a printed page in the 16th century.
+                            </p>
+
+                            <h4>Atmosphere and Texture</h4>
+                            <p>
+                                A key technical challenge was ensuring the page didn't feel like a flat digital screen. To achieve a tactile "paper" quality, we implemented a global noise overlay. By applying a semi-transparent noise texture (<code>beige-noise.png</code>) to a fixed <code>::before</code> pseudo-element on the body, we created a static grain that remains consistent even as the user scrolls. This subtle layering (managed via <code>z-index: -1</code>) ensures the text appears to sit on top of the texture, mimicking the physical depth of ink pressed into fiber.
+                            </p>
+
+                            <h4>Typography</h4>
+                            <p>Typography is the primary vehicle for this theme, using fonts that are historically grounded rather than merely "old-looking":</p>
+                            <ul>
+                                <li><strong>Headings:</strong> We utilized <em>IM Fell English SC</em>, a digital revival of the typefaces bequeathed to the University of Oxford by Bishop John Fell in the 17th century. Its slightly irregular edges and varying ink weight evoke the manual nature of early letterpress printing.</li>
+                                <li><strong>Body Text:</strong> For readability, we chose <em>Cormorant Garamond</em>. This is a tribute to the famous 16th-century French punchcutter Claude Garamont, whose work defined the elegance of Renaissance typography.</li>
+                            </ul>
+
+                            <h4>The "Operello" UI System</h4>
+                            <p>
+                                Since standard rectangular buttons would look anachronistic in this setting, we developed a custom UI system based on "Operellos" (decorative corner flourishes).
+                                Instead of using solid borders, the content cards and description boxes are framed by four distinct SVG ornaments positioned absolutely in the corners (<code>.top-left</code>, <code>.bottom-right</code>, etc.). This technique mimics the modular woodcut borders used in 16th-century bookbinding, allowing the containers to expand dynamically with content while maintaining a rigid, classical structure. These operellos serve as the only necessary UI framing, keeping the interface minimal and focused on the era's aesthetic.
+                            </p>
+
+                            <h4>Navigation and Interaction</h4>
+                            <p>
+                                Interaction design was kept intentionally subtle to avoid breaking immersion. In the navigation bar, we avoided modern "active state" color changes or background highlights. Instead, we used CSS pseudo-elements to render a decorative SVG line (<code>line.svg</code>) above and below the active link.
+                                This effect, triggered via opacity transitions, mimics the hand-ruling sometimes found in manuscripts to emphasize titles. Furthermore, a slight text-shadow was applied to hovered links (<code>0.1px 0 var(--default-font-color)</code>), simulating the "ink bleed" or bolding effect of a printing press applying more pressure. Finally, all modern rounded corners were strictly removed (<code>border-radius: 0</code>), ensuring every element has the sharp, straight cut of a page.
+                            </p>
+
+                            <figure class="figure mt-4 mb-5 w-100">
+                                <img src="img/early-modern-era/moodboard.png" class="figure-img img-fluid border border-dark" alt="Early Modern Era Design Mood Board">
+                                <figcaption class="figure-caption text-center">Fig 1. Mood board and design inspiration for the Early Modern Era theme.</figcaption>
+                            </figure>
+
+                            <p><strong>Bibliography</strong></p>
+                            <ol class="mb-5">
+                                <li>
+                                    IGINO MARINI. "IM Fell English." Igino Marini Fonts. 
+                                    <a href="https://iginomarini.com/fell/" target="_blank">https://iginomarini.com/fell/</a>
+                                </li>
+                                <li>
+                                    Catharsis Fonts. "Cormorant Garamond." Google Fonts. 
+                                    <a href="https://fonts.google.com/specimen/Cormorant+Garamond" target="_blank">https://fonts.google.com/specimen/Cormorant+Garamond</a>
+                                </li>
+                            </ol>
+
+
+                            <!-- 3.2 Penny Dreadfuls -->
+                            <h3 id="penny-dreadfuls">3.2 Penny Dreadfuls</h3>
+                            <h4>Historical background</h4>
+                            <p>
+                                The second theme is rooted in a 19th century British phenomenon, originally known as «penny bloods» and later renamed <strong>Penny Dreadfuls</strong>. Born form the surge in working-class literacy and the industrialization of printing, these publications introduced a new form of mass entertainment. They were designed to be consumed rapidly, catering to a public hungry for tales of gothic horror, notorious criminals, and supernatural mysteries.
+                            </p>
+                            <p>
+                                The Penny Dreadful was the direct result of manufacturing developments that allowed paper to be produced cheaply. Publishers quickly realized that mass-producing genre fiction would sell at a penny a time – thus, the penny periodical was born. Typically, eight to sixteen pages long, each weekly number or episode featured a black-and-white illustration on the top half of the front page. These covers were particularly gruesome, depicting murderers and highwaymen to capture the attention of a semiliterate audience. 
+                            </p>
+                            <p>
+                                The visual identity of this theme captures the raw urgency of those early serials. The imagery draws heavily on the style of crude woodcuts and broadsides. This approach aligns perfectly with the exhibition’s exploration of fear and folklore, utilizing a design language that feels historically authentic: raw, unrefined, and evocative of the printing press's urgency.
+                            </p>
+
+                            <h4>Layout and color palette</h4>
+                            <p>
+                            The interface design is based on a layout that feels dense and tactile, evoking the <em>horror vacui</em> (fear of empty space) typical of Victorian broadsheets. The composition relies on heavy framing and compartmentalization; content is enclosed within thick borders and dividers, mimicking the layout of Penny Dreadful publications where every inch of paper was maximized for narrative impact.
+                            </p>
+                            <p>
+                                Since original Penny Dreadfuls targeted working-class readers, the illustrations were crucial to their appeal. The theme replicates this by prioritizing bold, dramatic images that serve not just as decoration, but as integral storytelling devices - capturing attention and reinforcing the sensationalism of the tales just as they did in the 1830s.
+                            </p>
+                            <p>
+                                The colour palette is strictly material, simulating the textures of Penny Dreadfuls. The interface alternates between <code>--background-color</code> (a saturated, pulp-yellow ochre) and <code>--paper-tone</code> (a pale, off-white parchment). These tones replicate the look of high-acid wood pulp paper that has yellowed with age and exposure. All primary text and borders use <code>-–charcoal-ink</code>, a softer alternative to pure black that suggests the matte finish of carbon-based printing ink. Highlights are applied using <code>-–burnt-terracotta</code>, a desaturated red reminiscent of dried blood or the cheap hand-colouring applied to premium editions of Spring-Heeled Jack. Secondary accents in <code>–-dark-umber</code> ground the design in earthy, murky tones, reinforcing the mood of the darker corners of Victorian London.
+                            </p>
+
+                            <h4>Typography choices</h4>
+                            <p>
+                            The 19th century witnessed a typographic renaissance driven by the Industrial Revolution, which transformed printing into a genuine mass medium. Printers of "murder broadsides" utilized a dizzying array of new display typefaces designed for the advertising industry. This theme mirrors that aesthetic evolution. The typographic system deliberately employs two distinct typefaces for headings to replicate the visual language of Penny Dreadful covers.
+                            </p>
+                            <p>
+                                <strong>Abril Fatface</strong> is the primary display type, a heavy-weight serif that serves as a modern reinterpretation of the classic Didone (or "Fat Face") styles. Its extreme contrast between thick and thin lines mimics the "shouting" nature of Penny Dreadful headlines, which were designed to grab attention from across a crowded street. It provides a theatrical, dramatic presence that anchors the page.
+                            </p>
+                            <p>
+                                Navigational elements and sub-headings utilize <strong>IM Fell English SC (Small Caps)</strong>. This typeface introduces a roughness that Abril Fatface lacks, simulating the irregular edges of ink bleeding into paper.
+                            </p>
+                            <p>
+                                For long-form reading, the Roman version of <strong>IM Fell English</strong> is used. While it retains the "fell" — the historic roughness and uneven baseline of 17th and 18th-century types - it remains highly legible.
+                            </p>
+
+                            <figure class="figure mt-4 mb-5 w-100">
+                                <img src="#" class="figure-img img-fluid border border-dark" alt="Penny Dreadfuls Moodboard">
+                                <figcaption class="figure-caption text-center">Fig 3. Moodboard and design inspiration for the Penny Dreadfuls theme.</figcaption>
+                            </figure>
+
+                            <p><strong>Bibliography</strong></p>
+                            <ol class="mb-5">
+                                <li>
+                                    <a href="https://www.britishlibrary.cn/en/articles/penny-dreadfuls/" target="_blank">https://www.britishlibrary.cn/en/articles/penny-dreadfuls/</a>
+                                </li>
+                                <li>
+                                    <a href="https://ilovetypography.com/2020/10/19/penny-dreadfuls-murder-broadsides/" target="_blank">https://ilovetypography.com/2020/10/19/penny-dreadfuls-murder-broadsides/</a>
+                                </li>
+                                <li>
+                                    <a href="https://thegothicbookworm.wordpress.com/2020/10/13/the-penny-dreadfuls-a-brief-history/" target="_blank">https://thegothicbookworm.wordpress.com/2020/10/13/the-penny-dreadfuls-a-brief-history/</a>
+                                </li>
+                                <li>
+                                    <a href="https://travelswithmyart.wordpress.com/2025/02/28/the-dark-art-of-the-penny-dreadful-illustrators/" target="_blank">https://travelswithmyart.wordpress.com/2025/02/28/the-dark-art-of-the-penny-dreadful-illustrators/</a>
+                                </li>
+                                <li>
+                                    <a href="https://dfordreadful.wordpress.com/history/" target="_blank">https://dfordreadful.wordpress.com/history/</a>
+                                </li>
+                            </ol>
+
+                            <!-- 3.3 Vienna Secession -->
+                            <h3 id="vienna-secession">3.3 Vienna Secession</h3>
+                            <h4>Historical background</h4>
+                            <p> 
+                                The Vienna Secession theme draws its primary inspiration by the work of <strong>Koloman Moser</strong>, one of the founding members of the movement. Active at the turn of the 20th century, the <strong>Vienna Secession</strong> emerged as a reaction against academic historicism, advocating for a modern, unified approach to art. Its members sought to dissolve the rigid boundaries between fine and applied arts, promoting the concept of <em>Gesamtkunstwerk</em> (the “total work of art”), in which every visual element contributes to a coherent aesthetic whole. 
+                            </p>
+                            <p>
+                                Moser played a central role in shaping this vision. His designs for <em>Die Quelle</em> (<em>Flächen Schmuck</em>, 1901) exemplify the Secessionist pursuit of clarity, rhythm, and abstraction. Unlike traditional ornamentation rooted in illusionistic depth or naturalistic imitation, Moser’s work proposes a modern approach: motifs are flattened, stylized, and organized into modular systems governed by geometric rigor and a refined sense of balance. This philosophy laid the groundwork for the <em>Wiener Werkstätte</em>, founded in 1903 by Moser and Josef Hoffmann. The workshop functioned as a brand where artist and artisan worked as equals to bring high-quality design into all areas of life.
+                            </p>
+                            <p>
+                                The ideal of art as a tool for cultural renewal aligns perfectly with the exhibition's topic, reflecting the transformative flow that shaped the imaginary of witchcraft.
+                            </p>
+
+                            <h4>Layout and color palette</h4>
+                            <p>
+                                The <u>layout</u> and visual identity of the theme is based on the Secessionist principles of geometric organization, symmetry and repetition. The interface relies on clearly defined frames and grids that structure content into balanced, self-contained units. Content does not flow freely but is contained within decorative boundaries, echoing the controlled and ordered design of the period.
+                            </p>
+                            <p>
+                                The <u>colour palette</u> is restrained and derived from one of the plates designed by Moser for the series <em>Flächen Schmuck</em>. Muted, earthy tones are favoured over bright saturation, evoking the material qualities of ink, paper, and handcrafted objects. The reduced palette enhances legibility and reinforces the flatness of decorative surfaces, while subtle contrasts are employed to guide navigation and hierarchy.
+                            </p>
+                            <p>
+                                <u>Decorative elements</u> – such as square patterns and heavy borders – are not merely embellishments but structural devices that define margins and visual hierarchy. The design also references the Verso of <em>Wiener Werkstätte</em> postcards, characterized by defined dotted margins and distinct spacing.
+                            </p>
+                            <p>
+                                To replicate the materiality of early 20th century print, the theme implements a grid effect. Using a CSS <code>::after</code> pseudo-element on the body, the design applies a fixed overlay. It consists of two repeating linear gradients that intersect to form a micro-grid. Blended with a multiply mode and low opacity (0.05), this grid simulates the texture of the graph paper Moser used for his patterns.
+                            </p>
+
+                            <h4>Typography choices</h4>
+                            <p>
+                                Typography plays a fundamental role in expressing the Vienna Secession’s graphic identity. For this theme, the typographic system is inspired by the lettering and layout experiments developed by Koloman Moser for <em>Die Quelle</em>, where typography was conceived as an integral component of the overall composition. 
+                            </p>
+                            <p>
+                                <strong>Kolo W01 RegularLP</strong> was inspired by and named after Koloman Moser. It is used for headings, titles, and navigational elements. Defined by geometric rigor and angular terminals, the typeface recalls early twentieth-century Secessionist lettering and Moser’s emphasis on clarity through structure. The typeface conveys a strong decorative presence while remaining disciplined and orderly, making it suitable for display text that establishes hierarchy.
+                            </p>
+                            <p>
+                                For body text, <strong>Federo</strong> is employed due to its high legibility. Its more restrained character provides a visual counterbalance to the decorative expressiveness of the heading typeface. This contrast reflects the Secessionist practice of harmonizing ornament with function, ensuring that readability is never compromised by stylistic expression. It is an Art Deco-inspired sans serif, designed by Jakob Erbar and first cast by Ludwig & Mayer in 1909, optimized for web, by refining details and ensuring legibility with increased counters and regular figure proportions.
+                            </p>
+
+                            <figure class="figure mt-4 mb-5 w-100">
+                                <img src="img/vienna-secession/moodboard.png" class="figure-img img-fluid border border-dark" alt="Vienna Secession Moodboard">
+                                <figcaption class="figure-caption text-center">Fig 3. Moodboard and design inspiration for the Vienna Secession theme.</figcaption>
+                            </figure>
+
+                            <p><strong>Bibliography</strong></p>
+                            <ol class="mb-5">
+                                <li>
+                                    <a href="https://www.theviennasecession.com/vienna-secession/" target="_blank">https://www.theviennasecession.com/vienna-secession/</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.theviennasecession.com/a-history/" target="_blank">https://www.theviennasecession.com/a-history/</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.theviennasecession.com/die-quelle/" target="_blank">https://www.theviennasecession.com/die-quelle/</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.frizzifrizzi.it/2023/07/04/tesori-darchivio-i-pattern-di-koloman-moser/" target="_blank">https://www.frizzifrizzi.it/2023/07/04/tesori-darchivio-i-pattern-di-koloman-moser/</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.onlinewebfonts.com/download/5f48bbaab9d184a5466d1354cae30512" target="_blank">https://www.onlinewebfonts.com/download/5f48bbaab9d184a5466d1354cae30512</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.figma.com/fonts/federo/" target="_blank">https://www.figma.com/fonts/federo/</a>
+                                </li>
+                            </ol>
+                            
+                            <!-- 3.4 70s feminist protests -->
+                            <h3 id="70s-feminist-protests">3.4 70s feminist protests</h3>
+                            <h4>Historical background</h4>
+                            <p> 
+                                The visual identity of this theme is inspired by <strong>radical feminist graphic protest aesthetics</strong>, particularly the <strong>punk zine culture</strong> of the 1970s and several <strong>second-wave feminist periodicals</strong> of the time (e.g., <em>Spare Rib</em>, <em>Off Our Back</em>, <em>Effe</em> magazine).  
+                            </p>
+                            <p>
+                                <strong>Feminist zines</strong> of this era were not conceived as polished editorial products, but as spaces of self-expression and political resistance, distributed independently and outside institutional and commercial circuits. They were often produced with limited resources, using <strong>low-cost techniques</strong> such as photocopying, collage and manual typography. 
+                                Their visual language was deeply connected to political content: fragmented layouts, bold typography and the mixing of images and text reflected a desire to break with patriarchal norms and mainstream visual standards. These publications challenged traditional publishing aesthetics by embracing <strong>imperfection</strong>, which became a core aesthetic principle informing the layout of this theme. 
+                            </p>
+                            <p>
+                                A key reference for this aesthetic comes from <em>Spare Rib</em>, a feminist magazine launched in 1972 by founding editors Marsha Rowe and Rosie Boycott, with designers Sally Doust and Kate Hepburn. In sharp contrast to existing women’s magazines in both form and content, <em>Spare Rib</em> addressed issues ranging from sexual and racial equality to household tips, child- and healthcare, within a radical and contemporary framework. 
+                                The visual design of the magazine was crucial to its aims: it had to “look like a women’s magazine, yet with contents that did not reflect the conformist stereotyping of women”. Irregular layouts, <strong>collage compositions</strong> combining photographs and typewritten text, <strong>high-contrast colors</strong> and <strong>expressive typography</strong> were central to its visual identity. 
+                            </p>
+                            <p>
+                                These influences informed the decision to reject clean, minimal digital design in favour of <strong>visual noise</strong> and <strong>tactile interfaces</strong> that communicate activism and materiality. The interface is therefore not designed to look “perfect”, but rather intentional, expressive and handmade, reflecting the values and communication strategies of 1970s feminist publishing.
+                            </p>
+
+                            <h4>Layout and color palette</h4>
+                            <p>The layout of the interface translates the aesthetic principles of feminist zines and magazines into a digital environment by embracing irregularity and visual tension, echoing the <strong>collage-based construction</strong> typical of zine culture. The interface frequently employs visual metaphors such as <strong>tape, paper and pinned images</strong>.
+                                The layout is structured through overlapping layers and the <strong>background textures</strong> aim to reproduce the feeling of pinning things on printed paper. Elements such as cards, buttons, images and containers are intentionally rotated using small <code>transform</code> values, creating a sense of physical placement, as if elements were manually positioned on a page using glue or “tape”, 
+                                which is added as a decoration using CSS pseudo-elements (<code>::before</code> and <code>::after</code>). 
+                            </p>
+                            <p>The color palette is derived both from feminist symbolism and analogue printing practices. The main colors are:
+                                <ul>
+                                    <li><strong>neon pink</strong> (<code>#FB2E86</code>): represents feminist activism. Historically associated with femininity, pink is reappropriated here as a radical color rather than a decorative one.</li>
+                                    <li><strong>carbon black</strong> (<code>#1D1D1D</code>): evokes ink and typography, providing strong contrast and referencing print culture.</li>
+                                    <li><strong>vanilla cream</strong> (<code>#F2E9D0</code>): simulates paper and photocopied backgrounds, creating a warm analogue base.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                Additional colors include <strong>classic crimson</strong> (<code>#D7263D</code>), associated with urgency and political intensity, and <strong>silver</strong> (<code>#AFAFAE</code>), used for secondary contrast. Colors are not decorative but semantic: pink communicates identity, black communicates print, cream communicates paper and red communicates urgency.
+                            </p>
+
+                            <h4>Typography choices</h4>
+                            <p>The project uses a multi-font system to simulate the visual diversity and heterogeneity typical of zine production. 
+                            </p>
+                            <p>
+                                <em>Archivo</em>, a grotesque sans-serif typeface designed by Hector Gatti and released in 2012, is used for <strong>headers</strong>. Inspired by late 19th-century American typography, it conveys a retro aesthetic that recalls protest posters. 
+                                <br><em>Oswald</em>, a condensed neo-grotesque sans-serif created by Vernon Adams in 2011, is used as a <strong>secondary font</strong>, evoking magazine headlines and editorial layouts.
+                                <br><em>Work Sans</em> is used as the <strong>default body text font</strong> due to its neutrality and high readability, ensuring usability without compromising visual identity.  
+                                <br>Finally, <em>Courier New</em> is used to create a typewriter effect for metadata, referencing archival documents and typewritten materials.
+                            </p>
+                            <p>
+                                Instead of visual uniformity, the interface embraces typographic plurality, which reflects collective authorship, DIY publishing and non-professional print culture. Particular attention is also given to <strong>typographic emphasis</strong>. Key words within the text are highlighted in <strong>neon pink</strong>, visually recalling the act of manually 
+                                marking passages with a highlighter or marker pen. This technique references practices common in activist reading and zine culture, where texts were often annotated, underlined or emphasized by hand. In the interface, this visual strategy reinforces the importance of specific concepts, guides the reader’s attention and further contributes to the handmade aesthetic. 
+                            </p>
+
+                            <figure class="figure mt-4 mb-5 w-100">
+                                <img src="img/documentation/70sfeministprotest_moodboard.png" class="figure-img img-fluid border border-dark" alt="'70s feminist protest aesthetic Design Moodboard">
+                                <figcaption class="figure-caption text-center">Fig 4. Moodboard and design inspiration for the '70s feminist protest aesthetic theme.</figcaption>
+                            </figure>
+
+                            <p><strong>Bibliography</strong></p>
+                            <ol class="mb-5">
+                                <li>
+                                    PUNKZINE // Fanzine Tipográfico by Maria Victoria Marrone.
+                                    <a href="https://www.behance.net/gallery/237225993/PUNKZINE-Fanzine-Tipografico" target="_blank">https://www.behance.net/gallery/237225993/PUNKZINE-Fanzine-Tipografico</a>
+                                </li>
+                                <li>
+                                    Feminist Zines Have Have Been Around Longer Than You Thought—Here’s Where One Began by By Anna Merlan.
+                                    <a href="https://www.vice.com/en/article/in-the-70s-two-women-embarked-on-an-epic-road-trip-to-find-other-feminists/" target="_blank">https://www.vice.com/en/article/in-the-70s-two-women-embarked-on-an-epic-road-trip-to-find-other-feminists/</a>
+                                </li>
+                            </ol>
+
+                            <!--3.5 Windows 95 -->
+                            <h3 id="windows-95">3.5 Windows 95</h3>
+                            <p>
+                                The Windows 95 layout is a homage to the operating system that defined the graphical user interface for a generation. Released by Microsoft in August 1995 under the codename "Chicago," it introduced the Start menu and the taskbar—elements that remain standards in UX design today. This layout was chosen to evoke the specific nostalgia of the mid-90s "Vaporwave" aesthetic, prioritizing a utilitarian, gray-scale "3D" look over modern flat design.
+                            </p>
+                            <p>
+                                Visually, the design strictly adheres to the aesthetic standards of the era. The background color is set to the specific "Windows Teal" (<code>#008081</code>), providing high contrast for the windows. Unlike later iterations like Windows 98, which introduced gradients in window title bars, this theme utilizes solid dark blue (<code>#000181</code>) for active headers and silver-gray (<code>#C3C3C3</code>) for surfaces, maintaining historical accuracy.
+                            </p>
+
+                            <h4>Technical Implementation</h4>
+                            <p>
+                                The primary technical challenge was neutralizing the modern "softness" of the base framework to replicate the rigid, pixel-perfect nature of 1995 software. A global override (<code>* { border-radius: 0 !important; }</code>) was applied to strip away all rounded corners.
+                            </p>
+                            <p>
+                                To replicate the iconic "chiseled" 3D look of buttons and windows, we avoided standard drop-shadows. Instead, we reverse-engineered the "Windows 95 UI Kit" from the Figma Community [1] to implement two distinct CSS techniques:
+                            </p>
+                            <ul>
+                                <li><strong>Complex Borders:</strong> For content containers, we assigned distinct colors to each side of the border—white for top/left and dark gray for bottom/right.</li>
+                                <li><strong>Inset Box-Shadows:</strong> For interactive elements like navigation links, we used <code>box-shadow: inset</code> values (e.g., <code>inset 2px 2px 0px white</code>) to simulate depth without altering the element's dimensions.</li>
+                            </ul>
+                            <p>
+                                For the active "pressed" state of buttons, the code inverts these shadow colors and applies a <code>transform: translate(1px, 1px)</code> shift, creating a tactile feeling of mechanical depression.
+                            </p>
+
+                            <h4>Typography and Iconography</h4>
+                            <p>
+                                Typography is handled by the custom web font 'W95FA', which reproduces the bitmap appearance of the original MS Sans Serif. To ensure crispness on modern high-DPI displays, the CSS property <code>image-rendering: pixelated</code> was enforced globally.
+                            </p>
+                            <p>
+                                Finally, the theme is identified by the icon of "Clippy," the animated paperclip assistant. Although Clippy was technically introduced in Microsoft Office 97 rather than the initial Windows 95 launch, he has become a cultural shorthand for the Microsoft ecosystem of that era. His inclusion serves as a deliberate nod to the intrusive yet memorable user interfaces of the late 90s.
+                            </p>
+
+                            <figure class="figure mt-4 mb-5 w-100">
+                                <img src="img/windows95/moodboard.png" class="figure-img img-fluid border border-dark" alt="Windows 95 Design Mood Board">
+                                <figcaption class="figure-caption text-center">Fig 5. Mood board and design inspiration for the Windows 95 theme.</figcaption>
+                            </figure>
+
+                            <p><strong>Bibliography</strong></p>
+                            <ol class="mb-5">
+                                <li>
+                                    Figma Community. "Windows 95 UI Kit (Community)." Figma. 
+                                    <a href="https://www.figma.com/community/file/" target="_blank">https://www.figma.com/community/file/</a>
+                                </li>
+                                <li>
+                                    FontsArena. "W95FA Font." 
+                                    <a href="https://fontsarena.com/w95fa-by-fontsarena/" target="_blank">https://fontsarena.com/w95fa-by-fontsarena/</a>
+                                </li>
+                                <li>
+                                    Themesberg. "Windows 95 UI Kit." 
+                                    <a href="https://demo.themesberg.com/windows-95-ui-kit/" target="_blank">https://demo.themesberg.com/windows-95-ui-kit/</a>
+                                </li>
+                            </ol>
+                            
+                            <!-- 3.6 Cyberpunk 2035 -->
+                            <h3 id="cyberpunk">3.6 Cyberpunk 2035</h3>
+                            <h4>Historical Background</h4>
+                            <p>This last theme interprets the witch as a technologically augmented figure in a dystopian near-future, in which she inhabits a hybrid space between the occult and the digital, bridging ancient magic and futuristic technology.
+                                The main inspiration comes from <strong>cyberpunk</strong>, a dark subgenre of science fiction that emerged in the late twentieth century, portraying societies in which advanced technology and unregulated capitalism have radically reshaped 
+                                everyday life, often leading to social decay and inequality. The combination of the punk and hacker subcultures played a fundamental role in shaping the cyberpunk imaginary. The movement gained visibility in the 1980s with the publishing of 
+                                influential works such as <em>Blade Runner</em> (Ridley Scott, 1982), <em>Akira</em> (Katsuhiro Otomo, 1988) and later <em>Ghost in the Shell</em> (Mamoru Oshii, 1995). This dark style then entered mainstream culture with the release of <em>The Matrix</em> trilogy and has since 
+                                influenced a wide range of media, from videogames such as <em>Cyberpunk 2077RPG</em> to fashion  and graphic design, becoming a dominant visual language for imagining the future. 
+                            </p>
+                            <p>
+                                Within this framework, we decided to reimagine 2035 as a cyberpunk world in which <strong>magic</strong> and <strong>technology</strong> coexist and the witch is a figure of resistance. In order to recreate this kind of aesthetic, neon cyberpunk elements 
+                                are blended with hi-tech and sci-fi references, emphasizing the idea of rebellion and disruption of the dominant system operated from within. The ultimate goal is to echo the exhibition’s broader narrative: witchcraft reshaped through time, from myth to <strong>digital empowerment</strong>. 
+                            </p>
+
+                            <h4>Layout and color palette</h4>
+                            <p>In graphic design, cyberpunk aesthetics break modernist conventions through digitally altered typography, irregular layouts, and aggressive color palettes. We adopted a primary three-color palette, <strong>erin green</strong> (<code>#1AFE49</code>), <strong>neon magenta</strong> (<code>#E600FF</code>) and <strong>electric cyan</strong> (<code>#00F6FF</code>), 
+                                complemented by <strong>violet blue</strong> (<code>#3D43B4</code>), which is used sparingly for contrast. These chromatic choices recall classic cyberpunk visual codes: neon green evokes energy and the visual language of hacking and signal interference, electric cyan is used for holographic effects and magenta introduces a 
+                                sense of danger and rebellion, reinforcing the cyber-witchy vibe of the website.
+                            </p>
+
+                            <p>
+                                The background features an <strong>animated holographic grid</strong> inspired by retro CRT interfaces, creating spatial depth and anchoring the entire experience inside a “digital space”. To avoid overstimulation, animations are used selectively, primarily in glitch-based hover states and small UI elements, that simulate 
+                                instability and technological malfunction. Accessibility considerations are addressed through the use of the <code>prefers-reduced-motion</code> media query, which allows users who require reduced motion to experience a calmer interface without animated effects. High-contrast color combinations 
+                                further support readability on dark backgrounds. 
+                            </p>
+                            
+                            <h4>Typography choices</h4>
+                            <p>The videogame <strong>Cyberpunk 2077</strong> played an essential role in reviving public interest in cyberpunk aesthetics, particularly through its user interface design. Its typographic system served as a key reference for our theme. While the game primarily employs Rajdhani for interface elements and Orbitron for secondary text, 
+                                we slightly reversed this hierarchy. 
+                            </p>
+
+                            <p><em>Orbitron</em>, a geometric sans-serif typeface designed by Matt McInerney in 2009, features futuristic and post-apocalyptic influences. Due to its strong visual personality, it is used primarily for <strong>headlines, navigation elements and titles</strong>. <br>For <strong>body text</strong>, we selected <em>Rajdhani</em>, a sans-serif font family designed by 
+                                Satya Rajpurohit and Peter Bilak, characterized by squared letterforms and a clean geometric structure. Its clarity and legibility make it suitable for extended reading while maintaining a technological tone.  
+                                <br>This dual typography system ensures both visual impact and readability, reinforcing the high-tech cyberpunk atmosphere without compromising usability. In addition to this, a limited use of <em>Courier New</em> is introduced within the item page to reference command-line interfaces and early computing environments. Its restrained use creates a visual distinction 
+                                between descriptive text and technical or archival data, reinforcing the idea of interacting with a digital system rather than a traditional webpage.
+                            </p>
+
+                            <figure class="figure mt-4 mb-5 w-100">
+                                <img src="img/documentation/cyberpunk_moodboard.png" class="figure-img img-fluid border border-dark" alt="Cyberpunk Design Moodboard">
+                                <figcaption class="figure-caption text-center">Fig 6. Moodboard and design inspiration for the Cyberpunk theme.</figcaption>
+                            </figure>
+
+                            <p><strong>Bibliography</strong></p>
+                            <ol class="mb-5">
+                                <li>
+                                    Cyberpunk: how to master the futuristic style by Marion Gerlinger.
+                                    <a href="https://www.linearity.io/blog/cyberpunk-style/" target="_blank">https://www.linearity.io/blog/cyberpunk-style/</a>
+                                </li>
+                                <li>
+                                    Cyberpunk 2077—User Interface (Part 2) by Vladimír Vilimovský.
+                                    <a href="https://www.behance.net/gallery/133185623/Cyberpunk-2077User-Interface-(Part-2)" target="_blank">https://www.behance.net/gallery/133185623/Cyberpunk-2077User-Interface-(Part-2)</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
