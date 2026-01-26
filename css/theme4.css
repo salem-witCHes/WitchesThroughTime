@@ -472,7 +472,6 @@ footer {
     max-width: 100% !important; 
 }
 
-/* Introduction Section  */
 
 /* The Blue Title Bar  */
 .introduction-title {
@@ -829,24 +828,4 @@ footer {
     pointer-events: none; 
 }
 
-.documentation-title {
-    background-color: var(--win-blue) !important; 
-    color: var(--win-white) !important;           
 
-    margin: -100 !important;          
-    padding: 8px 12px !important;  
-
-    display: block;                
-    width: 100vw !important;       /* full viewport width */
-    box-sizing: border-box;        /* ensures padding is included in width */
-}
-.toggle-frame .layout-options.active .toggle-knob {
-    transform: translateY(-50%) !important; /* cancel press-down */
-    box-shadow: inset 2px 2px 0px var(--win-white),
-                inset -2px -2px 0px var(--win-dark-grey) !important;
-}
-
-/* Prevent :active click state from affecting the knob */
-.toggle-frame .layout-options.active .toggle-knob:active {
-    transform: translateY(-50%) !important;
-}
