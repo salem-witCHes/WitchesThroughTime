@@ -121,14 +121,14 @@ document.addEventListener('DOMContentLoaded', () => {
             currentIndex = 0;
         }
 
-        renderItem();
+        displayItemDetails();
         updateUIState();
     }
 
 
     // render information
     // take the data from memory and populate the screen
-    function renderItem() {
+    function displayItemDetails() {
         const itemId = currentIdList[currentIndex];
         const item = allItems[itemId];
         
@@ -136,25 +136,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // basic Info
         document.getElementById('item-image-display').src = item.image;
-        document.getElementById('item-title').textContent = item.title;
+        document.getElementById('item-title').innerHTML = item.title;
 
         // metadata table
         const meta = item.metadata || {};
-        document.getElementById('item-creator').textContent = Array.isArray(meta.creator) ? meta.creator.join(', ') : meta.creator;
-        document.getElementById('item-type').textContent = meta.type;
-        document.getElementById('item-location').textContent = meta.location;
+        document.getElementById('item-creator').innerHTML = Array.isArray(meta.creator) ? meta.creator.join(', ') : meta.creator;
+        document.getElementById('item-type').innerHTML = meta.type;
+        document.getElementById('item-location').innerHTML = meta.location;
         
         // clickable table cells
         const dateCell = document.getElementById('item-date');
-        dateCell.textContent = meta.date;
+        dateCell.innerHTML = meta.date;
         dateCell.title = "Switch to Chronological Narrative"; 
 
         const roomCell = document.getElementById('item-room');
-        roomCell.textContent = meta.room; 
+        roomCell.innerHTML = meta.room; 
         roomCell.title = "Switch to Eras Narrative"; 
         
         // update "current room" Label
-        document.getElementById('current-room-name').textContent = meta.room;
+        document.getElementById('current-room-name').innerHTML = meta.room;
         
         updateDescriptionText(item);
     }
@@ -219,14 +219,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('btn-next').addEventListener('click', () => {
         if (currentIndex < currentIdList.length - 1) {
             currentIndex++;
-            renderItem();
+            displayItemDetails();
         }
     });
 
     document.getElementById('btn-prev').addEventListener('click', () => {
         if (currentIndex > 0) {
             currentIndex--;
-            renderItem();
+            displayItemDetails();
         }
     });
 
@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const newIndex = currentIdList.indexOf(firstItemOfNextRoom);
                 if (newIndex !== -1) {
                     currentIndex = newIndex;
-                    renderItem();
+                    displayItemDetails();
                 }
             }
         });
@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const newIndex = currentIdList.indexOf(firstItemOfPrevRoom);
                 if (newIndex !== -1) {
                     currentIndex = newIndex;
-                    renderItem();
+                    displayItemDetails();
                 }
             }
         });
@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
             lengthBtns.forEach(b => b.classList.remove('active'));
             e.target.classList.add('active');
             currentLength = e.target.getAttribute('data-length');
-            renderItem();
+            displayItemDetails();
         });
     });
 
@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
             toneBtns.forEach(b => b.classList.remove('active'));
             e.target.classList.add('active');
             currentTone = e.target.getAttribute('data-tone');
-            renderItem();
+            displayItemDetails();
         });
     });
 

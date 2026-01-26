@@ -427,8 +427,12 @@
                         </p>
                     <!-- 1.4 Metadata model and standards -->
                     <h3 id="#1.4Metadata-model">1.4 Metadata model and standards</h3>
-                    <p></p>
-
+                    <p>
+                        Metadata for the digital collection were collected directly from institutional websites hosting the digital items. To ensure semantic interoperability across these heterogeneous sources, metadata were standardized using the Dublin Core Metadata Element Set (DCMES). This process unified varying cataloguing standards into a consistent schema – mapping attributes such as Creator, Date, Type, and Location – which was then consolidated into a single JSON file acting as the application’s central repository.
+                    </p>
+                    <p>
+                        The application utilizes JavaScript to dynamically populate the item interface without requiring page reloads. Upon initialization, the script fetches the JSON file and parses the items into a JavaScript object. The core function, displayItemDetails(), retrieves the specific metadata object for the active item ID. It then targets the corresponding table cells in the HTML (e.g., item-creator, item-type) and renders the content.
+                    </p>
 
 
                     <!-- 2. Presentation -->
@@ -569,7 +573,7 @@
                     </p>
 
                     <!-- 2.3 Exhibiyion Page -->
-                    <h3>2.3 Exhibiyion Page</h3>
+                    <h3>2.3 Exhibition Page</h3>
                     <p>
                         The Exhibition page functions as the central curatorial hub of
                         <em>Witches Through Time: From Myth to Empowerment</em>. Accessible directly from the navigation
@@ -645,7 +649,25 @@
 
                     <!-- 2.4 Item Page -->
                     <h3>2.4 Item Page</h3>
-                    <p></p>
+                    <p>
+                        The Item Page is designed as a responsive, modular interface that adapts its layout based on the device screen size using the Bootstrap grid system. The structure is divided into two primary sections: the <strong>upper section</strong> contains the interactive <u>item image</u>, clicking on that triggers a Bootstrap Modal for a high-resolution detailed view, and the <u>metadata table</u> which provides standardized information about the artifact; the <strong>lower section</strong> contains the <u>descriptive content</u> and allows visitors to choose between different text lengths (Short, Medium, Long) and tones (Kid, Adult, Scholar). The navigation controls are positioned at the bottom, dynamically updating based on the selected narrative mode.
+                    </p>
+                    <p>
+                        To ensure that every artifact in the collection is uniquely addressable and accessible directly from external pages (such as the Exhibition section), the application implements a <strong>URL parameter system</strong>. Each item is identified by a unique key passed via the ?id=parameter. Additionally, a ?narrative= parameter tracks the user’s navigational context (eras or chronological). Upon loading, the script inspects the browser’s URL query string using URLSearchParams. If a valid ID is found, the system immediately initializes the view with that specific item and sets the correct narrative context via the switchNarrative() function. If no ID is present, it defaults to the first item in the chronological sequence. This approach ensures that users can bookmark specific items or navigate seamlessly from other pages to a detailed view without losing their place in the narrative structure.
+                    </p>
+                    <p>
+                        The Item Page functions as a data-driven template. Content is injected dynamically via JavaScript, ensuring scalability and ease of maintenance. On page load, the script asynchronously fetches the JSON file, that acts as the central repository containing all item objects and their associated metadata. The script maintains the current state using variables for the active currentIdList (the list of items to show) and currentIndex (the specific item currently being viewed). The core of this system is the function displayItemDetails(): the function uses the currentIndex to find the correct item ID and retrieves the corresponding object from the loaded JSON data; it targets specific DOM elements by ID (e.g., item-title, item-creator) and populates them. The function uses innerHTML that allows the browser to correctly render any semantic HTML tags stored within the metadata.
+                    </p>
+                    <p>
+                        To address diverse audiences, the Item Page enables users to switch between <strong>different textual descriptions</strong> for each item. The JavaScript logic constructs a composite key based on user selection to retrieve the correct text block. When a user clicks a button (e.g., “Kid” tone and “Short” length), the script concatenates these values into a key string: ‘${currentLength}-${currentTone}’ (e.g., “short-kid”). It checks if this specific key exists in the item’s texts object within the JSON. If found, it updates the description panel instantly without reloading the page.
+                    </p>
+                    <p>
+                        The page supports two distinct modes of navigation, controlled by the switchNarrative() function. This system allows users to view the same artifact through different contextual lenses.
+                    </p>
+                    <ul>
+                        <li>The <u>Chronological Narrative</u> is the default mode. The currentIdList is populated with the complete list of items sorted by date and Previous and Next buttons traverse this entire collection. In this mode, the “Room Navigation” controls are hidden (d-none).</li>
+                        <li>The <u>Eras Narrative</u> is activated by clicking the “Room” link in the metadata table. The code creates a filtered list of items belonging only to specific rooms. In this mode, additional navigation buttons appear, allowing users to jump between rooms rather than just between individual items.</li>
+                    </ul>
 
                     <!-- 3. Themes/ Layouts -->
                     <h2 id="#3.themes">3. Themes/ Layouts</h2>
@@ -704,14 +726,132 @@
                     </ol>
 
 
-                    <!-- 3.2 Romanticism -->
-                    <h3>3.2 Romanticism</h3>
-                    <p> </p>
+                    <!-- 3.2 Penny Dreadfuls -->
+                    <h3>3.2 Penny Dreadfuls</h3>
+                    <h4>Historical background</h4>
+                    <p>
+                        The second theme is rooted in a 19th century British phenomenon, originally known as «penny bloods» and later renamed <strong>Penny Dreadfuls</strong>. Born form the surge in working-class literacy and the industrialization of printing, these publications introduced a new form of mass entertainment. They were designed to be consumed rapidly, catering to a public hungry for tales of gothic horror, notorious criminals, and supernatural mysteries.
+                    </p>
+                    <p>
+                        The Penny Dreadful was the direct result of manufacturing developments that allowed paper to be produced cheaply. Publishers quickly realized that mass-producing genre fiction would sell at a penny a time – thus, the penny periodical was born. Typically, eight to sixteen pages long, each weekly number or episode featured a black-and-white illustration on the top half of the front page. These covers were particularly gruesome, depicting murderers and highwaymen to capture the attention of a semiliterate audience. 
+                    </p>
+                    <p>
+                        The visual identity of this theme captures the raw urgency of those early serials. The imagery draws heavily on the style of crude woodcuts and broadsides. This approach aligns perfectly with the exhibition’s exploration of fear and folklore, utilizing a design language that feels historically authentic: raw, unrefined, and evocative of the printing press's urgency.
+                    </p>
+
+                    <h4>Layout and color palette</h4>
+                    <p>
+                       The interface design is based on a layout that feels dense and tactile, evoking the horror vacui (fear of empty space) typical of Victorian broadsheets. The composition relies on heavy framing and compartmentalization; content is enclosed within thick borders and dividers, mimicking the layout of Penny Dreadful publications where every inch of paper was maximized for narrative impact.
+                    </p>
+                    <p>
+                        Since original Penny Dreadfuls targeted working-class readers, the illustrations were crucial to their appeal. The theme replicates this by prioritizing bold, dramatic images that serve not just as decoration, but as integral storytelling devices—capturing attention and reinforcing the sensationalism of the tales just as they did in the 1830s.
+                    </p>
+                    <p>
+                        The colour palette is strictly material, simulating the textures of Penny Dreadfuls. The interface alternates between <code>--background-color</code> (a saturated, pulp-yellow ochre) and --paper-tone (a pale, off-white parchment). These tones replicate the look of high-acid wood pulp paper that has yellowed with age and exposure. All primary text and borders use <code>-–charcoal-ink</code>, a softer alternative to pure black that suggests the matte finish of carbon-based printing ink. Highlights are applied using <code>-–burnt-terracotta</code>, a desaturated red reminiscent of dried blood or the cheap hand-colouring applied to premium editions of Spring-Heeled Jack. Secondary accents in <code>–-dark-umber</code> ground the design in earthy, murky tones, reinforcing the mood of the darker corners of Victorian London.
+                    </p>
+
+                    <h4>Typography choices</h4>
+                    <p>
+                       The 19th century witnessed a typographic renaissance driven by the Industrial Revolution, which transformed printing into a genuine mass medium. Printers of "murder broadsides" utilized a dizzying array of new display typefaces designed for the advertising industry. This theme mirrors that aesthetic evolution. The typographic system deliberately employs two distinct typefaces for headings to replicate the visual language of Penny Dreadful covers.
+                    </p>
+                    <p>
+                        <strong>Abril Fatface</strong> is the primary display type, a heavy-weight serif that serves as a modern reinterpretation of the classic Didone (or "Fat Face") styles. Its extreme contrast between thick and thin lines mimics the "shouting" nature of Penny Dreadful headlines, which were designed to grab attention from across a crowded street. It provides a theatrical, dramatic presence that anchors the page.
+                    </p>
+                    <p>
+                        Navigational elements and sub-headings utilize <strong>IM Fell English SC (Small Caps)</strong>. This typeface introduces a roughness that Abril Fatface lacks, simulating the irregular edges of ink bleeding into paper.
+                    </p>
+                    <p>
+                        For long-form reading, the Roman version of <strong>IM Fell English</strong> is used. While it retains the "fell" — the historic roughness and uneven baseline of 17th and 18th-century types - it remains highly legible.
+                    </p>
+
+                    <figure class="figure mt-4 mb-5 w-100">
+                        <img src="#" class="figure-img img-fluid border border-dark" alt="Penny Dreadfuls Moodboard">
+                        <figcaption class="figure-caption text-center">Fig 3. Moodboard and design inspiration for the Penny Dreadfuls theme.</figcaption>
+                    </figure>
+
+                    <p><strong>Bibliography</strong></p>
+                    <ol class="mb-5">
+                        <li>
+                            <a href="https://www.britishlibrary.cn/en/articles/penny-dreadfuls/" target="_blank">https://www.britishlibrary.cn/en/articles/penny-dreadfuls/</a>
+                        </li>
+                        <li>
+                            <a href="https://ilovetypography.com/2020/10/19/penny-dreadfuls-murder-broadsides/" target="_blank">https://ilovetypography.com/2020/10/19/penny-dreadfuls-murder-broadsides/</a>
+                        </li>
+                        <li>
+                            <a href="https://thegothicbookworm.wordpress.com/2020/10/13/the-penny-dreadfuls-a-brief-history/" target="_blank">https://thegothicbookworm.wordpress.com/2020/10/13/the-penny-dreadfuls-a-brief-history/</a>
+                        </li>
+                        <li>
+                            <a href="https://travelswithmyart.wordpress.com/2025/02/28/the-dark-art-of-the-penny-dreadful-illustrators/" target="_blank">https://travelswithmyart.wordpress.com/2025/02/28/the-dark-art-of-the-penny-dreadful-illustrators/</a>
+                        </li>
+                        <li>
+                            <a href="https://dfordreadful.wordpress.com/history/" target="_blank">https://dfordreadful.wordpress.com/history/</a>
+                        </li>
+                    </ol>
 
                     <!-- 3.3 Vienna Secession -->
                     <h3>3.3 Vienna Secession</h3>
-                    <p> </p>
+                    <h4>Historical background</h4>
+                    <p> 
+                        The Vienna Secession theme draws its primary inspiration by the work of <strong>Koloman Moser</strong>, one of the founding members of the movement. Active at the turn of the 20th century, the <strong>Vienna Secession</strong> emerged as a reaction against academic historicism, advocating for a modern, unified approach to art. Its members sought to dissolve the rigid boundaries between fine and applied arts, promoting the concept of <i>Gesamtkunstwerk</i> (the “total work of art”), in which every visual element contributes to a coherent aesthetic whole. 
+                    </p>
+                    <p>
+                        Moser played a central role in shaping this vision. His designs for <i>Die Quelle</i> (<i>Flächen Schmuck</i>, 1901) exemplify the Secessionist pursuit of clarity, rhythm, and abstraction. Unlike traditional ornamentation rooted in illusionistic depth or naturalistic imitation, Moser’s work proposes a modern approach: motifs are flattened, stylized, and organized into modular systems governed by geometric rigor and a refined sense of balance. This philosophy laid the groundwork for the <i>Wiener Werkstätte</i>, founded in 1903 by Moser and Josef Hoffmann. The workshop functioned as a brand where artist and artisan worked as equals to bring high-quality design into all areas of life.
+                    </p>
+                    <p>
+                        The ideal of art as a tool for cultural renewal aligns perfectly with the exhibition's topic, reflecting the transformative flow that shaped the imaginary of witchcraft.
+                    </p>
 
+                    <h4>Layout and color palette</h4>
+                    <p>
+                        The <u>layout</u> and visual identity of the theme is based on the Secessionist principles of geometric organization, symmetry and repetition. The interface relies on clearly defined frames and grids that structure content into balanced, self-contained units. Content does not flow freely but is contained within decorative boundaries, echoing the controlled and ordered design of the period.
+                    </p>
+                    <p>
+                        The <u>colour palette</u> is restrained and derived from one of the plates designed by Moser for the series Flächen Schmuck. Muted, earthy tones are favoured over bright saturation, evoking the material qualities of ink, paper, and handcrafted objects. The reduced palette enhances legibility and reinforces the flatness of decorative surfaces, while subtle contrasts are employed to guide navigation and hierarchy.
+                    </p>
+                    <p>
+                        <u>Decorative elements</u> – such as square patterns and heavy borders – are not merely embellishments but structural devices that define margins and visual hierarchy. The design also references the Verso of <i>Wiener Werkstätte</i> postcards, characterized by defined dotted margins and distinct spacing.
+                    </p>
+                    <p>
+                        To replicate the materiality of early 20th century print, the theme implements a grain effect. Using a CSS ::after pseudo-element on the body, the design applies a fixed overlay. It consists of two repeating linear gradients that intersect to form a micro-grid. Blended with a multiply mode and low opacity (0.05), this grid simulates the texture of the graph paper Moser used for his patterns.
+                    </p>
+
+                    <h4>Typography choices</h4>
+                    <p>
+                        Typography plays a fundamental role in expressing the Vienna Secession’s graphic identity. For this theme, the typographic system is inspired by the lettering and layout experiments developed by Koloman Moser for <i>Die Quelle</i>, where typography was conceived as an integral component of the overall composition. 
+                    </p>
+                    <p>
+                        <strong>Kolo W01 RegularLP</strong> was inspired by and named after Koloman Moser. It is used for headings, titles, and navigational elements. Defined by geometric rigor and angular terminals, the typeface recalls early twentieth-century Secessionist lettering and Moser’s emphasis on clarity through structure. The typeface conveys a strong decorative presence while remaining disciplined and orderly, making it suitable for display text that establishes hierarchy.
+                    </p>
+                    <p>
+                        For body text, <strong>Federo</strong> is employed due to its high legibility. Its more restrained character provides a visual counterbalance to the decorative expressiveness of the heading typeface. This contrast reflects the Secessionist practice of harmonizing ornament with function, ensuring that readability is never compromised by stylistic expression. It is an Art Deco-inspired sans serif, designed by Jakob Erbar and first cast by Ludwig & Mayer in 1909, optimized for web, by refining details and ensuring legibility with increased counters and regular figure proportions.
+                    </p>
+
+                    <figure class="figure mt-4 mb-5 w-100">
+                        <img src="img/vienna-secession/moodboard.png" class="figure-img img-fluid border border-dark" alt="Vienna Secession Moodboard">
+                        <figcaption class="figure-caption text-center">Fig 3. Moodboard and design inspiration for the Vienna Secession theme.</figcaption>
+                    </figure>
+
+                    <p><strong>Bibliography</strong></p>
+                    <ol class="mb-5">
+                        <li>
+                            <a href="https://www.theviennasecession.com/vienna-secession/" target="_blank">https://www.theviennasecession.com/vienna-secession/</a>
+                        </li>
+                        <li>
+                            <a href="https://www.theviennasecession.com/a-history/" target="_blank">https://www.theviennasecession.com/a-history/</a>
+                        </li>
+                        <li>
+                            <a href="https://www.theviennasecession.com/die-quelle/" target="_blank">https://www.theviennasecession.com/die-quelle/</a>
+                        </li>
+                        <li>
+                            <a href="https://www.frizzifrizzi.it/2023/07/04/tesori-darchivio-i-pattern-di-koloman-moser/" target="_blank">https://www.frizzifrizzi.it/2023/07/04/tesori-darchivio-i-pattern-di-koloman-moser/</a>
+                        </li>
+                        <li>
+                            <a href="https://www.onlinewebfonts.com/download/5f48bbaab9d184a5466d1354cae30512" target="_blank">https://www.onlinewebfonts.com/download/5f48bbaab9d184a5466d1354cae30512</a>
+                        </li>
+                        <li>
+                            <a href="https://www.figma.com/fonts/federo/" target="_blank">https://www.figma.com/fonts/federo/</a>
+                        </li>
+                    </ol>
                     
 
 
