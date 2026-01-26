@@ -1,4 +1,4 @@
-# WITCHES THROUGH TIME: From Myth to Empowerment
+# Witches Through Time: From Myth to Empowerment
 
 Group project for the UniBo Information Modelling and Web Technologies 2024/25 course.
 
