@@ -79,6 +79,11 @@ p {
   /* keeps text readable on wide screens */
 }
 
+/* no justified text in punk publications */
+section p {
+  text-align: left;
+}
+
 strong {
   background-color: var(--neon-pink);
   color: var(--background-color);
