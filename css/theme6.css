@@ -418,7 +418,7 @@ footer a:hover {
   padding: 10px 50px;
   font-size: 20px;
   border: 1px solid var(--electric-cyan);
-  border-radius: 2px;
+  border-radius: 0;
   clip-path: var(--hud-clip);
   color: var(--electric-cyan);
   text-shadow: 0 0 6px var(--electric-cyan);
@@ -646,9 +646,8 @@ footer a:hover {
 
 .era-card-content {
   position: relative;
-  box-shadow: 0px 0px 10px 1px #000000ee;
-  border-radius: 16px;
-  background-color: #151515;
+  border-radius: 0px;
+  background-color: transparent !important;
   z-index: 2;
 }
 
@@ -907,7 +906,7 @@ footer a:hover {
   color: var(--electric-cyan) !important;
   text-shadow: var(--glow-cyan);
   border: 1px solid var(--electric-cyan) !important;
-  border-radius: 2px;
+  border-radius: 0px;
   letter-spacing: 2px;
   /* Cyberpunk Corner Cut */
   clip-path: var(--hud-clip);
@@ -1056,6 +1055,102 @@ footer a:hover {
 @keyframes blink {
     50% { opacity: 0; }
 }
+
+/* --- Documentation --- */
+
+/* #documentation li,  */
+#documentation figcaption {
+    font-family: var(--font-secondary);
+    color: var(--electric-cyan);
+    font-size: 1rem;
+}
+
+#documentation p, 
+#documentation ul:not(.list-unstyled),
+#documentation ol:not(.list-unstyled) {
+  font-family: var(--font-secondary);
+  color: var(--electric-cyan);
+  max-width: 85ch;
+  font-size: clamp(1rem, 0.9rem + 0.4vw, 1.25rem);
+  line-height: 1.6;
+  list-style-position: inside;
+  margin-bottom: 1.5rem;
+  padding-inline: clamp(1rem, 3vw, 2rem);
+}
+
+#documentation ul:not(.list-unstyled),
+#documentation ol:not(.list-unstyled) {
+  text-align: left;
+}
+
+/* Target the title inside the card body */
+.team-cards .card-body .card-title {
+  color: var(--magenta-glitch) !important;
+  text-shadow: var(--glow-magenta);
+}
+
+.card.card-contents {
+    background: var(--background-color) !important;
+    border: 1px solid var(--electric-cyan) !important;
+    box-shadow: var(--glow-cyan);
+    border-radius: 0; /* Cyberpunk is blocky */
+    position: relative;
+    z-index: 1; /* Ensures links stay on top of background grids */
+}
+
+/* 2. Header & Indicators */
+.card-contents .card-title {
+    color: var(--magenta-glitch) !important;
+    font-family: var(--font-default);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    margin-bottom: 20px !important;
+}
+
+.card-body li {
+    position: relative;
+}
+
+.card-body li strong {
+    font-family: var(--font-default);
+    font-size: 0.9rem;
+    color: var(--magenta-glitch);
+}
+
+/* 3. Global Link Styling (Preserved) */
+.card-body a {
+    color: var(--electric-cyan) !important;
+    font-family: var(--font-secondary);
+    transition: all 0.2s ease;
+}
+
+#documentation a {
+    color: var(--magenta-glitch);
+    font-family: var(--font-secondary);
+    text-decoration: none;
+} 
+
+/* 4. Navigation & Hover Effects */
+.card-body a:hover,
+#documentation a:hover, 
+#documentation li > a:hover,
+.card.card-contents li a:hover strong {
+    color: var(--erin-green) !important;
+    padding-left: 5px;
+    text-shadow: var(--glow-green);
+}
+
+/* 5. List Structure & Sub-sections */
+.card-body ul ul {
+    border-left: 1px solid rgba(0, 246, 255, 0.2);
+    margin-left: 1.5rem !important;
+    padding-left: 1rem;
+}
+
+
+
+
 
 
 
