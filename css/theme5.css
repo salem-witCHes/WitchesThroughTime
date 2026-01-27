@@ -444,6 +444,11 @@ footer {
 .room-description {
     padding: 12px 0 0 0; 
 }
+
+ svg #door1,#door11,#door2, #door3, #door4, #door5, #door6, #door7, #door8, #door9,#door10, #door12, .entrance-door {
+    fill: #008080 !important;
+}
+
 /* -------------------------------------
    HOMEPAGE SECTIONS (W95 Panels)
    ------------------------------------- */
@@ -819,4 +824,133 @@ footer {
     pointer-events: none; 
 }
 
+#room-nav-controls .btn {
+    position: relative;
+    display: inline-block;
 
+    font-family: var(--default-font) !important;
+    font-size: 14px !important;
+    color: var(--win-text) !important;
+
+    padding: 6px 14px !important;
+
+    background-color: var(--win-grey) !important;
+    border: none !important;
+    border-radius: 0 !important;
+
+    box-shadow: inset 2px 2px 0px var(--win-white),
+                inset -2px -2px 0px var(--win-dark-grey),
+                1px 1px 0px 0px #000 !important;
+
+    transition: none !important;
+}
+
+#room-nav-controls .btn:active {
+    background-color: #E6E6E6 !important;
+    box-shadow: -2px -2px 0 0 #F0F0F0 inset, 
+                2px 2px 0 0 #262626 inset, 
+                4px 4px 0 0 #7E7E7E inset, 
+                -4px -4px 0 0 #B1B1B1 inset !important;
+    transform: translate(1px, 1px) !important;
+}
+
+#room-nav-controls .btn:active::after {
+    content: "";
+    position: absolute;
+    top: 4px; left: 4px; right: 4px; bottom: 4px;
+    border: 1px dashed #1A1A1A;
+}
+
+/* -------------------------------
+   DOCUMENTATION SINGLE PANEL (CSS-ONLY)
+   ------------------------------- */
+
+/* Target the entire documentation container */
+#documentation .documentation-box {
+    background-color: var(--win-grey) !important;
+
+    /* Win95 border: 2px solid outset style */
+    border: 2px solid;
+    border-top-color: var(--win-dark-grey);
+    border-left-color: var(--win-dark-grey);
+    border-right-color: var(--win-white);
+    border-bottom-color: var(--win-white);
+
+    border-radius: 0 !important;
+    padding: 0 !important; /* remove internal spacing from card */
+    overflow: visible !important;
+}
+
+/* Remove card styles (white background / margin) */
+#documentation .card {
+    background: transparent !important;
+    border: none !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+}
+.col-lg-10.col-md-10.col-sm-12.text-box.documentation-title {
+    width: 98%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+#documentation .documentation-box {
+    background-color: var(--win-grey);
+    border: 2px solid;
+    border-top-color: var(--win-dark-grey);
+    border-left-color: var(--win-dark-grey);
+    border-right-color: var(--win-white);
+    border-bottom-color: var(--win-white);
+    border-radius: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+}
+
+/* Title bar pseudo-element to make a full-width blue bar */
+#documentation .documentation-title {
+    position: relative;
+    z-index: 1;
+    display: block;
+    padding: 8px 12px !important;
+    font-family: var(--default-font) !important;
+    font-weight: bolder !important;
+    color: var(--win-white) !important;
+    
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* Title bar pseudo-element to make a full-width blue bar */
+#documentation .documentation-title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%; /* center the pseudo-element */
+    width: 100vw; /* full viewport width */
+    height: 100%;
+    background-color: var(--win-blue);
+    transform: translateX(-50%); /* center it exactly */
+    z-index: -1; /* behind the text */
+}
+
+/* Keep h1 inside the title clean */
+#documentation .documentation-title h1 {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 70px !important;
+    background: transparent !important;
+    color: var(--win-white) !important;
+}
+
+/* Table of Contents */
+#documentation .card-body h4,
+#documentation .card-body ul {
+    background: transparent !important;
+    color: var(--win-text) !important;
+    margin: 0 0 1rem 0 !important;
+    padding: 20px !important;
+    list-style: none;
+}

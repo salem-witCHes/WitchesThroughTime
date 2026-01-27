@@ -21,12 +21,12 @@
     2. Global Reset & Typography
 ------------------------------- */
 body {
-    background-image: url("../img/vienna-secession/background.jpg");
+    background-image: url("../img/vienna-secession/background.jpeg");
     background-color: var(--warm-canvas);
-    background-size: 100% 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
     font-family: var(--default-font);
+    background-size: cover;
 }
 
 /* texture effect */
@@ -698,8 +698,76 @@ footer .copyright-text p {
 /* -------------------------------
     9. DOCUMENTATION
 --------------------------------- */
+#documentation h1::after {
+  content: "";
+  display: block;
+  margin: 1em auto 1.5rem;
+  width: 160px;  
+  height: 16px;
+  background-color: transparent !important;
+  background-image: linear-gradient(
+      to right, 
+      var(--green-amber) 50%, 
+      transparent 50%
+  );
+  background-size: 32px 100%;
+  background-repeat: repeat-x;
+}
+
+.table-of-contents {
+  background-color: transparent !important;
+  color: var(--darker-brown) !important;
+  border: 2px dotted var(--green-amber); 
+  text-align: center;
+}
+
+.table-of-contents h4 {
+  font-family: var(--default-font) !important;
+  color: var(--darker-brown) !important;
+}
+
+.table-of-contents a {
+  font-family: var(--text-font) !important;
+  color: var(--darker-brown) !important;
+}
+
 .documentation-box {
   background-color: var(--warm-canvas);
   border: 2px solid var(--hexed-walnut);
   border-radius: 2px;
+}
+
+.documentation-page h3 {
+  border: none;
+  font-family: var(--default-font);
+}
+
+.documentation-page h4, h5, h6 {
+  border: none;
+  font-family: var(--text-font);
+  text-transform: capitalize;
+}
+
+#documentation ul:not(.list-unstyled),
+#documentation ol:not(.list-unstyled) {
+  font-family: var(--text-font);
+  color: var(--darker-brown);
+  padding-left: calc(clamp(1rem, 3vw, 2rem) + 1.5rem);
+  padding-right: clamp(1rem, 3vw, 2rem);
+  margin-inline: auto; 
+  max-width: 85ch;
+  text-align: left;
+  list-style-position: outside;
+}
+
+p#bibliography {
+  font-family: var(--text-font);
+}
+
+#documentation ol a {
+  color: var(--darker-brown);
+}
+
+#documentation code {
+  color: var(--green-amber);
 }

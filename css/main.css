@@ -910,8 +910,12 @@ footer a {
   .toggle-frame { top: 80px; gap: 12px; }
   .toggle-text { font-size: 16px; }
   .toggle-pill { width: 100px; height: 50px; }
-  .toggle-knob { width: 42px; height: 42px; top: 3px; left: 3px; }
-  .toggle-pill.eras-active .toggle-knob { transform: translateX(50px); }
+.toggle-knob { 
+    width: 42px !important; 
+    height: 42px !important; 
+    top: 3px !important; 
+    left: 3px !important; 
+  }  .toggle-pill.eras-active .toggle-knob { transform: translateX(50px); }
   #toggleIcon, #inactiveIcon { width: 24px; height: 24px; }
   .inactive-icon-wrapper { right: 12px; }
 }
@@ -967,7 +971,7 @@ footer a {
 }
 
 .era-title {
-    font-family: "Times New Roman", serif;
+    font-family: var(--default-font);
     font-size: 20px;  /* slightly smaller */
     font-weight: 400;
     color: var(--Greyscale-900);
@@ -975,12 +979,19 @@ footer a {
 }
 
 .era-description {
-    font-family: "Times New Roman", serif;
-    font-size: 14px;  /* slightly smaller */
-    color: var(--Greyscale-900);
-    margin: 0;
-    line-height: 1.2; /* tighter spacing */
+  padding-inline: 0 !important; 
+  padding: 0 !important;
+  margin-inline: 0 !important;
+  max-width: 100% !important;
+  font-family: var(--default-font);
+  font-size: 14px;
+  color: var(--Greyscale-900);
+  margin: 0;
+  margin-bottom: 12px;
+  line-height: 1.2;
+  text-align: left;
 }
+
 
 /* ERA ITEMS - Grid layout */
 .era-items {
@@ -1558,8 +1569,6 @@ nav.navbar {
 
 #documentation ul:not(.list-unstyled),
 #documentation ol:not(.list-unstyled) {
-  font-family: var(--default-font);
-  color: var(--default-font-color);
   max-width: 85ch;
   margin-inline: auto;
   font-family: var(--default-font);
@@ -1589,4 +1598,11 @@ nav.navbar {
 .row.row-cols-1 .card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.row.gx-0.mb-4.item-table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
+  height: 500px;
 }

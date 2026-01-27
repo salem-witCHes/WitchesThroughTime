@@ -13,7 +13,6 @@
   --paper-tone: #F3EAE1;
   --charcoal-ink: #303030;
   --burnt-terracotta: #BC3D1C;
-  --olive-bronze: #837622;
   --dark-umber: #302226;
 }
 
@@ -286,8 +285,8 @@ footer .copyright-text p {
   column-count: 2;
   column-gap: 3rem;
   column-rule: 1px solid var(--charcoal-ink);
-
 }
+
 .map-description h2 {
   font-family: var(--default-font);
   font-size: 2em;
@@ -485,6 +484,13 @@ footer .copyright-text p {
 /* -------------------------------
    7. ERAS
 --------------------------------- */
+.eras .col-lg-3 {
+    width: 50% !important;
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+}
+
+
 .era-card {
     border: none;
     background: transparent;
@@ -495,30 +501,57 @@ footer .copyright-text p {
     color: var(--charcoal-ink);
     text-transform: uppercase;
     text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .era-description {
-    font-family: var(--text-font);
-    color: var(--charcoal-ink);
-    text-align: center;
+  font-family: var(--text-font);
+  color: var(--charcoal-ink);
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
+
+.era-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto !important;
+  align-content: start;
+  gap: 10px;
+}
+
 
 .era-item {
-    border-radius: 2px;
-    border: 2px dotted var(--green-amber);
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  min-height: auto !important; 
+  border-radius: 2px;
+  border: 2px dotted var(--green-amber);
+  padding: 5px;
+  background: transparent;
+  gap: 8px;
 }
 
+
 .era-item-text {
-    background-color: transparent;
-    border: none;
-    border-radius: 2px;
-    color: var(--burnt-terracotta);
-    font-family: var(--text-font);
-    text-align: center;
-    text-shadow: none;
+  position: static !important; 
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  border-radius: 2px;
+  color: var(--burnt-terracotta);
+  font-family: var(--text-font);
+  text-align: center;
+  text-shadow: none;
 }
 
 .era-items img {
+  width: 100%;
+  height: auto !important; 
+  aspect-ratio: 1 / 1; /* Keeps images uniform squares */
+  object-fit: cover;
   border-radius: 20%;
   border: 2px solid var(--charcoal-ink);
   filter:
@@ -529,6 +562,24 @@ footer .copyright-text p {
   mix-blend-mode: multiply;
 }
 
+@media (max-width: 991px) {
+    /* Make the container full width */
+    .eras .col-12 {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Remove the 2-column split so images are big */
+    .era-items {
+        column-count: 1; 
+        column-rule: none;
+    }
+    
+    .era-title {
+        font-size: 1.8rem;
+    }
+}
 
 /* -------------------------------
     8. ITEM PAGE 
@@ -642,11 +693,68 @@ footer .copyright-text p {
 /* -------------------------------
     9. DOCUMENTATION
 --------------------------------- */
-.documentation-page h3, h4 {
-  border-bottom: 2px solid var(--charcoal-ink);
+.table-of-contents {
+  background-color: transparent !important;
 }
 
-.documentation-page h5, h6 {
+.table-of-contents h4 {
+  font-family: var(--default-font) !important;
+  color: var(--charcoal-ink) !important;
+  text-transform: uppercase !important;
+}
+
+.list-unstyled {
+  font-family: var(--text-font);
+  color: var(--charcoal-ink);
+}
+
+.table-of-contents .card-body > .list-unstyled > li > a {
+  font-family: var(--sub-header-font);
+}
+
+.documentation-page h3 {
   border: none;
+  font-family: var(--sub-header-font);
 }
 
+.documentation-page h3::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background-color: var(--charcoal-ink);
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.documentation-page h4, h5, h6 {
+  border: none;
+  font-family: var(--text-font);
+  text-transform: capitalize;
+}
+
+#documentation ul:not(.list-unstyled),
+#documentation ol:not(.list-unstyled) {
+  font-family: var(--text-font);
+  color: var(--charcoal-ink);
+  padding-left: calc(clamp(1rem, 3vw, 2rem) + 1.5rem);
+  padding-right: clamp(1rem, 3vw, 2rem);
+  margin-inline: auto; 
+  max-width: 85ch;
+  text-align: left;
+  list-style-position: outside;
+}
+
+p#bibliography {
+  font-family: var(--sub-header-font);
+}
+
+#documentation ol a,
+#documentation a {
+  color: var(--charcoal-ink);
+}
+
+#documentation code {
+  color: var(--burnt-terracotta);
+}
