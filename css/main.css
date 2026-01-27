@@ -971,7 +971,7 @@ footer a {
 }
 
 .era-title {
-    font-family: "Times New Roman", serif;
+    font-family: var(--default-font);
     font-size: 20px;  /* slightly smaller */
     font-weight: 400;
     color: var(--Greyscale-900);
@@ -983,7 +983,7 @@ footer a {
   padding: 0 !important;
   margin-inline: 0 !important;
   max-width: 100% !important;
-  font-family: "Times New Roman", serif;
+  font-family: var(--default-font);
   font-size: 14px;
   color: var(--Greyscale-900);
   margin: 0;
