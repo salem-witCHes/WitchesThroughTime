@@ -1590,3 +1590,7 @@ nav.navbar {
     transform: translateY(-6px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
+
+.row.gx-0.mb-4.item-table {
+  height: 546px;
+}
