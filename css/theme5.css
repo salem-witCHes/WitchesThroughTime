@@ -824,62 +824,6 @@ footer {
     pointer-events: none; 
 }
 
-
-/* -------------------------------------
-   WINDOWS 95 BUTTON CORE
-   ------------------------------------- */
-
-.win95-btn {
-    position: relative;
-    display: inline-block;
-
-    font-family: var(--default-font) !important;
-    font-size: 14px !important;
-    color: var(--win-text) !important;
-    text-decoration: none !important;
-
-    padding: 10px 20px !important;
-
-    background-color: var(--win-grey) !important;
-    border: none !important;
-    border-radius: 0 !important;
-
-    box-shadow: inset 2px 2px 0px var(--win-white),
-                inset -2px -2px 0px var(--win-dark-grey),
-                1px 1px 0px 0px #000 !important;
-
-    transition: none !important;
-}
-
-.win95-btn:hover {
-    background-color: var(--win-grey) !important;
-    color: var(--win-text) !important;
-    transform: none !important;
-}
-
-.win95-btn:active {
-    background-color: #E6E6E6 !important;
-    box-shadow: -2px -2px 0 0 #F0F0F0 inset, 
-                2px 2px 0 0 #262626 inset, 
-                4px 4px 0 0 #7E7E7E inset, 
-                -4px -4px 0 0 #B1B1B1 inset !important;
-    transform: translate(1px, 1px) !important;
-}
-
-.win95-btn:active::after {
-    content: "";
-    position: absolute;
-    top: 4px; left: 4px; right: 4px; bottom: 4px;
-    border: 1px dashed #1A1A1A;
-    pointer-events: none;
-}
-
-.item-page .btn-outline-dark {
-    composes: win95-btn;
-}
-.item-page .btn-outline-dark {
-    @extend .win95-btn;
-}
 #room-nav-controls .btn {
     position: relative;
     display: inline-block;

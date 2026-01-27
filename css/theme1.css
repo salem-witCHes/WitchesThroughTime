@@ -366,6 +366,7 @@ footer a {
     
 /* ----------------- Link Documentation Button ----------------- */
 .introduction, .link-documentation {
+    max-width: 90%;
     
     text-align: center;
 }
@@ -630,4 +631,59 @@ footer a {
 .custom-room-btn:hover::before,
 .custom-room-btn:hover::after {
     opacity: 1;               /* show lines-necessary */
+}
+/* Map page room navigation buttons (reuse link style) */
+#room-nav-controls .btn {
+    position: relative;
+    display: inline-block;
+    font-family: var(--default-font);
+    font-weight: 400;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: var(--default-font-color) !important;
+    border: 0;
+    background: none !important;
+    box-shadow: none !important;
+    transition: font-weight 0.2s ease;
+    margin: 16px 20px 20px 20px !important;
+    padding: 6px 12px !important;
+}
+
+#room-nav-controls .btn:hover {
+    font-weight: 900;
+}
+
+/* Top line */
+#room-nav-controls .btn::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    width: 80px;
+    height: 20px;
+    background: url("../img/early-modern-era/line.svg") no-repeat center;
+    background-size: contain;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Bottom line */
+#room-nav-controls .btn::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    width: 80px;
+    height: 20px;
+    background: url("../img/early-modern-era/line.svg") no-repeat center;
+    background-size: contain;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#room-nav-controls .btn:hover::before,
+#room-nav-controls .btn:hover::after {
+    opacity: 1;
 }
