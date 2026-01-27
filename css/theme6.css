@@ -57,9 +57,7 @@ p {
   line-height: 1.6;
   margin-top: 0;
   margin-bottom: 1em;
-  /* keeps text readable on wide screens */
 }
-
 
 /* --------------------------
        3. Layout components: Background, Nav & Footer
@@ -142,7 +140,7 @@ p {
 }
 
 .navbar .nav-link.active {
-  color: black !important;    /* important! to override the variable --bs-navbar-active-color */
+  color: black !important; 
   text-decoration: none;
   background-color: var(--erin-green);
   box-shadow: var(--glow-green);
@@ -162,12 +160,12 @@ p {
 }
 
 .navbar-toggler:focus {
-    box-shadow: none !important; /* remove any inner shadow */
+    box-shadow: none !important; 
 }
 
 .navbar-toggler-icon {
     background-image: none !important;
-    opacity: 1 !important; /* remove Bootstrap dimming */
+    opacity: 1 !important; 
 }
 
 .navbar-toggler .navbar-toggler-icon {
@@ -204,10 +202,7 @@ footer a:hover {
   color: var(--magenta-glitch);
 }
 
-.bi-github {
-  color: var(--erin-green);
-}
-
+.bi-github, 
 .bi-envelope {
   color: var(--erin-green);
 }
@@ -248,11 +243,11 @@ footer a:hover {
 
 /* ----- Carousel ----- */
 
-/* High tech viewport effect */
 .carousel-frame-wrapper {
   padding: 20px;
 }
 
+/* High tech viewport effect */
 .carousel {
     position: relative;
     border: 3px solid var(--electric-cyan);
@@ -260,10 +255,10 @@ footer a:hover {
       var(--glow-cyan),
       0 0 15px var(--magenta-glitch);
     background-color: var(--background-color);
-    overflow: visible !important; /* Allow brackets to sit on the edge */
+    overflow: visible !important; 
 }
 
-/* Corner Brackets (Target Reticles) */
+/* Corner Brackets */
 .carousel::before,
 .carousel::after {
     content: '';
@@ -271,7 +266,7 @@ footer a:hover {
     width: 40px;
     height: 40px;
     border: 3px solid var(--magenta-glitch);
-    z-index: 3000; /* Higher than controls and images */
+    z-index: 3000; 
     pointer-events: none;
     filter: drop-shadow(0 0 5px var(--magenta-glitch));
 }
@@ -292,7 +287,7 @@ footer a:hover {
     border-top: none;
 }
 
-/* The "Scanning" Data HUD */
+/* "STREAMING LIVE" text in the top-left */
 .carousel-inner::before {
     content: "REC ● LINK_ESTABLISHED // STREAMING_LIVE";
     position: absolute;
@@ -307,7 +302,7 @@ footer a:hover {
     animation: text-flicker 4s infinite;
 }
 
-/* Remove bootstrap default icons */
+/* Remove bootstrap default arrows */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     background-image: none !important;
@@ -323,7 +318,7 @@ footer a:hover {
     background-size: contain;
 }
 
-/* Custom right arrow → rotated version */
+/* Custom right arrow (rotated version) */
 .carousel-control-next-icon {
     background-image: var(--arrow-icon) !important;
     width: 50px !important;
@@ -360,11 +355,12 @@ footer a:hover {
   }
 }
 
+
 /* ----- Title and Intro ----- */
 
 /* Typing effect for title */
 .cyberpunk-animation {
-  --chars: 21; /* number of visible characters */
+  --chars: 21; /* number of visible characters in "WITCHES THROUGH TIME" */
 
   font: bold 200% var(--font-default), monospace;
   color: var(--erin-green);
@@ -384,7 +380,7 @@ footer a:hover {
       caret 0.6s step-end infinite;
 }
 
-/* 21 = number of characters in "WITCHES THROUGH TIME" */
+/* matches character count */
 @keyframes typing {
   0% { width: 0ch; }
   50% { width: 21ch; }     /* typing phase */
@@ -396,7 +392,7 @@ footer a:hover {
   50% { border-color: transparent; }
 }
 
-/* on small screens we disable the typing animation */
+/* On small screens we disable the typing animation */
 @media (max-width: 640px) {
   .cyberpunk-animation {
     white-space: normal;     /* allow wrapping */
@@ -406,6 +402,7 @@ footer a:hover {
     display: block;
   }
 }
+
 
 /* Apply padding to the container to prevent text touching screen edges */
 .introduction-text,
@@ -447,7 +444,6 @@ footer a:hover {
 /* Hover effects */
 .link-documentation a:hover::after {
   animation: glitch_4011 1s;
-  text-shadow: 10 10px 10px black;
   animation-timing-function: steps(2, end);
   text-shadow: -3px -3px 0px var(--electric-cyan), 3px 3px 0px var(--magenta-glitch);
   background-color: transparent;
@@ -518,13 +514,12 @@ footer a:hover {
   }
 }
 
-.introduction-title h2::after {
-  background: var(--erin-green);        /* change color decorative line after heading */
+/* Change color decorative line after heading */
+.introduction-title h2::after, 
+.documentation-title h2::after {
+  background: var(--erin-green);        
 }
 
-.documentation-title h2::after {
-  background: var(--erin-green);
-}
 
 
 /* -------------------------------
@@ -533,10 +528,6 @@ footer a:hover {
 #museum-walls {
   fill: var(--erin-green);
   filter: drop-shadow(0 0 6px var(--erin-green));
-}
-
-#entrance-door path {
-  stroke: var(--erin-green) !important;
 }
 
 #text-entrance-room,
@@ -549,26 +540,12 @@ footer a:hover {
   font-weight: 600;
 }
 
-/* Define the hover effect */
+/* Hover effect and active state */
 #entrance-room:hover,
 #first-room:hover,
 #second-room:hover,
 #third-room:hover, 
-#fourth-room:hover {
-  /* This rule will override the default rule above */
-  fill: var(--erin-green) !important; 
-  filter: drop-shadow(0 0 10px var(--erin-green));
-}
-
-#entrance-room:hover + #text-entrance-room,
-#first-room:hover + #text-first-room,
-#second-room:hover + #text-second-room,
-#third-room:hover + #text-third-room, 
-#fourth-room:hover + #text-fourth-room {
-  fill: var(--magenta-glitch) !important;
-  text-shadow: 0 0 6px var(--magenta-glitch);
-} 
-
+#fourth-room:hover, 
 #entrance-room.active,
 #first-room.active,
 #second-room.active,
@@ -578,6 +555,17 @@ footer a:hover {
   filter: drop-shadow(0 0 10px var(--erin-green));
 }
 
+/* Hover > text relationship */
+#entrance-room:hover + #text-entrance-room,
+#first-room:hover + #text-first-room,
+#second-room:hover + #text-second-room,
+#third-room:hover + #text-third-room, 
+#fourth-room:hover + #text-fourth-room {
+  fill: var(--magenta-glitch) !important;
+  text-shadow: 0 0 6px var(--magenta-glitch);
+} 
+
+/* Active > text relationship */
 #entrance-room.active + #text-entrance-room,
 #first-room.active + #text-first-room,
 #second-room.active + #text-second-room,
@@ -590,7 +578,9 @@ footer a:hover {
 .map-description {
   border: 2px solid var(--erin-green);
   margin-top: 25px;
+  border-radius: 0;
 }
+
 
 /* --------------------------------
        6. Exhibition page
@@ -716,7 +706,7 @@ footer a:hover {
 }
 
 .card {
-  background-color: black;
+  background-color: var(--background-color);
   box-shadow: 0px 0px 10px 0px var(--magenta-glitch);
   transition: all .3s;
   border-radius: 0;
