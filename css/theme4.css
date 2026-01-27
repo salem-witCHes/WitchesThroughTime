@@ -91,6 +91,17 @@ strong {
   padding: 0 4px;
 }
 
+#documentation a {
+  color: var(--neon-pink);
+  font-family: var(--font-default);
+  text-decoration: none;
+}
+
+#documentation li {
+  font-family: var(--font-default);
+  font-size: 1rem;
+}
+
 /* --------------------------
       3. Layout components 
 ----------------------------- */
