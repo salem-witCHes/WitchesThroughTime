@@ -1526,6 +1526,30 @@ nav.navbar {
     background-color: transparent;
 }
 
+/* Prev and next buttons */
+/* Default state for the icons */
+.btn-icon {
+  display: none; /* Hidden on desktop as per previous step */
+  color: var(--default-font-color); /* Example: A nice Bootstrap blue */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+@media (max-width: 576px) {
+  .btn-text { display: none; }
+  
+  .btn-icon {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: var(--default-font-color); /* Let's make them Red on mobile for this example */
+  }
+
+  /* Change color when the user hovers or taps the button */
+  #btn-prev:hover .btn-icon,
+  #btn-next:hover .btn-icon {
+    color: var(--surface-color); /* Darker red on hover */
+  }
+}
+
 
 
 /* -------------------------
@@ -1550,4 +1574,19 @@ nav.navbar {
 
 #documentation li {
   margin-bottom: 0.5rem;
+}
+
+/* We set display: flex for the cards of exhibition page, here we want to restore bootstrap behavior */
+.row.row-cols-1 .card {
+    display: block;
+    width: 100%;
+}
+
+.row.row-cols-1 .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.row.row-cols-1 .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }

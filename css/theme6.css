@@ -708,7 +708,7 @@ footer a:hover {
 .ellipse-2 {
     width: 60px;
     height: 60px;
-    background: url("../img/cyberpunk_timeline_icons.svg") center/contain no-repeat;
+    background: url("../img/cyberpunk/cyberpunk_timeline_icons.svg") center/contain no-repeat;
     border-radius: 0;
     position: absolute;
     top: 50%;
@@ -996,6 +996,21 @@ footer a:hover {
   animation: border-flicker 2s infinite;
   background-color: rgba(0, 255, 255, 0.2) !important;
   box-shadow: inset 0 0 15px color-mix(in srgb, var(--electric-cyan), transparent 70%);  /* box-shadow: inset 0 0 15px var(--electric-cyan); */
+}
+
+/* Prev and next buttons on mobile */
+@media (max-width: 576px) {
+  .btn-icon {
+    color: var(--electric-cyan); 
+    text-shadow: var(--glow-cyan);
+  }
+
+  /* Change color when the user hovers or taps the button */
+  #btn-prev:hover .btn-icon,
+  #btn-next:hover .btn-icon {
+    color: var(--erin-green); 
+    text-shadow: var(--glow-green);
+  }
 }
 
 

@@ -9,6 +9,9 @@
         <!-- Favicon -->
         <link rel="icon" type="image/svg+xml" href="img/logo.svg">
 
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -68,9 +71,9 @@
                         <li class="nav-item text-center"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item text-center"><a class="nav-link" href="map.html">Map</a></li>
                         <li class="nav-item text-center"><a class="nav-link active" href="chronological.html">Exhibition</a></li>
-                        <li class="nav-item text-center"><a class="nav-link" href="#">About</a></li>
                         <li class="nav-item text-center"><a class="nav-link" href="documentation.html">Documentation</a></li>
-                        <li class="nav-item text-center"><a class="nav-link" href="#">Disclaimer</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="documentation.html#disclaimer">Disclaimer</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="documentation.html#about">About</a></li>
                     </ul>
                 </div>
 
@@ -97,16 +100,16 @@
                             <img class="style-icon" src="img/vienna-secession/icon.svg" alt="Style 3">
                         </li>
                         <li class="trigger-style" data-theme="theme4">
-                            <span class="style-label" style="font-family: 'Press Start 2P', cursive;"> Windows 95</span>
-                            <img class="style-icon" src="img/windows95/theme4.svg" alt="Style 4">
+                            <span class="style-label" style="font-family: 'Archivo Black', sans-serif;">70s Feminist Publishing</span>
+                            <img class="style-icon" src="img/70s-feminist-protests/70s_feminism_icon.svg" alt="Style 4">
                         </li>
                         <li class="trigger-style" data-theme="theme5">
-                            <span class="style-label" style="font-family: 'Archivo Black', sans-serif;">70s Feminist protests</span>
-                            <img class="style-icon" src="img/70s-feminist-protests/70s_feminism_icon.svg" alt="Style 5">
+                            <span class="style-label" style="font-family: 'Press Start 2P', cursive;"> Windows 95</span>
+                            <img class="style-icon" src="img/windows95/theme4.svg" alt="Style 5">
                         </li>
                         <li class="trigger-style" data-theme="theme6">
                             <span class="style-label"style="font-family: 'Orbitron', sans-serif;">Cyberpunk 2035</span>
-                            <img class="style-icon" src="img/cyberpunk_icon.svg" alt="Style 6">
+                            <img class="style-icon" src="img/cyberpunk/cyberpunk_icon.svg" alt="Style 6">
                         </li>
                         <li class="trigger-style" id="resetTheme">
                             <span class="style-label"> Reset to Default</span>
@@ -183,14 +186,20 @@
                     </div>
                     
                     <div class="card-footer d-flex justify-content-between">
-                        <button type="button" class="btn m-auto" id="btn-prev">Previous</button>
+                        <button type="button" class="btn m-auto" id="btn-prev">
+                            <span class="btn-text">Previous</span>
+                            <i class="fa-solid fa-chevron-left btn-icon"></i>
+                        </button>
                         <div id="room-nav-controls" class="d-none text-center">
                             <span class="text-muted small">Current Room: <span id="current-room-name"></span></span>
                             <br>
                             <button class="btn btn-sm">Prev Room</button>
                             <button class="btn btn-sm">Next Room</button>
                         </div>
-                        <button type="button" class="btn m-auto" id="btn-next">Next</button>
+                        <button type="button" class="btn m-auto" id="btn-next">
+                            <span class="btn-text">Next</span>
+                            <i class="fa-solid fa-chevron-right btn-icon"></i>
+                        </button>
                     </div>
                 </div>
             </div>
