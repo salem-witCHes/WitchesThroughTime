@@ -1402,7 +1402,8 @@ nav.navbar {
 .item-box {
     flex-direction: column; 
     position: relative;
-    min-height: 300px; 
+    aspect-ratio: 2 / 1;  /* width : height = 2:1 -> height = 0.5 * width */
+    min-height: 500px;    /* optional: prevent it from getting too small */
 }
 
 .item-box a {
@@ -1600,9 +1601,9 @@ nav.navbar {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-.row.gx-0.mb-4.item-table {
+/*.row.gx-0.mb-4.item-table {
   margin-left: auto;
   margin-right: auto;
-  width: 1000px;
-  height: 500px;
+  min-width: 1000px;
+  min-height: 500px;
 }
