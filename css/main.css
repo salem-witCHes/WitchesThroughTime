@@ -907,7 +907,9 @@ footer a {
 
 
 
-/* ----------------- Toggle Section ----------------- */
+/* ------------------------------------
+                  TOGGLE
+-------------------------------------- */
 .toggle-frame {
   position: sticky;
   top: var(--nav-height);
@@ -1049,13 +1051,11 @@ footer a {
   }
 }
 
-/* --- ERA CARDS UNDER TOGGLE --- */
-/* add padding-bottom to container eras */
+/*  ERA CARDS UNDER TOGGLE  */
 .p-3 {
   padding-bottom: 12px;
 }
 
-/* Ensure all ERA cards have equal height and 4 cards per row */
 .era-card {
   display: flex;
   flex-direction: column;
@@ -1074,7 +1074,6 @@ footer a {
 
 .era-card {
   position: relative;
-  /* Ensure the card is the coordinate reference */
 }
 
 .bottom-left,
@@ -1086,7 +1085,6 @@ footer a {
   gap: 0;
 }
 
-/* Ho aggiunto questo, controllare se va bene con tutto il resto */
 .era-card-content {
   display: flex;
   flex-direction: column;
@@ -1100,17 +1098,14 @@ footer a {
 /* Wrap title + description in a header div */
 .era-card-header {
   flex: 0 0 auto;
-  /* takes only its natural height */
 }
 
 .era-title {
   font-family: var(--default-font);
   font-size: 20px;
-  /* slightly smaller */
   font-weight: 400;
   color: var(--Greyscale-900);
   margin-bottom: 2px;
-  /* reduced space to description */
 }
 
 .era-description {
@@ -1132,10 +1127,8 @@ footer a {
 .era-items {
   display: grid;
   flex: 1 1 auto;
-  /* grid of images fills remaining space */
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 145px);
-  /* 3 rows */
   gap: 10px;
 }
 
@@ -1143,9 +1136,7 @@ footer a {
 .era-item {
   position: relative;
   width: 100%;
-  /* fill the grid cell */
   height: 140px;
-  /* match row height */
   border-radius: 8px;
   overflow: hidden;
 }
@@ -1192,7 +1183,6 @@ footer a {
   .era-item-text {
     font-size: 12px;
     -webkit-line-clamp: 2;
-    /* only 2 lines */
   }
 }
 
@@ -1200,23 +1190,18 @@ footer a {
 header {
   position: sticky;
   top: 0;
-  z-index: 10000;
-  /* higher than toggle */
+  z-index: 10000;   /* higher than toggle- important, don't change */
   background: var(--background-color);
   -webkit-backdrop-filter: none;
-  /* avoid creating new stacking context */
-  backdrop-filter: none;
+  backdrop-filter: none;   /* avoid creating new stacking context */
 }
 
 /* Ensure navbar itself doesn't create an interfering stacking context */
 nav.navbar {
   position: relative;
-  /* let header do the sticky job */
   top: 0;
-  z-index: 10001;
-  /* above header background */
-  background: transparent;
-  /* header provides background */
+  z-index: 10001; /* above header background */
+  background: transparent; /* header provides background */
 }
 
 
@@ -1315,7 +1300,6 @@ nav.navbar {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* vertically center the title */
 }
 
 .text-wrapper {
@@ -1342,7 +1326,6 @@ nav.navbar {
   z-index: 0;
 }
 
-/* Removes default link styling for your cards */
 .text-decoration-none {
   text-decoration: none;
   color: inherit;
@@ -1358,64 +1341,47 @@ nav.navbar {
 
   /* Center the entire timeline content horizontally */
   .timeline-lines {
-    /* Force full width and center children lines */
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Center all lines */
   }
 
-  /* 2. Make each card line take full width, and stack cards vertically */
+  
   .line {
     width: 100%;
     display: flex;
     justify-content: center;
-    /* Center the card horizontally */
     align-items: flex-start;
     margin-bottom: 20px;
-    /* Add spacing between lines */
+
   }
 
-  /* 3. Make the card itself responsive and centered */
   .card {
-    /* Allow card to shrink, but stop at a readable minimum */
     width: 85%;
-    /* Use a large percentage of the screen width */
     min-width: 250px;
-    /* Don't allow it to shrink below this size */
-    /* Center the card if its width is less than 100% of its container */
     margin: 0 auto;
-    /* On mobile, cards should stack their content (image/text) vertically */
     flex-direction: column;
     align-self: center;
   }
 
-  /* OVERRIDE SPECIFICITY TO CENTER CARDS *** */
   .line:nth-child(odd),
   .line:nth-child(even) {
     justify-content: center;
-    /* This overrides the flex-start/flex-end rules */
   }
 
-  /* 4. Fix image/text alignment within the card on mobile */
   .card .picture,
   .card .text {
     width: 100%;
   }
-
-  /* Fix image radius for stacked layout */
   .card .picture {
-    /* Remove specific left-side rounding */
     border-radius: 8px 8px 0 0;
   }
 
   .left-card .picture {
-    /* Override specific left-side rounding for consistency */
     border-radius: 8px 8px 0 0;
   }
 
-  /* put all captions at the bottom of the images */
   .card.left-card {
     flex-direction: column-reverse;
   }
@@ -1765,11 +1731,4 @@ nav.navbar {
 .row.row-cols-1 .card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-}
-
-/*.row.gx-0.mb-4.item-table {
-  margin-left: auto;
-  margin-right: auto;
-  min-width: 1000px;
-  min-height: 500px;
 }
