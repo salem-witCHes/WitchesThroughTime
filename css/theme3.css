@@ -611,14 +611,10 @@ footer .copyright-text p {
   padding: 0 !important;
   /* Allows inner lines to touch the edge */
   background-image:
-    radial-gradient(circle, var(--green-amber) 2.5px, transparent 3px),
-    /* Top */
-    radial-gradient(circle, var(--green-amber) 2.5px, transparent 3px),
-    /* Bottom */
-    radial-gradient(circle, var(--green-amber) 2.5px, transparent 3px),
-    /* Left */
-    radial-gradient(circle, var(--green-amber) 2.5px, transparent 3px);
-  /* Right */
+    radial-gradient(circle, var(--green-amber) 2.5px, transparent 3px), /* Top */
+    radial-gradient(circle, var(--green-amber) 2.5px, transparent 3px), /* Bottom */
+    radial-gradient(circle, var(--green-amber) 2.5px, transparent 3px), /* Left */
+    radial-gradient(circle, var(--green-amber) 2.5px, transparent 3px); /* Right */
   background-position: top left, bottom left, top left, top right;
   background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
   background-size: 10px 6px, 10px 6px, 6px 10px, 6px 10px;
@@ -630,16 +626,8 @@ footer .copyright-text p {
   background-image: radial-gradient(circle, var(--green-amber) 2.5px, transparent 3px);
   background-position: bottom left;
   background-repeat: repeat-x;
-  background-size: 10px 6px;
+  background-size: 10px 10px;
   margin-bottom: 0 !important;
-}
-
-.table-box {
-  height: 100%;
-  background-image: radial-gradient(circle, var(--green-amber) 2.5px, transparent 3px);
-  background-position: top left;
-  background-repeat: repeat-y;
-  background-size: 6px 10px;
 }
 
 .item-box,
@@ -650,21 +638,17 @@ footer .copyright-text p {
   border: none;
 }
 
-/* Mobile Fix: On small screens, switch vertical line to horizontal */
 @media (max-width: 767px) {
   .table-box {
     background-image: radial-gradient(circle, var(--green-amber) 2.5px, transparent 3px);
     background-position: top left;
     background-repeat: repeat-x;
-    /* Switch to horizontal line */
     background-size: 10px 6px;
   }
 }
 
 .table tr {
-  border: 1px solid var(--green-amber);
-  /* border-bottom: 1px solid var(--green-amber);
-    border-top: 1px solid var(--green-amber); */
+  border-bottom: 2px dotted var(--green-amber);
   background-color: transparent;
   color: var(--burnt-walnut);
 }
@@ -732,6 +716,10 @@ footer .copyright-text p {
 /* -------------------------------
     9. DOCUMENTATION
 --------------------------------- */
+.documentation-intro{
+  
+} 
+
 #documentation h1::after {
   content: "";
   display: block;
@@ -747,7 +735,6 @@ footer .copyright-text p {
 }
 
 .table-of-contents {
-  
   color: var(--burnt-walnut) !important;
   border: 2px dotted var(--green-amber);
   text-align: center;
