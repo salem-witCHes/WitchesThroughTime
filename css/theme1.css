@@ -354,7 +354,7 @@ footer a {
     background-size: contain;
 }
 
-.introduction-title h2::after, .documentation-title h2::after {
+.introduction-title h2::after, .link-documentation-title h2::after {
     content: "";
     width: 600px;
     height: 25px;
@@ -363,7 +363,7 @@ footer a {
 }
 @media (max-width: 500px) {
   .introduction-title h2::after,
-  .documentation-title h2::after {
+  .link-documentation-title h2::after {
       width: 100%;        /* full width of container */
   }
 }

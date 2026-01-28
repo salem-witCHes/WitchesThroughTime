@@ -423,7 +423,7 @@ footer a:hover {
 
 /* Change color decorative line after heading */
 .introduction-title h2::after, 
-.documentation-title h2::after {
+.link-documentation-title h2::after {
   background: var(--erin-green);        
 }
 

@@ -121,12 +121,10 @@ header {
   border: 2px dotted var(--burnt-walnut);
 }
 
-/* Change theme button and logo color */
 .navbar svg path {
   fill: var(--hexed-walnut);
 }
 
-/* Change hamburger icon */
 .navbar-toggler {
   color: var(--hexed-walnut);
 }

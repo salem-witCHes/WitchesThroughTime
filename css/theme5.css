@@ -43,7 +43,7 @@ body {
     content: none !important;
 }
 
-.documentation-title h2::after {
+.link-documentation-title h2::after {
     content: none !important;
 }
 
@@ -468,7 +468,7 @@ footer {
     font-size: 16px !important;
 }
 
-.documentation-title {
+.link-documentation-title {
     background-color: var(--win-blue);
     
     margin-left: -4px !important; 
@@ -481,7 +481,7 @@ footer {
     align-items: left;
 }
 
-.documentation-title h2 {
+.link-documentation-title h2 {
     color: var(--win-white) !important;
     font-family: var(--default-font) !important;
     font-weight: bolder !important;

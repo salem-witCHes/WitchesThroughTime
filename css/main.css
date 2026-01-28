@@ -731,7 +731,7 @@ scaleX(-1) re-introduces the horizontal flip */
 }
 
 .introduction-title h2::after,
-.documentation-title h2::after {
+.link-documentation-title h2::after {
   content: "";
   display: block;
   width: 60px;
