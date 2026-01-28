@@ -67,7 +67,7 @@ p {
   margin: 4vh auto;
   padding: 2rem;
   background: var(--paper-tone);
-  border: 2px solid var(--charcoal-ink);
+  border: 2px solid var(--dark-umber);
 }
 
 /* --- MOBILE TEXT FIXES --- */

@@ -13,7 +13,7 @@
   --warm-canvas: #F0E4CC;
   --green-amber: #BAA346;
   --hexed-walnut: #9D6C44;
-  --darker-brown: #845D34;
+  --burnt-walnut: #845D34;
 }
 
 
@@ -69,7 +69,7 @@ body::after {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--default-font);
-  color: var(--darker-brown);
+  color: var(--burnt-walnut);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: normal;
@@ -77,7 +77,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   font-family: var(--text-font);
-  color: var(--darker-brown);
+  color: var(--burnt-walnut);
   font-weight: 300;
   line-height: 1.6;
   letter-spacing: 0.02em;
@@ -102,7 +102,7 @@ header {
 }
 
 .navbar-nav .nav-link {
-  color: var(--darker-brown);
+  color: var(--burnt-walnut);
   border: 2px dotted var(--green-amber);
   border-radius: 2px;
 }
@@ -111,13 +111,13 @@ header {
   text-decoration: none;
   background-color: var(--green-amber);
   color: var(--warm-canvas);
-  border: 2px dotted var(--darker-brown);
+  border: 2px dotted var(--burnt-walnut);
 }
 
 .navbar .nav-link.active {
   color: var(--warm-canvas) !important;
   background-color: var(--green-amber);
-  border: 2px dotted var(--darker-brown);
+  border: 2px dotted var(--burnt-walnut);
 }
 
 /* Change theme button and logo color */
@@ -136,7 +136,7 @@ header {
 
 .navbar .layout-container .layout-options {
     background-color: var(--warm-canvas);
-    border: 4px solid var(--darker-brown);
+    border: 4px solid var(--burnt-walnut);
     border-radius: 0px;
 }
 
@@ -195,7 +195,7 @@ footer .copyright-text {
 }
 
 footer .copyright-text p {
-  color: var(--darker-brown) !important;
+  color: var(--burnt-walnut) !important;
 }
 
 
@@ -263,7 +263,7 @@ footer .copyright-text p {
 }
 
 .carousel-caption a:hover {
-  color: var(--darker-brown);
+  color: var(--burnt-walnut);
   transform: none;
 }
 
@@ -391,7 +391,7 @@ footer .copyright-text p {
 }
 
 #museum-walls {
-  fill: var(--darker-brown);
+  fill: var(--burnt-walnut);
 }
 
 #entrance-door path {
@@ -415,7 +415,7 @@ footer .copyright-text p {
 #text-third-room, 
 #text-fourth-room {
   font-family: var(--default-font) !important;
-  fill: var(--darker-brown) !important;
+  fill: var(--burnt-walnut) !important;
   font-weight: 600;
 }
 
@@ -490,7 +490,7 @@ footer .copyright-text p {
 
 .active-text {
    text-decoration-line: underline;
-   color: var(--darker-brown) !important;
+   color: var(--burnt-walnut) !important;
    text-decoration-style: dotted;
 }
 
@@ -505,7 +505,7 @@ footer .copyright-text p {
 }
 
 #toggleIcon path {
-  fill: var(--darker-brown) !important;
+  fill: var(--burnt-walnut) !important;
 }
 
 #inactiveIcon rect {
@@ -513,7 +513,7 @@ footer .copyright-text p {
 }
 
 #toggleIcon rect {
-  fill: var(--darker-brown) !important;
+  fill: var(--burnt-walnut) !important;
 }
 
 #inactiveIcon path {
@@ -528,13 +528,13 @@ footer .copyright-text p {
 
 .text-wrapper {
     font-family: var(--default-font);
-    color: var(--darker-brown);
+    color: var(--burnt-walnut);
     text-transform: uppercase;
 }
 
 .item-date {
   font-family: var(--text-font);
-  color: var(--darker-brown);
+  color: var(--burnt-walnut);
   font-style: normal;
   display: inline-flex;
   align-items: center;
@@ -547,7 +547,7 @@ footer .copyright-text p {
   display: block;
   height: 15px; 
   width: 5px;
-  background-color: var(--darker-brown);
+  background-color: var(--burnt-walnut);
   --mask-pattern: linear-gradient(to bottom, black 60%, transparent 60%);
   -webkit-mask-image: var(--mask-pattern);
   mask-image: var(--mask-pattern);
@@ -559,7 +559,7 @@ footer .copyright-text p {
 
 .ellipse,
 .ellipse-2 {
-    background: var(--darker-brown);
+    background: var(--burnt-walnut);
     border-radius: 2px;
 }
 
@@ -575,7 +575,7 @@ footer .copyright-text p {
 
 .era-title {
     font-family: var(--default-font);
-    color: var(--darker-brown);
+    color: var(--burnt-walnut);
     letter-spacing: 0.1em;
     font-weight: normal;
     text-transform: uppercase;
@@ -583,7 +583,7 @@ footer .copyright-text p {
 
 .era-description {
     font-family: var(--text-font);
-    color: var(--darker-brown);
+    color: var(--burnt-walnut);
 }
 
 .era-item {
@@ -596,9 +596,9 @@ footer .copyright-text p {
     font-size: 0.7rem;
     padding: 2px 4px;
     background-color: var(--warm-canvas);
-    border: 1px dotted var(--darker-brown);
+    border: 1px dotted var(--burnt-walnut);
     border-radius: 2px;
-    color: var(--darker-brown);
+    color: var(--burnt-walnut);
     font-family: var(--text-font);
     text-align: center;
     text-shadow: none;
@@ -660,14 +660,14 @@ footer .copyright-text p {
     /* border-bottom: 1px solid var(--green-amber);
     border-top: 1px solid var(--green-amber); */
     background-color: transparent;
-    color: var(--darker-brown);
+    color: var(--burnt-walnut);
 }
 
 .table th,
 .table td {
     border: none;
     background-color: transparent;
-    color: var(--darker-brown);
+    color: var(--burnt-walnut);
 }
 
 .table thead {
@@ -699,7 +699,7 @@ footer .copyright-text p {
 .card-footer button {
   border: 2px dotted var(--green-amber);  /* outlined look */
   border-radius: 2px;             /* rounded edges */
-  color: var(--darker-brown);
+  color: var(--burnt-walnut);
   background-color: var(--warm-canvas);
 }
 
@@ -741,19 +741,19 @@ footer .copyright-text p {
 
 .table-of-contents {
   background-color: transparent !important;
-  color: var(--darker-brown) !important;
+  color: var(--burnt-walnut) !important;
   border: 2px dotted var(--green-amber); 
   text-align: center;
 }
 
 .table-of-contents h4 {
   font-family: var(--default-font) !important;
-  color: var(--darker-brown) !important;
+  color: var(--burnt-walnut) !important;
 }
 
 .table-of-contents a {
   font-family: var(--text-font) !important;
-  color: var(--darker-brown) !important;
+  color: var(--burnt-walnut) !important;
 }
 
 .documentation-box {
@@ -776,7 +776,7 @@ footer .copyright-text p {
 #documentation ul:not(.list-unstyled),
 #documentation ol:not(.list-unstyled) {
   font-family: var(--text-font);
-  color: var(--darker-brown);
+  color: var(--burnt-walnut);
   padding-left: calc(clamp(1rem, 3vw, 2rem) + 1.5rem);
   padding-right: clamp(1rem, 3vw, 2rem);
   margin-inline: auto; 
@@ -790,7 +790,7 @@ p#bibliography {
 }
 
 #documentation ol a {
-  color: var(--darker-brown);
+  color: var(--burnt-walnut);
 }
 
 #documentation code {
