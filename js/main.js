@@ -54,7 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
   } 
 });
 
-// JS for themes switcher 
+
+
+// --- THEME SWITCHER ---
 
 document.addEventListener("DOMContentLoaded", function () {
   const layoutButton = document.getElementById("layoutButton");
@@ -204,7 +206,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Toggle switcher JS
+
+
+// --- Toggle switcher JS ---
 document.addEventListener("DOMContentLoaded", () => {
   const knob = document.querySelector(".toggle-knob");
   const labelChrono = document.getElementById("labelChrono");
@@ -283,7 +287,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// --- Map: rooms' descriptions 
+// --- MAP PAGE DESCRIPTIONS ---
 // JavaScript object to hold the descriptions for all rooms
 const roomData = {
     'first-room': {
@@ -373,12 +377,12 @@ function showRoomDescription(roomId) {
         currentRoom.classList.add('active');
     }
 
-    // 1. Check if the user clicked the entrance 
+    // Check if the user clicked the entrance 
     if (roomId === 'entrance-room') {
         panel.innerHTML = introHTML; // Restore intro text
         return;
     }
-    // 2. Get the data for the specific room ID
+    // Get the data for the specific room ID
     const room = roomData[roomId];
     
     if (!room) {
@@ -387,7 +391,7 @@ function showRoomDescription(roomId) {
         return;
     }
 
-    // 3. Build the new HTML content
+    // Build the new HTML content
     const newHTML = `
         <h2 class="room-title">${room.title}</h2>
         <p class="room-description">${room.description}</p>
@@ -398,7 +402,7 @@ function showRoomDescription(roomId) {
         </div>
     `;
 
-    // 4. Inject the new HTML into the target div
+    // Inject the new HTML into the target div
     // We use .innerHTML to completely replace the existing content.
     panel.innerHTML = newHTML;
 }
