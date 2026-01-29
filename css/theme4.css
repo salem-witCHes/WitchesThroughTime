@@ -90,34 +90,6 @@ strong {
   padding: 0 4px;
 }
 
-#documentation a {
-  color: var(--neon-pink);
-  font-family: var(--font-default);
-  text-decoration: none;
-  position: relative;
-}
-
-#documentation li {
-  font-family: var(--font-default);
-}
-
-#documentation p, 
-#documentation ul:not(.list-unstyled),
-#documentation ol:not(.list-unstyled) {
-  max-width: 85ch;
-  font-size: clamp(1rem, 0.9rem + 0.4vw, 1.25rem);
-  line-height: 1.6;
-  list-style-position: inside;
-  margin-bottom: 1.5rem;
-  padding-inline: clamp(1rem, 3vw, 2rem);
-}
-
-#documentation ul:not(.list-unstyled),
-#documentation ol:not(.list-unstyled) {
-  text-align: left;
-  padding-left: 0;
-}
-
 /* --------------------------
       3. Layout components 
 ----------------------------- */
@@ -776,7 +748,7 @@ footer a:hover {
 }
 
 
-/* Base style for all "Tape" buttons */
+/* Base style for all "tape" buttons */
 #length-buttons .btn, 
 #tone-buttons .btn,
 #btn-prev, 
@@ -811,7 +783,7 @@ footer a:hover {
     gap: 10px;
 }
 
-/* Rotate individual buttons slightly and randomly */
+/* Rotate individual buttons slightly */
 #length-buttons .btn:nth-child(odd),
 #tone-buttons .btn:nth-child(even) {
     transform: rotate(-1.5deg);
@@ -822,16 +794,16 @@ footer a:hover {
     transform: rotate(1.2deg);
 }
 
-/* Reset rotation on hover/active so they "straighten out" when interacted with */
+/* Reset rotation on hover/active state */
 #length-buttons .btn:hover, 
 #tone-buttons .btn:hover,
 #length-buttons .btn.active,
 #tone-buttons .btn.active {
     transform: rotate(0deg) scale(1.05);
-    z-index: 10; /* Ensure the active one sits on top */
+    z-index: 10; 
 }
 
-/* The "Active" or "Hover" Tape (Colored Tape) */
+/* Hover and active states */
 #length-buttons .btn:hover, 
 #tone-buttons .btn:hover {
     background-color: var(--classic-crimson) !important;
@@ -840,7 +812,6 @@ footer a:hover {
     box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
     opacity: 1;
 }
-
 
 #length-buttons .btn.active, 
 #tone-buttons .btn.active,
@@ -854,7 +825,7 @@ footer a:hover {
     opacity: 1;
 }
 
-/* Add a slight "grain" texture to the tape */
+/* Add a "grain" texture to the tape */
 #length-buttons .btn::after, 
 #tone-buttons .btn::after {
     content: "";
@@ -864,18 +835,17 @@ footer a:hover {
     pointer-events: none;
 }
 
-/* Prev and next buttons on mobile */
+/* Prev and Next buttons on mobile */
 @media (max-width: 576px) {
   .btn-icon {
     color: var(--vanilla-cream); 
   }
 }
 
-
 .text-box {
-    column-count: 1; /* You can change to 2 for a newspaper feel on large screens */
+    column-count: 1;
     padding: 20px;
-    background-image: radial-gradient(var(--silver) 0.5px, transparent 0.5px); /* Subtle paper tooth/dots */
+    background-image: radial-gradient(var(--silver) 0.5px, transparent 0.5px); /* dotted paper background */
     background-size: 10px 10px;
 }
 
@@ -888,37 +858,21 @@ footer a:hover {
 }
 
 .card-footer {
-    border: none; /* Remove the standard line */
+    border: none; 
     background: transparent;
     padding-top: 25px;
 }
 
-/* Make the Room Nav look like a smaller, typed scrap of paper underneath */
+/* Room Nav look like a small scrap of paper */
 #room-nav-controls {
     background: var(--classic-crimson);
     border: 1px solid #ccc;
     padding: 10px;
-    /* font-family: "Courier New", monospace; */
-    /* box-shadow: 2px 2px 5px rgba(0,0,0,0.05); */
-    box-shadow: 4px 4px 0px var(--carbon-black); /* Hard retro shadow */
+    box-shadow: 4px 4px 0px var(--carbon-black); 
     transform: rotate(-1deg);
 }
 
-/* #room-nav-controls .text-muted {
-    font-family: var(--font-secondary);
-}
-
-#current-room-name {
-    text-transform: uppercase;
-    color: var(--vanilla-cream) !important;
-} */
-
-/* Target the parent span to make sure it doesn't override the child */
-#room-nav-controls .text-muted {
-    opacity: 1; /* text-muted often lowers opacity */
-}
-
-/* Specific target for the room name */
+/* Room name */
 #room-nav-controls #current-room-name {
     color: var(--vanilla-cream) !important;
     font-weight: 900;
@@ -926,4 +880,35 @@ footer a:hover {
 }
 
 
+/* ----------------------
+       DOCUMENTATION PAGE 
+------------------------ */
+
+#documentation a {
+  color: var(--neon-pink);
+  font-family: var(--font-default);
+  text-decoration: none;
+  position: relative;
+}
+
+#documentation li {
+  font-family: var(--font-default);
+}
+
+#documentation p, 
+#documentation ul:not(.list-unstyled),
+#documentation ol:not(.list-unstyled) {
+  max-width: 85ch;
+  font-size: clamp(1rem, 0.9rem + 0.4vw, 1.25rem);
+  line-height: 1.6;
+  list-style-position: inside;
+  margin-bottom: 1.5rem;
+  padding-inline: clamp(1rem, 3vw, 2rem);
+}
+
+#documentation ul:not(.list-unstyled),
+#documentation ol:not(.list-unstyled) {
+  text-align: left;
+  padding-left: 0;
+}
 

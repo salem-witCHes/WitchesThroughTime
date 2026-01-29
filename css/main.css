@@ -405,7 +405,6 @@ scaleX(-1) re-introduces the horizontal flip */
 
 .navbar .nav-link.active {
   color: var(--surface-color) !important;
-  /* important! to override the variable --bs-navbar-active-color */
   text-decoration: none;
   background-color: var(--Greyscale-900);
 }
@@ -418,11 +417,8 @@ scaleX(-1) re-introduces the horizontal flip */
   justify-content: center;
   top: 24px;
   margin-left: auto;
-  /* right: 0; */
   transform: translateY(-50%);
-  /* Perfect vertical centering */
-  z-index: 9999;
-  /* above overlay */
+  z-index: 9999;    /* above overlay */
 }
 
 .navbar .layout-container .layout-button {
@@ -451,20 +447,15 @@ scaleX(-1) re-introduces the horizontal flip */
 }
 
 .navbar .layout-container .layout-options {
-  display: none;
-  /* hidden by default */
+  display: none; /* hidden by default */
   position: absolute;
   top: 50px;
-  /* adjust based on where you want it */
   right: 0;
   flex-direction: column;
   gap: 12px;
   padding: 16px;
   list-style: none;
   margin: 0;
-  /* background: white;     /* Uncomment this if you want visible background for the dropdown
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15); */
   z-index: 9999;
 }
 
@@ -478,9 +469,7 @@ scaleX(-1) re-introduces the horizontal flip */
   background-color: white;
   display: flex;
   align-items: center;
-  /* vertical centering */
   justify-content: flex-end;
-  /* Items are positioned at the end of the container */
   gap: 16px;
   padding: 6px 12px;
   width: 45px;
@@ -494,7 +483,6 @@ scaleX(-1) re-introduces the horizontal flip */
 
 /* Hide label by default */
 .trigger-style .style-label {
-  /* display: none; */
   display: block;
   opacity: 0;
   visibility: hidden;
@@ -503,14 +491,8 @@ scaleX(-1) re-introduces the horizontal flip */
   transition: opacity 0.2s ease;
 }
 
-/* .trigger-style.active-theme .style-label {
-  opacity: 1 !important;
-  visibility: visible !important;
-} */
-
 .trigger-style:hover {
-  transform: translateY(-2px);
-  /* a little lift when you hover */
+  transform: translateY(-2px);  /* Lift on hover */
 }
 
 /* Reveal label on hover */
@@ -527,15 +509,6 @@ scaleX(-1) re-introduces the horizontal flip */
   white-space: nowrap;
   color: white;
 }
-
-/* .trigger-style:hover .style-label {
-    padding: 5px 15px;
-    align-self: center;
-    display: flex;
-    margin-left: 8px;
-    white-space: nowrap;
-    color: white;
-} */
 
 /* Image inside the circle */
 .trigger-style .style-icon {
@@ -559,10 +532,8 @@ scaleX(-1) re-introduces the horizontal flip */
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  /* change darkness here */
-  z-index: 9998;
-  /* just below the dropdown */
+  background: rgba(0, 0, 0, 0.6); /* change darkness here */
+  z-index: 9998; /* just below the dropdown with z-index: 9999*/
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -573,12 +544,11 @@ scaleX(-1) re-introduces the horizontal flip */
   visibility: visible;
 }
 
-/* --- RESPONSIVE NAVBAR --- */
+/* --- RESPONSIVE Navbar --- */
 @media (max-width: 991px) {
   #menuItems {
     padding: 20px 0;
-    border-radius: 0;
-    /* remove the round pills on smaller screens */
+    border-radius: 0; /* remove the round pills on smaller screens */
     width: 100%;
   }
 
@@ -587,18 +557,14 @@ scaleX(-1) re-introduces the horizontal flip */
     gap: 10px;
     padding: 0;
     background: none;
-    /* no pill background */
   }
 
   .navbar-toggler {
     border: none;
-    /* margin-top: -10px;   --- change this if you want to move the toggler in the corner
-      margin-right: -10px; */
   }
 
   .navbar-toggler-icon {
     filter: brightness(0);
-    /* makes it black */
     width: 28px;
     height: 28px;
   }
@@ -609,31 +575,23 @@ scaleX(-1) re-introduces the horizontal flip */
 @media (max-width: 991px) {
   .navbar .layout-container {
     position: fixed;
-    /* Changed from absolute */
     top: auto;
-    /* Reset top */
     bottom: 24px;
-    /* Position at bottom */
     right: 20px;
-    /* Position at right */
     left: auto;
-    /* Reset left */
     transform: none;
-    /* Remove centering transform */
   }
 
   /* Dropdown opens UPWARD from bottom */
   .navbar .layout-container .layout-options {
     top: auto;
-    /* Reset top positioning */
     bottom: 60px;
-    /* Position above the button */
     left: auto;
     right: 0;
   }
 }
 
-/* Optional: Even smaller screens */
+/* RESPONSIVE for even smaller screens */
 @media (max-width: 480px) {
   .navbar .layout-container {
     bottom: 10px;
@@ -649,7 +607,7 @@ scaleX(-1) re-introduces the horizontal flip */
 }
 
 
-/* Carousel */
+/* --- Carousel --- */
 .carousel-frame-wrapper {
   position: relative;
 }
@@ -772,8 +730,6 @@ scaleX(-1) re-introduces the horizontal flip */
 .link-documentation a:hover {
   background-color: var(--default-font-color);
   color: var(--background-color);
-  /* transform: scale(1.05); */
-  /* subtle zoom */
 }
 
 
@@ -875,16 +831,13 @@ scaleX(-1) re-introduces the horizontal flip */
   height: 2px;
   background: black;
   max-width: 90%;
-  /* or 80%, or a fixed value like 1200px */
   margin: 40px auto;
-  /* centers the line */
 }
 
 footer p {
   font-size: 1rem;
   line-height: 1.6;
   max-width: none;
-
 }
 
 footer a {
@@ -892,18 +845,12 @@ footer a {
   color: var(--default-font-color);
 }
 
-.bi-github {
-  display: inline;
-  vertical-align: middle;
-  color: black;
-}
-
+.bi-github, 
 .bi-envelope {
   display: inline;
   vertical-align: middle;
   color: black;
 }
-
 
 
 /* ------------------------------------
@@ -1392,10 +1339,8 @@ nav.navbar {
 .map-container {
   margin: 0 auto 30px auto;
   display: flex;
-  justify-content: center;
-  /* center SVG horizontally */
-  align-items: center;
-  /* center SVG vertically */
+  justify-content: center; /* center SVG horizontally */
+  align-items: center; /* center SVG vertically */
 }
 
 .map-container svg {
@@ -1410,19 +1355,17 @@ nav.navbar {
 #third-room,
 #fourth-room {
   fill: var(--background-color) !important;
-  /* Example default color */
   stroke: none;
   opacity: 0.8;
   transition: fill 0.3s, opacity 0.3s;
 }
 
-/* 2. Define the hover effect */
+/* Hover and active effect */
 #entrance-room:hover,
 #first-room:hover,
 #second-room:hover,
 #third-room:hover,
 #fourth-room:hover {
-  /* This rule will override the default rule above */
   fill: var(--Greyscale-50) !important;
   opacity: 1.0;
   cursor: pointer;
@@ -1433,7 +1376,6 @@ nav.navbar {
 #second-room.active,
 #third-room.active,
 #fourth-room.active {
-  /* This rule will override the default rule above */
   fill: var(--Greyscale-50) !important;
   opacity: 1.0;
   cursor: pointer;
@@ -1488,7 +1430,7 @@ nav.navbar {
   margin-bottom: 15px;
 }
 
-
+/* "Explore Room Items" Button */
 .custom-room-btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -1496,7 +1438,6 @@ nav.navbar {
   border-radius: 2rem;
   color: var(--default-font-color);
   text-decoration: none;
-  /* remove underline */
   font-weight: 600;
 }
 
@@ -1504,8 +1445,6 @@ nav.navbar {
   background-color: var(--default-font-color);
   color: var(--background-color);
   border: 1px solid var(--default-font-color);
-  /* transform: scale(1.05); */
-  /* subtle zoom */
 }
 
 .custom-room-btn.active {
