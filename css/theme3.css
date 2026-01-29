@@ -714,17 +714,22 @@ footer .copyright-text p {
 /* -------------------------------
     9. DOCUMENTATION
 --------------------------------- */
-.documentation-title {
+.documentation-intro {
   background-color: var(--warm-canvas);
   border: 2px solid var(--hexed-walnut);
   color: var(--burnt-walnut);
-  max-width: 60%;
+  max-width: 83%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2rem;
   padding: 1rem;
 }
 
+@media (max-width: 576px) {
+  .documentation-title h1 {
+  font-size: 1rem;
+}
+}
 
 #documentation h1::after {
   content: "";
@@ -742,7 +747,7 @@ footer .copyright-text p {
 
 .table-of-contents {
   color: var(--burnt-walnut) !important;
-  border: 2px dotted var(--green-amber);
+  border: none;
   text-align: center;
 }
 
