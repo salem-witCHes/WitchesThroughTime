@@ -650,7 +650,6 @@ scaleX(-1) re-introduces the horizontal flip */
 
 
 /* Carousel */
-/* ---------------------------------------- */
 .carousel-frame-wrapper {
   position: relative;
 }
@@ -1530,7 +1529,6 @@ nav.navbar {
   aspect-ratio: 2 / 1;
   /* width : height = 2:1 -> height = 0.5 * width */
   min-height: 500px;
-  /* optional: prevent it from getting too small */
 }
 
 .item-box a {
