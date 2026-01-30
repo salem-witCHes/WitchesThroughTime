@@ -21,6 +21,9 @@
     --tape-brown: rgba(77, 63, 41, 0.902);
     --tape-light-brown: rgba(220, 220, 190, 0.75);
 
+    /* torn edge for tape  */
+    --tape-clip-path: polygon(2% 0%, 98% 1%, 100% 15%, 98% 85%, 100% 100%, 2% 99%, 0% 85%, 2% 15%);
+
     /* decorative SVGs */
     --arrow-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='86' height='73' viewBox='0 0 86 73' fill='none'%3E%3Cg filter='url(%23filter0_d_314_307)'%3E%3Cpath d='M61.6602 63.4583H40.3983L55.89 36.1004L40.3983 8.7365H61.6602L77.1521 36.1004L61.6602 63.4583ZM62.5783 7.09741H37.6206L54.0422 36.1004L37.6206 65.0974H62.5783L78.9999 36.1004L62.5783 7.09741Z' fill='%231AFE49'/%3E%3Cpath d='M31.478 7.0001H7L23.9013 36.1004L7 65.1946H31.478L48.3793 36.1004L31.478 7.0001Z' fill='%231AFE49'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d_314_307' x='0' y='0' width='86' height='72.1946' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset/%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3CfeComposite in2='hardAlpha' operator='out'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.101961 0 0 0 0 0.996078 0 0 0 0 0.286275 0 0 0 1 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_314_307'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_314_307' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
     --divider-nav: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='2022' height='34' viewBox='0 0 2022 34' fill='none'><path opacity='0.6' d='M0 2.5H326.832L356.247 31.5H1733.3L1762.71 2.5H2022' stroke='%231AFE49' stroke-width='5'/></svg>");
@@ -168,7 +171,7 @@ strong {
     box-shadow: none; /* remove any inner shadow */
 }
 
-/* Change theme switcher button */
+/* Theme Switcher button */
 .layout-button svg path {
   fill: var(--neon-pink);
   stroke: var(--carbon-black);
@@ -185,9 +188,7 @@ strong {
 }
 
 
-
 /* ----- Footer ----- */
-
 .footer-separator {
   display: none;
 }
@@ -220,7 +221,7 @@ footer a:hover {
       4. Home 
 --------------------------- */
 
-/* Carousel with taped edges */
+/* --- Carousel --- */
 .carousel-frame-wrapper {
     padding: 20px; /* extra space for tape */
     position: relative; 
@@ -244,42 +245,6 @@ footer a:hover {
     box-sizing: border-box;
     transform: rotate(1deg); 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Tape Pseudo-Elements */
-.carousel-item::before,
-.carousel-item::after {
-    content: "";
-    position: absolute;
-    width: 10vw;
-    height: 5vw;
-    background-color: var(--tape-light-brown); 
-    z-index: 99; 
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-    border-radius: 2px;
-}
-
-/* Tape on the Top-Left corner */
-.carousel-item::before {
-    top: 10px; 
-    left: 10px;
-    transform: rotate(-10deg); 
-}
-
-/* Tape on the Bottom-Right corner */
-.carousel-item::after {
-    bottom: 10px; 
-    right: 10px;
-    transform: rotate(-12deg); 
-}
-
-/* Media Queries for tape */
-@media (min-width: 1400px) {
-    .carousel-item::before,
-    .carousel-item::after {
-        width: 140px; /* Cap size at 140px */
-        height: 50px; /* Cap size at 50px */
-    }
 }
 
 .carousel-caption {
@@ -362,10 +327,105 @@ footer a:hover {
 
 
 /* ------------------------
-      BUTTONS 
+      5. Tape effect: carousel, cards and item-box 
+--------------------------- */
+.carousel-item::before,
+.carousel-item::after, 
+.left-card::after,
+.right-card::after,
+.item-box::before {
+    content: "";
+    position: absolute;
+    z-index: 99; 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    clip-path: var(--tape-clip-path)
+}
+
+/* Carousel */
+.carousel-item::before,
+.carousel-item::after {
+    width: 10vw;
+    height: 5vw;
+    background-color: var(--tape-light-brown);
+}
+
+/* Tape on the top left corner */
+.carousel-item::before {
+    top: 10px; 
+    left: 10px;
+    transform: rotate(-10deg); 
+}
+
+/* Tape on the bottom right corner */
+.carousel-item::after {
+    bottom: 10px; 
+    right: 10px;
+    transform: rotate(-12deg); 
+}
+
+@media (min-width: 1400px) {
+    .carousel-item::before,
+    .carousel-item::after {
+        width: 140px; /* Cap size at 140px */
+        height: 50px; /* Cap size at 50px */
+    }
+}
+
+/* Cards on chronology page */
+.left-card::after,
+.right-card::after {
+    width: 80px; /* Width of the tape strip */
+    height: 30px; /* Height/thickness of the tape strip */
+    background-color: var(--tape-brown);
+}
+
+/* Tape in the bottom right */
+.left-card::after {
+    bottom: 145px; /* Pull it slightly over the bottom edge */
+    right: 220px;
+    /* Angle the tape slightly */
+    transform: rotate(-5deg); 
+}
+
+.right-card::after {
+  bottom: 145px; /* Pull it slightly over the bottom edge */
+  right: 220px;
+    /* Angle the tape slightly */
+  transform: rotate(5deg); 
+}
+
+@media (max-width: 768px) {
+  .left-card::after {
+    bottom: -5px; /* Pull it slightly over the bottom edge */
+    right: -20px;
+    /* Angle the tape slightly */
+    transform: rotate(-5deg); 
+}
+
+  .right-card::after {
+    top: -5px; /* Pull it slightly over the bottom edge */
+    left: -20px;
+      /* Angle the tape slightly */
+    transform: rotate(-10deg); 
+  }
+}
+
+/* Item-box on Item page */
+.item-box::before {
+    top: -10px;
+    left: 20%;
+    width: 100px;
+    height: 35px;
+    background-color: var(--tape-brown); 
+    transform: rotate(2deg);
+}
+
+/* ------------------------
+       6. Buttons 
 --------------------------- */
 
-/* Link to documentation + "Explore room items" button in map page*/
+/* Link to documentation + "Explore room items" buttons in map page*/
 .link-documentation a,
 .custom-room-btn {
   font-family: var(--font-secondary);
@@ -386,9 +446,88 @@ footer a:hover {
   transform: scale(1.10); 
 }
 
+/* "Tape" buttons */
+#length-buttons .btn, 
+#tone-buttons .btn,
+#btn-prev, 
+#btn-next, 
+#room-nav-controls .btn {
+    background-color: var(--tape-brown); 
+    color: var(--vanilla-cream) !important;
+    font-family: var(--font-headers);
+    text-transform: uppercase;
+    border: none;
+    padding: 8px 25px;
+    margin: 5px;
+    position: relative;
+    border-radius: 0;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    clip-path: var(--tape-clip-path)
+
+}
+
+/* Rotation randomness to keep it "hand-placed" */
+#btn-prev { transform: rotate(-2deg); }
+#btn-next, #room-nav-controls .btn { transform: rotate(1.5deg); }
+
+#length-buttons, #tone-buttons {
+    transform: none; 
+    display: flex;
+    gap: 10px;
+}
+
+/* Rotate individual buttons slightly */
+#length-buttons .btn:nth-child(odd),
+#tone-buttons .btn:nth-child(even) {
+    transform: rotate(-1.5deg);
+}
+
+#length-buttons .btn:nth-child(even),
+#tone-buttons .btn:nth-child(odd) {
+    transform: rotate(1.2deg);
+}
+
+/* Reset rotation on hover/active state */
+#length-buttons .btn:hover, 
+#tone-buttons .btn:hover,
+#length-buttons .btn.active,
+#tone-buttons .btn.active {
+    transform: rotate(0deg) scale(1.05);
+    z-index: 10; 
+}
+
+#length-buttons .btn:hover, 
+#tone-buttons .btn:hover {
+    background-color: var(--classic-crimson) !important;
+    color: white !important;
+    transform: scale(1.05) rotate(0deg);
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+    opacity: 1;
+}
+
+#length-buttons .btn.active, 
+#tone-buttons .btn.active,
+#btn-prev:hover, 
+#btn-next:hover,
+#room-nav-controls .btn:hover {
+    background-color: var(--neon-pink) !important;
+    color: white !important;
+    transform: scale(1.05) rotate(0deg);
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+    opacity: 1;
+}
+
+/* Prev and Next buttons on mobile */
+@media (max-width: 576px) {
+  .btn-icon {
+    color: var(--vanilla-cream); 
+  }
+}
+
 
 /* -------------------------------
-        MAP 
+        7. Map 
 --------------------------------- */
 #museum-walls {
   fill: var(--neon-pink);
@@ -423,7 +562,7 @@ footer a:hover {
 }
 
 /* --------------------------------
-    EXHIBITION PAGE 
+      8. Exhibition page
 --------------------------------- */
 
 /* --- Toggle Section --- */
@@ -478,9 +617,7 @@ footer a:hover {
 }
 
 
-
 /* ----- Eras page ----- */
-
 .era-title {
     font-family: var(--font-secondary);
     color: var(--background-color);
@@ -585,55 +722,6 @@ footer a:hover {
   z-index: -1;
 }
 
-.left-card::after,
-.right-card::after {
-  content: "";
-  position: absolute;
-  /* width: 10vw;
-  height: 5vw; */
-  width: 80px; /* Width of the tape strip */
-  height: 30px; /* Height/thickness of the tape strip */
-  background-color: var(--tape-brown); /* Translucent tan/masking tape color */
-  clip-path: polygon(2% 0%, 98% 1%, 100% 15%, 98% 85%, 100% 100%, 2% 99%, 0% 85%, 2% 15%);
-  z-index: 99; /* Make sure the tape is on top of the image */
-  /* Add a subtle shadow to the tape to make it look raised */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  /* Use a simple border-radius to suggest slightly torn edges */
-  border-radius: 2px;
-}
-
-/* Tape in the bottom right */
-.left-card::after {
-    bottom: 145px; /* Pull it slightly over the bottom edge */
-    right: 220px;
-    /* Angle the tape slightly */
-    transform: rotate(-5deg); 
-}
-
-.right-card::after {
-  bottom: 145px; /* Pull it slightly over the bottom edge */
-  right: 220px;
-    /* Angle the tape slightly */
-  transform: rotate(5deg); 
-}
-
-/* Adjust tape positioning whith smaller screens */
-@media (max-width: 768px) {
-  .left-card::after {
-    bottom: -5px; /* Pull it slightly over the bottom edge */
-    right: -20px;
-    /* Angle the tape slightly */
-    transform: rotate(-5deg); 
-}
-
-.right-card::after {
-  top: -5px; /* Pull it slightly over the bottom edge */
-  left: -20px;
-    /* Angle the tape slightly */
-  transform: rotate(-10deg); 
-}
-}
-
 .text-wrapper {
   font-family: var(--font-secondary);
   letter-spacing: 2px;
@@ -657,7 +745,7 @@ footer a:hover {
 }
 
 /* ----------------------
-       ITEM PAGE 
+       9. Item page
 ------------------------ */
 
 /* Container for the whole item */
@@ -668,31 +756,12 @@ footer a:hover {
     overflow: visible;
 }
 
-/* "Taped" Image Box */
 .item-box {
     position: relative;
     padding: 15px;
     background: var(--classic-crimson);
     transform: rotate(-1.5deg); /* Slight tilt */
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.item-box img {
-    filter: contrast(1.1) grayscale(0.2); /* Subtle vintage photo look */
-}
-
-/* Adding Tape to the item image specifically */
-.item-box::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: 20%;
-    width: 100px;
-    height: 35px;
-    background-color: var(--tape-brown); /* Translucent tan/masking tape color */
-    transform: rotate(2deg);
-    z-index: 10;
-    clip-path: polygon(2% 0%, 98% 1%, 100% 15%, 98% 85%, 100% 100%, 2% 99%, 0% 85%, 2% 15%);
 }
 
 .table-box {
@@ -730,100 +799,6 @@ footer a:hover {
     border-collapse: collapse;
 }
 
-
-/* Base style for all "tape" buttons */
-#length-buttons .btn, 
-#tone-buttons .btn,
-#btn-prev, 
-#btn-next, 
-#room-nav-controls .btn {
-    background-color: var(--tape-brown); 
-    color: var(--vanilla-cream) !important;
-    font-family: var(--font-headers);
-    text-transform: uppercase;
-    border: none;
-    padding: 8px 25px;
-    margin: 5px;
-    position: relative;
-    border-radius: 0;
-    transition: all 0.2s ease-in-out;
-    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-    
-    /* The "Torn Edge" Look */
-    clip-path: polygon(
-        1% 2%, 98% 0%, 100% 12%, 99% 88%, 
-        100% 100%, 2% 98%, 0% 85%, 1% 15%
-    );
-}
-
-/* Rotation randomness to keep it "hand-placed" */
-#btn-prev { transform: rotate(-2deg); }
-#btn-next, #room-nav-controls .btn { transform: rotate(1.5deg); }
-
-#length-buttons, #tone-buttons {
-    transform: none; 
-    display: flex;
-    gap: 10px;
-}
-
-/* Rotate individual buttons slightly */
-#length-buttons .btn:nth-child(odd),
-#tone-buttons .btn:nth-child(even) {
-    transform: rotate(-1.5deg);
-}
-
-#length-buttons .btn:nth-child(even),
-#tone-buttons .btn:nth-child(odd) {
-    transform: rotate(1.2deg);
-}
-
-/* Reset rotation on hover/active state */
-#length-buttons .btn:hover, 
-#tone-buttons .btn:hover,
-#length-buttons .btn.active,
-#tone-buttons .btn.active {
-    transform: rotate(0deg) scale(1.05);
-    z-index: 10; 
-}
-
-/* Hover and active states */
-#length-buttons .btn:hover, 
-#tone-buttons .btn:hover {
-    background-color: var(--classic-crimson) !important;
-    color: white !important;
-    transform: scale(1.05) rotate(0deg);
-    box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
-    opacity: 1;
-}
-
-#length-buttons .btn.active, 
-#tone-buttons .btn.active,
-#btn-prev:hover, 
-#btn-next:hover,
-#room-nav-controls .btn:hover {
-    background-color: var(--neon-pink) !important;
-    color: white !important;
-    transform: scale(1.05) rotate(0deg);
-    box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
-    opacity: 1;
-}
-
-/* Add a "grain" texture to the tape */
-#length-buttons .btn::after, 
-#tone-buttons .btn::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.1'/%3E%3C/svg%3E");
-    pointer-events: none;
-}
-
-/* Prev and Next buttons on mobile */
-@media (max-width: 576px) {
-  .btn-icon {
-    color: var(--vanilla-cream); 
-  }
-}
 
 .text-box {
     column-count: 1;
@@ -864,7 +839,7 @@ footer a:hover {
 
 
 /* ----------------------
-       DOCUMENTATION PAGE 
+       10. Documentation page 
 ------------------------ */
 
 #documentation a {
