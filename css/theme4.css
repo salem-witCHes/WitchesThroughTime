@@ -264,6 +264,7 @@ footer a:hover {
   text-transform: uppercase;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
   transition: color 0.3s ease;
+  display: inline-block;
 }
 
 .carousel-caption:hover {
@@ -443,7 +444,8 @@ footer a:hover {
 .custom-room-btn:hover {
   background-color: transparent;
   color: var(--neon-pink);
-  transform: scale(1.10); 
+  border: 2px solid var(--neon-pink);  
+  transform: rotate(0deg) scale(1.10); 
 }
 
 /* "Tape" buttons */

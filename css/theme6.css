@@ -1095,16 +1095,22 @@ footer a:hover {
 Disable animations for users who prefer reduced motion 
 ------------------------------------------------------ */
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0s !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0s !important;
-  }
+    * {
+      animation-duration: 0s !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0s !important;
+    }
 
-  .grid-line,
-  .cyberpunk-animation,
-  .era-card::before {
-    animation: none !important;
+    .grid-line,
+    .era-card::before {
+      animation: none !important;
+    }
+
+    /* Ensure title is visible if animation is disabled */
+    .cyberpunk-animation {
+      animation: none !important;
+      width: auto !important;
+      border-right: none !important;
   }
 }
 
